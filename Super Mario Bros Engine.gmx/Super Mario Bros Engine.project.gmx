@@ -68,6 +68,19 @@
         <sprite>sprites\spr_luigi_powerdown2</sprite>
       </sprites>
     </sprites>
+    <sprites name="Masks">
+      <sprites name="Player">
+        <sprite>sprites\spr_mask</sprite>
+        <sprite>sprites\spr_mask_big</sprite>
+      </sprites>
+      <sprite>sprites\spr_square</sprite>
+      <sprite>sprites\spr_square_b</sprite>
+      <sprite>sprites\spr_square_c</sprite>
+    </sprites>
+    <sprite>sprites\spr_up</sprite>
+    <sprite>sprites\spr_down</sprite>
+    <sprite>sprites\spr_left</sprite>
+    <sprite>sprites\spr_right</sprite>
     <sprites name="Special">
       <sprites name="Palettes">
         <sprites name="Players">
@@ -76,15 +89,40 @@
         </sprites>
       </sprites>
     </sprites>
-    <sprites name="Masks">
-      <sprites name="Player Masks">
-        <sprite>sprites\spr_mask_small</sprite>
-        <sprite>sprites\spr_mask_super</sprite>
-      </sprites>
-    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Player Scripts">
+      <scripts name="Animation">
+        <scripts name="Mario">
+          <script>scripts\scr_mario_walk.gml</script>
+          <script>scripts\scr_mario_jump.gml</script>
+          <script>scripts\scr_mario_skid.gml</script>
+          <script>scripts\scr_mario_climb.gml</script>
+          <script>scripts\scr_mario_swim.gml</script>
+          <script>scripts\scr_mario_pose.gml</script>
+        </scripts>
+        <scripts name="Luigi">
+          <script>scripts\scr_luigi_walk.gml</script>
+          <script>scripts\scr_luigi_jump.gml</script>
+          <script>scripts\scr_luigi_skid.gml</script>
+          <script>scripts\scr_luigi_climb.gml</script>
+          <script>scripts\scr_luigi_swim.gml</script>
+          <script>scripts\scr_luigi_pose.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Physics">
+        <script>scripts\scr_physics_mario.gml</script>
+      </scripts>
+      <script>scripts\scr_player_create.gml</script>
+    </scripts>
+  </scripts>
+  <constants number="3">
+    <constant name="cs_small">0</constant>
+    <constant name="cs_super">1</constant>
+    <constant name="cs_fire">2</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
