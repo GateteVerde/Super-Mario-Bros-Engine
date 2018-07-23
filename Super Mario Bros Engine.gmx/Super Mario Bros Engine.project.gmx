@@ -76,6 +76,11 @@
         </sprites>
       </sprites>
     </sprites>
+    <sprites name="Masks">
+      <sprites name="Player Masks">
+        <sprite>sprites\spr_mask_small</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
