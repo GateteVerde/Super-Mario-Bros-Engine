@@ -79,6 +79,7 @@
     <sprites name="Masks">
       <sprites name="Player Masks">
         <sprite>sprites\spr_mask_small</sprite>
+        <sprite>sprites\spr_mask_super</sprite>
       </sprites>
     </sprites>
   </sprites>
