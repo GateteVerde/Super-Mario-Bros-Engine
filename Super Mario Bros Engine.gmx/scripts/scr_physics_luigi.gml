@@ -1,11 +1,11 @@
-///scr_physics_mario();
+///scr_physics_luigi();
 
 /*
 //  Usage:
-//      scr_physics_mario();
+//      scr_physics_luigi();
 //
 //  Purpose:
-//      Initializes the physical variables for Mario
+//      Initializes the physical variables for Luigi if SMB2J mode is active.
 */
 
 //Minimum / Maximum Horizontal speed

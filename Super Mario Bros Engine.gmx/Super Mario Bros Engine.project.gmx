@@ -114,10 +114,20 @@
       </scripts>
       <scripts name="Physics">
         <script>scripts\scr_physics_mario.gml</script>
+        <script>scripts\scr_physics_luigi.gml</script>
       </scripts>
       <script>scripts\scr_player_create.gml</script>
     </scripts>
+    <script>scripts\scr_globals_init.gml</script>
   </scripts>
+  <objects name="objects">
+    <object>objects\obj_player</object>
+    <objects name="Collisions">
+      <object>objects\obj_solid</object>
+      <object>objects\obj_swim</object>
+      <object>objects\obj_climb</object>
+    </objects>
+  </objects>
   <constants number="3">
     <constant name="cs_small">0</constant>
     <constant name="cs_super">1</constant>
