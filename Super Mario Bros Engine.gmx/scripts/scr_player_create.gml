@@ -23,6 +23,12 @@ statedelay = 0;
 //-1: Left
 xscale = 1;
 
+//Handle the player direction when stuck on a solid.
+//1:    Right
+//-1:   Left
+direct = 1;
+direct2 = 0;
+
 //Allows the player to grab a beanstalk
 canhang = 0;
 

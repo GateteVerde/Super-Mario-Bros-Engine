@@ -121,17 +121,34 @@
     <script>scripts\scr_globals_init.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_player</object>
+    <objects name="Main">
+      <objects name="Controllers">
+        <object>objects\obj_levelcontrol</object>
+      </objects>
+      <object>objects\obj_player</object>
+    </objects>
     <objects name="Collisions">
+      <objects name="State Collisions">
+        <object>objects\obj_swim</object>
+        <object>objects\obj_climb</object>
+      </objects>
       <object>objects\obj_solid</object>
-      <object>objects\obj_swim</object>
-      <object>objects\obj_climb</object>
+      <object>objects\obj_platform</object>
+    </objects>
+    <objects name="Special">
+      <objects name="Parents">
+        <object>objects\obj_blockparent</object>
+      </objects>
     </objects>
   </objects>
-  <constants number="3">
-    <constant name="cs_small">0</constant>
-    <constant name="cs_super">1</constant>
-    <constant name="cs_fire">2</constant>
+  <constants number="7">
+    <constant name="cs_idle">0</constant>
+    <constant name="cs_walk">1</constant>
+    <constant name="cs_jump">2</constant>
+    <constant name="cs_climb">3</constant>
+    <constant name="cs_small">"small"</constant>
+    <constant name="cs_super">"super"</constant>
+    <constant name="cs_fire">"fire"</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

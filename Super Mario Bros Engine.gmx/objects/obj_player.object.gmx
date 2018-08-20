@@ -34,6 +34,426 @@ scr_player_create();
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Player Logic
+
+//Floor collision
+if (vspeed &gt;= 0) {
+
+    //Check for the ground
+    var ground = collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom+vspeed,obj_solid,0,0);
+    
+    //If there's ground to step in
+    if (ground) 
+    &amp;&amp; (bbox_bottom &lt; ground.yprevious+5) {
+    
+        //Stay above the ground
+        y = ground.y-16;
+        
+        //Stop vertical speed
+        vspeed = 0;
+        gravity = 0;
+        
+        //Reset values
+        event_user(15);
+    }
+}
+
+//If the player is not swimming
+if (swimming == false) {
+
+    //If the player is not climbing, set up 'Default' behaviour.
+    if (state != cs_climb)
+        event_user(4);
+    
+    //Otherwise if the player is climbing, set up 'Climbing' behaviour.
+    else if (state == cs_climb)
+        event_user(5);
+}
+
+//Otherwise if the player is swimming, set up 'Swimming' behaviour
+else if (swimming == true)
+    event_user(6);
+    
+//If the player is moving to the right and there's a wall on the way.
+if (hspeed &gt; 0)
+&amp;&amp; (collision_rectangle(bbox_right,bbox_top+4,bbox_right+1,bbox_bottom-1,obj_solid,0,0)) {
+
+    //Stop horizontal speed
+    hspeed = 0;
+    
+    //Prevent the player from getting embed on the wall
+    while (collision_rectangle(bbox_right,bbox_top+4,bbox_right,bbox_bottom-1,obj_solid,0,0))
+    &amp;&amp; (!collision_point(x,bbox_top+4,obj_solid,0,0))
+        x--;
+}
+
+//Otherwise, if the player is moving to the left and there's a wall on the way.
+else if (hspeed &lt; 0)
+&amp;&amp; (collision_rectangle(bbox_left-1,bbox_top+4,bbox_left,bbox_bottom-1,obj_solid,0,0)) {
+
+    //Stop horizontal speed
+    hspeed = 0;
+    
+    //Prevent the player from getting embed on the wall
+    while (collision_rectangle(bbox_left,bbox_top+4,bbox_left,bbox_bottom-1,obj_solid,0,0))
+    &amp;&amp; (!collision_point(x,bbox_top+4,obj_solid,0,0))
+        x++;
+}
+
+//If the player is moving up
+if (vspeed &lt; 0) {
+
+    //Prevent the player from getting embed on a ceiling
+    if (state &gt; cs_walk) {
+    
+        while (collision_rectangle(bbox_left,bbox_top+1,bbox_right,bbox_top+1,obj_solid,0,0))
+            y++;
+    }
+            
+    //Check for a item block
+    var block = collision_rectangle(bbox_left,bbox_top-2,bbox_right,bbox_top,obj_blockparent,0,0);
+    
+    //If there's a item block in the way and this one can be hit
+    if (block) 
+    &amp;&amp; (block.ready == 0) {
+    
+        //With the block
+        with (block) {
+        
+            //Block has been hit
+            ready = 1;
+            
+            //Bump the block
+            vspeed = -2;
+            alarm[0] = 4;
+            
+            //Perform block specific events
+            event_user(0);
+        }
+    }
+    
+    //Stop vertical movement
+    vspeed = 0;
+    
+    /*Play 'Bump' sound if not climbing
+    if (state == cs_jump)
+        audio_play_sound(snd_bump, 0, false);*/
+}
+
+//If the player is not climbing
+if (state != cs_climb) {
+
+    //If the player control is not disabled and it is not jumping.
+    if (state != cs_jump)
+    &amp;&amp; (disablecontrol == false) {
+    
+        //Make the player crouch down if the 'Down' key is held
+        if (keyboard_check(vk_down))
+        &amp;&amp; (!crouch)
+            crouch = true;
+            
+        //Otherwise, make the player get up
+        else if (!keyboard_check(vk_down))
+            crouch = false;
+    }
+    
+    //Handles powerup specific projectiles
+    if (keyboard_check_pressed(vk_control))
+    &amp;&amp; (obj_levelcontrol.barrier == false)
+        alarm[11] = 1;
+}
+
+//Make the player get up
+else {
+
+    crouch = false;
+}
+
+//Check for a nearby swimming surface
+var water = collision_rectangle(bbox_left,y-1,bbox_right,y,obj_swim,1,0);
+
+//If the player is not swimming and makes contact with a water surface
+if (water) 
+&amp;&amp; (swimming == false) {
+    
+    //Halve current horizontal speed
+    hspeed = hspeed/2.5;    
+    
+    //Make the player swim.
+    swimming = true;
+    
+    //Make the player get up
+    crouch = false;
+                
+    //Stop vertical movement
+    gravity = 0;
+    if (vspeed &gt; 0)
+        vspeed = 0;
+}
+
+//Otherwise, if the player had enough swimming and wants to get out
+else if (!water) 
+&amp;&amp; (swimming == true) {
+
+    //If there's not water above and there's not a solid on the way out
+    if (!collision_rectangle(bbox_left,bbox_top,bbox_right,bbox_top,obj_solid,0,0)) {
+    
+        //If the player is moving up
+        if (vspeed &lt; 0) 
+        &amp;&amp; (state == cs_jump) {
+        
+            //If the 'Jump' key is pressed
+            if (keyboard_check(vk_shift)) {
+            
+                //Play 'Jump' sound
+                //audio_play_sound(snd_jump, 0, false);
+                
+                //Make the player not swim
+                swimming = false;
+                
+                //Allow variable jump
+                jumping = 1;
+                
+                //Set the vertical speed
+                vspeed = -3.4675;
+            }
+            
+            //Otherwise, if 'Shift' is not held.
+            else {
+            
+                //If the player is moving up.
+                if (vspeed &lt; 0)
+                    vspeed = 0;
+            }
+        }
+    }
+}
+    
+//Free the player is he is stuck on a solid.
+if (vspeed == 0)
+&amp;&amp; (crouch == false) 
+&amp;&amp; (mask_index == spr_mask_big) {
+    
+    //If the player gets stuck
+    if (collision_rectangle(bbox_left,bbox_top+4,bbox_right,bbox_top+4,obj_solid,0,0)) 
+    &amp;&amp; (inwall == 0) {
+    
+        //If the direction was not set
+        if (direct2 == 0) {
+        
+            //Set it up
+            direct2 = xscale;
+        }
+        
+        //Begin movement
+        inwall = 1;
+        
+        //Set the movement direction
+        direct = -direct2;
+    }
+    
+    //Otherwise, if the player gets stuck on a wall.
+    else if (inwall == 1) {
+        
+        //Move the player until it's not embed in a wall.
+        x += 1*sign(direct);       
+        
+        //If the player is not longer embed on a wall, make him able to move.
+        if (!collision_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_solid,1,0)) {
+        
+            inwall = 0;
+            direct2 = 0;
+        }
+        
+        //If the player collides with a wall while being stuck
+        if (collision_rectangle(bbox_left,y+4,bbox_left,bbox_bottom-4,obj_solid,1,0))
+        || (collision_rectangle(bbox_right,y+4,bbox_right,bbox_bottom-4,obj_solid,1,0))
+            direct = -direct;
+    }
+}
+
+//Unstuck in case of overlapping a solid completely
+if (state &lt; 2)
+&amp;&amp; (inwall == 0)
+    while (collision_rectangle(x-1,bbox_top,x+1,bbox_bottom,obj_solid,0,0))
+        y--;
+        
+//If the player is not in contact with water.
+if (!collision_rectangle(bbox_left,y,bbox_right,bbox_bottom,obj_swim,0,0))
+&amp;&amp; (swimming == true)
+    swimming = false;
+
+//Prevent the player from going too high on the level
+if (y &lt; -96)
+    y = -96;
+    
+//Otherwise, if he is falling.
+else {
+
+    //If the player is below the bottom room boundary and didn't activate a warp, restart the room.
+    if (bbox_bottom &gt; room_height+32)
+        room_restart();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="25">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reset values
+
+//Allow jumping
+jumping = 0;
+
+//Reset combo
+if (hitcombo &gt; 0)
+    hitcombo = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Player Behaviour (Swim)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="15">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Player Behaviour (Climb)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="14">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Player Behaviour
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set up behaviour
+
+//If the player is not swimming
+if (swimming == false) {
+
+    //If the player is not climbing, set up 'Default' behaviour.
+    if (state != cs_climb)
+        event_user(4);
+    
+    //Otherwise if the player is climbing, set up 'Climbing' behaviour.
+    else if (state == cs_climb)
+        event_user(5);
+}
+
+//Otherwise if the player is swimming, set up 'Swimming' behaviour
+else if (swimming == true)
+    event_user(6);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
   </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>

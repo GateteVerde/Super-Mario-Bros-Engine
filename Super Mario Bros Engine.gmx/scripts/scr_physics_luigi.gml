@@ -13,10 +13,10 @@ minspd = 1.3;
 maxspd = 2.6;
 
 //Acceleration
-acc = 0.06;
+acc = 0.04; //0.06
 
 //Acceleration (when turning)
-accskid = 0.15;
+accskid = 0.1; //0.15
 
 //Deceleration
 dec = 0.0375;
@@ -25,10 +25,10 @@ dec = 0.0375;
 decskid = 0.072;
 
 //Gravity
-grav = 0.3;
+grav = 0.25; //0.3
 
 //Gravity (when jumping)
-grav_alt = 0.065;
+grav_alt = 0.045; //0.045
 
 //Acceleration (when underwater)
 acc_swim = 0.025;
