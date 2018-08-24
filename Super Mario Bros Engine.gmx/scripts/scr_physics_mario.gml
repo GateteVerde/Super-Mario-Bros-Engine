@@ -22,13 +22,16 @@ accskid = 0.15;
 dec = 0.0375;
 
 //Deceleration (when turning)
-decskid = 0.072;
+decskid = 0.065;
+
+//Jump Strength
+jumpstr = 4.1675;
 
 //Gravity
-grav = 0.3;
+grav = 0.4;
 
 //Gravity (when jumping)
-grav_alt = 0.065;
+grav_alt = 0.1;
 
 //Acceleration (when underwater)
 acc_swim = 0.025;

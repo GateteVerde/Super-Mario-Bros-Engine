@@ -9,12 +9,12 @@
 */
 
 //SMB2J Mode (If activated, this enables custom physics for Luigi.)
-global.smb2jmode = false;
+global.smb2jmode = true;
 
 //Current player
 //0: Mario
 //1: Luigi
-global.player = 0;
+global.player = 1;
 
 //Initialize player based variables
 for (i=0; i<2; i++) {
@@ -35,5 +35,5 @@ for (i=0; i<2; i++) {
     //0: Small
     //1: Super
     //2: Fire
-    global.powerup[i] = cs_small;
+    global.powerup[i] = cs_super;
 }

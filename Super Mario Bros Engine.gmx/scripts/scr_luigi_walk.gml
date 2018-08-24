@@ -8,7 +8,7 @@
 //      Returns the appropiate walking sprite for Luigi.
 */
 
-switch (global.powerup) {
+switch (global.powerup[1]) {
 
     //Small
     case (cs_small): return spr_luigi_small_walk;

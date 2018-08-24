@@ -8,7 +8,7 @@
 //      Returns the appropiate pose sprite for Mario.
 */
 
-switch (global.powerup) {
+switch (global.powerup[0]) {
 
     //Small
     case (cs_small): return spr_mario_small_pose;

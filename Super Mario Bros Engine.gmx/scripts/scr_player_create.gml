@@ -41,6 +41,9 @@ canturn = 0;
 //2: Cannot stop in mid-air
 jumping = 0;
 
+//Checks if the player is swimming, or not
+swimming = 0;
+
 //Sets sliding frame on the player and plays a sound too
 skidnow = 0;
 
