@@ -1,8 +1,15 @@
-///animated_tile_add(background,speed,BG Frame 1, BG Frame 2, 3, 4... etc);
+///animated_tile_add(background,speed,frame1,frame2,frame3,frame4,etc...);
 
-///Add a tile set to the animated tile system.
-with(Animated_Tile_Controller)
-{
+/*
+//  Usage:
+//      animated_tile_add(background,speed,frame1,frame2,frame3,frame4,etc...);
+//
+//  Purpose:
+//      Sets the backgrounds to be used as the animated tiles
+*/
+
+//Add a tile set to the animated tile system.
+with (Animated_Tile_Controller) {
   
     var _non_frame_arg_count=2;
     var _bg=argument[0];
@@ -21,10 +28,9 @@ with(Animated_Tile_Controller)
     animated_tiles[# Tiles.next_frame,_row]    = 1; //Set the "next animation frame.
     animated_tiles[# Tiles.frame_count,_row]   = _frame_count; //How many frames do we have?
     
-    ///Set Up Frames
-    for(var _i=0; _i<_frame_count; _i++)
-    {
-      animated_tiles[# Tiles.column_count-1+_i,_row] = argument[_non_frame_arg_count+_i];
+    //Set Up Frames
+    for(var _i=0; _i<_frame_count; _i++) {
+    
+        animated_tiles[# Tiles.column_count-1+_i,_row] = argument[_non_frame_arg_count+_i];
     }
 }
-

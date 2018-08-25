@@ -97,6 +97,68 @@
     <sprite>sprites\spr_playermarker</sprite>
   </sprites>
   <backgrounds name="background">
+    <backgrounds name="Level Backgrounds">
+      <backgrounds name="Gradients">
+        <background>background\bgr_gradient_sky</background>
+        <background>background\bgr_gradient_sky_pale</background>
+        <background>background\bgr_gradient_sky_night</background>
+        <background>background\bgr_gradient_water</background>
+      </backgrounds>
+      <background>background\bgr_clouds</background>
+      <background>background\bgr_mushrooms</background>
+      <backgrounds name="Hills">
+        <background>background\bgr_hills</background>
+        <background>background\bgr_hills_forest</background>
+      </backgrounds>
+      <backgrounds name="Underground">
+        <background>background\bgr_underground</background>
+        <background>background\bgr_underground_b</background>
+        <background>background\bgr_underground_c</background>
+      </backgrounds>
+      <backgrounds name="Underwater">
+        <background>background\bgr_underwater</background>
+        <background>background\bgr_underwater_ruins</background>
+      </backgrounds>
+      <backgrounds name="Waterfall">
+        <background>background\bgr_waterfall</background>
+        <background>background\bgr_waterfall_b</background>
+        <background>background\bgr_waterfall_c</background>
+        <background>background\bgr_waterfall_d</background>
+      </backgrounds>
+      <backgrounds name="Mini-Hill Clusters">
+        <background>background\bgr_minihills</background>
+        <background>background\bgr_minihills_snow</background>
+        <background>background\bgr_minihills_orange</background>
+      </backgrounds>
+      <backgrounds name="Goomba Pillars">
+        <background>background\bgr_goombapillars</background>
+      </backgrounds>
+      <backgrounds name="Night Sky">
+        <background>background\bgr_nightsky</background>
+        <background>background\bgr_nightsky_b</background>
+        <background>background\bgr_nightsky_c</background>
+        <background>background\bgr_nightsky_d</background>
+        <background>background\bgr_nightsky_e</background>
+        <background>background\bgr_nightsky_f</background>
+        <background>background\bgr_nightsky_g</background>
+        <background>background\bgr_nightsky_h</background>
+        <background>background\bgr_nightsky_hills</background>
+      </backgrounds>
+      <backgrounds name="Castle">
+        <backgrounds name="Fake">
+          <background>background\bgr_fakecastle</background>
+          <background>background\bgr_fakecastle_b</background>
+          <background>background\bgr_fakecastle_maze</background>
+        </backgrounds>
+        <background>background\bgr_castle</background>
+      </backgrounds>
+      <backgrounds name="Castle Walls">
+        <background>background\bgr_castlewalls</background>
+        <background>background\bgr_castlewalls_b</background>
+      </backgrounds>
+      <background>background\bgr_bonus_mario</background>
+      <background>background\bgr_bonus_luigi</background>
+    </backgrounds>
     <backgrounds name="Tile Sets">
       <backgrounds name="Animated (DO NOT USE)">
         <background>background\tls_animate1</background>
@@ -140,27 +202,29 @@
         </scripts>
         <script>scripts\scr_player_create.gml</script>
       </scripts>
-      <scripts name="Tiles">
-        <script>scripts\animated_tile_add.gml</script>
-        <script>scripts\animated_tile_cleanup.gml</script>
-        <script>scripts\animated_tile_disable_all.gml</script>
-        <script>scripts\animated_tile_enable_all.gml</script>
-        <script>scripts\animated_tile_get_animation_speed.gml</script>
-        <script>scripts\animated_tile_get_background.gml</script>
-        <script>scripts\animated_tile_get_current_background.gml</script>
-        <script>scripts\animated_tile_get_current_frame.gml</script>
-        <script>scripts\animated_tile_get_frame_count.gml</script>
-        <script>scripts\animated_tile_get_next_frame.gml</script>
-        <script>scripts\animated_tile_init.gml</script>
-        <script>scripts\animated_tile_is_playing.gml</script>
-        <script>scripts\animated_tile_update.gml</script>
-      </scripts>
       <script>scripts\scr_globals_init.gml</script>
     </scripts>
+    <scripts name="Tiles">
+      <script>scripts\animated_tile_add.gml</script>
+      <script>scripts\animated_tile_cleanup.gml</script>
+      <script>scripts\animated_tile_disable_all.gml</script>
+      <script>scripts\animated_tile_enable_all.gml</script>
+      <script>scripts\animated_tile_get_animation_speed.gml</script>
+      <script>scripts\animated_tile_get_background.gml</script>
+      <script>scripts\animated_tile_get_current_background.gml</script>
+      <script>scripts\animated_tile_get_current_frame.gml</script>
+      <script>scripts\animated_tile_get_frame_count.gml</script>
+      <script>scripts\animated_tile_get_next_frame.gml</script>
+      <script>scripts\animated_tile_init.gml</script>
+      <script>scripts\animated_tile_is_playing.gml</script>
+      <script>scripts\animated_tile_update.gml</script>
+    </scripts>
+    <script>scripts\draw_background_tiled_horizontal_ext.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Main">
       <objects name="Controllers">
+        <object>objects\obj_bganimator</object>
         <object>objects\obj_levelcontrol</object>
         <object>objects\obj_levelcontrol_tiles</object>
       </objects>
