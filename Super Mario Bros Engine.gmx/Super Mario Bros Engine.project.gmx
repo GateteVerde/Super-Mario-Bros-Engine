@@ -81,10 +81,6 @@
       <sprite>sprites\spr_square_b</sprite>
       <sprite>sprites\spr_square_c</sprite>
     </sprites>
-    <sprite>sprites\spr_up</sprite>
-    <sprite>sprites\spr_down</sprite>
-    <sprite>sprites\spr_left</sprite>
-    <sprite>sprites\spr_right</sprite>
     <sprites name="Special">
       <sprites name="Palettes">
         <sprites name="Players">
@@ -93,46 +89,80 @@
         </sprites>
       </sprites>
     </sprites>
+    <sprite>sprites\spr_up</sprite>
+    <sprite>sprites\spr_down</sprite>
+    <sprite>sprites\spr_left</sprite>
+    <sprite>sprites\spr_right</sprite>
+    <sprite>sprites\spr_event</sprite>
     <sprite>sprites\spr_playermarker</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Tile Sets">
+      <backgrounds name="Animated (DO NOT USE)">
+        <background>background\tls_animate1</background>
+        <background>background\tls_animate2</background>
+        <background>background\tls_animate3</background>
+        <background>background\tls_animate4</background>
+        <background>background\tls_animate5</background>
+        <background>background\tls_animate6</background>
+        <background>background\tls_animate7</background>
+        <background>background\tls_animate8</background>
+      </backgrounds>
       <background>background\tls_main</background>
+      <background>background\tls_animate</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="Player Scripts">
-      <scripts name="Animation">
-        <scripts name="Mario">
-          <script>scripts\scr_mario_walk.gml</script>
-          <script>scripts\scr_mario_jump.gml</script>
-          <script>scripts\scr_mario_skid.gml</script>
-          <script>scripts\scr_mario_climb.gml</script>
-          <script>scripts\scr_mario_swim.gml</script>
-          <script>scripts\scr_mario_pose.gml</script>
+    <scripts name="Gameplay">
+      <scripts name="Player">
+        <scripts name="Animation">
+          <scripts name="Mario">
+            <script>scripts\scr_mario_walk.gml</script>
+            <script>scripts\scr_mario_jump.gml</script>
+            <script>scripts\scr_mario_skid.gml</script>
+            <script>scripts\scr_mario_climb.gml</script>
+            <script>scripts\scr_mario_swim.gml</script>
+            <script>scripts\scr_mario_pose.gml</script>
+          </scripts>
+          <scripts name="Luigi">
+            <script>scripts\scr_luigi_walk.gml</script>
+            <script>scripts\scr_luigi_jump.gml</script>
+            <script>scripts\scr_luigi_skid.gml</script>
+            <script>scripts\scr_luigi_climb.gml</script>
+            <script>scripts\scr_luigi_swim.gml</script>
+            <script>scripts\scr_luigi_pose.gml</script>
+          </scripts>
         </scripts>
-        <scripts name="Luigi">
-          <script>scripts\scr_luigi_walk.gml</script>
-          <script>scripts\scr_luigi_jump.gml</script>
-          <script>scripts\scr_luigi_skid.gml</script>
-          <script>scripts\scr_luigi_climb.gml</script>
-          <script>scripts\scr_luigi_swim.gml</script>
-          <script>scripts\scr_luigi_pose.gml</script>
+        <scripts name="Physics">
+          <script>scripts\scr_physics_mario.gml</script>
+          <script>scripts\scr_physics_luigi.gml</script>
         </scripts>
+        <script>scripts\scr_player_create.gml</script>
       </scripts>
-      <scripts name="Physics">
-        <script>scripts\scr_physics_mario.gml</script>
-        <script>scripts\scr_physics_luigi.gml</script>
+      <scripts name="Tiles">
+        <script>scripts\animated_tile_add.gml</script>
+        <script>scripts\animated_tile_cleanup.gml</script>
+        <script>scripts\animated_tile_disable_all.gml</script>
+        <script>scripts\animated_tile_enable_all.gml</script>
+        <script>scripts\animated_tile_get_animation_speed.gml</script>
+        <script>scripts\animated_tile_get_background.gml</script>
+        <script>scripts\animated_tile_get_current_background.gml</script>
+        <script>scripts\animated_tile_get_current_frame.gml</script>
+        <script>scripts\animated_tile_get_frame_count.gml</script>
+        <script>scripts\animated_tile_get_next_frame.gml</script>
+        <script>scripts\animated_tile_init.gml</script>
+        <script>scripts\animated_tile_is_playing.gml</script>
+        <script>scripts\animated_tile_update.gml</script>
       </scripts>
-      <script>scripts\scr_player_create.gml</script>
+      <script>scripts\scr_globals_init.gml</script>
     </scripts>
-    <script>scripts\scr_globals_init.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Main">
       <objects name="Controllers">
         <object>objects\obj_levelcontrol</object>
+        <object>objects\obj_levelcontrol_tiles</object>
       </objects>
       <object>objects\obj_player_start</object>
     </objects>
@@ -158,9 +188,11 @@
           </objects>
         </objects>
       </objects>
+      <object>objects\obj_persistent</object>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_load</room>
     <room>rooms\rm_enginetest</room>
   </rooms>
   <constants number="7">
