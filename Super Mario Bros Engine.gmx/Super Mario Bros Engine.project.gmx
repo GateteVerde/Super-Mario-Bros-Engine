@@ -95,7 +95,11 @@
     </sprites>
     <sprite>sprites\spr_playermarker</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <backgrounds name="Tile Sets">
+      <background>background\tls_main</background>
+    </backgrounds>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Player Scripts">

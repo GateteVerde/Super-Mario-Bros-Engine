@@ -177,7 +177,7 @@ else if (crouch == false) {
             //Set 'Jump' pose if jumping
             if (jumping &gt; 0)
                 sprite_index = scr_mario_jump();
-            else
+            else if (sprite_index != scr_mario_skid())
                 sprite_index = scr_mario_walk();
         }
     }
