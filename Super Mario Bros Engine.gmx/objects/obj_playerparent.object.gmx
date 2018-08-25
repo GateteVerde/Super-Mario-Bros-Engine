@@ -34,6 +34,88 @@ scr_player_create();
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Make the player able to climb again
+
+canhang = 0;
+canturn = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Make the player blink when invulnerable
+
+if (invulnerable == true) {
+
+    image_alpha = !image_alpha;
+    alarm[0] = 1;
+}
+else
+    image_alpha = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Make the player vulnerable to all hazards
+
+invulnerable = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -388,6 +470,129 @@ if (hitcombo &gt; 0)
           <argument>
             <kind>1</kind>
             <string>///Player Behaviour (Climb)
+
+//Reset jump state delay
+statedelay = 0;
+
+//Reset jump variable
+jumping = 0;
+
+//If 'Right' is pressed
+if (keyboard_check(vk_right)) {
+
+    //Set the facing direction
+    xscale = -1;
+    
+    //Release the vine if the key has been held enough
+    canturn++;
+    if (canturn &gt; 19) {
+    
+        //Force set jump state
+        state = cs_jump;
+        
+        //Disallow climbing
+        alarm[2] = 12;     
+        canhang = 2;
+        
+        //Set movement
+        hspeed = -(minspd/1.3)*xscale;
+        
+        //Set the facing direction
+        xscale = 1*sign(hspeed);
+    }    
+}
+
+//Otherwise, if 'Left' is pressed
+else if (keyboard_check(vk_left)) {
+
+    //Set the facing direction
+    xscale = 1;
+    
+    //Release the vine if the key has been held enough
+    canturn++;
+    if (canturn &gt; 19) {
+    
+        //Force set jump state
+        state = cs_jump;
+        
+        //Allow climbing
+        alarm[2] = 12;
+        canhang = 2;
+        
+        //Set movement
+        hspeed = -(minspd/1.3)*xscale;
+        
+        //Set the facing direction
+        xscale = 1*sign(hspeed);
+    }
+}
+
+//Otherwise, reset turning variable
+else
+    canturn = 0;
+    
+//Move up if 'Up' is held.
+if ((keyboard_check(vk_up)) &amp;&amp; (!keyboard_check(vk_down))) {
+
+    if (!collision_rectangle(bbox_left,y,bbox_right,y,obj_climb,0,0))
+        vspeed = 0;
+    else
+        vspeed = -1;
+}
+
+//Move down if 'Down' is held.
+else if ((keyboard_check(vk_down)) &amp;&amp; (!keyboard_check(vk_up)))
+    vspeed = 1;
+
+//Otherwise, stop the player
+else
+    vspeed = 0;
+
+//Make the player jump.
+if (keyboard_check_pressed(vk_shift)) {
+
+    //Play 'Jump' sound
+    audio_play_sound(snd_jump, 0, false);   
+    
+    //Force set 'Jump' state
+    state = cs_jump;
+    
+    //Disallow climbing
+    alarm[2] = 12;
+    canhang = 2;
+    
+    //End variable jumping
+    jumping = 1;
+        
+    //Set movement
+    vspeed = -jumpstr;
+    hspeed = -minspd*xscale;
+    
+    //Move Mario 8 pixels
+    x -= 8*sign(xscale);     
+    
+    //Set the facing direction
+    xscale = 1*sign(hspeed);
+}
+
+//Makes the player move down when there's not a climbable surface above.
+if (!collision_rectangle(bbox_left,y,bbox_right,bbox_bottom,obj_climb,0,0)) {
+
+    if (vspeed &lt; 0)
+        vspeed = 0
+    else {
+    
+        //Force set 'Jump' state
+        state = cs_jump;
+                    
+        //Disallow climbing
+        alarm[2] = 12;
+        canhang = 2;
+        
+        //Move Mario 8 pixels
+        x -= 8*sign(xscale);
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -632,17 +837,25 @@ if (statedelay &gt; 0)
 }
 
 //Check for a climbing surface
-var climb = collision_rectangle(bbox_left,bbox_top,bbox_right,bbox_top,obj_climb,0,0);
+var climb = collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom,obj_climb,0,0);
 
 //If there's a climbable surface
 if (climb)
+&amp;&amp; (vspeed &gt;= 0)
+&amp;&amp; (canhang == 0)
 &amp;&amp; (disablecontrol == false) {
 
     //Force set climbing state
     state = cs_climb;
     
+    //Snap into the climb mask
+    x = climb.x+8;
+    
+    //Hang into the vine
+    canhang = 1;
+    
     //Stop movement
-    vspeed = 0;
+    speed = 0;
     gravity = 0;
 }
 </string>

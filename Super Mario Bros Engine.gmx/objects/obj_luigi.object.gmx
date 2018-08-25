@@ -89,7 +89,7 @@ else if (crouch == false) {
     if (state == cs_idle) {
     
         //If Luigi has the fire powerup and he's shooting a fireball
-        if (global.powerup[0] = cs_fire) 
+        if (global.powerup[1] = cs_fire) 
         &amp;&amp; (firing &gt; 0) {
         
             //Set 'Pose' sprite
@@ -180,6 +180,8 @@ else if (crouch == false) {
             //Set 'Jump' pose if jumping
             if (jumping &gt; 0)
                 sprite_index = scr_luigi_jump();
+            else
+                sprite_index = scr_luigi_walk();
         }
     }
     
