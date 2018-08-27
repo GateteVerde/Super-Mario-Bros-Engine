@@ -744,8 +744,15 @@ if (inwall == false)
             }
                 
             //Otherwise, accelerate a bit faster
-            else if (hspeed &lt; 0)
-                hspeed += accskid;
+            else if (hspeed &lt; 0) {
+            
+                //Double acceleration if skidding
+                if (sprite_index == scr_mario_skid)
+                || (sprite_index == scr_luigi_skid)
+                    hspeed += accskid*1.25;
+                else
+                    hspeed += accskid;
+            }
         }
         
         //If the player is not overlapping a wall, set the facing direction
@@ -775,8 +782,15 @@ if (inwall == false)
             }
                 
             //Otherwise, accelerate a bit faster
-            else if (hspeed &gt; 0)
-                hspeed -= accskid;            
+            else if (hspeed &gt; 0) {
+            
+                //Double acceleration if skidding
+                if (sprite_index == scr_mario_skid)
+                || (sprite_index == scr_luigi_skid)
+                    hspeed -= accskid*1.25;
+                else
+                    hspeed -= accskid;
+            }       
         }
         
         //If the player is not overlapping a wall, set the facing direction
@@ -973,6 +987,16 @@ else
             <string>///Draw the player
 
 draw_sprite_ext(sprite_index, -1, round(x), round(y)+1, xscale, 1, 0, c_white, image_alpha);
+
+//Draw camera
+if (instance_exists(obj_levelcontrol)) {
+
+    draw_sprite(spr_event, -1, round(obj_levelcontrol.x), round(y));
+    draw_text(view_xview + 2, view_yview + 2, 
+    "State: " + string(obj_levelcontrol.state) 
+    + "#" +
+    "Pos: " + string(obj_levelcontrol.pos));
+}
 </string>
           </argument>
         </arguments>

@@ -27,12 +27,26 @@
             <kind>1</kind>
             <string>///Level Control object
 
+//Default values
+levelmusic = noone;
+leveltime = 0;
+
 //Barrier
 barrier = true;
 alarm[5] = 3;
 
+//Camera target
+target = noone;
+
 //Make sure the view follows this object.
 view_object[0] = id;
+
+//Camera variables
+state = 0;
+pos = 0;
+xx = 0;
+camera_l = instance_create(0,0,obj_camera_l);
+camera_r = instance_create(0,0,obj_camera_r);
 </string>
           </argument>
         </arguments>
@@ -84,39 +98,92 @@ barrier = false;
 
 //If the player does exist
 if (instance_exists(obj_playerparent)) {
-
-    //Move towards the player
-    x = obj_playerparent.x;
-    y = obj_playerparent.y;
     
     //Make sure the barrier is not active
     if (barrier == 0) {
          
         //Prevent the player from going outside the left boundary
-        if (obj_playerparent.x &lt; view_xview[0]+5) {
+        if (obj_playerparent.x &lt; view_xview[0] + 8) {
         
             //Snap the player 5 pixels at the left of the boundary
-            obj_playerparent.x = view_xview[0]+5;
+            obj_playerparent.x = view_xview[0] + 8;
             
             //Stop the player's horizontal movement
             if (obj_playerparent.hspeed &lt; 0)
                 obj_playerparent.hspeed = 0;
         }
         
-        //Otherwise, prevent the player from going outside the right boundary
-        else if (obj_playerparent.x &gt; view_xview[0]+view_wview[0]-5) {
+        //Follow
+        y = obj_playerparent.y;
         
-            //Snap the player 5 pixels at the left of the boundary
-            obj_playerparent.x = view_xview[0]+view_wview[0]-5;
+        //If the scrolling is not activated
+        if (state == 0) {
+        
+            if (obj_playerparent.x &gt; view_xview[0] + (view_wview[0]/2) - 40) {
             
-            //Stop the player's horizontal movement
-            if (obj_playerparent.hspeed &gt; 0)
-                obj_playerparent.hspeed = 0;
+                x = obj_playerparent.x;
+                if (obj_playerparent.x &gt; view_xview[0] + (view_wview[0]/2 - 40))
+                    state = 1;
+            }
         }
+        
+        //Otherwise, if the player just entered the speed-up area
+        else if (state == 1) {
+
+            //If the player exits the speed-up area, keep the camera in place
+            if (obj_playerparent.x &lt; view_xview[0] + (view_wview[0]/2 - 40)) {
+            
+                //Keep the camera in place
+                x = view_xview[0] + (view_wview[0]/2 - 40)
+                
+                //Reset state
+                state = 0;
+            }
+            
+            //Otherwise, if the player moves to the right while being on the speed-up area
+            else {
+            
+                //Move the view as the player advances
+                if (obj_playerparent.hspeed &gt; 0) 
+                &amp;&amp; (obj_playerparent.x &gt; view_xview[0] + (view_wview[0]/2) - 40) {
+                
+                    //Increment distance
+                    x += 2;
+                    
+                    //Prevent the camera from panning too far from the player
+                    if (x &gt; view_xview[0] + (view_wview[0]/2) - 8) {
+                    
+                        state = 2;
+                        x = view_xview[0] + (view_wview[0]/2) - 8;
+                    }
+                }
+            }
+        }
+        
+        //Otherwise, if the player is at the final of the speed-run area
+        else if (state == 2) {
+        
+            //If the player exits the speed-up area, keep the camera in place
+            if (obj_playerparent.x &lt; view_xview[0] + (view_wview[0]/2 - 40)) {
+            
+                //Keep the camera in place
+                x = view_xview[0] + (view_wview[0]/2 - 40)
+                
+                //Reset state
+                state = 0;
+            }            
+        }
+    }
+    
+    //Otherwise, follow the target
+    else {
+    
+        x = obj_playerparent.x;
+        y = obj_playerparent.y;
     }
 }
 
-//Round position variables
+//Round position
 x = round(x);
 y = round(y);
 </string>
@@ -146,8 +213,8 @@ y = round(y);
 for (var i=0; i&lt;8; i++) {
 
     //If the background is not set, do not draw
-    if (background_index[i] != -1)  
-        draw_background_tiled_horizontal_ext(background_index[i], view_xview[0]/(2+(1.5*i))+(background_x[i]+background_hspeed[i]), background_y[i], 1, 1, 0, background_blend[i], background_alpha[i]);
+    if (background_index[i] != -1)    
+        draw_background_tiled_horizontal_ext(background_index[i], floor(view_xview[0]/(1.2+(0.2*i))+(background_x[i]+background_hspeed[i])), background_y[i], 1, 1, 0, background_blend[i], background_alpha[i]);
 }
 </string>
           </argument>

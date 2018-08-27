@@ -138,6 +138,9 @@ else if (keyboard_check_pressed(ord('R'))) {
     
     //Stop all audio
     audio_stop_all();
+    
+    //Restart the room
+    room_restart();
 }
 
 //Change window size
@@ -268,14 +271,11 @@ view_wview[0] = global.gw;
 //Update hview
 view_hview[0] = global.gh; 
 
+//Update hborder
+view_hborder[0] = global.gw/2;
+
 //Update vborder
 view_vborder[0] = global.gh/2;
-
-//Update hborder
-if (instance_exists(obj_levelcontrol))
-    view_hborder[0] = global.gw/2-8;
-else
-    view_hborder[0] = global.gw/2;
 </string>
           </argument>
         </arguments>

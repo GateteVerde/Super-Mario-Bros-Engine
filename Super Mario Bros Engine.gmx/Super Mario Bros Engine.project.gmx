@@ -80,6 +80,7 @@
       <sprite>sprites\spr_square</sprite>
       <sprite>sprites\spr_square_b</sprite>
       <sprite>sprites\spr_square_c</sprite>
+      <sprite>sprites\spr_cameramark</sprite>
     </sprites>
     <sprites name="Special">
       <sprites name="Palettes">
@@ -252,6 +253,8 @@
           </objects>
         </objects>
       </objects>
+      <object>objects\obj_camera_l</object>
+      <object>objects\obj_camera_r</object>
       <object>objects\obj_persistent</object>
     </objects>
   </objects>

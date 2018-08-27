@@ -13,7 +13,7 @@ minspd = 1.3;
 maxspd = 2.6;
 
 //Acceleration
-acc = 0.06;
+acc = 0.05;
 
 //Acceleration (when turning)
 accskid = 0.15;
