@@ -987,16 +987,6 @@ else
             <string>///Draw the player
 
 draw_sprite_ext(sprite_index, -1, round(x), round(y)+1, xscale, 1, 0, c_white, image_alpha);
-
-//Draw camera
-if (instance_exists(obj_levelcontrol)) {
-
-    draw_sprite(spr_event, -1, round(obj_levelcontrol.x), round(y));
-    draw_text(view_xview + 2, view_yview + 2, 
-    "State: " + string(obj_levelcontrol.state) 
-    + "#" +
-    "Pos: " + string(obj_levelcontrol.pos));
-}
 </string>
           </argument>
         </arguments>

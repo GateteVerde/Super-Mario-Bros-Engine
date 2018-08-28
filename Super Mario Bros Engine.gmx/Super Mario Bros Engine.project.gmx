@@ -253,8 +253,6 @@
           </objects>
         </objects>
       </objects>
-      <object>objects\obj_camera_l</object>
-      <object>objects\obj_camera_r</object>
       <object>objects\obj_persistent</object>
     </objects>
   </objects>

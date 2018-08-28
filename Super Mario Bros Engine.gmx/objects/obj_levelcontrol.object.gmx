@@ -38,15 +38,15 @@ alarm[5] = 3;
 //Camera target
 target = noone;
 
-//Make sure the view follows this object.
-view_object[0] = id;
-
 //Camera variables
-state = 0;
+padding = view_wview[view_current] div 2 - 48;
 pos = 0;
-xx = 0;
-camera_l = instance_create(0,0,obj_camera_l);
-camera_r = instance_create(0,0,obj_camera_r);
+
+//Check if the player exists
+if (!instance_exists(obj_playerparent))
+    playerx = noone;
+else
+    playerx = obj_playerparent.x;
 </string>
           </argument>
         </arguments>
@@ -113,79 +113,36 @@ if (instance_exists(obj_playerparent)) {
                 obj_playerparent.hspeed = 0;
         }
         
-        //Follow
-        y = obj_playerparent.y;
+        //Check where the player is
+        playerx = max(playerx, obj_playerparent.x-pos);
         
-        //If the scrolling is not activated
-        if (state == 0) {
+        //Update pos
+        if (obj_playerparent.hspeed &gt; 0) 
+        &amp;&amp; (obj_playerparent.x &gt; view_wview div 2 - 48) {
         
-            if (obj_playerparent.x &gt; view_xview[0] + (view_wview[0]/2) - 40) {
-            
-                x = obj_playerparent.x;
-                if (obj_playerparent.x &gt; view_xview[0] + (view_wview[0]/2 - 40))
-                    state = 1;
-            }
+            pos += abs(obj_playerparent.hspeed)/2;
+            if (pos &gt; 32)
+                pos = 32;
         }
         
-        //Otherwise, if the player just entered the speed-up area
-        else if (state == 1) {
-
-            //If the player exits the speed-up area, keep the camera in place
-            if (obj_playerparent.x &lt; view_xview[0] + (view_wview[0]/2 - 40)) {
-            
-                //Keep the camera in place
-                x = view_xview[0] + (view_wview[0]/2 - 40)
-                
-                //Reset state
-                state = 0;
-            }
-            
-            //Otherwise, if the player moves to the right while being on the speed-up area
-            else {
-            
-                //Move the view as the player advances
-                if (obj_playerparent.hspeed &gt; 0) 
-                &amp;&amp; (obj_playerparent.x &gt; view_xview[0] + (view_wview[0]/2) - 40) {
-                
-                    //Increment distance
-                    x += 2;
-                    
-                    //Prevent the camera from panning too far from the player
-                    if (x &gt; view_xview[0] + (view_wview[0]/2) - 8) {
-                    
-                        state = 2;
-                        x = view_xview[0] + (view_wview[0]/2) - 8;
-                    }
-                }
-            }
-        }
+        //Reset pos
+        if (obj_playerparent.x &lt; view_xview[0]+80)
+        &amp;&amp; (pos &gt; 0) {
         
-        //Otherwise, if the player is at the final of the speed-run area
-        else if (state == 2) {
-        
-            //If the player exits the speed-up area, keep the camera in place
-            if (obj_playerparent.x &lt; view_xview[0] + (view_wview[0]/2 - 40)) {
-            
-                //Keep the camera in place
-                x = view_xview[0] + (view_wview[0]/2 - 40)
-                
-                //Reset state
-                state = 0;
-            }            
+            leftedge -= pos;
+            pos = 0;
         }
     }
     
-    //Otherwise, follow the target
-    else {
+    //Update the left edge
+    leftedge = playerx - padding;
     
-        x = obj_playerparent.x;
-        y = obj_playerparent.y;
-    }
+    //Update views
+    view_xview[view_current] = leftedge; 
+    view_yview[view_current] = 16;
 }
 
-//Round position
-x = round(x);
-y = round(y);
+
 </string>
           </argument>
         </arguments>
