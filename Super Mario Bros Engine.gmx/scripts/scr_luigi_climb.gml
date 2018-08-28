@@ -8,7 +8,7 @@
 //      Returns the appropiate climbing sprite for Luigi.
 */
 
-switch (global.powerup[1]) {
+switch (global.powerup_l) {
 
     //Small
     case (cs_small): return spr_luigi_small_climb;

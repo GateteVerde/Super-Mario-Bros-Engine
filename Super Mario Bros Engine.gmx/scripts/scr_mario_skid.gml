@@ -8,7 +8,7 @@
 //      Returns the appropiate skidding sprite for Mario.
 */
 
-switch (global.powerup[0]) {
+switch (global.powerup_m) {
 
     //Small
     case (cs_small): return spr_mario_small_skid;

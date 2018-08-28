@@ -89,7 +89,7 @@ else if (crouch == false) {
     if (state == cs_idle) {
     
         //If Luigi has the fire powerup and he's shooting a fireball
-        if (global.powerup[1] = cs_fire) 
+        if (global.powerup_l = cs_fire) 
         &amp;&amp; (firing &gt; 0) {
         
             //Set 'Pose' sprite
@@ -204,7 +204,7 @@ else if (crouch == false) {
     }
     
     //If Luigi is not small
-    if (global.powerup[0] != cs_small)
+    if (global.powerup_l != cs_small)
         mask_index = spr_mask_big;
         
     //Otherwise, if Luigi is small

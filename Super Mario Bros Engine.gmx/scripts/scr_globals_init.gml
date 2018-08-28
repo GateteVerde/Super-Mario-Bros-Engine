@@ -9,31 +9,35 @@
 */
 
 //SMB2J Mode (If activated, this enables custom physics for Luigi.)
-global.smb2jmode = true;
+global.smb2jmode = false;
+
+//Hard mode (If activated, goombas turn into buzzy beetles.
+global.hardmode = true;
 
 //Current player
 //0: Mario
 //1: Luigi
 global.player = 1;
 
-//Initialize player based variables
-for (i=0; i<2; i++) {
+//Time
+global.time = 0;
 
-    //World
-    global.world[i] = "1";
-    
-    //Level
-    global.level[i] = "1";
-    
-    //Lives
-    global.myl[i] = 5;
-    
-    //Score
-    global.mys[i] = 0;
-    
-    //Powerup
-    //0: Small
-    //1: Super
-    //2: Fire
-    global.powerup[i] = cs_small;
-}
+//World
+global.world_m = "1-1";
+global.world_l = "1-1";
+
+//Lives
+global.lives_m = 5;
+global.lives_l = 5;
+
+//Score
+global.score_m = 0;
+global.score_l = 0;
+
+//Coins
+global.coins_m = 0;
+global.coins_l = 0;
+
+//Powerup
+global.powerup_m = cs_small;
+global.powerup_l = cs_super;

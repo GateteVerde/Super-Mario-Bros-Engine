@@ -35,8 +35,8 @@ leveltime = 0;
 barrier = true;
 alarm[5] = 3;
 
-//Camera target
-target = noone;
+//Create HUD
+instance_create(0,0,obj_hud);
 
 //Camera variables
 padding = view_wview[view_current] div 2 - 48;
