@@ -210,6 +210,17 @@
       </scripts>
       <script>scripts\scr_globals_init.gml</script>
     </scripts>
+    <scripts name="Palettes">
+      <script>scripts\pal_swap_draw_palette.gml</script>
+      <script>scripts\pal_swap_enable_override.gml</script>
+      <script>scripts\pal_swap_get_color_count.gml</script>
+      <script>scripts\pal_swap_get_pal_color.gml</script>
+      <script>scripts\pal_swap_get_pal_count.gml</script>
+      <script>scripts\pal_swap_index_palette.gml</script>
+      <script>scripts\pal_swap_init_system.gml</script>
+      <script>scripts\pal_swap_reset.gml</script>
+      <script>scripts\pal_swap_set.gml</script>
+    </scripts>
     <scripts name="Tiles">
       <script>scripts\animated_tile_add.gml</script>
       <script>scripts\animated_tile_cleanup.gml</script>
@@ -228,6 +239,9 @@
     <script>scripts\string_add_zeros.gml</script>
     <script>scripts\draw_background_tiled_horizontal_ext.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shd_pal_swapper.shader</shader>
+  </shaders>
   <objects name="objects">
     <objects name="Main">
       <objects name="Controllers">

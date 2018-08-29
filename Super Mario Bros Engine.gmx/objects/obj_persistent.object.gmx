@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>///SMBEngine Persistent Object
 
+//Initialize the palette swapping system
+pal_swap_init_system(shd_pal_swapper, false);
+
 //Initialize global variables
 scr_globals_init();
 

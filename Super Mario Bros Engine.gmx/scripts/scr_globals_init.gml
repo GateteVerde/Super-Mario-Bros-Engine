@@ -12,19 +12,13 @@
 global.smb2jmode = false;
 
 //Hard mode (If activated, goombas turn into buzzy beetles.
-global.hardmode = true;
+global.hardmode = false;
 
-//Current player
-//0: Mario
-//1: Luigi
-global.player = 1;
+//Current player (0: Mario, 1: Luigi)
+global.player = 0;
 
 //Time
 global.time = 0;
-
-//World
-global.world_m = "1-1";
-global.world_l = "1-1";
 
 //Lives
 global.lives_m = 5;
@@ -38,6 +32,10 @@ global.score_l = 0;
 global.coins_m = 0;
 global.coins_l = 0;
 
+//World
+global.world_m = "1-1";
+global.world_l = "1-1";
+
 //Powerup
 global.powerup_m = cs_small;
-global.powerup_l = cs_super;
+global.powerup_l = cs_small;
