@@ -17,6 +17,9 @@ global.hardmode = false;
 //Current player (0: Mario, 1: Luigi)
 global.player = 0;
 
+//Skin (0: NOR, 1: UND, 2: CAS)
+global.skin = 2;
+
 //Time
 global.time = 0;
 

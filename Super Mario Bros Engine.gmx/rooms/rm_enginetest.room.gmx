@@ -54,9 +54,6 @@
     <instance objName="obj_levelcontrol" x="0" y="-16" name="inst_483D6558" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol_tiles" x="16" y="-16" name="inst_F7A22F94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_start" x="80" y="192" name="inst_59483004" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_solid" x="256" y="144" name="inst_FFFEB089" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_solid" x="304" y="128" name="inst_CFF29ECA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_solid" x="352" y="128" name="inst_AC98A090" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="416" y="144" name="inst_01F4B163" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="512" y="160" name="inst_B843AD88" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="608" y="144" name="inst_D2F26598" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
@@ -79,6 +76,15 @@
     <instance objName="obj_solid" x="784" y="208" name="inst_9D48EF9C" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="944" y="208" name="inst_FF4D5C58" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bganimator" x="32" y="-16" name="inst_6A94F67B" locked="0" code="bg_index = 0;&#xA;bg_frame[0] = bgr_nightsky;&#xA;bg_frame[1] = bgr_nightsky_b;&#xA;bg_frame[2] = bgr_nightsky_c;&#xA;bg_frame[3] = bgr_nightsky_d;&#xA;bg_frame[4] = bgr_nightsky_e;&#xA;bg_frame[5] = bgr_nightsky_f;&#xA;bg_frame[6] = bgr_nightsky_g;&#xA;bg_frame[7] = bgr_nightsky_h;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_qblock" x="352" y="128" name="inst_B39055C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_qblock" x="304" y="128" name="inst_55D8F690" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_qblock" x="256" y="144" name="inst_8F27B02F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_qblock_hidden" x="432" y="80" name="inst_42B8D0AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_qblock_hidden" x="1312" y="80" name="inst_B20C8032" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_qblock_hidden" x="976" y="80" name="inst_03F0785F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_qblock_hidden" x="1296" y="80" name="inst_B0F10140" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_qblock_hidden" x="1280" y="80" name="inst_BB66013D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_qblock_hidden" x="1264" y="80" name="inst_69DC4431" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="0" y="32" w="160" h="176" xo="160" yo="0" id="10000571" name="inst_27BD6FC0" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -199,9 +205,6 @@
     <tile bgName="tls_main" x="32" y="208" w="16" h="32" xo="464" yo="0" id="10000568" name="inst_BD0D1CD3" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_main" x="16" y="208" w="16" h="32" xo="464" yo="0" id="10000569" name="inst_9B669730" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_main" x="0" y="208" w="16" h="32" xo="464" yo="0" id="10000570" name="inst_B2AD1186" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tls_main" x="256" y="144" w="16" h="16" xo="496" yo="128" id="10000604" name="inst_F4A3AAB2" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tls_main" x="304" y="128" w="16" h="16" xo="496" yo="128" id="10000605" name="inst_8FBE6483" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tls_main" x="352" y="128" w="16" h="16" xo="496" yo="128" id="10000606" name="inst_41CFB7BE" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_main" x="416" y="144" w="16" h="16" xo="496" yo="128" id="10000607" name="inst_07F3185A" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_main" x="432" y="144" w="16" h="16" xo="496" yo="128" id="10000608" name="inst_7E7DAAFD" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_main" x="448" y="144" w="16" h="16" xo="496" yo="128" id="10000609" name="inst_65514913" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

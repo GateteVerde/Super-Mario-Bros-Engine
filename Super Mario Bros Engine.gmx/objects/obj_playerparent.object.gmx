@@ -240,17 +240,16 @@ if (vspeed &lt; 0)
     
     //If there's a item block in the way and this one can be hit
     if (block) 
-    &amp;&amp; (block.ready == 0) {
+    &amp;&amp; (block.state == 0) {
     
         //With the block
         with (block) {
         
             //Block has been hit
-            ready = 1;
+            state = 1;
             
             //Bump the block
             vspeed = -2;
-            alarm[0] = 4;
             
             //Perform block specific events
             event_user(0);

@@ -1,8 +1,8 @@
-///pal_swap_set(palette_sprite_index, palette_index,palette is surface)
+///pal_swap_set(palette_sprite_index,palette_index,palette_is_surface)
 
 /*
 //  Usage:
-//      pal_swap_set(palette_sprite_index, palette_index,palette is surface);
+//      pal_swap_set(palette_sprite_index,palette_index,palette_is_surface);
 //
 //  Purpose:
 //      Sets the palette to use for a sprite with the same equal colours
