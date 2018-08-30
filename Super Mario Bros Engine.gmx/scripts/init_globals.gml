@@ -18,7 +18,7 @@ global.hardmode = false;
 global.player = 0;
 
 //Skin (0: NOR, 1: UND, 2: CAS)
-global.skin = 2;
+global.skin = 0;
 
 //Time
 global.time = 0;
@@ -40,5 +40,5 @@ global.world_m = "1-1";
 global.world_l = "1-1";
 
 //Powerup
-global.powerup_m = cs_small;
+global.powerup_m = cs_super;
 global.powerup_l = cs_small;
