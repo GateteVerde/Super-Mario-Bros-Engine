@@ -3,7 +3,7 @@
   <spriteName>spr_event</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100</depth>
+  <depth>-99</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,10 +28,25 @@
             <string>///SMBEngine Persistent Object
 
 //Initialize the palette swapping system
-pal_swap_init_system(shd_pal_swapper, false);
+pal_swap_init_system(shd_palette_swapper, false);
 
 //Initialize global variables
 init_globals();
+init_pixel(1);
+
+//How the screen is fading
+//0: From black, 1: To black
+mode = 0
+
+//How much the screen is faded
+done = 0
+
+//Screenshot of the game, if it exists
+back = -1
+
+//Ports
+port_x = 0;
+port_y = 0;
 
 //Game width
 global.gw = 256;
@@ -39,21 +54,75 @@ global.gw = 256;
 //Game height
 global.gh = 224;
 
-//Screenshot
-back = -1;
-
-//Ports
-port_x = 0;
-port_y = 0;
+//Set the in-game font
+global.hud_font = font_add_sprite_ext(spr_hudfont,"@.-x+,;1234567890!&amp;&gt;ABCDEFGHIJKLMNOPQRSTUVWXYZ", 0, 0);
 
 //Set the epsilon value for floating point numbers
 math_set_epsilon(0.0001);
 
-//Set the in-game font
-global.hud_font = font_add_sprite_ext(spr_hudfont,"@.-x+,;1234567890!&amp;&gt;ABCDEFGHIJKLMNOPQRSTUVWXYZ", 0, 0);
-
 //Disable application surface automatic drawing
 application_surface_draw_enable(0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Deactivate everything
+
+instance_deactivate_all(1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Stop fading to black
+
+//Set mode to fade from black
+mode = 0;
+
+//Begin fading from black
+done = 0;
+
+//Activate everything
+instance_activate_all();
+
+//Delete the screenshot
+if (background_exists(back))
+    background_delete(back);
 </string>
           </argument>
         </arguments>
@@ -113,6 +182,53 @@ window_center();
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set up room parameters
+
+//Enable views if not enabled
+view_enabled = true;
+
+//Update visibility
+view_visible[0] = true;
+
+//Update wport
+view_wport[0] = global.gw;
+
+//Update hport
+view_hport[0] = global.gh;
+
+//Update wview
+view_wview[0] = global.gw;
+
+//Update hview
+view_hview[0] = global.gh; 
+
+//Update hborder
+view_hborder[0] = global.gw/2;
+
+//Update vborder
+view_vborder[0] = global.gh/2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="5" enumb="18">
       <action>
         <libid>1</libid>
@@ -138,15 +254,15 @@ if (keyboard_check_pressed(vk_f4))
     
 //Restart the game when ALT+R are pressed.
 else if (keyboard_check_pressed(ord('R'))) {
-        
+
     //Stop all audio
     audio_stop_all();
-    
+        
     //Reset all global variables
-    init_globals();
-           
-    //Restart the room
-    room_restart();
+    init_globals();    
+    
+    //If the screen is not fading out
+    room_goto(room_first);
 }
 
 //Change window size
@@ -185,6 +301,51 @@ else if (keyboard_check_pressed(ord('W'))) {
     //Apply settings
     event_user(0);       
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Fade the screen to black
+
+//If this event was called manually
+if (mode == 0) {
+
+    //Take a screenshot
+    back = background_create_from_surface(application_surface, 0, 0, view_wview[0], view_hview[0], 0, 0);
+    
+    //Pixel size
+    size = 25.6;
+
+    //Deactivate everything
+    instance_deactivate_all(1);
+}
+
+//Start fading
+done = 0;
+
+//To black
+mode = 1;
+
+//Make sure it stops when its done
+alarm[2] = 30;
 </string>
           </argument>
         </arguments>
@@ -240,6 +401,41 @@ alarm[0] = 1;
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Prepare to fade to black
+
+//Fade to black
+mode = 1;
+
+//Set the pixel size
+size = 0;
+
+//Take a screenshot
+back = background_create_from_surface(application_surface, 0, 0, view_wview[0], view_hview[0], 0, 0);
+
+//Set alarm to execute when the next room starts
+alarm[3] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
@@ -257,31 +453,10 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set up room parameters
+            <string>///Fade the screen to black, unless you just opened up the game
 
-//Make view 0 visible if not visible
-view_visible[0] = true;
-
-//Enable views if not enabled
-view_enabled = true;
-
-//Update wport
-view_wport[0] = global.gw;
-
-//Update hport
-view_hport[0] = global.gh;
-
-//Update wview
-view_wview[0] = global.gw;
-
-//Update hview
-view_hview[0] = global.gh; 
-
-//Update hborder
-view_hborder[0] = global.gw/2;
-
-//Update vborder
-view_vborder[0] = global.gh/2;
+if (mode = 1)
+    event_user(1);
 </string>
           </argument>
         </arguments>
@@ -404,10 +579,17 @@ alarm[1] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Deals with the application surface, window size, and fading.
+            <string>///Deals with the application surface, window size.
 
 //Disable alpha blending
 draw_enable_alphablend(false);
+
+//Set the pixelate shader
+if (done &lt; 1) {
+
+    shader_set(shd_pixel);
+    shader_set_uniform_f(pixel, global.gw, global.gh, size, size);
+}
 
 //Draw a rectangle
 draw_rectangle_colour(0,0,global.gw*(filter+1),global.gh*(filter+1),c_black,c_black,c_black,c_black,0);
@@ -415,8 +597,38 @@ draw_rectangle_colour(0,0,global.gw*(filter+1),global.gh*(filter+1),c_black,c_bl
 //Draw the application surface
 draw_surface_stretched(application_surface,port_x*(filter+1),port_y*(filter+1),global.gw*(filter+1),global.gh*(filter+1));
 
+//Reset the shader
+shader_reset();
+
 //Enable alpha blending
 draw_enable_alphablend(true);
+
+//Fades the screen to and from black
+if (done &lt; 1) {
+
+    //Increment fading
+    done += 1/30;
+
+    //Fade from black
+    if (mode = 0) {
+    
+        draw_set_alpha(1-done);
+        size -= 1.28;
+    }
+
+    //Fade to black
+    else {
+    
+        draw_set_alpha(done);
+        size += 1.28;
+    }
+
+    //Draw the fade
+    draw_set_color(c_black)
+    draw_rectangle(0,0,5000,5000,0)
+    draw_set_alpha(1)
+    draw_set_color(c_white)
+}
 </string>
           </argument>
         </arguments>
@@ -439,20 +651,19 @@ draw_enable_alphablend(true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw background if the window has not focus
+            <string>///Display status message and fade effect
 
-//If the background exists
+//Draws the screenshot shown when fading to black
 if (background_exists(back)) {
 
-    //Disable alpha blending.
     draw_enable_alphablend(0);
-    
-    //Draw the screenshot
     draw_background(back,view_xview[0],view_yview[0]);
-    
-    //Enable alpha blending.
     draw_enable_alphablend(1);
 }
+
+//Draw text
+draw_line_colour(view_xview[0], view_yview[0]-16, view_xview[0], 240, c_lime, c_white);
+draw_line_colour(view_wview[0], view_yview[0]-16, view_wview[0], 240, c_red, c_white);
 </string>
           </argument>
         </arguments>

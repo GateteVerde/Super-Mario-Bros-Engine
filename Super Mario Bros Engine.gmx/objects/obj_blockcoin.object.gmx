@@ -31,7 +31,7 @@
 audio_play_sound(snd_coin, 0, false);
 
 //Animate
-image_speed = 0.2;
+image_speed = 0.4;
 
 //Set the vertical speed
 vspeed = -4;
@@ -70,6 +70,7 @@ scr_score_add(200);
 sprite_index = spr_sparkle;
 
 //Reset animation
+image_speed = 0.2;
 image_index = 0;
 
 //Stop
