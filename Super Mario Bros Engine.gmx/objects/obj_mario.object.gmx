@@ -58,7 +58,7 @@ scr_physics_mario();
 
 //Reset firing state
 if (firing &gt; 0)
-&amp;&amp; (state == 1)
+&amp;&amp; (state != cs_idle)
     firing = 0;
     
 //If Mario is crouched down

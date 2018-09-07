@@ -34,6 +34,50 @@ scr_player_create();
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Handle powerup specific projectiles
+
+//If controls are not disabled
+if (disablecontrol == false) {
+
+    //If the player is not crouched down
+    if (crouch == false) {
+    
+        //If either Mario or Luigi has the fire powerup
+        if ((global.player == 0) &amp;&amp; (global.powerup_m == cs_fire))
+        || ((global.player == 1) &amp;&amp; (global.powerup_l == cs_fire)) {
+        
+            //If there's less than 2 fireballs on screen
+            if (instance_number(obj_fireball) &lt; 2) {
+            
+                firing = 6;
+                with (instance_create(x+4*sign(xscale),y-8,obj_fireball))
+                    hspeed = 3.5*other.xscale;
+            }
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
@@ -180,6 +224,24 @@ if (vspeed &gt;= 0) {
         //Reset values
         event_user(15);
     }
+    
+    //Check for the ground
+    var platform = collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom+vspeed,obj_platformparent,0,0);
+    
+    //If there's ground to step in
+    if (platform) 
+    &amp;&amp; (bbox_bottom &lt; platform.yprevious+5) {
+    
+        //Stay above the ground
+        y = platform.y-16;
+        
+        //Stop vertical speed
+        vspeed = 0;
+        gravity = 0;
+        
+        //Reset values
+        event_user(15);
+    }
 }
 
 //If the player is not swimming
@@ -199,7 +261,7 @@ else if (swimming == true)
     event_user(5);
     
 //If the player is moving to the right and there's a wall on the way.
-if (hspeed &gt; 0)
+if (hspeed &gt; 0) 
 &amp;&amp; (collision_rectangle(bbox_right,bbox_top+4,bbox_right+1,bbox_bottom-1,obj_solid,0,0)) {
 
     //Stop horizontal speed
@@ -476,7 +538,8 @@ if (hitcombo &gt; 0)
 event_user(15);
 
 //Figure out player's state
-if (collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom+1,obj_solid,0,0))
+if ((collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom+1,obj_solid,0,0))
+|| (collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom+1,obj_platformparent,0,0)))
 &amp;&amp; (gravity == 0) {
 
     //If not moving upwards
@@ -797,7 +860,8 @@ if (!collision_rectangle(bbox_left,y,bbox_right,y+16,obj_climb,0,0)) {
             <string>///Player Behaviour
 
 //Figure out player's state
-if (collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom+1,obj_solid,0,0))
+if ((collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom+1,obj_solid,0,0))
+|| (collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom+1,obj_platformparent,0,0)))
 &amp;&amp; (gravity == 0) {
 
     //If not moving upwards

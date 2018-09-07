@@ -32,12 +32,6 @@ event_user(3);
 
 //Default floor collision
 event_user(4);
-
-//Destroy if outside the view
-if (x &lt; view_xview[view_current]-96)
-|| (x &gt; view_xview[view_current]+global.gw+96)
-|| (y &gt; view_hview[view_current]+global.gh+16)
-    instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -98,7 +92,7 @@ if (vspeed &gt;= 0) {
     //If the semisolid exists, snap above it.
     if (semisolid)
     &amp;&amp; (bbox_bottom &lt; semisolid.yprevious+5)
-        y = semisolid.bbox_top-16;
+        y = semisolid.bbox_top-sprite_height;
 }
 
 //Check for floor objects

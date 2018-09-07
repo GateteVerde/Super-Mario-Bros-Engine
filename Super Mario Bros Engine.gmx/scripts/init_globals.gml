@@ -45,3 +45,6 @@ global.world_l = "1-1";
 //Powerup
 global.powerup_m = cs_small;
 global.powerup_l = cs_small;
+
+//Hidden 1-UP Blocks data storage
+global.hidden = ds_map_create();

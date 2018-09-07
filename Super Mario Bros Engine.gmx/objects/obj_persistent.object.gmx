@@ -503,6 +503,30 @@ file_text_close(file);
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///End GMGME
+
+gmeStop();
+gmeClose();
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="2">
       <action>
@@ -557,6 +581,29 @@ else {
 
 //Apply loaded settings
 alarm[1] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialize GMGME
+
+gmeCreate();
 </string>
           </argument>
         </arguments>
@@ -660,10 +707,6 @@ if (background_exists(back)) {
     draw_background(back,view_xview[0],view_yview[0]);
     draw_enable_alphablend(1);
 }
-
-//Draw text
-draw_line_colour(view_xview[0], view_yview[0]-16, view_xview[0], 240, c_lime, c_white);
-draw_line_colour(view_wview[0], view_yview[0]-16, view_wview[0], 240, c_red, c_white);
 </string>
           </argument>
         </arguments>
