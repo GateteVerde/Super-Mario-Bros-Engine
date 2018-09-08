@@ -61,7 +61,7 @@ else
 
 //Reset firing state
 if (firing &gt; 0)
-&amp;&amp; (state == 1)
+&amp;&amp; (state != cs_idle)
     firing = 0;
     
 //If Luigi is crouched down
@@ -73,6 +73,9 @@ if (crouch == true) {
     //Do not animate
     image_speed = 0;
     image_index = 0;
+    
+    //Reset firing
+    firing = 0;
     
     //Set the mask
     mask_index = spr_mask;

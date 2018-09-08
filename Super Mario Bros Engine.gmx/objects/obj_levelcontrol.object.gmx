@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Level Control object
 
-//Default values
+//Default values (Check init_globals_mus for the number of the tracks)
 levelmusic = noone;
 leveltime = 0;
 
@@ -101,11 +101,10 @@ barrier = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Play 'Hurry up' sound
+            <string>///Warn that the timer is running out
 
+//Play 'Hurry' sound
 audio_play_sound(snd_hurry, 0, false);
-alarm[0] = 120;
-alarm[1] = 1;
 </string>
           </argument>
         </arguments>
@@ -171,7 +170,7 @@ if (global.time &gt; 0) {
             <kind>1</kind>
             <string>///Stop music
 
-gmeStop();
+audio_stop_sound(global._music[levelmusic]);
 </string>
           </argument>
         </arguments>
@@ -198,23 +197,9 @@ gmeStop();
 
 //If music is not disabled
 if (musicdisable == false) {
-    
-    //Load the file first
-    gmeLoad(levelmusic);
-    
-    //Set the volume and stereo depth
-    gmeSetStereoDepth(0.5);
-    gmeSetVolume(100);
-    
-    //Check if the time is less than 100 and speed up the music
-    if (leveltime &gt; 0)
-    &amp;&amp; (global.time &lt; 100) {
-    
-        gmeSetTempo(1.3);
-    }
-    
-    //Play it
-    gmePlay();
+
+    if (!audio_is_playing(global._music[levelmusic]))
+        audio_loop_sound(global._music[levelmusic], global._st[levelmusic], global._en[levelmusic], 44100, 1);
 }
 </string>
           </argument>
@@ -291,6 +276,47 @@ if (instance_exists(obj_playerparent)) {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Handle music speed
+
+if (leveltime &gt; 0) {
+
+    //If the time is lower than 100
+    if (global.time &lt; 100) {
+    
+        //Speed up level music
+        audio_sound_pitch(global._music[levelmusic],1.3);
+    }
+    else {
+    
+        //Set normal pitch
+        audio_sound_pitch(global._music[levelmusic],1);        
+    }
+}
+else {
+
+    //Set normal pitch
+    audio_sound_pitch(global._music[levelmusic],1);    
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="4">
       <action>
@@ -318,12 +344,12 @@ if (leveltime &gt; 0) { //If the timer has been set.
     if (global.time = 0) {
     
         global.time = leveltime;
-        alarm[2] = 30;
+        alarm[2] = 60;
     }
     
     //Otherwise, if the time has been set before.
     else if (global.time &gt; 0)    
-        alarm[2] = 30;
+        alarm[2] = 60;
 }
 </string>
           </argument>

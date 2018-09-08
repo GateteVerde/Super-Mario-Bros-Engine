@@ -3,97 +3,14 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="5" name="datafiles">
-    <datafiles number="5" name="music">
-      <datafile>
-        <name>102_Overworld.spc</name>
-        <exists>-1</exists>
-        <size>66092</size>
-        <exportAction>2</exportAction>
-        <exportDir></exportDir>
-        <overwrite>0</overwrite>
-        <freeData>-1</freeData>
-        <removeEnd>0</removeEnd>
-        <store>0</store>
-        <ConfigOptions>
-          <Config name="Default">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-        </ConfigOptions>
-        <filename>102_Overworld.spc</filename>
-      </datafile>
-    </datafiles>
-    <datafile>
-      <name>GMGME.dll</name>
-      <exists>-1</exists>
-      <size>848896</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>GMGME.dll</filename>
-    </datafile>
-    <datafile>
-      <name>libgcc_s_dw2-1.dll</name>
-      <exists>-1</exists>
-      <size>107520</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>libgcc_s_dw2-1.dll</filename>
-    </datafile>
-    <datafile>
-      <name>libsndfile-1.dll</name>
-      <exists>-1</exists>
-      <size>325120</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>libsndfile-1.dll</filename>
-    </datafile>
-    <datafile>
-      <name>openal32.dll</name>
-      <exists>-1</exists>
-      <size>208896</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>openal32.dll</filename>
-    </datafile>
-  </datafiles>
+  <datafiles number="5" name="datafiles"/>
   <NewExtensions/>
   <sounds name="sound">
+    <sounds name="Music">
+      <sounds name="Level Music">
+        <sound>sound\bgm_overworld</sound>
+      </sounds>
+    </sounds>
     <sound>sound\snd_1up</sound>
     <sound>sound\snd_break</sound>
     <sound>sound\snd_bump</sound>
@@ -352,23 +269,6 @@
       <script>scripts\scr_score_add.gml</script>
       <script>scripts\scr_coins_add.gml</script>
     </scripts>
-    <scripts name="Music">
-      <script>scripts\gmeCreate.gml</script>
-      <script>scripts\gmeLoad.gml</script>
-      <script>scripts\gmeClose.gml</script>
-      <script>scripts\gmePlay.gml</script>
-      <script>scripts\gmeStop.gml</script>
-      <script>scripts\gmePause.gml</script>
-      <script>scripts\gmeGetTracks.gml</script>
-      <script>scripts\gmeSetTrack.gml</script>
-      <script>scripts\gmeNextTrack.gml</script>
-      <script>scripts\gmeSetVolume.gml</script>
-      <script>scripts\gmeGetSample.gml</script>
-      <script>scripts\gmeSetStereoDepth.gml</script>
-      <script>scripts\gmeSetTempo.gml</script>
-      <script>scripts\gmeIsStopped.gml</script>
-      <script>scripts\gmeIsPlaying.gml</script>
-    </scripts>
     <scripts name="Palettes">
       <script>scripts\pal_swap_draw_palette.gml</script>
       <script>scripts\pal_swap_enable_override.gml</script>
@@ -397,11 +297,13 @@
     </scripts>
     <script>scripts\init_pixel.gml</script>
     <script>scripts\init_globals.gml</script>
+    <script>scripts\init_globals_mus.gml</script>
     <script>scripts\string_add_zeros.gml</script>
     <script>scripts\constant_get_sprite.gml</script>
     <script>scripts\sprite_get_constant.gml</script>
     <script>scripts\sprite_make_object.gml</script>
     <script>scripts\draw_background_tiled_horizontal_ext.gml</script>
+    <script>scripts\audio_loop_sound.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_palette_swapper.shader</shader>
@@ -478,6 +380,7 @@
             <object>objects\obj_sparkle</object>
           </objects>
           <object>objects\obj_hud</object>
+          <object>objects\obj_audio_loop_sound</object>
         </objects>
       </objects>
     </objects>

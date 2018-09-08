@@ -477,8 +477,11 @@ if (y &lt; -96)
 else {
 
     //If the player is below the bottom room boundary and didn't activate a warp, restart the room.
-    if (bbox_bottom &gt; room_height+32)
+    if (bbox_bottom &gt; room_height+32) {
+    
+        audio_stop_all();
         room_restart();
+    }
 }
 </string>
           </argument>

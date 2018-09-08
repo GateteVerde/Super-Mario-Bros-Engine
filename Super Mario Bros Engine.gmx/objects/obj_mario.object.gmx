@@ -71,6 +71,9 @@ if (crouch == true) {
     image_speed = 0;
     image_index = 0;
     
+    //Reset firing
+    firing = 0;
+    
     //Set the mask
     mask_index = spr_mask;
     

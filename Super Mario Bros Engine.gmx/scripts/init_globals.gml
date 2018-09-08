@@ -1,8 +1,8 @@
-///scr_globals_init();
+///init_globals();
 
 /*
 //  Usage:
-//      scr_globals_init();
+//      init_globals();
 //
 //  Purpose:
 //      Initializes the global variables the game needs to run properly.

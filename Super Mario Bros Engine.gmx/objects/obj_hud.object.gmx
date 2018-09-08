@@ -102,7 +102,7 @@ if (global.player == 0) {
     draw_text(view_xview[0]+104, view_yview[0]+24, string_add_zeros(global.coins_m, 2));
     
     //World / Level
-    draw_text(view_xview[0]+152, view_yview[0]+24, string(global.world_m));
+    draw_text(view_xview[0]+152, view_yview[0]+24, string_upper(global.world_m));
     if (global.hardmode == 1)
         draw_text(view_xview[0]+144, view_yview[0]+24, string("+"));
 }
@@ -123,9 +123,14 @@ else if (global.player == 1) {
 }
 
 //Time
-if (global.time &gt; 0)
-&amp;&amp; (obj_levelcontrol.leveltime &gt; 0)
-    draw_text(view_xview[0]+208, view_yview[0]+24, string_add_zeros(global.time, 3));
+if (obj_levelcontrol.leveltime &gt; 0) {
+
+    if (global.time &gt; 0)
+        draw_text(view_xview[0]+208, view_yview[0]+24, string_add_zeros(global.time, 3));
+    else
+        draw_text(view_xview[0]+208, view_yview[0]+24, string("000"));
+        
+}
 else
     draw_text(view_xview[0]+208, view_yview[0]+24, string("---")); 
 </string>
