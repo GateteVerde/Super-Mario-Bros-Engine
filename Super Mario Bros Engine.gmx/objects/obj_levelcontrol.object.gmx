@@ -136,15 +136,15 @@ if (global.time &gt; 0) {
     global.time--;
     
     //Repeat the process
-    alarm[2] = 30;
+    alarm[2] = 24;
     
     //If there's 100 seconds left, warn the player
     if (global.time == 101)
-        alarm[3] = 30;
+        alarm[3] = 24;
         
     //Otherwise, if there's 0 seconds left, kill the player.
     else if (global.time == 1)
-        alarm[4] = 30;
+        alarm[4] = 24;
 }
 </string>
           </argument>
@@ -231,16 +231,8 @@ if (instance_exists(obj_playerparent)) {
     //Make sure the barrier is not active
     if (barrier == 0) {
          
-        //Prevent the player from going outside the left boundary
-        if (obj_playerparent.x &lt; view_xview[0] + 8) {
-        
-            //Snap the player 5 pixels at the left of the boundary
-            obj_playerparent.x = view_xview[0] + 8;
-            
-            //Stop the player's horizontal movement
-            if (obj_playerparent.hspeed &lt; 0)
-                obj_playerparent.hspeed = 0;
-        }
+        //Prevent player from going outside
+        event_user(0);
         
         //Check where the player is
         playerx = max(playerx, obj_playerparent.x-pos);
@@ -266,9 +258,13 @@ if (instance_exists(obj_playerparent)) {
     //Update the left edge
     leftedge = playerx - padding;
     
-    //Update views
+    //Update view_yview
+    view_yview[view_current] = 16;    
+    
+    //Update view_xview
     view_xview[view_current] = leftedge;
-    view_yview[view_current] = 16;
+    if (view_xview[view_current] &gt; room_width-global.gw)
+        view_xview[view_current] = room_width-global.gw;
 }
 
 
@@ -297,7 +293,7 @@ if (instance_exists(obj_playerparent)) {
 if (leveltime &gt; 0) {
 
     //If the time is lower than 100
-    if (global.time &lt; 100) {
+    if (global.time &lt; 101) {
     
         //Speed up level music
         audio_sound_pitch(global._music[levelmusic],1.3);
@@ -312,6 +308,51 @@ else {
 
     //Set normal pitch
     audio_sound_pitch(global._music[levelmusic],1);    
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Prevent the player from going outside the view
+
+//If the player is at the leftmost boundary
+if (obj_playerparent.x &lt; view_xview[0] + 8) {
+
+    //Snap the player 5 pixels at the left of the boundary
+    obj_playerparent.x = view_xview[0] + 8;
+    
+    //Stop the player's horizontal movement
+    if (obj_playerparent.hspeed &lt; 0)
+        obj_playerparent.hspeed = 0;
+}
+
+//Otherwise, if the player is at the rightmost boundary
+else if (obj_playerparent.x &gt; view_xview[0] + view_wview[0] - 8) {
+
+    //Snap the player 5 pixels at the left of the boundary
+    obj_playerparent.x = view_xview[0] + view_wview[0] - 8;
+    
+    //Stop the player's horizontal movement
+    if (obj_playerparent.hspeed &gt; 0)
+        obj_playerparent.hspeed = 0;
 }
 </string>
           </argument>

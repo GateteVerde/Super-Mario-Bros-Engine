@@ -30,8 +30,53 @@
 //Inherit variables from parent
 event_inherited();
 
+//Palette
+palette_index = pal_mario;
+
 //Inherit physical variables
 scr_physics_mario();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Handle player specific eyecandy
+
+//If Mario is turning and it is making contact with the floor.
+if (sprite_index == scr_mario_skid()) &amp;&amp; (state != cs_jump) {
+
+    //If Mario is not crouched down
+    if (crouch == false) {
+    
+        alarm[4] = 4;
+        with (instance_create(x,bbox_bottom-4,obj_smoke)) {
+        
+            sprite_index = spr_smoke_skid;
+            image_speed = 0.3;
+        }
+    }
+    else
+        alarm[4] = 1;
+}
+else
+    alarm[4] = 1;
 </string>
           </argument>
         </arguments>

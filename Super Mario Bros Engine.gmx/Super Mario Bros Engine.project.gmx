@@ -10,6 +10,7 @@
       <sounds name="Level Music">
         <sound>sound\bgm_overworld</sound>
       </sounds>
+      <sound>sound\bgm_invincible</sound>
     </sounds>
     <sound>sound\snd_1up</sound>
     <sound>sound\snd_break</sound>
@@ -137,6 +138,7 @@
         <sprite>sprites\spr_fireball</sprite>
         <sprite>sprites\spr_fireball_hit</sprite>
         <sprite>sprites\spr_smoke</sprite>
+        <sprite>sprites\spr_smoke_skid</sprite>
         <sprite>sprites\spr_sparkle</sprite>
       </sprites>
       <sprites name="HUD">
@@ -369,6 +371,7 @@
             </objects>
             <object>objects\obj_powerupsprout</object>
             <object>objects\obj_fireball</object>
+            <object>objects\obj_invincibility</object>
           </objects>
         </objects>
         <objects name="System">
