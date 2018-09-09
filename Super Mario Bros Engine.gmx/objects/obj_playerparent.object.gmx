@@ -520,15 +520,26 @@ if (!collision_rectangle(bbox_left,y,bbox_right,bbox_bottom,obj_swim,0,0))
     swimming = false;
 
 //Prevent the player from going too high on the level
-if (y &lt; -96)
-    y = -96;
+if (y &lt; -96) {
+
+    if (inair == false)
+        y = -96;
+}
     
 //Otherwise, if he is falling.
 else {
 
-    //If the player is below the bottom room boundary and didn't activate a warp, restart the room.
-    if (bbox_bottom &gt; room_height+32) {
+    //If the player has been launched with a trampoline.
+    if (inair) {
     
+        if (y &gt; -96)
+        &amp;&amp; (vspeed &gt; 0)
+            inair = false;
+    }
+
+    //Make the player die if he falls on a pit.
+    if (bbox_top &gt; room_height+32) {
+        
         audio_stop_all();
         room_restart();
     }

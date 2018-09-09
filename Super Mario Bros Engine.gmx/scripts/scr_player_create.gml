@@ -68,5 +68,8 @@ firing = 0;
 //Handles the consecutive stomps the player makes
 hitcombo = 0;
 
+//Handles the player when launched with a green trampoline
+inair = 0;
+
 //Handles the palette to use when the player is under the effects of the star power
 isflashing = 0;
