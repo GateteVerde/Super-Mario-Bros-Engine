@@ -256,10 +256,7 @@ if (instance_exists(obj_playerparent)) {
     }
     
     //Update the left edge
-    leftedge = playerx - padding;
-    
-    //Update view_yview
-    view_yview[view_current] = 16;    
+    leftedge = playerx - padding;  
     
     //Update view_xview
     view_xview[view_current] = leftedge;
