@@ -134,7 +134,7 @@ else if (crouch == false) {
     if (state == cs_idle) {
     
         //If Mario has the fire powerup and he's shooting a fireball
-        if (global.powerup_m = cs_fire) 
+        if (global.powerup = cs_fire) 
         &amp;&amp; (firing &gt; 0) {
         
             //Set 'Pose' sprite
@@ -249,7 +249,7 @@ else if (crouch == false) {
     }
     
     //If Mario is not small
-    if (global.powerup_m != cs_small)
+    if (global.powerup != cs_small)
         mask_index = spr_mask_big;
         
     //Otherwise, if Mario is small

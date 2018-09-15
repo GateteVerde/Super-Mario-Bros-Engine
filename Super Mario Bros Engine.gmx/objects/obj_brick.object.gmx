@@ -111,8 +111,7 @@ with (instance_create(x+8,y+8,obj_shard)) {
             <kind>1</kind>
             <string>///Break it if big
 
-if (global.player == 0) &amp;&amp; (global.powerup_m &gt; cs_small)
-|| (global.player == 1) &amp;&amp; (global.powerup_l &gt; cs_small) {
+if (global.powerup != cs_small) {
 
     //Play 'Break' sound
     audio_play_sound(snd_break, 0, false);

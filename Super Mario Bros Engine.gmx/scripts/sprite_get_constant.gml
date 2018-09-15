@@ -14,19 +14,19 @@
 switch (argument[2]) {
 
     //Mushroom
-    case (spr_mushroom): return instance_create(argument[0], argument[1], obj_mushroom);
+    case (spr_mushroom): return cs_powerup;
     
     //Fireflower
-    case (spr_fireflower): return instance_create(argument[0], argument[1], obj_fireflower);
+    case (spr_fireflower): return cs_powerup;
     
     //Starman
-    case (spr_starman): return instance_create(argument[0], argument[1], obj_1up);
+    case (spr_starman): return cs_starman;
     
     //1-UP
-    case (spr_1up): return instance_create(argument[0], argument[1], obj_starman);
+    case (spr_1up): return cs_1up;
     
     //Poison
-    case (spr_poison): return instance_create(argument[0], argument[1], obj_poison);
+    case (spr_poison): return cs_poison;
     
     //Default
     default: return -1;

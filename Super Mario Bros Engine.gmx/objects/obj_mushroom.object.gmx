@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-2</depth>
   <persistent>0</persistent>
-  <parentName>obj_physicsparent</parentName>
+  <parentName>obj_powerupparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="2" enumb="10">
@@ -63,9 +63,9 @@ if (other.vspeed &lt; 0)
         hspeed = 1;
     else {
     
-        if (x+sprite_width/2 &gt; other.x+sprite_width/2)
+        if (x &gt; other.x+sprite_width/2)
             hspeed = 1;
-        else if (x+sprite_width/2 &lt; other.x+sprite_width/2)
+        else if (x &lt; other.x+sprite_width/2)
             hspeed = -1;        
     }
 }
@@ -99,42 +99,19 @@ audio_play_sound(snd_powerup, 0, false);
 //Get 1000 points
 with (instance_create(x-8,y,obj_score)) event_user(5);
 
-//If Mario is playing
-if (global.player == 0) {
+//Turn the player into the 'Super' form
+if (global.powerup == cs_small) {
 
-    //If Mario is small
-    if (global.powerup_m == cs_small) {
+    //Set 'Super' powerup
+    global.powerup = cs_super;
     
-        //Set 'Super' powerup
-        global.powerup_m = cs_super;
-        
-        //Stop jump
-        if (other.jumping &gt; 0)
-            other.jumping = 2;
-        
-        //Create transformation object
-        with (instance_create(0,0,obj_player_transform))
-            sequence = 0;
-    }
-}
-
-//Otherwise, if Luigi is playing
-else {
+    //Stop jump
+    if (other.jumping &gt; 0)
+        other.jumping = 2;
     
-    //Luigi
-    if (global.powerup_l == cs_small) {
-    
-        //Set 'Super' powerup
-        global.powerup_l = cs_super;
-        
-        //Stop jump
-        if (other.jumping &gt; 0)
-            other.jumping = 2;
-        
-        //Create transformation object
-        with (instance_create(0,0,obj_player_transform))
-            sequence = 0;
-    }
+    //Create transformation object
+    with (instance_create(0,0,obj_player_transform))
+        sequence = 0;    
 }
 
 //Destroy

@@ -147,8 +147,14 @@
         <sprite>sprites\spr_sparkle</sprite>
       </sprites>
       <sprites name="HUD">
+        <sprites name="Level Start">
+          <sprite>sprites\spr_hudface</sprite>
+          <sprite>sprites\spr_hudpreview</sprite>
+          <sprite>sprites\spr_hudpreview_lvl</sprite>
+        </sprites>
         <sprite>sprites\spr_hud</sprite>
         <sprite>sprites\spr_hudfont</sprite>
+        <sprite>sprites\spr_hudfont_red</sprite>
       </sprites>
       <sprites name="Palettes">
         <sprites name="Playable Characters">
@@ -353,6 +359,7 @@
         </objects>
         <objects name="NPC">
           <object>objects\obj_physicsparent</object>
+          <object>objects\obj_powerupparent</object>
         </objects>
         <object>objects\obj_blockparent</object>
         <object>objects\obj_platformparent</object>
@@ -395,6 +402,7 @@
           <object>objects\obj_hud</object>
           <object>objects\obj_audio_loop_sound</object>
         </objects>
+        <object>objects\obj_levelstart</object>
       </objects>
     </objects>
     <object>objects\obj_up</object>
@@ -404,7 +412,12 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_load</room>
-    <room>rooms\rm_enginetest</room>
+    <rooms name="Levels">
+      <room>rooms\rm_levelstart</room>
+      <rooms name="World 1">
+        <room>rooms\rm_enginetest</room>
+      </rooms>
+    </rooms>
   </rooms>
   <constants number="12">
     <constant name="cs_poison">-5</constant>

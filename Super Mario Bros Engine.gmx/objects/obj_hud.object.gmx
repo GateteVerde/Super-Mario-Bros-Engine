@@ -92,47 +92,35 @@ draw_set_alpha(1);
 //HUD
 draw_sprite_ext(spr_hud, (global.player*4)+anim, view_xview[0]+24, view_yview[0]+16, 1, 1, 0, c_white, 1);
 
-//Mario
-if (global.player == 0) {
-                
-    //Score
-    draw_text(view_xview[0]+24, view_yview[0]+24, string_add_zeros(global.score_m, 6));
-    
-    //Coins
-    draw_text(view_xview[0]+104, view_yview[0]+24, string_add_zeros(global.coins_m, 2));
-    
-    //World / Level
-    draw_text(view_xview[0]+152, view_yview[0]+24, string_upper(global.world_m));
-    if (global.hardmode == 1)
-        draw_text(view_xview[0]+144, view_yview[0]+24, string("+"));
-}
+//Score
+draw_text(view_xview[0]+24, view_yview[0]+24, string_add_zeros(score, 6));
 
-//Luigi
-else if (global.player == 1) {
-        
-    //Score
-    draw_text(view_xview[0]+24, view_yview[0]+24, string_add_zeros(global.score_l, 6));
-    
-    //Coins
-    draw_text(view_xview[0]+104, view_yview[0]+24, string_add_zeros(global.coins_l, 2));
-    
-    //World / Level
-    draw_text(view_xview[0]+152, view_yview[0]+24, string(global.world_l));
-    if (global.hardmode == 1)
-        draw_text(view_xview[0]+144, view_yview[0]+24, string("+"));           
-}
+//Coins
+draw_text(view_xview[0]+104, view_yview[0]+24, string_add_zeros(global.coins, 2));
+
+//World / Level (Draw a star before if hard mode is selected)
+draw_text(view_xview[0]+152, view_yview[0]+24, string(global.world));
+if (global.hardmode == 1) {
+
+    draw_text(view_xview[0]+144, view_yview[0]+24, string("+"));
+}   
 
 //Time
-if (obj_levelcontrol.leveltime &gt; 0) {
-
-    if (global.time &gt; 0)
-        draw_text(view_xview[0]+208, view_yview[0]+24, string_add_zeros(global.time, 3));
+if (instance_exists(obj_levelcontrol)) {
+    
+    if (obj_levelcontrol.leveltime &gt; 0) {
+    
+        if (global.time &gt; 0)
+            draw_text(view_xview[0]+208, view_yview[0]+24, string_add_zeros(global.time, 3));
+        else
+            draw_text(view_xview[0]+208, view_yview[0]+24, string("000"));
+            
+    }
     else
-        draw_text(view_xview[0]+208, view_yview[0]+24, string("000"));
-        
+        draw_text(view_xview[0]+208, view_yview[0]+24, string("---"));
 }
 else
-    draw_text(view_xview[0]+208, view_yview[0]+24, string("---")); 
+    draw_text(view_xview[0]+208, view_yview[0]+24, string("---"));
 </string>
           </argument>
         </arguments>

@@ -17,13 +17,11 @@ switch (argument[0]) {
     case (cs_powerup): {
     
         //If the player is small, get a mushroom sprite
-        if ((global.player == 0) && (global.powerup_m == cs_small))
-        || ((global.player == 1) && (global.powerup_l == cs_small))
+        if (global.powerup == cs_small)
             return spr_mushroom;
             
         //Otherwise, if the players are not small
-        else if ((global.player == 0) && (global.powerup_m != cs_small))
-        || ((global.player == 1) && (global.powerup_l != cs_small))
+        else
             return spr_fireflower;
     }
     

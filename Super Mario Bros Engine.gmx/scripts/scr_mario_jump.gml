@@ -8,7 +8,7 @@
 //      Returns the appropiate jumping sprite for Mario.
 */
 
-switch (global.powerup_m) {
+switch (global.powerup) {
 
     //Small
     case (cs_small): return spr_mario_small_jump;

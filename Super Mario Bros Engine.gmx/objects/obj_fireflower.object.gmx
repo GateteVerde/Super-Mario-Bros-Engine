@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-2</depth>
   <persistent>0</persistent>
-  <parentName>obj_physicsparent</parentName>
+  <parentName>obj_powerupparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -59,72 +59,34 @@ audio_play_sound(snd_powerup, 0, false);
 //Get 1000 points
 with (instance_create(x-8,y,obj_score)) event_user(5);
 
-//If Mario is playing
-if (global.player == 0) {
+//If the player is small, turn into the Super form
+if (global.powerup == cs_small) {
 
-    //If Mario is small, turn into Super Mario
-    if (global.powerup_m == cs_small) {
+    //Set 'Super' powerup
+    global.powerup = cs_super;
     
-        //Set 'Super' powerup
-        global.powerup_m = cs_super;
-        
-        //Stop jump
-        if (other.jumping &gt; 0)
-            other.jumping = 2;
-        
-        //Create transformation object
-        with (instance_create(0,0,obj_player_transform))
-            sequence = 0;
-    }
+    //Stop jump
+    if (other.jumping &gt; 0)
+        other.jumping = 2;
     
-    //Otherwise, turn into Fire Mario
-    else if (global.powerup_m == cs_super) {
-    
-        //Set 'Fire' powerup
-        global.powerup_m = cs_fire;
-        
-        //Stop jump
-        if (other.jumping &gt; 0)
-            other.jumping = 2;
-        
-        //Create transformation object
-        with (instance_create(0,0,obj_player_transform))
-            sequence = 1;    
-    }
+    //Create transformation object
+    with (instance_create(0,0,obj_player_transform))
+        sequence = 0;
 }
 
-//Otherwise, if Luigi is playing
-else {
+//Otherwise, turn into the fire form
+else if (global.powerup == cs_super) {
+
+    //Set 'Fire' powerup
+    global.powerup = cs_fire;
     
-    //If Luigi is small, turn into Super Luigi
-    if (global.powerup_l == cs_small) {
+    //Stop jump
+    if (other.jumping &gt; 0)
+        other.jumping = 2;
     
-        //Set 'Super' powerup
-        global.powerup_l = cs_super;
-        
-        //Stop jump
-        if (other.jumping &gt; 0)
-            other.jumping = 2;
-        
-        //Create transformation object
-        with (instance_create(0,0,obj_player_transform))
-            sequence = 0;
-    }
-    
-    //Otherwise, turn into Fire Luigi
-    else if (global.powerup_l == cs_super) {
-    
-        //Set 'Fire' powerup
-        global.powerup_l = cs_fire;
-        
-        //Stop jump
-        if (other.jumping &gt; 0)
-            other.jumping = 2;
-        
-        //Create transformation object
-        with (instance_create(0,0,obj_player_transform))
-            sequence = 1;    
-    }
+    //Create transformation object
+    with (instance_create(0,0,obj_player_transform))
+        sequence = 1;    
 }
 
 //Destroy

@@ -8,24 +8,21 @@
 //      Adds the given amount of coins to the current player.
 */
 
+//Amount of coins to add
 add = argument[0];
-if (global.player == 0) {
 
-    global.coins_m += add;
-    if (global.coins_m > 99) {
-    
-        audio_play_sound(snd_1up, 0, false);
-        global.coins_m -= 100;
-        global.lives_m++;
-    }
-}
-else {
+//Increment global coins
+global.coins += add;
 
-    global.coins_l += add;
-    if (global.coins_l > 99) {
+//Check if the coins are greater than 100 and reset counter
+if (global.coins > 99) {
+
+    //Play '1-UP' sound
+    audio_play_sound(snd_1up, 0, false);
     
-        audio_play_sound(snd_1up, 0, false);
-        global.coins_l -= 100;
-        global.lives_l++;
-    }
+    //Restart coin counter
+    global.coins -= 100;
+    
+    //Increment lives
+    lives += 1;
 }

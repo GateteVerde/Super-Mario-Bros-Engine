@@ -8,7 +8,7 @@
 //      Returns the appropiate swimming sprite for Luigi.
 */
 
-switch (global.powerup_l) {
+switch (global.powerup) {
 
     //Small
     case (cs_small): return spr_luigi_small_swim;

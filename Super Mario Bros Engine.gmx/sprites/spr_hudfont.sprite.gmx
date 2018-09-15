@@ -10,7 +10,7 @@
   <bbox_left>0</bbox_left>
   <bbox_right>7</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>9</bbox_bottom>
+  <bbox_bottom>7</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>8</width>
-  <height>10</height>
+  <height>8</height>
   <frames>
     <frame index="0">images\spr_hudfont_0.png</frame>
     <frame index="1">images\spr_hudfont_1.png</frame>
@@ -65,5 +65,54 @@
     <frame index="42">images\spr_hudfont_42.png</frame>
     <frame index="43">images\spr_hudfont_43.png</frame>
     <frame index="44">images\spr_hudfont_44.png</frame>
+    <frame index="45">images\spr_hudfont_45.png</frame>
+    <frame index="46">images\spr_hudfont_46.png</frame>
+    <frame index="47">images\spr_hudfont_47.png</frame>
+    <frame index="48">images\spr_hudfont_48.png</frame>
+    <frame index="49">images\spr_hudfont_49.png</frame>
+    <frame index="50">images\spr_hudfont_50.png</frame>
+    <frame index="51">images\spr_hudfont_51.png</frame>
+    <frame index="52">images\spr_hudfont_52.png</frame>
+    <frame index="53">images\spr_hudfont_53.png</frame>
+    <frame index="54">images\spr_hudfont_54.png</frame>
+    <frame index="55">images\spr_hudfont_55.png</frame>
+    <frame index="56">images\spr_hudfont_56.png</frame>
+    <frame index="57">images\spr_hudfont_57.png</frame>
+    <frame index="58">images\spr_hudfont_58.png</frame>
+    <frame index="59">images\spr_hudfont_59.png</frame>
+    <frame index="60">images\spr_hudfont_60.png</frame>
+    <frame index="61">images\spr_hudfont_61.png</frame>
+    <frame index="62">images\spr_hudfont_62.png</frame>
+    <frame index="63">images\spr_hudfont_63.png</frame>
+    <frame index="64">images\spr_hudfont_64.png</frame>
+    <frame index="65">images\spr_hudfont_65.png</frame>
+    <frame index="66">images\spr_hudfont_66.png</frame>
+    <frame index="67">images\spr_hudfont_67.png</frame>
+    <frame index="68">images\spr_hudfont_68.png</frame>
+    <frame index="69">images\spr_hudfont_69.png</frame>
+    <frame index="70">images\spr_hudfont_70.png</frame>
+    <frame index="71">images\spr_hudfont_71.png</frame>
+    <frame index="72">images\spr_hudfont_72.png</frame>
+    <frame index="73">images\spr_hudfont_73.png</frame>
+    <frame index="74">images\spr_hudfont_74.png</frame>
+    <frame index="75">images\spr_hudfont_75.png</frame>
+    <frame index="76">images\spr_hudfont_76.png</frame>
+    <frame index="77">images\spr_hudfont_77.png</frame>
+    <frame index="78">images\spr_hudfont_78.png</frame>
+    <frame index="79">images\spr_hudfont_79.png</frame>
+    <frame index="80">images\spr_hudfont_80.png</frame>
+    <frame index="81">images\spr_hudfont_81.png</frame>
+    <frame index="82">images\spr_hudfont_82.png</frame>
+    <frame index="83">images\spr_hudfont_83.png</frame>
+    <frame index="84">images\spr_hudfont_84.png</frame>
+    <frame index="85">images\spr_hudfont_85.png</frame>
+    <frame index="86">images\spr_hudfont_86.png</frame>
+    <frame index="87">images\spr_hudfont_87.png</frame>
+    <frame index="88">images\spr_hudfont_88.png</frame>
+    <frame index="89">images\spr_hudfont_89.png</frame>
+    <frame index="90">images\spr_hudfont_90.png</frame>
+    <frame index="91">images\spr_hudfont_91.png</frame>
+    <frame index="92">images\spr_hudfont_92.png</frame>
+    <frame index="93">images\spr_hudfont_93.png</frame>
   </frames>
 </sprite>

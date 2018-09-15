@@ -66,15 +66,14 @@ if (disablecontrol == false) {
     //If the player is not crouched down
     if (crouch == false) {
     
-        //If either Mario or Luigi has the fire powerup
-        if ((global.player == 0) &amp;&amp; (global.powerup_m == cs_fire))
-        || ((global.player == 1) &amp;&amp; (global.powerup_l == cs_fire)) {
+        //If the player has the fire powerup
+        if (global.powerup == cs_fire) {
         
             //If there's less than 2 fireballs on screen
             if (instance_number(obj_fireball) &lt; 2) {
             
                 firing = 6;
-                with (instance_create(x+4*sign(xscale),y-8,obj_fireball))
+                with (instance_create(x+4*sign(xscale),y-12,obj_fireball))
                     hspeed = 3.5*other.xscale;
             }
         }
@@ -656,7 +655,8 @@ if (inwall == false)
         hspeedmax = 0.5;
         
     //If the player presses the 'Shift' key.
-    if (keyboard_check_pressed(vk_shift)) {
+    if (keyboard_check_pressed(vk_shift)) 
+    &amp;&amp; (!collision_rectangle(bbox_left,bbox_bottom-4,bbox_right,bbox_bottom+5,obj_trampoline,0,0)) {
     
         //Play 'Swim' sound
         audio_play_sound(snd_swim, 0, false);
@@ -972,7 +972,8 @@ if (inwall == false)
     //If the 'Shift' key is pressed and the player can jump
     if (keyboard_check_pressed(vk_shift))
     &amp;&amp; ((jumping == 0) 
-    &amp;&amp; (state &lt; cs_jump)) {
+    &amp;&amp; (state &lt; cs_jump)) 
+    &amp;&amp; (!collision_rectangle(bbox_left,bbox_bottom-4,bbox_right,bbox_bottom+5,obj_trampoline,0,0)) {
     
         //Play 'Jump' sound
         audio_play_sound(snd_jump, 0, false);

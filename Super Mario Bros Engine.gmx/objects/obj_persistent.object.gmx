@@ -35,6 +35,9 @@ init_globals_mus();
 init_globals();
 init_pixel(1);
 
+//Pixelate screen?
+tr_pixel = false;
+
 //How the screen is fading
 //0: From black, 1: To black
 mode = 0
@@ -55,8 +58,9 @@ global.gw = 256;
 //Game height
 global.gh = 224;
 
-//Set the in-game font
-global.hud_font = font_add_sprite_ext(spr_hudfont,"@.-x+,;1234567890!&amp;&gt;ABCDEFGHIJKLMNOPQRSTUVWXYZ", 0, 0);
+//Set the in-game fonts
+global.hud_font = font_add_sprite(spr_hudfont,ord('!'), 0, 0);
+global.hud_fontr = font_add_sprite(spr_hudfont_red,ord('!'), 0, 0);
 
 //Set the epsilon value for floating point numbers
 math_set_epsilon(0.0001);
@@ -346,7 +350,7 @@ done = 0;
 mode = 1;
 
 //Make sure it stops when its done
-alarm[2] = 30;
+alarm[2] = 15;
 </string>
           </argument>
         </arguments>
@@ -586,7 +590,8 @@ alarm[1] = 1;
 draw_enable_alphablend(false);
 
 //Set the pixelate shader
-if (done &lt; 1) {
+if (done &lt; 1) 
+&amp;&amp; (tr_pixel == true) {
 
     shader_set(shd_pixel);
     shader_set_uniform_f(pixel, global.gw, global.gh, size, size);
@@ -607,13 +612,11 @@ draw_enable_alphablend(true);
 //Fades the screen to and from black
 if (done &lt; 1) {
 
-    //Increment fading
-    done += 1/30;
-
     //Fade from black
     if (mode = 0) {
     
         draw_set_alpha(1-done);
+        done += 1/30;     
         size -= 1.28;
     }
 
@@ -621,7 +624,8 @@ if (done &lt; 1) {
     else {
     
         draw_set_alpha(done);
-        size += 1.28;
+        done += 2/30;
+        size += 2.56;
     }
 
     //Draw the fade
