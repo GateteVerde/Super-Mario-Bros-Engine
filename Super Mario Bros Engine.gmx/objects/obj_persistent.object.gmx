@@ -350,7 +350,7 @@ done = 0;
 mode = 1;
 
 //Make sure it stops when its done
-alarm[2] = 15;
+alarm[2] = 30;
 </string>
           </argument>
         </arguments>
@@ -612,11 +612,12 @@ draw_enable_alphablend(true);
 //Fades the screen to and from black
 if (done &lt; 1) {
 
+    done += 1/30;
+    
     //Fade from black
     if (mode = 0) {
     
-        draw_set_alpha(1-done);
-        done += 1/30;     
+        draw_set_alpha(1-done);             
         size -= 1.28;
     }
 
@@ -624,8 +625,7 @@ if (done &lt; 1) {
     else {
     
         draw_set_alpha(done);
-        done += 2/30;
-        size += 2.56;
+        size += 1.28;
     }
 
     //Draw the fade

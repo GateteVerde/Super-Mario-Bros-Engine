@@ -73,6 +73,13 @@ if (collision_rectangle(bbox_left,bbox_top-5,bbox_right,bbox_top+4,obj_playerpar
             <kind>1</kind>
             <string>///Mario logic
 
+//If the player dies, stop everything
+if (instance_exists(obj_player_dead)) {
+
+    scr_freeze();
+    exit;
+}
+
 //Make sure the player exists
 if (instance_exists(obj_playerparent)) {
 

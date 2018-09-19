@@ -33,8 +33,7 @@ event_inherited();
 //Go to the level
 alarm[0] = 180;
 
-//Check frame
-frame = 0;
+//Reset time and check frame / preview
 preview = noone;
 alarm[1] = 1;
 </string>
@@ -59,8 +58,9 @@ alarm[1] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set the level preview frame
+            <string>///Reset time and set the level preview frame
 
+global.time = 0;
 switch (global.world) {
 
     //World 1-1
@@ -149,9 +149,7 @@ draw_text(view_xview[0]+view_wview[0]/2, view_yview[0]+88, '"' + string_format(l
 
 //Draw level preview
 draw_sprite(spr_hudpreview, 0, view_xview[0]+(view_wview[0]/2)-65, view_yview[0]+112);
-if (preview == noone)
-    draw_sprite(spr_hudpreview, frame, view_xview[0]+(view_wview[0]/2)-65, view_yview[0]+112);
-else
+if (preview != noone)
     draw_sprite(spr_hudpreview_lvl, anim, view_xview[0]+(view_wview[0]/2)-65, view_yview[0]+112);
 </string>
           </argument>

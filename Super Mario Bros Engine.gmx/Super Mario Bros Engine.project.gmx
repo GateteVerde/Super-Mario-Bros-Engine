@@ -11,6 +11,7 @@
         <sound>sound\bgm_overworld</sound>
       </sounds>
       <sound>sound\bgm_invincible</sound>
+      <sound>sound\bgm_miss</sound>
     </sounds>
     <sound>sound\snd_1up</sound>
     <sound>sound\snd_break</sound>
@@ -253,6 +254,7 @@
       <background>background\tls_main</background>
       <background>background\tls_animate</background>
     </backgrounds>
+    <background>background\bgr_pit</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -281,6 +283,9 @@
           <script>scripts\scr_physics_luigi.gml</script>
         </scripts>
         <script>scripts\scr_player_create.gml</script>
+      </scripts>
+      <scripts name="NPCs">
+        <script>scripts\scr_freeze.gml</script>
       </scripts>
       <script>scripts\scr_score_add.gml</script>
       <script>scripts\scr_coins_add.gml</script>
@@ -371,6 +376,7 @@
             <object>objects\obj_luigi</object>
           </objects>
           <object>objects\obj_player_transform</object>
+          <object>objects\obj_player_dead</object>
         </objects>
         <objects name="Blocks">
           <object>objects\obj_emptyblock</object>

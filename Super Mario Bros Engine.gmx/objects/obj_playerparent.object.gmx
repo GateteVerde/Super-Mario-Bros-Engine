@@ -73,8 +73,11 @@ if (disablecontrol == false) {
             if (instance_number(obj_fireball) &lt; 2) {
             
                 firing = 6;
-                with (instance_create(x+4*sign(xscale),y-12,obj_fireball))
+                with (instance_create(x+4*sign(xscale),y-12,obj_fireball)) {
+                
                     hspeed = 3.5*other.xscale;
+                    image_xscale = other.xscale;
+                }
             }
         }
     }
@@ -537,10 +540,11 @@ else {
     }
 
     //Make the player die if he falls on a pit.
-    if (bbox_top &gt; room_height+32) {
+    else if (bbox_top &gt; room_height+32) {
         
-        audio_stop_all();
-        room_restart();
+        instance_create(x,y,obj_player_dead);
+        instance_destroy();
+        exit;
     }
 }
 </string>

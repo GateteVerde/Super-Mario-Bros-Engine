@@ -37,7 +37,7 @@ palette_index = noone;
 image_speed = 0;
 
 //Move up
-vspeed = -0.35;
+vspeed = -0.3;
 
 //Sprite check
 alarm[0] = 1;
@@ -96,6 +96,13 @@ else if (sprite_index == spr_1up)
           <argument>
             <kind>1</kind>
             <string>///Item sprout logic
+
+//If the player dies, stop everything
+if (instance_exists(obj_player_dead)) {
+
+    scr_freeze();
+    exit;
+}
 
 //If there's not a solid in position
 if (!collision_point(x,bbox_bottom-1,obj_solid,0,0)) {
@@ -185,7 +192,7 @@ if (palette_index != noone) {
 }
 
 //Draw it
-draw_sprite_part_ext(sprite_index, -1, 0, 0, 16, ystart-y, round(x)-8, round(y), 1, 1, c_white, 1);
+draw_sprite_part_ext(sprite_index, -1, 0, 0, 16, ystart-y, round(x)-8, y, 1, 1, c_white, 1);
 
 //Reset shader
 pal_swap_reset();

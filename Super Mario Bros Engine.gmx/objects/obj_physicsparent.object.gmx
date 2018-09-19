@@ -27,6 +27,13 @@
             <kind>1</kind>
             <string>///Physics parent logic
 
+//If the player dies, stop everything
+if (instance_exists(obj_player_dead)) {
+
+    scr_freeze();
+    exit;
+}
+
 //Default wall collision
 event_user(3);
 
@@ -185,7 +192,7 @@ if ((hspeed &lt; 0) &amp;&amp; (collision_rectangle(bbox_left-1,bbox_top+4,bbox_
             <kind>1</kind>
             <string>///Draw the item
 
-draw_sprite_ext(sprite_index, -1, round(x), y+1, 1, 1, 0, c_white, 1);
+draw_sprite_ext(sprite_index, -1, round(x), y+1, image_xscale, 1, 0, c_white, 1);
 </string>
           </argument>
         </arguments>

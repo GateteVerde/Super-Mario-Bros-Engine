@@ -84,6 +84,33 @@ barrier = false;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Kill the player
+
+instance_create(obj_playerparent.x, obj_playerparent.y, obj_player_dead);
+with (obj_playerparent) instance_destroy();
+exit;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
@@ -144,7 +171,7 @@ if (global.time &gt; 0) {
         
     //Otherwise, if there's 0 seconds left, kill the player.
     else if (global.time == 1)
-        alarm[4] = 24;
+        alarm[4] = 25;
 }
 </string>
           </argument>
@@ -223,7 +250,7 @@ if (musicdisable == false) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Follow the player
+            <string>///Handle various in-game variables
 
 //If the player does exist
 if (instance_exists(obj_playerparent)) {
@@ -266,7 +293,9 @@ if (instance_exists(obj_playerparent)) {
         view_xview[view_current] = room_width-global.gw;
 }
 
-
+//Update parallax background position
+for (var i=0; i&lt;8; i++)
+    xx[i] = view_xview/(1.2+(0.4*i));
 </string>
           </argument>
         </arguments>
@@ -400,6 +429,10 @@ if (leveltime &gt; 0) { //If the timer has been set.
     else if (global.time &gt; 0)    
         alarm[2] = 60;
 }
+
+//Parallax backgrounds
+for (var i=0; i&lt;8; i++)
+    xx[i] = view_xview/(1.2+(0.4*i));
 </string>
           </argument>
         </arguments>
@@ -426,10 +459,13 @@ if (leveltime &gt; 0) { //If the timer has been set.
 
 for (var i=0; i&lt;8; i++) {
 
-    //If the background is not set, do not draw
-    if (background_index[i] != -1)    
-        draw_background_tiled_horizontal_ext(background_index[i], floor(view_xview[0]/(1.2+(0.2*i))+(background_x[i]+background_hspeed[i])), background_y[i], 1, 1, 0, background_blend[i], background_alpha[i]);
+    //If the background exists
+    if (background_index[i] != -1)
+        draw_background_tiled_horizontal_ext(background_index[i], xx[i]+(background_x[i]+background_hspeed[i]), background_y[i], 1, 1, 0, background_blend[i], background_alpha[i]);
 }
+
+//Draw pit
+draw_background_ext(bgr_pit, 0, room_height-16, room_width/16, 1, 0, c_white, 0.5);
 </string>
           </argument>
         </arguments>
