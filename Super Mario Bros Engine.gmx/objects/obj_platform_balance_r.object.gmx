@@ -5,10 +5,10 @@
   <visible>-1</visible>
   <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>obj_platformparent</parentName>
+  <parentName>obj_platform_balance</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="2">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,25 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Moving platform logic
+            <string>///A balance platform, not suitable for plumbers over 80 kg.
 
-//Inherit default event
-event_inherited();
+//Prevent the object from falling too fast.
+vspeedmax = 1;
 
-//Destroy when outside the room
-if (y &lt; -32)
-|| (y &gt; room_height+32)
-    instance_destroy();
+//Set the parent of the other platform.
+parent = noone;
 
-//Move in contact with arrow
-if (collision_rectangle(x,y,x+15,y+15,obj_up,0,0))
-    vspeed -= 0.0324;
-else if (collision_rectangle(x,y,x+15,y+15,obj_down,0,0))
-    vspeed += 0.0324;
-else if (collision_rectangle(x,y,x+15,y+15,obj_left,0,0))
-    hspeed -= 0.0324;
-else if (collision_rectangle(x,y,x+15,y+15,obj_right,0,0))
-    hspeed += 0.0324;
+//Make them fall
+ready = 0;
+
+//Create a rope that hangs both platforms.
+rope = noone;
+
+//Create the rope
+alarm[1] = 3;
 </string>
           </argument>
         </arguments>

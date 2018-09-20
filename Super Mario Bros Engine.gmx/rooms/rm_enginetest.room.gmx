@@ -4,7 +4,7 @@
   <width>3392</width>
   <height>224</height>
   <vsnap>16</vsnap>
-  <hsnap>16</hsnap>
+  <hsnap>8</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -67,8 +67,6 @@
     <instance objName="obj_brick" x="1328" y="80" name="inst_3FC6B099" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1344" y="80" name="inst_CDA82418" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1360" y="80" name="inst_A612ACE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_brick" x="1376" y="80" name="inst_BDD0A0C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_brick" x="1392" y="80" name="inst_2DCE8581" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1456" y="80" name="inst_6AB464F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1472" y="80" name="inst_94B201F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1488" y="80" name="inst_9049D066" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -148,9 +146,18 @@
     <instance objName="obj_player_start" x="40" y="192" name="inst_EBBB0A41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol" x="0" y="-16" name="inst_BA789C80" locked="0" code="levelmusic = 1;&#xA;leveltime = 400;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol_tiles" x="16" y="-16" name="inst_E98307A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_brick" x="1376" y="80" name="inst_21B2A4E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform_balance" x="72" y="144" name="inst_DEEC733C" locked="0" code="sprite_index = spr_platform_32;&#xA;distance = 96;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="3248" y="128" w="96" h="80" xo="32" yo="0" id="10001352" name="inst_380A84EA" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tls_main" x="80" y="80" w="16" h="16" xo="576" yo="112" id="10001637" name="inst_0F986A8A" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tls_main" x="96" y="80" w="16" h="16" xo="592" yo="112" id="10001638" name="inst_E43C5BEE" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tls_main" x="112" y="80" w="16" h="16" xo="592" yo="112" id="10001639" name="inst_2F5E3252" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tls_main" x="128" y="80" w="16" h="16" xo="592" yo="112" id="10001640" name="inst_FC3522A3" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tls_main" x="144" y="80" w="16" h="16" xo="592" yo="112" id="10001641" name="inst_8B35E5F7" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tls_main" x="160" y="80" w="16" h="16" xo="592" yo="112" id="10001642" name="inst_63456880" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tls_main" x="176" y="80" w="16" h="16" xo="608" yo="112" id="10001643" name="inst_B1DC91D3" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_animate" x="376" y="192" w="16" h="16" xo="0" yo="16" id="10001375" name="inst_046BC683" depth="12" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_animate" x="392" y="192" w="16" h="16" xo="32" yo="16" id="10001376" name="inst_04CA5494" depth="12" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_animate" x="232" y="192" w="16" h="16" xo="32" yo="16" id="10001377" name="inst_AC46DBC4" depth="12" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

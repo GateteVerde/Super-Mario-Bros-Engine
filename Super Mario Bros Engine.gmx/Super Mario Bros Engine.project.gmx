@@ -118,6 +118,10 @@
       </sprites>
       <sprites name="Platforms">
         <sprite>sprites\spr_platform</sprite>
+        <sprite>sprites\spr_platform_32</sprite>
+        <sprite>sprites\spr_platform_24</sprite>
+        <sprite>sprites\spr_platform_16</sprite>
+        <sprite>sprites\spr_platform_rope</sprite>
       </sprites>
       <sprite>sprites\spr_coin</sprite>
       <sprite>sprites\spr_coin_b</sprite>
@@ -156,6 +160,9 @@
         <sprite>sprites\spr_hud</sprite>
         <sprite>sprites\spr_hudfont</sprite>
         <sprite>sprites\spr_hudfont_red</sprite>
+      </sprites>
+      <sprites name="Markers">
+        <sprite>sprites\spr_marker_platform</sprite>
       </sprites>
       <sprites name="Palettes">
         <sprites name="Playable Characters">
@@ -351,7 +358,12 @@
     </objects>
     <objects name="Items">
       <objects name="Platforms">
+        <objects name="Generators">
+          <object>objects\obj_generator_platform</object>
+        </objects>
         <object>objects\obj_platform</object>
+        <object>objects\obj_platform_weight</object>
+        <object>objects\obj_platform_balance</object>
       </objects>
       <object>objects\obj_coin</object>
       <object>objects\obj_trampoline</object>
@@ -395,6 +407,10 @@
             <object>objects\obj_powerupsprout</object>
             <object>objects\obj_fireball</object>
             <object>objects\obj_invincibility</object>
+          </objects>
+          <objects name="Platforms">
+            <object>objects\obj_platform_balance_r</object>
+            <object>objects\obj_platform_balance_rope</object>
           </objects>
         </objects>
         <objects name="System">
