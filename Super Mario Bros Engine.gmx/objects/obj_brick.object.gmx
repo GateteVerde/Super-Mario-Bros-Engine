@@ -143,6 +143,9 @@ if (global.powerup != cs_small) {
         }
     }
     
+    //Create block bumper
+    instance_create(x+8,ystart,obj_blockbumper);
+    
     //Destroy
     instance_destroy();
 }

@@ -250,6 +250,56 @@ if (musicdisable == false) {
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Handle music speed
+
+if (leveltime &gt; 0) {
+
+    //If the time is lower than 100
+    if (global.time &lt; 101) {
+    
+        //Speed up level music
+        audio_sound_pitch(global._music[levelmusic],1.3);
+        
+        //Speed up starman music
+        audio_sound_pitch(bgm_invincible, 1.3);
+    }
+    else {
+    
+        //Set normal pitch
+        audio_sound_pitch(global._music[levelmusic],1);
+                
+        //Speed up starman music
+        audio_sound_pitch(bgm_invincible, 1);        
+    }
+}
+else {
+
+    //Set normal pitch
+    audio_sound_pitch(global._music[levelmusic],1);
+        
+    //Speed up starman music
+    audio_sound_pitch(bgm_invincible, 1);    
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Handle various in-game variables
 
 //If the player does exist
@@ -294,58 +344,16 @@ if (instance_exists(obj_playerparent)) {
 }
 
 //Update parallax background position
-for (var i=0; i&lt;8; i++)
+for (var i=0; i&lt;8; i++) {
+
     xx[i] = view_xview/(1.2+(0.4*i));
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Handle music speed
-
-if (leveltime &gt; 0) {
-
-    //If the time is lower than 100
-    if (global.time &lt; 101) {
-    
-        //Speed up level music
-        audio_sound_pitch(global._music[levelmusic],1.3);
-        
-        //Speed up starman music
-        audio_sound_pitch(bgm_invincible, 1.3);
-    }
-    else {
-    
-        //Set normal pitch
-        audio_sound_pitch(global._music[levelmusic],1);
-                
-        //Speed up starman music
-        audio_sound_pitch(bgm_invincible, 1);        
-    }
 }
-else {
 
-    //Set normal pitch
-    audio_sound_pitch(global._music[levelmusic],1);
-        
-    //Speed up starman music
-    audio_sound_pitch(bgm_invincible, 1);    
-}
+//Deactivate instances outside the view
+instance_deactivate_object(obj_deactenemyparent);
+
+//Activate deactivated instances inside the view
+instance_activate_region(view_xview[0]-32,view_yview[0]-32,view_wview[0]+32,view_hview[0]+32,true);
 </string>
           </argument>
         </arguments>
