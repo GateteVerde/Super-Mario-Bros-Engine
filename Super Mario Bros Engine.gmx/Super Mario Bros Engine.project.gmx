@@ -21,6 +21,13 @@
     <sound>sound\snd_hurry</sound>
     <sound>sound\snd_jump</sound>
     <sound>sound\snd_kick</sound>
+    <sound>sound\snd_kick2</sound>
+    <sound>sound\snd_kick3</sound>
+    <sound>sound\snd_kick4</sound>
+    <sound>sound\snd_kick5</sound>
+    <sound>sound\snd_kick6</sound>
+    <sound>sound\snd_kick7</sound>
+    <sound>sound\snd_kick8</sound>
     <sound>sound\snd_powerup</sound>
     <sound>sound\snd_skid</sound>
     <sound>sound\snd_sprout</sound>
@@ -104,6 +111,9 @@
     <sprites name="Enemies">
       <sprite>sprites\spr_goomba</sprite>
       <sprite>sprites\spr_goomba_sq</sprite>
+      <sprite>sprites\spr_koopa</sprite>
+      <sprite>sprites\spr_koopa_shell</sprite>
+      <sprite>sprites\spr_parakoopa</sprite>
     </sprites>
     <sprites name="Items">
       <sprites name="Powerups">
@@ -183,6 +193,7 @@
         </sprites>
         <sprites name="Enemies">
           <sprite>sprites\pal_goomba</sprite>
+          <sprite>sprites\pal_koopa</sprite>
         </sprites>
         <sprites name="Items">
           <sprite>sprites\pal_1up</sprite>
@@ -373,6 +384,7 @@
     </objects>
     <objects name="Enemies">
       <object>objects\obj_goomba</object>
+      <object>objects\obj_koopa</object>
     </objects>
     <objects name="Items">
       <objects name="Platforms">
@@ -422,6 +434,7 @@
           <object>objects\obj_enemy_dead</object>
           <object>objects\obj_enemy_stomped</object>
           <object>objects\obj_stomped</object>
+          <object>objects\obj_shell</object>
         </objects>
         <objects name="Items">
           <objects name="Powerups">
