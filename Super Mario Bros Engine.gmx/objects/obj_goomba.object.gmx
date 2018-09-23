@@ -35,6 +35,7 @@ stomp = 0;
 
 //How many points should the enemy give when killed with an item
 handicap = 0;
+handicap_stomp = 0;
 
 //Palette
 palette_index = pal_goomba;

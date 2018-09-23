@@ -53,6 +53,7 @@ stomp = 0;
 //9: 8000
 //10: 1-UP
 handicap = 0;
+handicap_stomp = 0;
 
 //Does this enemy have a palette
 palette_index = noone;
@@ -137,96 +138,6 @@ event_user(4);
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_shell">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Collision with the player while invulnerable
-
-//If the enemy is vulnerable to fireballs
-if (vulnerable &lt; 99) {
-    
-    //Get points based on combo
-    if (other.hitcombo == 0) { //500 points
-    
-        audio_play_sound(snd_kick, 0, false);
-        with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
-            event_user(3);
-    }
-    else if (other.hitcombo == 1) { //800 points
-    
-        audio_play_sound(snd_kick2, 0, false);
-        with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
-            event_user(4);
-    }
-    else if (other.hitcombo == 2) { //1000 points
-    
-        audio_play_sound(snd_kick3, 0, false);
-        with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
-            event_user(5);
-    }
-    else if (other.hitcombo == 3) { //2000 points
-    
-        audio_play_sound(snd_kick4, 0, false);
-        with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
-            event_user(6);
-    }
-    else if (other.hitcombo == 4) { //4000 points
-    
-        audio_play_sound(snd_kick5, 0, false);
-        with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
-            event_user(7);
-    }
-    else if (other.hitcombo == 5) { //5000 points
-    
-        audio_play_sound(snd_kick6, 0, false);
-        with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
-            event_user(8);
-    }
-    else if (other.hitcombo == 6) { //8000 points
-    
-        audio_play_sound(snd_kick7, 0, false);
-        with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
-            event_user(9);
-    }
-    else if (other.hitcombo &gt; 6) { //1-UP
-
-        audio_play_sound(snd_kick8, 0, false);
-        with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
-            event_user(10);
-    }
-    
-    //Increment combo
-    other.hitcombo++;
-        
-    //Create 'Spinthump' effect
-    with (instance_create(round(bbox_left+bbox_right)/2,round(bbox_top+bbox_bottom)/2-8,obj_smoke)) {
-    
-        sprite_index = spr_shellthump;
-        image_speed = 0.3;
-    }
-    
-    //Kill the enemy
-    event_user(0);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_invincibility">
       <action>
         <libid>1</libid>
@@ -306,6 +217,100 @@ if (vulnerable == 0) {
 //Destroy the fireball
 if (vulnerable &lt; 100)
     with (other) event_user(0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_shell">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collision with the player while invulnerable
+
+//If the shell has been kicked
+if (other.ready &gt; 0) {
+    
+    //If the enemy is vulnerable to fireballs
+    if (vulnerable &lt; 99) {
+        
+        //Get points based on combo
+        if (other.hitcombo == 0) { //500 points
+        
+            audio_play_sound(snd_kick, 0, false);
+            with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
+                event_user(3);
+        }
+        else if (other.hitcombo == 1) { //800 points
+        
+            audio_play_sound(snd_kick2, 0, false);
+            with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
+                event_user(4);
+        }
+        else if (other.hitcombo == 2) { //1000 points
+        
+            audio_play_sound(snd_kick3, 0, false);
+            with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
+                event_user(5);
+        }
+        else if (other.hitcombo == 3) { //2000 points
+        
+            audio_play_sound(snd_kick4, 0, false);
+            with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
+                event_user(6);
+        }
+        else if (other.hitcombo == 4) { //4000 points
+        
+            audio_play_sound(snd_kick5, 0, false);
+            with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
+                event_user(7);
+        }
+        else if (other.hitcombo == 5) { //5000 points
+        
+            audio_play_sound(snd_kick6, 0, false);
+            with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
+                event_user(8);
+        }
+        else if (other.hitcombo == 6) { //8000 points
+        
+            audio_play_sound(snd_kick7, 0, false);
+            with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
+                event_user(9);
+        }
+        else if (other.hitcombo &gt; 6) { //1-UP
+    
+            audio_play_sound(snd_kick8, 0, false);
+            with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
+                event_user(10);
+        }
+        
+        //Increment combo
+        other.hitcombo++;
+            
+        //Create 'Spinthump' effect
+        with (instance_create(round(bbox_left+bbox_right)/2,round(bbox_top+bbox_bottom)/2-8,obj_smoke)) {
+        
+            sprite_index = spr_shellthump;
+            image_speed = 0.3;
+        }
+        
+        //Kill the enemy
+        event_user(0);
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -437,7 +442,7 @@ if (stomp != -1)
             if (vspeed &lt; 0) {
             
                 y = yprevious;
-                if (other.yspeed &gt; 0)
+                if (other.vspeed &gt; 0)
                     other.y = other.yprevious;
             }
             
@@ -445,11 +450,11 @@ if (stomp != -1)
             with (other) event_user(1);
 
             //Get points based on combo
-            if (other.hitcombo &lt;= 10) {
+            if (other.hitcombo &lt;= 10-handicap_stomp) {
             
                 //If the player did 10 or less consecutive stomps
                 with (instance_create((bbox_left+bbox_right)/2-8,y,obj_score)) 
-                    event_user(0+obj_playerparent.hitcombo);
+                    event_user((0+other.handicap_stomp)+obj_playerparent.hitcombo);
             }
             else {
             
@@ -690,7 +695,7 @@ if (palette_index != noone) {
 }
 
 //Draw sprite
-draw_sprite_ext(sprite_index, -1, round(x), round(y)+1, image_xscale, image_yscale, 0, c_white, 1);
+draw_sprite_ext(sprite_index, -1, round(x), round(y)+1, xscale, image_yscale, 0, c_white, 1);
 
 //Reset the palette
 pal_swap_reset();

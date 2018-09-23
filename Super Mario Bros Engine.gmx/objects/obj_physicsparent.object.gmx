@@ -99,7 +99,7 @@ if (vspeed &gt;= 0) {
     //If the semisolid exists, snap above it.
     if (semisolid)
     &amp;&amp; (bbox_bottom &lt; semisolid.yprevious+5)
-        y = semisolid.bbox_top-sprite_height;
+        y = semisolid.bbox_top-(sprite_height-sprite_get_yoffset(sprite_index));
 }
 
 //Check for floor objects

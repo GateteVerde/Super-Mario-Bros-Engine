@@ -111,9 +111,16 @@
     <sprites name="Enemies">
       <sprite>sprites\spr_goomba</sprite>
       <sprite>sprites\spr_goomba_sq</sprite>
-      <sprite>sprites\spr_koopa</sprite>
-      <sprite>sprites\spr_koopa_shell</sprite>
-      <sprite>sprites\spr_parakoopa</sprite>
+      <sprites name="Koopas">
+        <sprites name="Shells">
+          <sprite>sprites\spr_koopa_shell</sprite>
+          <sprite>sprites\spr_koopa_shell_red</sprite>
+        </sprites>
+        <sprite>sprites\spr_koopa</sprite>
+        <sprite>sprites\spr_parakoopa</sprite>
+        <sprite>sprites\spr_koopa_red</sprite>
+        <sprite>sprites\spr_parakoopa_red</sprite>
+      </sprites>
     </sprites>
     <sprites name="Items">
       <sprites name="Powerups">
@@ -384,7 +391,13 @@
     </objects>
     <objects name="Enemies">
       <object>objects\obj_goomba</object>
-      <object>objects\obj_koopa</object>
+      <objects name="Koopas">
+        <object>objects\obj_koopa</object>
+        <object>objects\obj_parakoopa</object>
+        <object>objects\obj_parakoopa_fly</object>
+        <object>objects\obj_koopa_red</object>
+        <object>objects\obj_parakoopa_red_fly</object>
+      </objects>
     </objects>
     <objects name="Items">
       <objects name="Platforms">

@@ -81,14 +81,17 @@ hspeed = 1;
 //Inherit event
 event_inherited();
 
-//Bounce
-if (gravity == 0) {
-
-    vspeed = -3.5;
-    y--;
+//Jump when in contact with the floor
+if (!instance_exists(obj_player_dead)) {
+    
+    if (gravity == 0) {
+    
+        vspeed = -3.5;
+        y--;
+    }
+    else
+        gravity = 0.15;
 }
-else
-    gravity = 0.15;
 </string>
           </argument>
         </arguments>
