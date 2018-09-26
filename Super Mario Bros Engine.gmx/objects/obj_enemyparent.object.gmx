@@ -94,6 +94,10 @@ if (hspeed == 0) {
     else
         hspeed = 0.5;
 }
+
+//Double speed if you chose hard mode
+if (global.hardmode == 1)
+    hspeed = hspeed*2;
 </string>
           </argument>
         </arguments>
@@ -292,7 +296,7 @@ if (other.ready &gt; 0) {
         }
         else if (other.hitcombo &gt; 6) { //1-UP
     
-            audio_play_sound(snd_kick8, 0, false);
+            audio_play_sound(snd_1up, 0, false);
             with (instance_create(round(bbox_left+bbox_right)/2-8,y,obj_score))
                 event_user(10);
         }

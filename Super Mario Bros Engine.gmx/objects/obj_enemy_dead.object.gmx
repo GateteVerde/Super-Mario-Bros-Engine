@@ -72,18 +72,24 @@ switch (sprite_index) {
     } break;
     
     //Koopa
-    case (spr_koopa_shell): {
+    case (spr_shell): {
     
         palette_index = pal_koopa;
     } break;
+    
+    //Hammer Bro
+    case (spr_hammerbro): {
+    
+        palette_index = pal_hammerbro;
+    } break;
 }
 
-//Set vertical scale
-image_yscale = -1;
-
 //If the object has less than 17 pixels of height, move down 16 pixels
-if (sprite_get_yoffset(sprite_index) == 0)
+if (sprite_get_yoffset(sprite_index) == 0) {
+
     y += 16;
+    image_yscale = -1;
+}
 </string>
           </argument>
         </arguments>

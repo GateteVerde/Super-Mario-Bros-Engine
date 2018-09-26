@@ -324,7 +324,7 @@ if (instance_exists(obj_playerparent)) {
         }
         
         //Reset pos
-        if (obj_playerparent.x &lt; view_xview[0]+80)
+        if (obj_playerparent.x &lt; view_xview[view_current]+80)
         &amp;&amp; (pos &gt; 0) {
         
             leftedge -= pos;
@@ -353,7 +353,7 @@ for (var i=0; i&lt;8; i++) {
 instance_deactivate_object(obj_deactenemyparent);
 
 //Activate deactivated instances inside the view
-instance_activate_region(view_xview[0]-64,view_yview[0]-32,view_wview[0]+64,view_hview[0]+32,true);
+instance_activate_region(view_xview[view_current]-64,view_yview[view_current]-32,view_wview[view_current]+64,view_hview[view_current]+32,true);
 </string>
           </argument>
         </arguments>

@@ -1334,7 +1334,7 @@ if (invulnerable == 0) {
     invulnerable = 1;
     
     //Become vulnerable
-    alarm[0] = 90;
+    alarm[0] = 192;
     alarm[1] = 1;
 }
 </string>

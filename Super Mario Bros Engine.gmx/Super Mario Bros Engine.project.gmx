@@ -18,6 +18,7 @@
     <sound>sound\snd_bump</sound>
     <sound>sound\snd_coin</sound>
     <sound>sound\snd_fireball</sound>
+    <sound>sound\snd_hammer</sound>
     <sound>sound\snd_hurry</sound>
     <sound>sound\snd_jump</sound>
     <sound>sound\snd_kick</sound>
@@ -112,15 +113,25 @@
       <sprite>sprites\spr_goomba</sprite>
       <sprite>sprites\spr_goomba_sq</sprite>
       <sprites name="Koopas">
-        <sprites name="Shells">
-          <sprite>sprites\spr_koopa_shell</sprite>
-          <sprite>sprites\spr_koopa_shell_red</sprite>
+        <sprites name="Green">
+          <sprite>sprites\spr_koopa</sprite>
+          <sprite>sprites\spr_parakoopa</sprite>
         </sprites>
-        <sprite>sprites\spr_koopa</sprite>
-        <sprite>sprites\spr_parakoopa</sprite>
-        <sprite>sprites\spr_koopa_red</sprite>
-        <sprite>sprites\spr_parakoopa_red</sprite>
+        <sprites name="Red">
+          <sprite>sprites\spr_koopa_red</sprite>
+          <sprite>sprites\spr_parakoopa_red</sprite>
+        </sprites>
+        <sprite>sprites\spr_shell</sprite>
+        <sprite>sprites\spr_shell_red</sprite>
       </sprites>
+      <sprite>sprites\spr_lakitu</sprite>
+      <sprite>sprites\spr_lakitu_egg</sprite>
+      <sprite>sprites\spr_hammerbro</sprite>
+      <sprite>sprites\spr_hammerbro_throw</sprite>
+      <sprite>sprites\spr_hammerbro_hammer</sprite>
+      <sprite>sprites\spr_buzzybeetle</sprite>
+      <sprite>sprites\spr_shell_buzzy</sprite>
+      <sprite>sprites\spr_spiny</sprite>
     </sprites>
     <sprites name="Items">
       <sprites name="Powerups">
@@ -201,6 +212,7 @@
         <sprites name="Enemies">
           <sprite>sprites\pal_goomba</sprite>
           <sprite>sprites\pal_koopa</sprite>
+          <sprite>sprites\pal_hammerbro</sprite>
         </sprites>
         <sprites name="Items">
           <sprite>sprites\pal_1up</sprite>
@@ -392,12 +404,20 @@
     <objects name="Enemies">
       <object>objects\obj_goomba</object>
       <objects name="Koopas">
-        <object>objects\obj_koopa</object>
-        <object>objects\obj_parakoopa</object>
-        <object>objects\obj_parakoopa_fly</object>
-        <object>objects\obj_koopa_red</object>
-        <object>objects\obj_parakoopa_red_fly</object>
+        <objects name="Green">
+          <object>objects\obj_koopa</object>
+          <object>objects\obj_parakoopa</object>
+          <object>objects\obj_parakoopa_fly</object>
+        </objects>
+        <objects name="Red">
+          <object>objects\obj_koopa_red</object>
+          <object>objects\obj_parakoopa_red</object>
+        </objects>
       </objects>
+      <object>objects\obj_lakitu</object>
+      <object>objects\obj_hammerbro</object>
+      <object>objects\obj_buzzybeetle</object>
+      <object>objects\obj_spiny</object>
     </objects>
     <objects name="Items">
       <objects name="Platforms">
@@ -448,6 +468,9 @@
           <object>objects\obj_enemy_stomped</object>
           <object>objects\obj_stomped</object>
           <object>objects\obj_shell</object>
+          <object>objects\obj_lakitu_egg</object>
+          <object>objects\obj_lakitu_ticker</object>
+          <object>objects\obj_hammer</object>
         </objects>
         <objects name="Items">
           <objects name="Powerups">

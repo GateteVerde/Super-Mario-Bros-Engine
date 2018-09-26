@@ -108,7 +108,7 @@ else if (hspeed &lt; 0)
 imdead = instance_create(x,y-2,obj_shell);
 
 //Make the dead object hereby the sprite
-imdead.sprite_index = spr_koopa_shell;
+imdead.sprite_index = spr_shell;
 
 //Make the dead object hereby the scale
 imdead.image_xscale = 1;
@@ -193,7 +193,7 @@ exit;
 event_inherited();
 
 //Set sprite
-imdead.sprite_index = spr_koopa_shell;
+imdead.sprite_index = spr_shell;
 </string>
           </argument>
         </arguments>

@@ -102,7 +102,7 @@ draw_text(view_xview[0]+104, view_yview[0]+24, string_add_zeros(global.coins, 2)
 draw_text(view_xview[0]+152, view_yview[0]+24, string(global.world));
 if (global.hardmode == 1) {
 
-    draw_text(view_xview[0]+144, view_yview[0]+24, string("+"));
+    draw_text(view_xview[0]+144, view_yview[0]+24, string("*"));
 }   
 
 //Time
