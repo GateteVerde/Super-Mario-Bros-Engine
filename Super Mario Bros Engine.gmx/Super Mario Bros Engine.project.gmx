@@ -112,18 +112,12 @@
     <sprites name="Enemies">
       <sprite>sprites\spr_goomba</sprite>
       <sprite>sprites\spr_goomba_sq</sprite>
-      <sprites name="Koopas">
-        <sprites name="Green">
-          <sprite>sprites\spr_koopa</sprite>
-          <sprite>sprites\spr_parakoopa</sprite>
-        </sprites>
-        <sprites name="Red">
-          <sprite>sprites\spr_koopa_red</sprite>
-          <sprite>sprites\spr_parakoopa_red</sprite>
-        </sprites>
-        <sprite>sprites\spr_shell</sprite>
-        <sprite>sprites\spr_shell_red</sprite>
-      </sprites>
+      <sprite>sprites\spr_koopa</sprite>
+      <sprite>sprites\spr_parakoopa</sprite>
+      <sprite>sprites\spr_shell</sprite>
+      <sprite>sprites\spr_koopa_red</sprite>
+      <sprite>sprites\spr_parakoopa_red</sprite>
+      <sprite>sprites\spr_shell_red</sprite>
       <sprite>sprites\spr_lakitu</sprite>
       <sprite>sprites\spr_lakitu_egg</sprite>
       <sprite>sprites\spr_hammerbro</sprite>
@@ -132,6 +126,8 @@
       <sprite>sprites\spr_buzzybeetle</sprite>
       <sprite>sprites\spr_shell_buzzy</sprite>
       <sprite>sprites\spr_spiny</sprite>
+      <sprite>sprites\spr_piranhaplant</sprite>
+      <sprite>sprites\spr_piranhaplant_red</sprite>
     </sprites>
     <sprites name="Items">
       <sprites name="Powerups">
@@ -213,6 +209,7 @@
           <sprite>sprites\pal_goomba</sprite>
           <sprite>sprites\pal_koopa</sprite>
           <sprite>sprites\pal_hammerbro</sprite>
+          <sprite>sprites\pal_piranhaplant</sprite>
         </sprites>
         <sprites name="Items">
           <sprite>sprites\pal_1up</sprite>
@@ -403,21 +400,18 @@
     </objects>
     <objects name="Enemies">
       <object>objects\obj_goomba</object>
-      <objects name="Koopas">
-        <objects name="Green">
-          <object>objects\obj_koopa</object>
-          <object>objects\obj_parakoopa</object>
-          <object>objects\obj_parakoopa_fly</object>
-        </objects>
-        <objects name="Red">
-          <object>objects\obj_koopa_red</object>
-          <object>objects\obj_parakoopa_red</object>
-        </objects>
-      </objects>
+      <object>objects\obj_koopa</object>
+      <object>objects\obj_parakoopa</object>
+      <object>objects\obj_parakoopa_fly</object>
+      <object>objects\obj_koopa_red</object>
+      <object>objects\obj_parakoopa_red</object>
       <object>objects\obj_lakitu</object>
       <object>objects\obj_hammerbro</object>
       <object>objects\obj_buzzybeetle</object>
       <object>objects\obj_spiny</object>
+      <object>objects\obj_piranhaplant</object>
+      <object>objects\obj_piranhaplant_red</object>
+      <object>objects\obj_piranhaplant_red_down</object>
     </objects>
     <objects name="Items">
       <objects name="Platforms">
