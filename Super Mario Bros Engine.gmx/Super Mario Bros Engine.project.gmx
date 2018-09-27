@@ -215,8 +215,10 @@
           <sprite>sprites\pal_1up</sprite>
         </sprites>
       </sprites>
+      <sprite>sprites\spr_flag</sprite>
       <sprite>sprites\spr_flagpole</sprite>
-      <sprite>sprites\spr_flagpole_flag</sprite>
+      <sprite>sprites\spr_underwater</sprite>
+      <sprite>sprites\spr_underwater_top</sprite>
     </sprites>
     <sprite>sprites\spr_up</sprite>
     <sprite>sprites\spr_down</sprite>
@@ -377,11 +379,13 @@
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_palette_swapper.shader</shader>
     <shader type="GLSLES">shaders\shd_pixel.shader</shader>
+    <shader type="GLSLES">shaders\shd_underwater.shader</shader>
   </shaders>
   <objects name="objects">
     <object>objects\obj_persistent</object>
     <objects name="Main">
       <objects name="Controllers">
+        <object>objects\obj_water</object>
         <object>objects\obj_bganimator</object>
         <object>objects\obj_levelcontrol</object>
         <object>objects\obj_levelcontrol_tiles</object>
