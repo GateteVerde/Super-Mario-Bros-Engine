@@ -128,6 +128,8 @@
       <sprite>sprites\spr_spiny</sprite>
       <sprite>sprites\spr_piranhaplant</sprite>
       <sprite>sprites\spr_piranhaplant_red</sprite>
+      <sprite>sprites\spr_redcheep</sprite>
+      <sprite>sprites\spr_greencheep</sprite>
     </sprites>
     <sprites name="Items">
       <sprites name="Powerups">
@@ -177,6 +179,7 @@
           <sprite>sprites\spr_8000pts</sprite>
           <sprite>sprites\spr_1uppts</sprite>
         </sprites>
+        <sprite>sprites\spr_bubble</sprite>
         <sprite>sprites\spr_fireball</sprite>
         <sprite>sprites\spr_fireball_hit</sprite>
         <sprite>sprites\spr_shellthump</sprite>
@@ -196,6 +199,7 @@
       </sprites>
       <sprites name="Markers">
         <sprite>sprites\spr_marker_platform</sprite>
+        <sprite>sprites\spr_marker_cheepcheep</sprite>
       </sprites>
       <sprites name="Palettes">
         <sprites name="Playable Characters">
@@ -306,7 +310,9 @@
     </backgrounds>
     <background>background\bgr_pit</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pth_bubble</path>
+  </paths>
   <scripts name="scripts">
     <scripts name="Gameplay">
       <scripts name="Player">
@@ -403,6 +409,9 @@
       <object>objects\obj_brick</object>
     </objects>
     <objects name="Enemies">
+      <objects name="Generators">
+        <object>objects\obj_generator_cheep</object>
+      </objects>
       <object>objects\obj_goomba</object>
       <object>objects\obj_koopa</object>
       <object>objects\obj_parakoopa</object>
@@ -469,6 +478,8 @@
           <object>objects\obj_lakitu_egg</object>
           <object>objects\obj_lakitu_ticker</object>
           <object>objects\obj_hammer</object>
+          <object>objects\obj_redcheep</object>
+          <object>objects\obj_greencheep</object>
         </objects>
         <objects name="Items">
           <objects name="Powerups">
@@ -493,6 +504,7 @@
             <objects name="Score">
               <object>objects\obj_score</object>
             </objects>
+            <object>objects\obj_bubble</object>
             <object>objects\obj_smoke</object>
             <object>objects\obj_sparkle</object>
           </objects>

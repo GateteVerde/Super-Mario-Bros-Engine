@@ -92,8 +92,8 @@ instance_destroy();
             <string>///Stay in view
 
 x = view_xview[0];
-if (y &lt; view_yview[0]+34)
-    y = view_yview[0]+34;
+if (y &lt; view_yview[0]+40)
+    y = view_yview[0]+40;
 </string>
           </argument>
         </arguments>

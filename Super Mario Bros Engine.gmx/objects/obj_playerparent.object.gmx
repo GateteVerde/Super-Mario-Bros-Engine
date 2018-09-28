@@ -36,6 +36,9 @@ alarm[4] = 2;
 //Cycle between palettes
 isflashing = 0;
 alarm[5] = 1;
+
+//Create bubble effect
+alarm[6] = 2;
 </string>
           </argument>
         </arguments>
@@ -82,6 +85,33 @@ if (disablecontrol == false) {
         }
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create bubble effect when swimming
+
+alarm[6] = 45+random_range(15,-15);
+if (swimming == true)
+    instance_create(x,bbox_top,obj_bubble);
 </string>
           </argument>
         </arguments>
@@ -438,7 +468,8 @@ else if (!water)
     
         //If the player is moving up
         if (vspeed &lt; 0) 
-        &amp;&amp; (state == cs_jump) {
+        &amp;&amp; (state == cs_jump) 
+        &amp;&amp; (!instance_exists(obj_water)) {
         
             //If the 'Jump' key is pressed
             if (keyboard_check(vk_shift)) {

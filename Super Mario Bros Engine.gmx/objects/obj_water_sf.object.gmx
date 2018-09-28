@@ -30,12 +30,50 @@
 dw = view_wview[view_current];
 dh = view_hview[view_current];
 
+focus = true;                                    //In case the window looses focus
+
 tearings_surface    = surface_create(dw, dh);    // We'll draw on this surface
 tearings_y          = 0;
 band_num            = 32;                        // How many bands you want on screen
 band_height         = dh / band_num;
 tearings_x_offset   = 4;                         // How much you want to displace the bands horizontally
 tearing_speed       = 4;                         // Change this to speed up/slow down the tearings
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reset if the window looses focus
+
+//Reset surface
+if (window_has_focus() == true)
+&amp;&amp; (!focus) {
+
+    focus = true;
+    event_user(0);
+}
+
+//If the window looses focus, remember it
+if (window_has_focus() == false) 
+&amp;&amp; (focus)
+    focus = false;
 </string>
           </argument>
         </arguments>

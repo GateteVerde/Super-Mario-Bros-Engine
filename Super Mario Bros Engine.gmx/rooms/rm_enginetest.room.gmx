@@ -3,7 +3,7 @@
   <caption></caption>
   <width>3376</width>
   <height>224</height>
-  <vsnap>16</vsnap>
+  <vsnap>8</vsnap>
   <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
@@ -32,7 +32,7 @@
   </makerSettings>
   <backgrounds>
     <background visible="-1" foreground="0" name="bgr_gradient_water" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="-1" foreground="0" name="bgr_underwater" x="0" y="0" htiled="-1" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="-1" foreground="0" name="bgr_underwater_ruins" x="0" y="-16" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -165,11 +165,8 @@
     <instance objName="obj_goomba" x="2816" y="192" name="inst_583CE450" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_koopa" x="1720" y="192" name="inst_9C0CAA74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_qblock" x="352" y="80" name="inst_AC758862" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piranhaplant" x="624" y="176" name="inst_386F113F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piranhaplant_red" x="752" y="160" name="inst_47D9F8CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_solid" x="736" y="-80" name="inst_5569E3E2" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piranhaplant_red_down" x="752" y="64" name="inst_96C28558" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water" x="0" y="32" name="inst_DB468641" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_generator_cheep" x="32" y="0" name="inst_D3D3827F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="3232" y="128" w="96" h="80" xo="32" yo="0" id="10001352" name="inst_380A84EA" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -509,11 +506,6 @@
     <tile bgName="tls_main" x="2928" y="160" w="16" h="16" xo="496" yo="128" id="10001689" name="inst_6EBCBA99" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_main" x="2912" y="176" w="16" h="16" xo="496" yo="128" id="10001690" name="inst_06E2BB25" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_main" x="2896" y="192" w="16" h="16" xo="496" yo="128" id="10001691" name="inst_EF55F2D1" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tls_main" x="736" y="64" w="32" h="16" xo="512" yo="16" id="10001692" name="inst_77D56408" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tls_main" x="736" y="48" w="32" h="16" xo="512" yo="0" id="10001693" name="inst_F8EB74FF" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tls_main" x="736" y="32" w="32" h="16" xo="512" yo="0" id="10001694" name="inst_8D692B32" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tls_main" x="736" y="16" w="32" h="16" xo="512" yo="0" id="10001695" name="inst_3CE2D5FA" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tls_main" x="736" y="0" w="32" h="16" xo="512" yo="0" id="10001696" name="inst_79CB963E" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>
