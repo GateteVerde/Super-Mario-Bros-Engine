@@ -497,6 +497,7 @@
             <object>objects\obj_sparkle</object>
           </objects>
           <object>objects\obj_hud</object>
+          <object>objects\obj_water_sf</object>
           <object>objects\obj_audio_loop_sound</object>
         </objects>
         <object>objects\obj_levelstart</object>
