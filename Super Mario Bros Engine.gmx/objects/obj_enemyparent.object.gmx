@@ -174,7 +174,7 @@ if (vulnerable &lt; 99) {
     with (instance_create(round(bbox_left+bbox_right)/2,round(bbox_top+bbox_bottom)/2-8,obj_smoke)) {
     
         sprite_index = spr_shellthump;
-        image_speed = 0.3;
+        image_speed = 0.5;
     }
     
     //Kill the enemy
@@ -309,7 +309,7 @@ if (other.ready &gt; 0) {
         with (instance_create(round(bbox_left+bbox_right)/2,round(bbox_top+bbox_bottom)/2-8,obj_smoke)) {
         
             sprite_index = spr_shellthump;
-            image_speed = 0.3;
+            image_speed = 0.5;
         }
         
         //Kill the enemy
@@ -350,7 +350,7 @@ event_user(6);
 with (instance_create(round(bbox_left+bbox_right)/2,round(bbox_top+bbox_bottom)/2-8,obj_smoke)) {
 
     sprite_index = spr_shellthump;
-    image_speed = 0.3;
+    image_speed = 0.5;
 }
     
 //Get some points
@@ -393,7 +393,7 @@ if (other.vspeed &lt; 0)
     with (instance_create(round(bbox_left+bbox_right)/2,round(bbox_top+bbox_bottom)/2-8,obj_smoke)) {
     
         sprite_index = spr_shellthump;
-        image_speed = 0.3;
+        image_speed = 0.5;
     }
         
     //Get some points

@@ -45,7 +45,7 @@ vulnerable = 0;
 stomp = 0;
 
 //How many points should the enemy give when killed with an item
-handicap = 4;
+handicap = 2;
 handicap_stomp = 4;
 
 //Palette

@@ -99,7 +99,7 @@ event_user(5);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Default enemy dead script
+            <string>///Default block bump script
 
 //Create koopa shell
 imdead = instance_create(x,y-2,obj_shell);

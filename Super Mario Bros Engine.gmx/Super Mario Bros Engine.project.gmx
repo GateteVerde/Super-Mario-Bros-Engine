@@ -16,6 +16,7 @@
     <sound>sound\snd_1up</sound>
     <sound>sound\snd_break</sound>
     <sound>sound\snd_bump</sound>
+    <sound>sound\snd_cannon</sound>
     <sound>sound\snd_coin</sound>
     <sound>sound\snd_fireball</sound>
     <sound>sound\snd_hammer</sound>
@@ -131,6 +132,8 @@
       <sprite>sprites\spr_redcheep</sprite>
       <sprite>sprites\spr_greencheep</sprite>
       <sprite>sprites\spr_blooper</sprite>
+      <sprite>sprites\spr_bulletbill</sprite>
+      <sprite>sprites\spr_firebar</sprite>
     </sprites>
     <sprites name="Items">
       <sprites name="Powerups">
@@ -199,8 +202,14 @@
         <sprite>sprites\spr_hudfont_red</sprite>
       </sprites>
       <sprites name="Markers">
+        <sprites name="Enemies">
+          <sprites name="Obstacles">
+            <sprite>sprites\spr_marker_firebar</sprite>
+          </sprites>
+          <sprite>sprites\spr_marker_cheepcheep</sprite>
+          <sprite>sprites\spr_marker_bulletbill</sprite>
+        </sprites>
         <sprite>sprites\spr_marker_platform</sprite>
-        <sprite>sprites\spr_marker_cheepcheep</sprite>
       </sprites>
       <sprites name="Palettes">
         <sprites name="Playable Characters">
@@ -407,12 +416,14 @@
       <object>objects\obj_qblock</object>
       <object>objects\obj_qblock_coins</object>
       <object>objects\obj_qblock_hidden</object>
+      <object>objects\obj_emptyblock</object>
       <object>objects\obj_brick</object>
     </objects>
     <objects name="Enemies">
       <objects name="Generators">
         <object>objects\obj_generator_cheep</object>
         <object>objects\obj_generator_cheep_flying</object>
+        <object>objects\obj_generator_bullet</object>
       </objects>
       <object>objects\obj_goomba</object>
       <object>objects\obj_koopa</object>
@@ -428,6 +439,9 @@
       <object>objects\obj_piranhaplant_red</object>
       <object>objects\obj_piranhaplant_red_down</object>
       <object>objects\obj_blooper</object>
+      <object>objects\obj_bulletbill</object>
+      <object>objects\obj_firebar</object>
+      <object>objects\obj_firebar_fast</object>
     </objects>
     <objects name="Items">
       <objects name="Platforms">
@@ -457,6 +471,7 @@
         </objects>
         <object>objects\obj_blockparent</object>
         <object>objects\obj_platformparent</object>
+        <object>objects\obj_deactivateparent</object>
       </objects>
       <objects name="Do not use">
         <objects name="Players">
@@ -468,7 +483,6 @@
           <object>objects\obj_player_dead</object>
         </objects>
         <objects name="Blocks">
-          <object>objects\obj_emptyblock</object>
           <object>objects\obj_shard</object>
           <object>objects\obj_blockcoin</object>
           <object>objects\obj_blockbumper</object>
@@ -484,6 +498,8 @@
           <object>objects\obj_redcheep</object>
           <object>objects\obj_greencheep</object>
           <object>objects\obj_generatorcheep</object>
+          <object>objects\obj_bullet</object>
+          <object>objects\obj_firebar_ball</object>
         </objects>
         <objects name="Items">
           <objects name="Powerups">

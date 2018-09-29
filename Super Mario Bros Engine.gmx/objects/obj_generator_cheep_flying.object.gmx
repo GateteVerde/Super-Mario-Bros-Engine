@@ -83,24 +83,9 @@ else {
 
             //Repeat
             alarm[0] = 48;
-        
-            //Generate a cheep-cheep
-            if (random(round(1) == 1)) {
             
-                with (instance_create(view_xview[0]+32, view_yview[0]+224,obj_generatorcheep)) {
-                
-                    hspeed = random_range(0.5, 1.5);
-                    xscale = 1;
-                }
-            }
-            else {
-            
-                with (instance_create(view_xview[0]+224, view_yview[0]+224,obj_generatorcheep)) {
-                
-                    hspeed = random_range(-0.5, -1.5);
-                    xscale = -1;
-                }
-            }
+            //Create a jumping cheep cheep
+            instance_create(view_xview[view_current]+random_range(-48, 224), view_yview[view_current]+224, obj_generatorcheep);
         }
         
         //Otherwise, delay

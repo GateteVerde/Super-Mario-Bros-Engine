@@ -351,6 +351,7 @@ for (var i=0; i&lt;8; i++) {
 
 //Deactivate instances outside the view
 instance_deactivate_object(obj_deactenemyparent);
+instance_deactivate_object(obj_deactivateparent);
 
 //Activate deactivated instances inside the view
 instance_activate_region(view_xview[view_current]-64,view_yview[view_current]-32,view_wview[view_current]+64,view_hview[view_current]+32,true);
