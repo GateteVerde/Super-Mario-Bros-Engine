@@ -412,6 +412,7 @@
     <objects name="Enemies">
       <objects name="Generators">
         <object>objects\obj_generator_cheep</object>
+        <object>objects\obj_generator_cheep_flying</object>
       </objects>
       <object>objects\obj_goomba</object>
       <object>objects\obj_koopa</object>
@@ -482,6 +483,7 @@
           <object>objects\obj_hammer</object>
           <object>objects\obj_redcheep</object>
           <object>objects\obj_greencheep</object>
+          <object>objects\obj_generatorcheep</object>
         </objects>
         <objects name="Items">
           <objects name="Powerups">
