@@ -130,6 +130,7 @@
       <sprite>sprites\spr_piranhaplant_red</sprite>
       <sprite>sprites\spr_redcheep</sprite>
       <sprite>sprites\spr_greencheep</sprite>
+      <sprite>sprites\spr_blooper</sprite>
     </sprites>
     <sprites name="Items">
       <sprites name="Powerups">
@@ -425,6 +426,7 @@
       <object>objects\obj_piranhaplant</object>
       <object>objects\obj_piranhaplant_red</object>
       <object>objects\obj_piranhaplant_red_down</object>
+      <object>objects\obj_blooper</object>
     </objects>
     <objects name="Items">
       <objects name="Platforms">

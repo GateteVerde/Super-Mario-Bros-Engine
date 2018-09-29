@@ -28,16 +28,14 @@
             <string>///Underwater ripple effect
 
 dw = view_wview[view_current];
-dh = view_hview[view_current];
+dh = view_hview[view_current];  
 
-focus = true;                                    //In case the window looses focus
-
-tearings_surface    = surface_create(dw, dh);    // We'll draw on this surface
+tearings_surface    = surface_create(dw, dh);    //We'll draw on this surface
 tearings_y          = 0;
-band_num            = 32;                        // How many bands you want on screen
+band_num            = 64;                        //How many bands you want on screen
 band_height         = dh / band_num;
-tearings_x_offset   = 4;                         // How much you want to displace the bands horizontally
-tearing_speed       = 4;                         // Change this to speed up/slow down the tearings
+tearings_x_offset   = 2;                         //How much you want to displace the bands horizontally
+tearing_speed       = 4;                         //Change this to speed up/slow down the tearings
 </string>
           </argument>
         </arguments>
@@ -60,20 +58,19 @@ tearing_speed       = 4;                         // Change this to speed up/slow
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Reset if the window looses focus
+            <string>///Update width / height
 
-//Reset surface
-if (window_has_focus() == true)
-&amp;&amp; (!focus) {
+//If the window looses focus
+if (window_has_focus() == false) {
 
-    focus = true;
-    event_user(0);
-}
-
-//If the window looses focus, remember it
-if (window_has_focus() == false) 
-&amp;&amp; (focus)
-    focus = false;
+    dw = view_wview[view_current];
+    dh = view_hview[view_current];  
+    if (surface_exists(tearings_surface)) {
+    
+        surface_free(tearings_surface);
+        tearings_surface = -1;
+    }
+} 
 </string>
           </argument>
         </arguments>
@@ -96,10 +93,10 @@ if (window_has_focus() == false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Update dw / dh
+            <string>///Force reset display
 
 dw = view_wview[view_current];
-dh = view_hview[view_current];
+dh = view_hview[view_current];   
 </string>
           </argument>
         </arguments>
@@ -124,29 +121,29 @@ dh = view_hview[view_current];
             <kind>1</kind>
             <string>///Draw underwater surface
 
-// Create surface if it doesn't exits
-if !surface_exists(tearings_surface) {
+//Create surface if it doesn't exits
+if (!surface_exists(tearings_surface)) {
 
     tearings_surface = surface_create(view_wview[view_current], view_hview[view_current]);
 }
 
-// Let's set the target to our surface
+//Let's set the target to our surface
 surface_set_target(tearings_surface);
 draw_clear_alpha(c_black, 0);
 
-// We draw parts of our application surface on tearings surface
+//We draw parts of our application surface on tearings surface
 for (var current_band = 0; current_band &lt; band_num * 2; current_band++) {
 
     draw_surface_part(application_surface, 0, band_height * current_band - tearings_y, dw, band_height, sin((degtorad(360) / band_num) * current_band) * tearings_x_offset , band_height * current_band - tearings_y)
 }
 
-// Always reset the target surface
+//Always reset the target surface
 surface_reset_target();
 
-// Draw the actual surface
+//Draw the actual surface
 draw_surface_stretched(tearings_surface, round(view_xview[view_current]) - tearings_x_offset, 0, dw + tearings_x_offset * 2, dh);
 
-// Move the Tearings
+//Move the Tearings
 tearings_y = (tearings_y + tearing_speed) % (band_height * band_num);
 </string>
           </argument>

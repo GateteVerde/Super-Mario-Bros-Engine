@@ -84,12 +84,12 @@ switch (sprite_index) {
     } break;
 }
 
-//If the object has less than 17 pixels of height, move down 16 pixels
-if (sprite_get_yoffset(sprite_index) == 0) {
+//Go upside down
+image_yscale = -1;
 
+//Move 16 pixels below if the sprite yoffset is lower than 16
+if (sprite_get_yoffset(sprite_index) &lt; 16)
     y += 16;
-    image_yscale = -1;
-}
 </string>
           </argument>
         </arguments>
