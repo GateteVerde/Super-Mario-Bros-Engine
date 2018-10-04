@@ -34,8 +34,12 @@ audio_play_sound(bgm_miss, 0, false);
 audio_stop_sound(bgm_invincible);
 
 //Stop music and time
-obj_levelcontrol.alarm[1] = 1;
-obj_levelcontrol.alarm[2] = 0;
+with (obj_levelcontrol) {
+
+    musicdisable = true;
+    alarm[1] = 1;
+    alarm[2] = 0;
+}
 
 //Subtract a life
 lives--;
@@ -72,7 +76,14 @@ global.powerup = cs_small;
             <kind>1</kind>
             <string>///Go to the level start screen
 
-room_goto(rm_levelstart);
+if (lives &gt; 0) {
+    
+    if (obj_levelcontrol.leveltime &gt; 0)
+    &amp;&amp; (global.time == 0)
+        room_goto(rm_timeup);
+    else
+        room_goto(rm_levelstart);
+}
 </string>
           </argument>
         </arguments>

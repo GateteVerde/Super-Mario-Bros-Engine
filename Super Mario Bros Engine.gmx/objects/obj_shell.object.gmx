@@ -195,7 +195,7 @@ if (ready &gt; 0) {
             with (instance_create(x-5,y,obj_smoke)) {
             
                 sprite_index = spr_shellthump;
-                image_speed = 0.3;
+                image_speed = 0.5;
             }
         }
         
@@ -205,7 +205,7 @@ if (ready &gt; 0) {
             with (instance_create(x+5,y,obj_smoke)) {
             
                 sprite_index = spr_shellthump;
-                image_speed = 0.3;
+                image_speed = 0.5;
             }                    
         }
          

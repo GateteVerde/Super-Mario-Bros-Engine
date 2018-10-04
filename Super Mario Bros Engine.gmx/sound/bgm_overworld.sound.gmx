@@ -23,7 +23,7 @@
   <preload>-1</preload>
   <data>bgm_overworld.ogg</data>
   <compressed>1</compressed>
-  <streamed>1</streamed>
+  <streamed>0</streamed>
   <uncompressOnLoad>0</uncompressOnLoad>
   <audioGroup>0</audioGroup>
 </sound>

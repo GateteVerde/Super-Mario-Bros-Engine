@@ -34,11 +34,13 @@
 **      1: Right
 **      -1: Left
 **  length      = Length of the firebar (Not counting the middle one)
+**  createblock = Creates a empty block in position
 */
 
 //Default variables
 clockwise = 1;
 length = 5;
+createblock = true;
 
 //Distance
 dist = 8;
@@ -119,6 +121,10 @@ for (var i=0; i&lt;length; i++) {
     }
     dist += 8;
 }
+
+//Create a empty block
+if (createblock == true)
+    instance_create(xstart, ystart, obj_emptyblock);
 </string>
           </argument>
         </arguments>

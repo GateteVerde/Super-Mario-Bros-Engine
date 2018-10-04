@@ -34,11 +34,13 @@
 **      1: Right
 **      -1: Left
 **  length      = Length of the firebar (Not counting the middle one)
+**  createblock = Creates a empty block in position
 */
 
 //Default variables
 clockwise = 1;
 length = 5;
+createblock = true;
 
 //Distance
 dist = 8;

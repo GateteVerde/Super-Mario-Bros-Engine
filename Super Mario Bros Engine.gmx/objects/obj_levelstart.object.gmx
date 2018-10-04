@@ -67,7 +67,7 @@ switch (global.world) {
     case ("1-1"): {
     
         frame = noone;
-        preview = spr_hudpreview_lvl;
+        preview = spr_hud_ls_preview_lvl;
     } break;
 }
 </string>
@@ -142,15 +142,15 @@ draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 
 //Draw face frame
-draw_sprite(spr_hudface, global.player, view_xview[0]+(view_wview[0]/2)-31, view_yview[0]+80);
+draw_sprite(spr_hud_ls_face, global.player, view_xview[0]+(view_wview[0]/2)-31, view_yview[0]+80);
 
 //Draw current lives
 draw_text(view_xview[0]+view_wview[0]/2, view_yview[0]+88, '"' + string_format(lives, 3, 0));
 
 //Draw level preview
-draw_sprite(spr_hudpreview, 0, view_xview[0]+(view_wview[0]/2)-65, view_yview[0]+112);
+draw_sprite(spr_hud_ls_preview, 0, view_xview[0]+(view_wview[0]/2)-65, view_yview[0]+112);
 if (preview != noone)
-    draw_sprite(spr_hudpreview_lvl, anim, view_xview[0]+(view_wview[0]/2)-65, view_yview[0]+112);
+    draw_sprite(spr_hud_ls_preview_lvl, anim, view_xview[0]+(view_wview[0]/2)-65, view_yview[0]+112);
 </string>
           </argument>
         </arguments>

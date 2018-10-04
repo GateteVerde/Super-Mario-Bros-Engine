@@ -3,23 +3,24 @@
   <type>0</type>
   <xorig>0</xorig>
   <yorigin>0</yorigin>
-  <colkind>1</colkind>
+  <colkind>0</colkind>
   <coltolerance>0</coltolerance>
-  <sepmasks>0</sepmasks>
+  <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>129</bbox_right>
+  <bbox_right>38</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>81</bbox_bottom>
+  <bbox_bottom>15</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>130</width>
-  <height>82</height>
+  <width>39</width>
+  <height>16</height>
   <frames>
-    <frame index="0">images\spr_hudpreview_0.png</frame>
+    <frame index="0">images\spr_hud_tu_player_0.png</frame>
+    <frame index="1">images\spr_hud_tu_player_1.png</frame>
   </frames>
 </sprite>

@@ -30,6 +30,7 @@
     <sound>sound\snd_kick6</sound>
     <sound>sound\snd_kick7</sound>
     <sound>sound\snd_kick8</sound>
+    <sound>sound\snd_lava</sound>
     <sound>sound\snd_powerup</sound>
     <sound>sound\snd_skid</sound>
     <sound>sound\snd_sprout</sound>
@@ -134,6 +135,7 @@
       <sprite>sprites\spr_blooper</sprite>
       <sprite>sprites\spr_bulletbill</sprite>
       <sprite>sprites\spr_firebar</sprite>
+      <sprite>sprites\spr_lavabubble</sprite>
     </sprites>
     <sprites name="Items">
       <sprites name="Powerups">
@@ -166,6 +168,7 @@
       <sprite>sprites\spr_square_b</sprite>
       <sprite>sprites\spr_square_c</sprite>
       <sprite>sprites\spr_screenmask</sprite>
+      <sprite>sprites\spr_currentmask</sprite>
       <sprite>sprites\spr_blockmask</sprite>
     </sprites>
     <sprites name="Special">
@@ -184,8 +187,10 @@
           <sprite>sprites\spr_1uppts</sprite>
         </sprites>
         <sprite>sprites\spr_bubble</sprite>
+        <sprite>sprites\spr_cinder</sprite>
         <sprite>sprites\spr_fireball</sprite>
         <sprite>sprites\spr_fireball_hit</sprite>
+        <sprite>sprites\spr_lavasplash</sprite>
         <sprite>sprites\spr_shellthump</sprite>
         <sprite>sprites\spr_smoke</sprite>
         <sprite>sprites\spr_smoke_skid</sprite>
@@ -193,9 +198,15 @@
       </sprites>
       <sprites name="HUD">
         <sprites name="Level Start">
-          <sprite>sprites\spr_hudface</sprite>
-          <sprite>sprites\spr_hudpreview</sprite>
-          <sprite>sprites\spr_hudpreview_lvl</sprite>
+          <sprite>sprites\spr_hud_ls_face</sprite>
+          <sprite>sprites\spr_hud_ls_preview</sprite>
+          <sprite>sprites\spr_hud_ls_preview_lvl</sprite>
+        </sprites>
+        <sprites name="Time Up">
+          <sprite>sprites\spr_hud_tu_title</sprite>
+          <sprite>sprites\spr_hud_tu_player</sprite>
+          <sprite>sprites\spr_hud_tu_player2</sprite>
+          <sprite>sprites\spr_hud_tu_timeup</sprite>
         </sprites>
         <sprite>sprites\spr_hud</sprite>
         <sprite>sprites\spr_hudfont</sprite>
@@ -209,6 +220,7 @@
           <sprite>sprites\spr_marker_cheepcheep</sprite>
           <sprite>sprites\spr_marker_bulletbill</sprite>
         </sprites>
+        <sprite>sprites\spr_marker_lava</sprite>
         <sprite>sprites\spr_marker_platform</sprite>
       </sprites>
       <sprites name="Palettes">
@@ -246,10 +258,12 @@
       <backgrounds name="Gradients">
         <background>background\bgr_gradient_sky</background>
         <background>background\bgr_gradient_sky_pale</background>
+        <background>background\bgr_gradient_sky_sunset</background>
         <background>background\bgr_gradient_sky_night</background>
         <background>background\bgr_gradient_water</background>
       </backgrounds>
       <background>background\bgr_clouds</background>
+      <background>background\bgr_clouds_sunset</background>
       <background>background\bgr_mushrooms</background>
       <backgrounds name="Hills">
         <background>background\bgr_hills</background>
@@ -395,7 +409,6 @@
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_palette_swapper.shader</shader>
     <shader type="GLSLES">shaders\shd_pixel.shader</shader>
-    <shader type="GLSLES">shaders\shd_underwater.shader</shader>
   </shaders>
   <objects name="objects">
     <object>objects\obj_persistent</object>
@@ -416,7 +429,6 @@
       <object>objects\obj_qblock</object>
       <object>objects\obj_qblock_coins</object>
       <object>objects\obj_qblock_hidden</object>
-      <object>objects\obj_emptyblock</object>
       <object>objects\obj_brick</object>
     </objects>
     <objects name="Enemies">
@@ -442,6 +454,7 @@
       <object>objects\obj_bulletbill</object>
       <object>objects\obj_firebar</object>
       <object>objects\obj_firebar_fast</object>
+      <object>objects\obj_lavabubble</object>
     </objects>
     <objects name="Items">
       <objects name="Platforms">
@@ -455,6 +468,8 @@
       <object>objects\obj_coin</object>
       <object>objects\obj_trampoline</object>
       <object>objects\obj_trampoline_super</object>
+      <object>objects\obj_lava</object>
+      <object>objects\obj_current</object>
     </objects>
     <objects name="Special">
       <objects name="Parents">
@@ -483,6 +498,7 @@
           <object>objects\obj_player_dead</object>
         </objects>
         <objects name="Blocks">
+          <object>objects\obj_emptyblock</object>
           <object>objects\obj_shard</object>
           <object>objects\obj_blockcoin</object>
           <object>objects\obj_blockbumper</object>
@@ -526,13 +542,13 @@
             </objects>
             <object>objects\obj_bubble</object>
             <object>objects\obj_smoke</object>
-            <object>objects\obj_sparkle</object>
           </objects>
           <object>objects\obj_hud</object>
           <object>objects\obj_water_sf</object>
           <object>objects\obj_audio_loop_sound</object>
         </objects>
         <object>objects\obj_levelstart</object>
+        <object>objects\obj_timeup</object>
         <object>objects\obj_flag</object>
       </objects>
     </objects>
@@ -545,6 +561,7 @@
     <room>rooms\rm_load</room>
     <rooms name="Levels">
       <room>rooms\rm_levelstart</room>
+      <room>rooms\rm_timeup</room>
       <rooms name="World 1">
         <room>rooms\rm_enginetest</room>
       </rooms>
