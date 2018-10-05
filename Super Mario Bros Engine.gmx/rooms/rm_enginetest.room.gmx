@@ -3,7 +3,7 @@
   <caption></caption>
   <width>3376</width>
   <height>224</height>
-  <vsnap>8</vsnap>
+  <vsnap>16</vsnap>
   <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
@@ -31,9 +31,9 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="bgr_gradient_water" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="-1" foreground="0" name="bgr_underwater" x="0" y="32" htiled="-1" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="bgr_gradient_sky_sunset" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="bgr_clouds_sunset" x="0" y="80" htiled="-1" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="bgr_mushrooms" x="0" y="32" htiled="-1" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -165,9 +165,6 @@
     <instance objName="obj_goomba" x="2816" y="192" name="inst_583CE450" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_koopa" x="1720" y="192" name="inst_9C0CAA74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_qblock" x="352" y="80" name="inst_AC758862" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_current" x="1120" y="0" name="inst_70A7214C" locked="0" code="" scaleX="1.5" scaleY="20" colour="4294967295" rotation="0"/>
-    <instance objName="obj_current" x="1400" y="0" name="inst_019818BB" locked="0" code="" scaleX="2.5" scaleY="20" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water" x="0" y="32" name="inst_5AC7E79B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="3232" y="128" w="96" h="80" xo="32" yo="0" id="10001352" name="inst_380A84EA" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

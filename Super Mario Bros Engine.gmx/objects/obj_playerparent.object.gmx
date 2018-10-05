@@ -696,11 +696,14 @@ if (inwall == false)
         //Play 'Swim' sound
         audio_play_sound(snd_swim, 0, false);
     
-        //Swim  up
-        vspeed -= 1.5;
-            
         //Force 'Jump' state
         state = cs_jump;
+        
+        //If the player is on contact with a current object
+        if (collision_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_current,0,0))
+            vspeed = -2.5;
+        else
+            vspeed -= 1.5;
     }
     
     //If the player presses the 'Right' key and the 'Left' key is not held.
@@ -1303,7 +1306,11 @@ y--;
 state = cs_jump;
 
 //Prevent variable jumping
-jumping = 2;
+if (global.smb2jmode == 1)
+&amp;&amp; (keyboard_check(vk_shift))
+    jumping = 1;
+else
+    jumping = 2;
 </string>
           </argument>
         </arguments>

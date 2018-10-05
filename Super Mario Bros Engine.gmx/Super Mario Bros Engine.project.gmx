@@ -468,8 +468,8 @@
       <object>objects\obj_coin</object>
       <object>objects\obj_trampoline</object>
       <object>objects\obj_trampoline_super</object>
-      <object>objects\obj_lava</object>
       <object>objects\obj_current</object>
+      <object>objects\obj_lava</object>
     </objects>
     <objects name="Special">
       <objects name="Parents">
@@ -541,6 +541,7 @@
               <object>objects\obj_score</object>
             </objects>
             <object>objects\obj_bubble</object>
+            <object>objects\obj_bubble_current</object>
             <object>objects\obj_smoke</object>
           </objects>
           <object>objects\obj_hud</object>

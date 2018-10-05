@@ -52,6 +52,10 @@ alarm[1] = 200;
 
 //Reset powerup
 global.powerup = cs_small;
+
+//Change to luigi if required
+if (global.player == 1)
+    sprite_index = spr_luigi_dead;
 </string>
           </argument>
         </arguments>

@@ -202,7 +202,7 @@ else if (crouch == false) {
             
             //If not moving up
             if (vspeed &lt; 0)
-                image_speed = 0.15;
+                image_speed = 0.2;
             
             //Otherwise, if not moving up
             else {
