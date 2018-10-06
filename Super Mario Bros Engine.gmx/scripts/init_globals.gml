@@ -9,10 +9,10 @@
 */
 
 //SMB2J Mode (If activated, this enables custom physics for Luigi.)
-global.smb2jmode = true;
+global.smb2jmode = false;
 
 //Hard mode (If activated, goombas turn into buzzy beetles.
-global.hardmode = true;
+global.hardmode = false;
 
 //Current player (0: Mario, 1: Luigi)
 global.player = 1;

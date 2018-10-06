@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///An heroic death!
 
-//Play 'Miss' sound
-audio_play_sound(bgm_miss, 0, false);
+//Play 'Player Down' sound
+audio_play_sound(bgm_playerdown, 0, false);
 
 //Stop 'Invincible' bgm
 audio_stop_sound(bgm_invincible);

@@ -117,10 +117,10 @@ if (instance_exists(obj_levelcontrol)) {
             
     }
     else
-        draw_text(view_xview[0]+208, view_yview[0]+24, string("---"));
+        draw_text(view_xview[0]+208, view_yview[0]+24, string("000"));
 }
 else
-    draw_text(view_xview[0]+208, view_yview[0]+24, string("---"));
+    draw_text(view_xview[0]+208, view_yview[0]+24, string("000"));
 </string>
           </argument>
         </arguments>

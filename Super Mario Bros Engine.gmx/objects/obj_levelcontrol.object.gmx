@@ -222,11 +222,15 @@ audio_stop_sound(global._music[levelmusic]);
             <kind>1</kind>
             <string>///Loop given theme
 
+//Check if the following variable exists
+if (variable_global_exists(global._sr[levelmusic]))
+    sr = global._sr[levelmusic];
+
 //If music is not disabled
 if (musicdisable == false) {
 
     if (!audio_is_playing(global._music[levelmusic]))
-        audio_loop_sound(global._music[levelmusic], global._st[levelmusic], global._en[levelmusic], 44100, 1);
+        audio_loop_sound(global._music[levelmusic], global._st[levelmusic], global._en[levelmusic], 48000, 1);
 }
 </string>
           </argument>
@@ -260,7 +264,7 @@ if (leveltime &gt; 0) {
         //Speed up level music
         audio_sound_pitch(global._music[levelmusic],1.3);
         
-        //Speed up starman music
+        //Speed up 'Invincible' music
         audio_sound_pitch(bgm_invincible, 1.3);
     }
     else {
@@ -268,7 +272,7 @@ if (leveltime &gt; 0) {
         //Set normal pitch
         audio_sound_pitch(global._music[levelmusic],1);
                 
-        //Speed up starman music
+        //Speed up 'Invincible' music
         audio_sound_pitch(bgm_invincible, 1);        
     }
 }
@@ -277,7 +281,7 @@ else {
     //Set normal pitch
     audio_sound_pitch(global._music[levelmusic],1);
         
-    //Speed up starman music
+    //Speed up 'Invincible' music
     audio_sound_pitch(bgm_invincible, 1);    
 }
 </string>
@@ -315,12 +319,24 @@ if (instance_exists(obj_playerparent)) {
         playerx = max(playerx, obj_playerparent.x-pos);
         
         //Update pos
-        if (obj_playerparent.hspeed &gt; 0) 
+        if (obj_playerparent.x &gt; x-xprevious) 
         &amp;&amp; (obj_playerparent.x &gt; view_wview div 2 - 48) {
         
-            pos += abs(obj_playerparent.hspeed)/2;
-            if (pos &gt; 32)
-                pos = 32;
+            //If the player is moving to the right
+            if (obj_playerparent.hspeed &gt; 0) {
+            
+                pos += abs(obj_playerparent.hspeed)/2;
+                if (pos &gt; 32)
+                    pos = 32;
+            }
+            
+            //Otherwise
+            else {
+            
+                pos += 0.5;
+                if (pos &gt; 32)
+                    pos = 32;
+            }
         }
         
         //Reset pos
@@ -342,6 +358,9 @@ if (instance_exists(obj_playerparent)) {
     if (view_xview[view_current] &gt; room_width-global.gw)
         view_xview[view_current] = room_width-global.gw;
 }
+
+//Round position variables
+view_xview[view_current] = round(view_xview[view_current]);
 
 //Update parallax background position
 for (var i=0; i&lt;8; i++) {

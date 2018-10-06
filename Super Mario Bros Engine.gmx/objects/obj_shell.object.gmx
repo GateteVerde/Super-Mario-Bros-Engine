@@ -294,7 +294,7 @@ else if (ready == 0) {
         with (instance_create(x,y,obj_smoke)) {
         
             sprite_index = spr_shellthump;
-            image_speed = 0.3;
+            image_speed = 0.5;
         }
         
         //Get points
