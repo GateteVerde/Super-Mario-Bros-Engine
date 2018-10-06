@@ -45,7 +45,7 @@ vulnerable = 0;
 stomp = 0;
 
 //How many points should the enemy give when killed with an item
-handicap = 2;
+handicap = 4;
 handicap_stomp = 4;
 
 //Palette
@@ -341,13 +341,9 @@ if (x &gt; view_xview[0]+view_wview[0]+32)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Custom blooper kill event
+            <string>///Perform stomp kill event
 
-//Inherit event
-event_inherited();
-
-//Set motion
-imdead.hspeed = 0;
+event_user(1);
 </string>
           </argument>
         </arguments>

@@ -201,6 +201,7 @@
         <sprite>sprites\spr_fireball_hit</sprite>
         <sprite>sprites\spr_lavasplash</sprite>
         <sprite>sprites\spr_leaf</sprite>
+        <sprite>sprites\spr_rain</sprite>
         <sprite>sprites\spr_shellthump</sprite>
         <sprite>sprites\spr_smoke</sprite>
         <sprite>sprites\spr_smoke_skid</sprite>
@@ -425,8 +426,13 @@
     <object>objects\obj_persistent</object>
     <objects name="Main">
       <objects name="Controllers">
-        <object>objects\obj_water</object>
-        <object>objects\obj_wind</object>
+        <objects name="Gameplay">
+          <objects name="Weather">
+            <object>objects\obj_rainmaker</object>
+            <object>objects\obj_windmaker</object>
+          </objects>
+          <object>objects\obj_water</object>
+        </objects>
         <object>objects\obj_bganimator</object>
         <object>objects\obj_levelcontrol</object>
         <object>objects\obj_levelcontrol_tiles</object>
@@ -555,6 +561,7 @@
             <object>objects\obj_bubble</object>
             <object>objects\obj_leaf</object>
             <object>objects\obj_bubble_current</object>
+            <object>objects\obj_rain</object>
             <object>objects\obj_smoke</object>
           </objects>
           <object>objects\obj_hud</object>

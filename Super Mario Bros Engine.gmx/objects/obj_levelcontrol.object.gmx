@@ -222,15 +222,20 @@ audio_stop_sound(global._music[levelmusic]);
             <kind>1</kind>
             <string>///Loop given theme
 
-//Check if the following variable exists
-if (variable_global_exists(global._sr[levelmusic]))
-    sr = global._sr[levelmusic];
-
 //If music is not disabled
 if (musicdisable == false) {
 
-    if (!audio_is_playing(global._music[levelmusic]))
-        audio_loop_sound(global._music[levelmusic], global._st[levelmusic], global._en[levelmusic], 48000, 1);
+    if (!audio_is_playing(global._music[levelmusic])) {
+    
+        //Set the sample rate for the selected song
+        if (variable_global_exists(global._sr[levelmusic]))
+            sr = global._sr[levelmusic];
+        else
+            sr = 48000;
+        
+        //Loop the given sound
+        audio_loop_sound(global._music[levelmusic], global._st[levelmusic], global._en[levelmusic], sr, 1);
+    }
 }
 </string>
           </argument>
@@ -368,12 +373,12 @@ for (var i=0; i&lt;8; i++) {
     xx[i] = view_xview/(1.2+(0.4*i));
 }
 
-//Deactivate instances outside the view
+//Deactivate enemies outside the view
 instance_deactivate_object(obj_deactenemyparent);
 instance_deactivate_object(obj_deactivateparent);
 
-//Activate deactivated instances inside the view
-instance_activate_region(view_xview[view_current]-64,view_yview[view_current]-32,view_wview[view_current]+64,view_hview[view_current]+32,true);
+//Activate deactivated instances inside the activation region
+instance_activate_region(view_xview[view_current] - 64, view_yview - 32, view_wview[view_current] + 128, view_hview[view_current] + 64, true);
 </string>
           </argument>
         </arguments>

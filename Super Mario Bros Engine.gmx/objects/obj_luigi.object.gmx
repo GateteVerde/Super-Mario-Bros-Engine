@@ -106,7 +106,7 @@ else
 
 //Reset firing state
 if (firing &gt; 0)
-&amp;&amp; (state != cs_idle)
+&amp;&amp; (state &gt; cs_walk)
     firing = 0;
     
 //If Luigi is crouched down
@@ -133,69 +133,70 @@ if (crouch == true) {
 //Otherwise if Luigi is not crouched down
 else if (crouch == false) {
 
-    //If Luigi is idling
-    if (state == cs_idle) {
-    
-        //If Luigi has the fire powerup and he's shooting a fireball
-        if (global.powerup = cs_fire) 
-        &amp;&amp; (firing &gt; 0) {
+    //If Luigi has the fire powerup and he is shooting a fireball
+    if (global.powerup == cs_fire)
+    &amp;&amp; (firing &gt; 0) {
+
+        //Set 'Pose' sprite
+        sprite_index = scr_luigi_pose();
         
-            //Set 'Pose' sprite
-            sprite_index = scr_luigi_pose();
-            
-            //Decrement firing
-            firing--;
-            
-            //Do not animate
-            image_speed = 0;
-            image_index = 4;
-        }
+        //Decrement firing
+        firing--;
         
-        //Otherwise, set default sprite
-        else {
-        
-            //Set 'Walk' sprite
-            sprite_index = scr_luigi_walk();
-            
-            //Do not animate
-            image_speed = 0;
-            image_index = 0;
-        }
+        //Do not animate
+        image_speed = 0;
+        image_index = 4;        
     }
     
-    //Otherwise, if Luigi is walking
-    else if (state == cs_walk) {
-    
-        //Check first the facing direction of Luigi and it's facing direction and set a 'Skid' pose if so
-        if (((hspeed &gt; 0.1) &amp;&amp; (xscale == -1))
-        || ((hspeed &lt; -0.1) &amp;&amp; (xscale == 1)))
-        &amp;&amp; (swimming == false) {
-        
-            //Set 'Skid' sprite
-            sprite_index = scr_luigi_skid();
+    //Otherwise, perform regular animation
+    else {
+
+        //If Luigi is idling
+        if (state == cs_idle) {
             
-            //Do not animate
-            image_speed = 0;
-            image_index = 0;
-            
-            //Play 'Skid' sound
-            if (!audio_is_playing(snd_skid))
-                audio_play_sound(snd_skid, 0, true);
+                //Set 'Walk' sprite
+                sprite_index = scr_luigi_walk();
+                
+                //Do not animate
+                image_speed = 0;
+                image_index = 0;
         }
         
-        //Otherwise set the 'Walk' pose
-        else {
+        //Otherwise, if Luigi is walking
+        else if (state == cs_walk) {
         
-            //Set 'Walk' pose
-            sprite_index = scr_luigi_walk();
+            //Check first the facing direction of Luigi and it's facing direction and set a 'Skid' pose if so
+            if (((hspeed &gt; 0.1) &amp;&amp; (xscale == -1))
+            || ((hspeed &lt; -0.1) &amp;&amp; (xscale == 1)))
+            &amp;&amp; (swimming == false) {
             
-            //Set the animation speed
-            image_speed = 0.065+abs(hspeed)/7.5;
+                //Set 'Skid' sprite
+                sprite_index = scr_luigi_skid();
+                
+                //Do not animate
+                image_speed = 0;
+                image_index = 0;
+                
+                //Play 'Skid' sound
+                if (!audio_is_playing(snd_skid))
+                    audio_play_sound(snd_skid, 0, true);
+            }
+            
+            //Otherwise set the 'Walk' pose
+            else {
+            
+                //Set 'Walk' pose
+                sprite_index = scr_luigi_walk();
+                
+                //Set the animation speed
+                image_speed = 0.065+abs(hspeed)/7.5;
+            }
         }
     }
     
     //Otherwise, if Luigi is jumping or falling
-    else if ((state == cs_jump) || (statedelay &gt; 0)) {
+    if (statedelay &gt; 0) 
+    || (state == cs_jump) {
     
         //If Luigi is swimming
         if (swimming == true) {

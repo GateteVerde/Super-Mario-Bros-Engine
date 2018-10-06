@@ -103,7 +103,7 @@ else
 
 //Reset firing state
 if (firing &gt; 0)
-&amp;&amp; (state != cs_idle)
+&amp;&amp; (state &gt; cs_walk)
     firing = 0;
     
 //If Mario is crouched down
@@ -130,26 +130,26 @@ if (crouch == true) {
 //Otherwise if Mario is not crouched down
 else if (crouch == false) {
 
-    //If Mario is idling
-    if (state == cs_idle) {
+    //If Mario has the fire powerup and he is shooting a fireball
+    if (global.powerup == cs_fire)
+    &amp;&amp; (firing &gt; 0) {
+
+        //Set 'Pose' sprite
+        sprite_index = scr_mario_pose();
+        
+        //Decrement firing
+        firing--;
+        
+        //Do not animate
+        image_speed = 0;
+        image_index = 4;        
+    }
     
-        //If Mario has the fire powerup and he's shooting a fireball
-        if (global.powerup = cs_fire) 
-        &amp;&amp; (firing &gt; 0) {
-        
-            //Set 'Pose' sprite
-            sprite_index = scr_mario_pose();
-            
-            //Decrement firing
-            firing--;
-            
-            //Do not animate
-            image_speed = 0;
-            image_index = 4;
-        }
-        
-        //Otherwise, set default sprite
-        else {
+    //Otherwise, perform regular animation
+    else {
+
+        //If Mario is idling
+        if (state == cs_idle) {
         
             //Set 'Walk' sprite
             sprite_index = scr_mario_walk();
@@ -158,41 +158,42 @@ else if (crouch == false) {
             image_speed = 0;
             image_index = 0;
         }
-    }
-    
-    //Otherwise, if Mario is walking
-    else if (state == cs_walk) {
-    
-        //Check first the facing direction of Mario and it's facing direction and set a 'Skid' pose if so
-        if (((hspeed &gt; 0.1) &amp;&amp; (xscale == -1))
-        || ((hspeed &lt; -0.1) &amp;&amp; (xscale == 1)))
-        &amp;&amp; (swimming == false) {
         
-            //Set 'Skid' sprite
-            sprite_index = scr_mario_skid();
-            
-            //Do not animate
-            image_speed = 0;
-            image_index = 0;
-            
-            //Play 'Skid' sound
-            if (!audio_is_playing(snd_skid))
-                audio_play_sound(snd_skid, 0, true);
-        }
+        //Otherwise, if Mario is walking
+        else if (state == cs_walk) {
         
-        //Otherwise set the 'Walk' pose
-        else {
-        
-            //Set 'Walk' pose
-            sprite_index = scr_mario_walk();
+            //Check first the facing direction of Mario and it's facing direction and set a 'Skid' pose if so
+            if (((hspeed &gt; 0.1) &amp;&amp; (xscale == -1))
+            || ((hspeed &lt; -0.1) &amp;&amp; (xscale == 1)))
+            &amp;&amp; (swimming == false) {
             
-            //Set the animation speed
-            image_speed = 0.065+abs(hspeed)/7.5;
+                //Set 'Skid' sprite
+                sprite_index = scr_mario_skid();
+                
+                //Do not animate
+                image_speed = 0;
+                image_index = 0;
+                
+                //Play 'Skid' sound
+                if (!audio_is_playing(snd_skid))
+                    audio_play_sound(snd_skid, 0, true);
+            }
+            
+            //Otherwise set the 'Walk' pose
+            else {
+            
+                //Set 'Walk' pose
+                sprite_index = scr_mario_walk();
+                
+                //Set the animation speed
+                image_speed = 0.065+abs(hspeed)/7.5;
+            }
         }
     }
     
     //Otherwise, if Mario is jumping or falling
-    else if ((state == cs_jump) || (statedelay &gt; 0)) {
+    if (statedelay &gt; 0) 
+    || (state == cs_jump) {
     
         //If Mario is swimming
         if (swimming == true) {
