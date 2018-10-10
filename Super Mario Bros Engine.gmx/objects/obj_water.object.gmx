@@ -34,7 +34,7 @@ image_speed = 0.2;
 anim = 0;
 
 //Create surface
-instance_create(0,0,obj_water_sf);
+instance_create(x,y+8,obj_water_sf);
 
 //Create swimming collision
 water = instance_create(x,y+8,obj_swim);

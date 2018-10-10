@@ -91,6 +91,13 @@ instance_destroy();
             <kind>1</kind>
             <string>///Stay in view
 
+//Update position
+if (_xx &lt; 0)
+    _xx++;
+else if (_xx &gt; 256)
+    _xx--;
+
+//Stay in the view
 x = view_xview[0];
 if (y &lt; view_yview[0]+40)
     y = view_yview[0]+40;

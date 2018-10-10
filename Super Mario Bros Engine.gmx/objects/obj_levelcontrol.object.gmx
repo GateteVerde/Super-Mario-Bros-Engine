@@ -224,18 +224,10 @@ audio_stop_sound(global._music[levelmusic]);
 
 //If music is not disabled
 if (musicdisable == false) {
-
-    if (!audio_is_playing(global._music[levelmusic])) {
-    
-        //Set the sample rate for the selected song
-        if (variable_global_exists(global._sr[levelmusic]))
-            sr = global._sr[levelmusic];
-        else
-            sr = 48000;
         
-        //Loop the given sound
-        audio_loop_sound(global._music[levelmusic], global._st[levelmusic], global._en[levelmusic], sr, 1);
-    }
+    //If the music is not playing
+    if (!audio_is_playing(global._music[levelmusic]))
+        audio_loop_sound(global._music[levelmusic], global._st[levelmusic], global._en[levelmusic], 48000, 1);
 }
 </string>
           </argument>
@@ -498,7 +490,8 @@ for (var i=0; i&lt;8; i++) {
 }
 
 //Draw pit
-draw_background_ext(bgr_pit, 0, room_height-16, room_width/16, 1, 0, c_white, 0.5);
+if (!instance_exists(obj_water_sf))
+    draw_background_ext(bgr_pit, 0, room_height-16, room_width/16, 1, 0, c_white, 0.5);
 </string>
           </argument>
         </arguments>
