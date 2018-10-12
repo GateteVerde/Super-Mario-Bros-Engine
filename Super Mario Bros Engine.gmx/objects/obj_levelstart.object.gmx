@@ -94,11 +94,19 @@ switch (global.world) {
             <kind>1</kind>
             <string>///Go to the current level
 
-//If the player is playing
-switch (global.world) {
+//If a checkpoint has been touched, go to the given checkpoint
+if (global.checkpoint != noone)
+    room_goto(global.checkpointroom);
 
-    //World 1-1
-    case ("1-1"): room_goto(rm_enginetest); break;
+//Otherwise
+else {
+
+    //If the player is playing
+    switch (global.world) {
+    
+        //World 1-1
+        case ("1-1"): room_goto(rm_enginetest); break;
+    }
 }
 </string>
           </argument>

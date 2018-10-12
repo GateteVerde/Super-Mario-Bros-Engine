@@ -38,3 +38,8 @@ global._music[103] = bgm_castle;
 global._music[104] = bgm_swimming;
 global._st[104] = 200704;
 global._en[104] = 1505175;
+
+//Bonus
+global._music[105] = bgm_bonus;
+global._st[105] = 114688;
+global._en[105] = 692927;

@@ -37,9 +37,15 @@ alarm[0] = 2;
 //The music can play?
 musicdisable = 0;
 
+//Object being followed
+follow = noone;
+
 //Barrier
 barrier = true;
 alarm[5] = 3;
+
+//Destroy enemies in sight
+alarm[6] = 2;
 
 //Create HUD
 instance_create(0,0,obj_hud);
@@ -54,6 +60,31 @@ if (!instance_exists(obj_playerparent))
     playerx = noone;
 else
     playerx = obj_playerparent.x;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Remove nearby NPCs
+
+instance_create(view_xview+view_wview/2, view_yview, obj_nonpc);
 </string>
           </argument>
         </arguments>
@@ -157,7 +188,8 @@ audio_play_sound(snd_hurry, 0, false);
             <string>///Decrement time
 
 //If there's still time left
-if (global.time &gt; 0) {
+if (instance_exists(obj_playerparent)) 
+&amp;&amp; (global.time &gt; 0) {
 
     //Decrement it by 1
     global.time--;
@@ -173,6 +205,8 @@ if (global.time &gt; 0) {
     else if (global.time == 1)
         alarm[4] = 25;
 }
+else
+    alarm[2] = 1;
 </string>
           </argument>
         </arguments>
@@ -322,20 +356,20 @@ if (follow != noone)
         //Update pos
         if ((follow.hspeed &gt;= 0) 
         &amp;&amp; (follow.x &gt; x-xprevious))
-        &amp;&amp; (follow.x &gt; view_wview div 2 - 32) { //48
+        &amp;&amp; (follow.x &gt; view_wview div 2 - 48) {
         
             //Update only if the player is moving right or it's at the right
             if (follow.hspeed &gt; 0)
             || (follow.x &gt; x-xprevious) {
                 
                 pos += abs(follow.hspeed)/2;
-                if (pos &gt; 56) //40
+                if (pos &gt; 56)
                     pos = 56;
             }
         }
         
         //Reset pos
-        if (follow.x &lt; view_xview[view_current]+48) //80
+        if (follow.x &lt; view_xview[view_current]+64)
         &amp;&amp; (pos &gt; 0) {
         
             leftedge -= pos;
@@ -381,6 +415,32 @@ instance_activate_region(view_xview[view_current] - 32, view_yview - 32, view_wv
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="12">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy player objects
+
+with (obj_player) instance_destroy();
+with (obj_player_warp) instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="11">
       <action>
         <libid>1</libid>
@@ -405,7 +465,7 @@ if (instance_exists(obj_playerparent))
     follow = obj_playerparent;
 
 //Otherwise, if the player is warping through a pipe
-else if (instance_exists(obj_player_warp))
+else if (instance_exists(obj_player_warp)) 
     follow = obj_player_warp;
     
 //Otherwise, do not follow anyone
@@ -436,26 +496,55 @@ else
             <string>///Prevent the player from going outside the view
 
 //If the player is at the leftmost boundary
-if (obj_playerparent.x &lt; view_xview[0] + 8) {
+if (follow.x &lt; view_xview[0] + 8) {
 
     //Snap the player 5 pixels at the left of the boundary
-    obj_playerparent.x = view_xview[0] + 8;
+    follow.x = view_xview[0] + 8;
     
     //Stop the player's horizontal movement
-    if (obj_playerparent.hspeed &lt; 0)
-        obj_playerparent.hspeed = 0;
+    if (follow.hspeed &lt; 0)
+        follow.hspeed = 0;
 }
 
 //Otherwise, if the player is at the rightmost boundary
-else if (obj_playerparent.x &gt; view_xview[0] + view_wview[0] - 8) {
+else if (follow.x &gt; view_xview[0] + view_wview[0] - 8) {
 
     //Snap the player 5 pixels at the left of the boundary
-    obj_playerparent.x = view_xview[0] + view_wview[0] - 8;
+    follow.x = view_xview[0] + view_wview[0] - 8;
     
     //Stop the player's horizontal movement
-    if (obj_playerparent.hspeed &gt; 0)
-        obj_playerparent.hspeed = 0;
+    if (follow.hspeed &gt; 0)
+        follow.hspeed = 0;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reset skin and stop music
+
+//Reset skin
+global.skin = 0;
+
+//Stop music
+audio_stop_all();
 </string>
           </argument>
         </arguments>
@@ -493,6 +582,48 @@ if (leveltime &gt; 0) { //If the timer has been set.
     //Otherwise, if the time has been set before.
     else if (global.time &gt; 0)    
         alarm[2] = 60;
+}
+
+//If the player came from another room
+if (global.postchange != -1) {
+
+    //Destroy player objects
+    event_user(2);
+
+    //Main
+    if (global.postchange == 0)    
+        scr_player_retrieve(global.postx, global.posty);
+    
+    //Warp
+    else if (global.postchange == 1) {
+    
+        with (instance_create(global.postx, global.posty, obj_player_warp)) {
+        
+            //Stop it
+            speed = 0;
+            delay = 1;
+            
+            //Start moving
+            alarm[2] = 54;
+        }
+    }
+    
+    //Reset post change
+    global.postchange = -1;
+}
+
+//Otherwise, move to the next
+else {
+
+    //Move to the latest checkpoint if it exists.
+    if (instance_exists(global.checkpoint)) {
+    
+        //Destroy all player objects
+        event_user(2);
+        
+        //Create a player object right in position
+        scr_player_retrieve(global.checkpoint.x, global.checkpoint.y);
+    }
 }
 
 //Parallax backgrounds

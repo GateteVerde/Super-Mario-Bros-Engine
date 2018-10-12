@@ -15,7 +15,7 @@ global.smb2jmode = false;
 global.hardmode = false;
 
 //Current player (0: Mario, 1: Luigi)
-global.player = 1;
+global.player = 0;
 
 //Current World (Must be in brackets)
 global.world = "1-1";
@@ -40,3 +40,12 @@ global.powerup = cs_small;
 
 //Hidden 1-UP Blocks data storage
 global.hidden = ds_map_create();
+
+//Checkpoint variable
+global.checkpoint = noone;
+global.checkpointroom = noone;
+
+//Warp variables
+global.postchange = -1;
+global.postx = 0;
+global.posty = 0;

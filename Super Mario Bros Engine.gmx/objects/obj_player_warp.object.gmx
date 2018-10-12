@@ -6,7 +6,7 @@
   <depth>-5</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_mask_warp</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -38,12 +38,65 @@ depth = 10;
 ready = 0;
 alarm[0] = 10;
 
-//Default speed
-speed = 0.5;
+//Delay movement
+delay = 0;
+
+//Facing direction
+xscale = 1;
 
 //Is the player invincible?
 isflashing = 0;
 alarm[4] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Disable pixel fade
+
+with (obj_persistent) tr_pixel = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Allow movement
+
+delay = 0;
 </string>
           </argument>
         </arguments>
@@ -182,35 +235,93 @@ else {
 //Update boundary and facing direction
 event_user(1);
 
-//Make the player move slower/faster.
-if (collision_point(x-8,y+boundary,obj_solid,0,0))
-&amp;&amp; (collision_point(x+7,y+boundary,obj_solid,0,0))
-&amp;&amp; (collision_point(x-8,bbox_bottom,obj_solid,0,0))
-&amp;&amp; (collision_point(x+7,bbox_bottom,obj_solid,0,0)) {
+//If the movement is not delayed
+if (delay == 0) {
 
-    speed = 3;
-    visible = false;
-}
-else {
-
-    //Play a sound if the player is about to exit a pipe.
-    if (speed == 3)
-        audio_play_sound(snd_warp, 0, false);
+    //Make the player move slower/faster.
+    if (collision_point(x-8,y+boundary,obj_solid,0,0))
+    &amp;&amp; (collision_point(x+7,y+boundary,obj_solid,0,0))
+    &amp;&amp; (collision_point(x-8,bbox_bottom,obj_solid,0,0))
+    &amp;&amp; (collision_point(x+7,bbox_bottom,obj_solid,0,0))    
+        speed = 3;
     
-    //Make it visible
-    visible = true;
-
-    //Set the speed of the player
-    if (direction == 90)
-        speed = 1;
-    else
-        speed = 0.5;
+    else {
+    
+        //Play a sound if the player is about to exit a pipe.
+        if (speed == 3) {
+        
+            audio_play_sound(snd_warp, 0, false);
+        }
+    
+        //Set the speed of the player
+        if (direction == 90)
+            speed = 1;
+        else
+            speed = 0.5;
+    }
+    
+    //Make the player exit the pipe.
+    if (ready)
+    &amp;&amp; (!collision_rectangle(x-8,y+boundary,x+7,bbox_bottom,obj_solid,0,0))
+        event_user(0);
 }
 
-//Make the player exit the pipe.
-if (ready)
-&amp;&amp; (!collision_rectangle(x-8,y+boundary,x+7,bbox_bottom,obj_solid,0,0))
-    event_user(0);
+//Make invisible if moving horizontally
+if (direction == 0) || (direction == 180) {
+
+    if (speed == 3)
+        visible = 0;
+    else
+        visible = 1;
+}
+else
+    visible = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_warproom">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Warp to the given destination room
+
+//Set pixel fade mode
+with (obj_persistent) tr_pixel = 1;
+
+//With the warp object.
+with (other) {
+
+    //If the position needs to be changed in the new room.
+    if (postchange != -1) {
+    
+        //Remember the spawn type
+        global.postchange = postchange;
+        
+        //Remember the x spawn position.
+        global.postx = postx+16;
+        
+        //Remember the y spawn position.
+        global.posty = posty+16;
+    }
+    
+    //Go to the destination room
+    room_goto(myroom);
+}
 </string>
           </argument>
         </arguments>

@@ -127,7 +127,7 @@
     <instance objName="obj_solid" x="2512" y="176" name="inst_0C49006F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2528" y="192" name="inst_BADB51F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2544" y="208" name="inst_F9CED19B" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_solid" x="2608" y="176" name="inst_14C20F76" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_solid" x="2608" y="176" name="inst_14C20F76" locked="0" code="" scaleX="2" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2640" y="208" name="inst_47EDCD02" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2864" y="176" name="inst_CB2A4DB5" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2896" y="192" name="inst_A8B58083" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -164,7 +164,11 @@
     <instance objName="obj_goomba" x="2816" y="192" name="inst_583CE450" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_koopa" x="1720" y="192" name="inst_9C0CAA74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_qblock" x="352" y="80" name="inst_AC758862" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player_start" x="40" y="192" name="inst_315BD38F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="40" y="192" name="inst_C04483DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_up" x="2640" y="256" name="inst_89E76908" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_warptop" x="912" y="144" name="inst_5A76D3BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_warproom" x="928" y="192" name="inst_7233345A" locked="0" code="myroom = rm_enginetest2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_checkpoint" x="1328" y="192" name="inst_E6935508" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="3232" y="128" w="96" h="80" xo="32" yo="0" id="10001352" name="inst_380A84EA" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
