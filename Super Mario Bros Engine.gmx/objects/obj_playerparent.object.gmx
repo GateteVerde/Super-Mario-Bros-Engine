@@ -1178,21 +1178,28 @@ if (state != cs_jump) {
 //If the player is jumping
 if (statedelay &gt; 0)
 || (state == cs_jump) {
+
+    //If the player is not jumping, descend slowly
+    if (jumping == 0)
+    &amp;&amp; (statedelay &lt; 4)
+        gravity = grav_alt/8;
     
-    //Variable jumping
-    if (vspeed &lt; -2) 
-    &amp;&amp; (jumping == 1)
-        gravity = grav_alt;
-    
-    //Otherwise, use default gravity.     
     else {
+        //Variable jumping
+        if (vspeed &lt; -2) 
+        &amp;&amp; (jumping == 1)
+            gravity = grav_alt;
         
-        //Use default gravity
-        gravity = grav;
-                
-        //End variable jumping if it never ends manually.
-        if (jumping = 1)
-            jumping = 2;
+        //Otherwise, use default gravity.     
+        else {
+            
+            //Use default gravity
+            gravity = grav;
+                    
+            //End variable jumping if it never ends manually.
+            if (jumping = 1)
+                jumping = 2;
+        }
     }
 }
 

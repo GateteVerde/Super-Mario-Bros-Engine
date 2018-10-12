@@ -231,6 +231,15 @@
           <sprite>sprites\spr_marker_cheepcheep</sprite>
           <sprite>sprites\spr_marker_bulletbill</sprite>
         </sprites>
+        <sprites name="Pipes">
+          <sprites name="Entrances">
+            <sprite>sprites\spr_marker_pipe_up</sprite>
+            <sprite>sprites\spr_marker_pipe_down</sprite>
+            <sprite>sprites\spr_marker_pipe_left</sprite>
+            <sprite>sprites\spr_marker_pipe_right</sprite>
+          </sprites>
+          <sprite>sprites\spr_marker_warp</sprite>
+        </sprites>
         <sprite>sprites\spr_marker_lava</sprite>
         <sprite>sprites\spr_marker_wind</sprite>
         <sprite>sprites\spr_marker_platform</sprite>
@@ -375,6 +384,7 @@
           <script>scripts\scr_physics_luigi.gml</script>
         </scripts>
         <script>scripts\scr_player_create.gml</script>
+        <script>scripts\scr_player_retrieve.gml</script>
       </scripts>
       <scripts name="NPCs">
         <script>scripts\scr_freeze.gml</script>
@@ -438,6 +448,7 @@
         <object>objects\obj_levelcontrol_tiles</object>
       </objects>
       <object>objects\obj_player_start</object>
+      <object>objects\obj_player_warp</object>
       <object>objects\obj_flagpole</object>
     </objects>
     <object>objects\obj_solid</object>

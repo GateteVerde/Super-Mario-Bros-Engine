@@ -46,7 +46,7 @@ instance_create(0,0,obj_hud);
 
 //Camera variables
 padding = view_wview[view_current] div 2;
-padding -= 48;
+padding -= 64;
 pos = 0;
 
 //Check if the player exists
@@ -303,8 +303,12 @@ else {
             <kind>1</kind>
             <string>///Handle various in-game variables
 
+//Set what object is being followed
+event_user(1);
+
 //If the player does exist
-if (instance_exists(obj_playerparent)) {
+if (follow != noone)
+&amp;&amp; (instance_exists(follow)) {
     
     //Make sure the barrier is not active
     if (barrier == 0) {
@@ -313,36 +317,37 @@ if (instance_exists(obj_playerparent)) {
         event_user(0);
         
         //Check where the player is
-        playerx = max(playerx, obj_playerparent.x-pos);
+        playerx = max(playerx, follow.x-pos);
         
         //Update pos
-        if (obj_playerparent.x &gt; x-xprevious) 
-        &amp;&amp; (obj_playerparent.x &gt; view_wview div 2 - 48) {
+        if ((follow.hspeed &gt;= 0) 
+        &amp;&amp; (follow.x &gt; x-xprevious))
+        &amp;&amp; (follow.x &gt; view_wview div 2 - 32) { //48
         
-            //If the player is moving to the right
-            if (obj_playerparent.hspeed &gt; 0) {
-            
-                pos += abs(obj_playerparent.hspeed)/2;
-                if (pos &gt; 32)
-                    pos = 32;
-            }
-            
-            //Otherwise
-            else {
-            
-                pos += 0.5;
-                if (pos &gt; 32)
-                    pos = 32;
+            //Update only if the player is moving right or it's at the right
+            if (follow.hspeed &gt; 0)
+            || (follow.x &gt; x-xprevious) {
+                
+                pos += abs(follow.hspeed)/2;
+                if (pos &gt; 56) //40
+                    pos = 56;
             }
         }
         
         //Reset pos
-        if (obj_playerparent.x &lt; view_xview[view_current]+80)
+        if (follow.x &lt; view_xview[view_current]+48) //80
         &amp;&amp; (pos &gt; 0) {
         
             leftedge -= pos;
             pos = 0;
         }
+    }
+    
+    //Otherwise, force set position of the camera
+    else if (barrier == 1) {
+    
+        //Check where the player is
+        playerx = max(playerx, follow.x);
     }
     
     //Update the left edge
@@ -370,7 +375,42 @@ instance_deactivate_object(obj_deactenemyparent);
 instance_deactivate_object(obj_deactivateparent);
 
 //Activate deactivated instances inside the activation region
-instance_activate_region(view_xview[view_current] - 64, view_yview - 32, view_wview[view_current] + 128, view_hview[view_current] + 64, true);
+instance_activate_region(view_xview[view_current] - 32, view_yview - 32, view_wview[view_current] + 32, view_hview[view_current] + 32, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set the object to follow
+
+//If the player is not warping
+if (instance_exists(obj_playerparent))
+    follow = obj_playerparent;
+
+//Otherwise, if the player is warping through a pipe
+else if (instance_exists(obj_player_warp))
+    follow = obj_player_warp;
+    
+//Otherwise, do not follow anyone
+else
+    follow = noone;
 </string>
           </argument>
         </arguments>
