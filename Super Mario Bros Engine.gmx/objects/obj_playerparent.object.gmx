@@ -427,7 +427,6 @@ if (state != cs_climb) {
     
     //Handles powerup specific projectiles
     if (keyboard_check_pressed(vk_control))
-    &amp;&amp; (obj_levelcontrol.barrier == false)
         alarm[11] = 1;
 }
 
@@ -570,9 +569,9 @@ else {
             inair = false;
     }
 
-    //Make the player die if he falls on a pit.
+    //Make the player do stuff if he falls on a pit.
     else if (bbox_top &gt; room_height+32) {
-        
+    
         instance_create(x,y,obj_player_dead);
         instance_destroy();
         exit;

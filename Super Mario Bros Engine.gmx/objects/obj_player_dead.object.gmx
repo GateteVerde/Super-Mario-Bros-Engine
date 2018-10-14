@@ -50,6 +50,9 @@ alarm[0] = 60;
 //Go back
 alarm[1] = 200;
 
+//Restart level
+global.playerstart = 0;
+
 //Reset powerup
 global.powerup = cs_small;
 

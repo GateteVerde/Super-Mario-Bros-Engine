@@ -23,6 +23,7 @@
       <sound>sound\bgm_bonus</sound>
     </sounds>
     <sound>sound\snd_1up</sound>
+    <sound>sound\snd_beanstalk</sound>
     <sound>sound\snd_break</sound>
     <sound>sound\snd_bump</sound>
     <sound>sound\snd_cannon</sound>
@@ -160,6 +161,8 @@
         <sprite>sprites\spr_platform_32</sprite>
         <sprite>sprites\spr_platform_24</sprite>
         <sprite>sprites\spr_platform_16</sprite>
+        <sprite>sprites\spr_platform_cloud_48</sprite>
+        <sprite>sprites\spr_platform_cloud_32</sprite>
         <sprite>sprites\spr_platform_rope</sprite>
       </sprites>
       <sprite>sprites\spr_coin</sprite>
@@ -168,6 +171,7 @@
       <sprite>sprites\spr_trampoline_end</sprite>
       <sprite>sprites\spr_trampoline_super</sprite>
       <sprite>sprites\spr_trampoline_super_end</sprite>
+      <sprite>sprites\spr_beanstalk</sprite>
     </sprites>
     <sprites name="Masks">
       <sprites name="Player">
@@ -446,6 +450,7 @@
           </objects>
           <object>objects\obj_water</object>
         </objects>
+        <object>objects\obj_pitwarp</object>
         <object>objects\obj_bganimator</object>
         <object>objects\obj_checkpoint</object>
         <object>objects\obj_levelcontrol</object>
@@ -453,6 +458,7 @@
       </objects>
       <object>objects\obj_player</object>
       <object>objects\obj_player_warp</object>
+      <object>objects\obj_player_climb</object>
       <object>objects\obj_flagpole</object>
     </objects>
     <object>objects\obj_solid</object>
@@ -497,6 +503,7 @@
         <object>objects\obj_platform</object>
         <object>objects\obj_platform_weight</object>
         <object>objects\obj_platform_balance</object>
+        <object>objects\obj_platform_cloud</object>
       </objects>
       <object>objects\obj_coin</object>
       <object>objects\obj_trampoline</object>
@@ -574,6 +581,8 @@
             <object>objects\obj_platform_balance_r</object>
             <object>objects\obj_platform_balance_rope</object>
           </objects>
+          <object>objects\obj_beanstalk</object>
+          <object>objects\obj_beanstalk_b</object>
         </objects>
         <objects name="System">
           <objects name="Eyecandy">
@@ -609,10 +618,12 @@
       <rooms name="World 1">
         <room>rooms\rm_enginetest</room>
         <room>rooms\rm_enginetest2</room>
+        <room>rooms\rm_enginetest3</room>
       </rooms>
     </rooms>
   </rooms>
-  <constants number="12">
+  <constants number="13">
+    <constant name="cs_beanstalk">-6</constant>
     <constant name="cs_poison">-5</constant>
     <constant name="cs_1up">-4</constant>
     <constant name="cs_starman">-3</constant>

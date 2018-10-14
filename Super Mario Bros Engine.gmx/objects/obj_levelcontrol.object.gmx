@@ -37,29 +37,20 @@ alarm[0] = 2;
 //The music can play?
 musicdisable = 0;
 
-//Object being followed
-follow = noone;
-
-//Barrier
-barrier = true;
-alarm[5] = 3;
-
 //Destroy enemies in sight
-alarm[6] = 2;
+alarm[5] = 2;
+
+//Disable barrier
+barrier = 1;
+alarm[6] = 3;
 
 //Create HUD
 instance_create(0,0,obj_hud);
 
-//Camera variables
-padding = view_wview[view_current] div 2;
-padding -= 64;
-pos = 0;
-
-//Check if the player exists
-if (!instance_exists(obj_playerparent))
-    playerx = noone;
-else
-    playerx = obj_playerparent.x;
+//Jump to position
+x = view_xview[view_current]+128;
+view_object[0] = id;
+target = noone;
 </string>
           </argument>
         </arguments>
@@ -82,9 +73,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Remove nearby NPCs
+            <string>///Disable barrier
 
-instance_create(view_xview+view_wview/2, view_yview, obj_nonpc);
+barrier = 0;
 </string>
           </argument>
         </arguments>
@@ -107,9 +98,9 @@ instance_create(view_xview+view_wview/2, view_yview, obj_nonpc);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Disable barrier
+            <string>///Remove nearby NPCs
 
-barrier = false;
+instance_create(view_xview+view_wview/2, view_yview, obj_nonpc);
 </string>
           </argument>
         </arguments>
@@ -285,8 +276,9 @@ if (musicdisable == false) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Handle music speed
+            <string>///Handle music speed and update background position
 
+//If the level has a given amount of time to beat.
 if (leveltime &gt; 0) {
 
     //If the time is lower than 100
@@ -315,6 +307,10 @@ else {
     //Speed up 'Invincible' music
     audio_sound_pitch(bgm_invincible, 1);    
 }
+
+//Update parallax background position
+for (var i=0; i&lt;8; i++)
+    xx[i] = view_xview/(1.2+(0.4*i));
 </string>
           </argument>
         </arguments>
@@ -335,74 +331,97 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Handle various in-game variables
+            <string>///Handle position and instance deactivation
 
-//Set what object is being followed
-event_user(1);
+//Set the target
+event_user(2);
 
-//If the player does exist
-if (follow != noone)
-&amp;&amp; (instance_exists(follow)) {
+//If the target exists
+if (target != noone) {
+
+    //If the camera is way far away from the room width
+    if (x-128 &lt; room_width-256) {
     
-    //Make sure the barrier is not active
-    if (barrier == 0) {
-         
-        //Prevent player from going outside
-        event_user(0);
+        //If the target is greater than x
+        if (target.x+16 &gt; x) {
         
-        //Check where the player is
-        playerx = max(playerx, follow.x-pos);
+            x = target.x+16;
+            hspeed = 0;
+        }
         
-        //Update pos
-        if ((follow.hspeed &gt;= 0) 
-        &amp;&amp; (follow.x &gt; x-xprevious))
-        &amp;&amp; (follow.x &gt; view_wview div 2 - 48) {
+        //Otherwise
+        else {
         
-            //Update only if the player is moving right or it's at the right
-            if (follow.hspeed &gt; 0)
-            || (follow.x &gt; x-xprevious) {
+            //If the target is the player object
+            if (target == obj_playerparent) {
+            
+                //If the horizontal speed is greater than 0.5
+                if (hspeed &gt; 0.5) {
                 
-                pos += abs(follow.hspeed)/2;
-                if (pos &gt; 56)
-                    pos = 56;
+                    //If the player object x is greater than x+64
+                    if (obj_playerparent.x &gt; x+64)
+                        hspeed = target.hspeed-0.5;
+                    else
+                        hspeed = 0;
+                }
+                else
+                    hspeed = 0;
+            }
+            
+            //Otherwise, if the target is warping through a pipe
+            else if (target == obj_player_warp) {
+            
+                //If the horizontal speed is greater than 0.5
+                if (hspeed &gt; 0.5) {
+                
+                    //If the player object x is greater than x+64
+                    if (obj_player_warp.x &gt; x+64)
+                        hspeed = target.hspeed-0.5;
+                    else
+                        hspeed = 0;
+                }
+                else
+                    hspeed = 0;                      
+            }
+            
+            //Otherwise, if the target is climbing a beanstalk
+            else if (target == obj_player_climb) {
+            
+                //If the horizontal speed is greater than 0.5
+                if (hspeed &gt; 0.5) {
+                
+                    //If the player object x is greater than x+64
+                    if (obj_player_climb.x &gt; x+64)
+                        hspeed = target.hspeed-0.5;
+                    else
+                        hspeed = 0;
+                }
+                else
+                    hspeed = 0;                      
             }
         }
-        
-        //Reset pos
-        if (follow.x &lt; view_xview[view_current]+64)
-        &amp;&amp; (pos &gt; 0) {
-        
-            leftedge -= pos;
-            pos = 0;
-        }
     }
     
-    //Otherwise, force set position of the camera
-    else if (barrier == 1) {
+    //Otherwise
+    else {
     
-        //Check where the player is
-        playerx = max(playerx, follow.x);
+        hspeed = 0;
+        x = xprevious
     }
-    
-    //Update the left edge
-    leftedge = playerx - padding;  
-    
-    //Update view_xview
-    view_xview[view_current] = leftedge;
-    if (view_xview[view_current] &lt; 0)
-        view_xview[view_current] = 0;
-    if (view_xview[view_current] &gt; room_width-global.gw)
-        view_xview[view_current] = room_width-global.gw;
 }
-
+    
 //Round position variables
-view_xview[view_current] = round(view_xview[view_current]);
+x = round(x);
+y = round(y);
 
-//Update parallax background position
-for (var i=0; i&lt;8; i++) {
+//Prevent the player from getting outside the view and set the view speed
+if (barrier == 0) {
 
-    xx[i] = view_xview/(1.2+(0.4*i));
+    event_user(0);
+    view_hspeed[0] = 10;
 }
+else
+view_hspeed[0] = -1;
 
 //Deactivate enemies outside the view
 instance_deactivate_object(obj_deactenemyparent);
@@ -432,10 +451,23 @@ instance_activate_region(view_xview[view_current] - 32, view_yview - 32, view_wv
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Destroy player objects
+            <string>///Set the target
 
-with (obj_player) instance_destroy();
-with (obj_player_warp) instance_destroy();
+//If the player is the player object
+if (instance_exists(obj_playerparent))
+    target = obj_playerparent;
+    
+//Otherwise, if the player is warping through a pipe
+else if (instance_exists(obj_player_warp))
+    target = obj_player_warp;
+
+//Otherwise, if the player is climbing a beanstalk
+else if (instance_exists(obj_player_climb))
+    target = obj_player_climb;
+    
+//Otherwise, no target
+else
+    target = noone;
 </string>
           </argument>
         </arguments>
@@ -458,19 +490,11 @@ with (obj_player_warp) instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set the object to follow
+            <string>///Destroy player objects
 
-//If the player is not warping
-if (instance_exists(obj_playerparent))
-    follow = obj_playerparent;
-
-//Otherwise, if the player is warping through a pipe
-else if (instance_exists(obj_player_warp)) 
-    follow = obj_player_warp;
-    
-//Otherwise, do not follow anyone
-else
-    follow = noone;
+with (obj_player) instance_destroy();
+with (obj_player_warp) instance_destroy();
+with (obj_player_climb) instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -495,26 +519,30 @@ else
             <kind>1</kind>
             <string>///Prevent the player from going outside the view
 
-//If the player is at the leftmost boundary
-if (follow.x &lt; view_xview[0] + 8) {
+//If the player is the main one
+if (instance_exists(obj_playerparent)) {
 
-    //Snap the player 5 pixels at the left of the boundary
-    follow.x = view_xview[0] + 8;
+    //If the player is at the leftmost boundary
+    if (obj_playerparent.x &lt; view_xview[0] + 8) {
     
-    //Stop the player's horizontal movement
-    if (follow.hspeed &lt; 0)
-        follow.hspeed = 0;
-}
-
-//Otherwise, if the player is at the rightmost boundary
-else if (follow.x &gt; view_xview[0] + view_wview[0] - 8) {
-
-    //Snap the player 5 pixels at the left of the boundary
-    follow.x = view_xview[0] + view_wview[0] - 8;
+        //Snap the player 5 pixels at the left of the boundary
+        obj_playerparent.x = view_xview[0] + 8;
+        
+        //Stop the player's horizontal movement
+        if (obj_playerparent.hspeed &lt; 0)
+            obj_playerparent.hspeed = 0;
+    }
     
-    //Stop the player's horizontal movement
-    if (follow.hspeed &gt; 0)
-        follow.hspeed = 0;
+    //Otherwise, if the player is at the rightmost boundary
+    else if (obj_playerparent.x &gt; view_xview[0] + view_wview[0] - 8) {
+    
+        //Snap the player 5 pixels at the left of the boundary
+        obj_playerparent.x = view_xview[0] + view_wview[0] - 8;
+        
+        //Stop the player's horizontal movement
+        if (obj_playerparent.hspeed &gt; 0)
+            obj_playerparent.hspeed = 0;
+    }
 }
 </string>
           </argument>
@@ -545,6 +573,9 @@ global.skin = 0;
 
 //Stop music
 audio_stop_all();
+
+//Destroy
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -586,13 +617,18 @@ if (leveltime &gt; 0) { //If the timer has been set.
 
 //If the player came from another room
 if (global.postchange != -1) {
-
+    
+    //Move the camera to the warp spot
+    x = global.postx+64;
+    
     //Destroy player objects
-    event_user(2);
-
+    event_user(1);
+        
     //Main
-    if (global.postchange == 0)    
+    if (global.postchange == 0) {
+    
         scr_player_retrieve(global.postx, global.posty);
+    }
     
     //Warp
     else if (global.postchange == 1) {
@@ -608,6 +644,12 @@ if (global.postchange != -1) {
         }
     }
     
+    //Climb
+    else if (global.postchange == 2) {
+    
+        instance_create(global.postx, global.posty, obj_player_climb);
+    }
+                        
     //Reset post change
     global.postchange = -1;
 }
@@ -618,8 +660,11 @@ else {
     //Move to the latest checkpoint if it exists.
     if (instance_exists(global.checkpoint)) {
     
+        //Move the camera to the checkpoint position
+        x = global.checkpoint.x+64;
+        
         //Destroy all player objects
-        event_user(2);
+        event_user(1);
         
         //Create a player object right in position
         scr_player_retrieve(global.checkpoint.x, global.checkpoint.y);

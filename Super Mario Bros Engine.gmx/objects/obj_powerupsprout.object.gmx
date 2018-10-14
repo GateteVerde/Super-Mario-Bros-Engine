@@ -27,9 +27,6 @@
             <kind>1</kind>
             <string>///An sprouting item
 
-//Play 'Sprout' sound
-audio_play_sound(snd_sprout, 0, false);
-
 //Palette
 palette_index = noone;
 
@@ -65,14 +62,29 @@ alarm[0] = 1;
             <kind>1</kind>
             <string>///Sprite check
 
-//Fireflower, Starman
-if (sprite_index == spr_fireflower)
-|| (sprite_index == spr_starman)
-    image_speed = 0.4;
+//Beanstalk
+if (sprite_index == spr_beanstalk) {
+
+    instance_create(xstart-8,ystart,obj_beanstalk);
+    instance_destroy();
+    exit;
+}
+
+//Otherwise
+else {
+
+    //Play 'Sprout' sound
+    audio_play_sound(snd_sprout, 0, false);
     
-//1-UP
-else if (sprite_index == spr_1up)
-    palette_index = pal_1up;
+    //Fireflower, Starman
+    if (sprite_index == spr_fireflower)
+    || (sprite_index == spr_starman)
+        image_speed = 0.4;
+        
+    //1-UP
+    else if (sprite_index == spr_1up)
+        palette_index = pal_1up;
+}
 </string>
           </argument>
         </arguments>

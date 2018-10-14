@@ -34,6 +34,9 @@ switch (argument[0]) {
     //Poison
     case (cs_poison): return spr_poison;
     
+    //Beanstalk
+    case (cs_beanstalk): return spr_beanstalk;
+    
     //Default
     default: return -1;
 }

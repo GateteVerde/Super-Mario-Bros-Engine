@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_mario_small_pose</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>-5</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -281,52 +281,6 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_warproom">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Warp to the given destination room
-
-//Set pixel fade mode
-with (obj_persistent) tr_pixel = 1;
-
-//With the warp object.
-with (other) {
-
-    //If the position needs to be changed in the new room.
-    if (postchange != -1) {
-    
-        //Remember the spawn type
-        global.postchange = postchange;
-        
-        //Remember the x spawn position.
-        global.postx = postx+16;
-        
-        //Remember the y spawn position.
-        global.posty = posty+16;
-    }
-    
-    //Go to the destination room
-    room_goto(myroom);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_right">
       <action>
         <libid>1</libid>
@@ -438,6 +392,52 @@ direction = 90;
 
 //Snap to position.
 move_snap(16,16);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_warproom">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Warp to the given destination room
+
+//Set pixel fade mode
+with (obj_persistent) tr_pixel = 1;
+
+//With the warp object.
+with (other) {
+
+    //If the position needs to be changed in the new room.
+    if (postchange != -1) {
+    
+        //Remember the spawn type
+        global.postchange = postchange;
+        
+        //Remember the x spawn position.
+        global.postx = postx+16;
+        
+        //Remember the y spawn position.
+        global.posty = posty+16;
+    }
+    
+    //Go to the destination room
+    room_goto(myroom);
+}
 </string>
           </argument>
         </arguments>

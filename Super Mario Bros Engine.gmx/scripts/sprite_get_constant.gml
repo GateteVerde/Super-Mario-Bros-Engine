@@ -28,6 +28,9 @@ switch (argument[2]) {
     //Poison
     case (spr_poison): return cs_poison;
     
+    //Beanstalk
+    case (spr_beanstalk): return cs_beanstalk;
+    
     //Default
     default: return -1;
 }
