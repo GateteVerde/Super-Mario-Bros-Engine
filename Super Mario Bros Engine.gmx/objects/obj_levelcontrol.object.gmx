@@ -276,6 +276,124 @@ if (musicdisable == false) {
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Handle position and instance deactivation
+
+//Set the target
+event_user(2);
+
+//If the target exists
+if (target != noone) {
+
+    //If the camera is way far away from the room width
+    if (x-128 &lt; room_width-256) {
+    
+        //If the target is greater than x
+        if (target.x+16 &gt; x) {
+        
+            x = target.x+16;
+            hspeed = 0;
+        }
+        
+        //Otherwise
+        else {
+        
+            //If the target is the player object
+            if (target == obj_playerparent) {
+            
+                //If the horizontal speed is greater than 0.5
+                if (target.hspeed &gt; 0.5) {
+                
+                    //If the player object x is lower than x-64
+                    if (obj_playerparent.x &gt; x-64)
+                        hspeed = target.hspeed-1;
+                    else
+                        hspeed = 0;
+                }
+                else
+                    hspeed = 0;
+            }
+            
+            //Otherwise, if the target is warping through a pipe
+            else if (target == obj_player_warp) {
+            
+                //If the horizontal speed is greater than 0.5
+                if (target.hspeed &gt; 0.5) {
+                
+                    //If the player object x is lower than x-64
+                    if (obj_player_warp.x &gt; x-64)
+                        hspeed = target.hspeed-1;
+                    else
+                        hspeed = 0;
+                }
+                else
+                    hspeed = 0;                      
+            }
+            
+            //Otherwise, if the target is climbing a beanstalk
+            else if (target == obj_player_climb) {
+            
+                //If the horizontal speed is greater than 0.5
+                if (target.hspeed &gt; 0.5) {
+                
+                    //If the player object x is lower than x-64
+                    if (obj_player_climb.x &gt; x-64)
+                        hspeed = target.hspeed-1;
+                    else
+                        hspeed = 0;
+                }
+                else
+                    hspeed = 0;                      
+            }
+        }
+    }
+    
+    //Otherwise
+    else {
+    
+        hspeed = 0;
+        x = xprevious
+    }
+}
+    
+//Round position variables
+x = round(x);
+y = round(y);
+
+//Prevent the player from getting outside the view and set the view speed
+if (barrier == 0) {
+
+    event_user(0);
+    view_hspeed[0] = 10;
+}
+else
+    view_hspeed[0] = -1;
+
+//Deactivate enemies outside the view
+instance_deactivate_object(obj_deactenemyparent);
+instance_deactivate_object(obj_deactivateparent);
+
+//Activate deactivated instances inside the activation region
+instance_activate_region(view_xview[view_current] - 32, view_yview - 32, view_wview[view_current] + 32, view_hview[view_current] + 32, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Handle music speed and update background position
 
 //If the level has a given amount of time to beat.
@@ -311,124 +429,6 @@ else {
 //Update parallax background position
 for (var i=0; i&lt;8; i++)
     xx[i] = view_xview/(1.2+(0.4*i));
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Handle position and instance deactivation
-
-//Set the target
-event_user(2);
-
-//If the target exists
-if (target != noone) {
-
-    //If the camera is way far away from the room width
-    if (x-128 &lt; room_width-256) {
-    
-        //If the target is greater than x
-        if (target.x+16 &gt; x) {
-        
-            x = target.x+16;
-            hspeed = 0;
-        }
-        
-        //Otherwise
-        else {
-        
-            //If the target is the player object
-            if (target == obj_playerparent) {
-            
-                //If the horizontal speed is greater than 0.5
-                if (hspeed &gt; 0.5) {
-                
-                    //If the player object x is greater than x+64
-                    if (obj_playerparent.x &gt; x+64)
-                        hspeed = target.hspeed-0.5;
-                    else
-                        hspeed = 0;
-                }
-                else
-                    hspeed = 0;
-            }
-            
-            //Otherwise, if the target is warping through a pipe
-            else if (target == obj_player_warp) {
-            
-                //If the horizontal speed is greater than 0.5
-                if (hspeed &gt; 0.5) {
-                
-                    //If the player object x is greater than x+64
-                    if (obj_player_warp.x &gt; x+64)
-                        hspeed = target.hspeed-0.5;
-                    else
-                        hspeed = 0;
-                }
-                else
-                    hspeed = 0;                      
-            }
-            
-            //Otherwise, if the target is climbing a beanstalk
-            else if (target == obj_player_climb) {
-            
-                //If the horizontal speed is greater than 0.5
-                if (hspeed &gt; 0.5) {
-                
-                    //If the player object x is greater than x+64
-                    if (obj_player_climb.x &gt; x+64)
-                        hspeed = target.hspeed-0.5;
-                    else
-                        hspeed = 0;
-                }
-                else
-                    hspeed = 0;                      
-            }
-        }
-    }
-    
-    //Otherwise
-    else {
-    
-        hspeed = 0;
-        x = xprevious
-    }
-}
-    
-//Round position variables
-x = round(x);
-y = round(y);
-
-//Prevent the player from getting outside the view and set the view speed
-if (barrier == 0) {
-
-    event_user(0);
-    view_hspeed[0] = 10;
-}
-else
-view_hspeed[0] = -1;
-
-//Deactivate enemies outside the view
-instance_deactivate_object(obj_deactenemyparent);
-instance_deactivate_object(obj_deactivateparent);
-
-//Activate deactivated instances inside the activation region
-instance_activate_region(view_xview[view_current] - 32, view_yview - 32, view_wview[view_current] + 32, view_hview[view_current] + 32, true);
 </string>
           </argument>
         </arguments>
@@ -627,7 +627,11 @@ if (global.postchange != -1) {
     //Main
     if (global.postchange == 0) {
     
-        scr_player_retrieve(global.postx, global.posty);
+        with (scr_player_retrieve(global.postx, global.posty)) {
+        
+            if (!place_meeting(global.postx, global.posty+16, obj_solid))
+                state = cs_jump;
+        }
     }
     
     //Warp
@@ -661,7 +665,7 @@ else {
     if (instance_exists(global.checkpoint)) {
     
         //Move the camera to the checkpoint position
-        x = global.checkpoint.x+64;
+        x = global.checkpoint.x+80;
         
         //Destroy all player objects
         event_user(1);

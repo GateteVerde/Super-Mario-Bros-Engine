@@ -145,7 +145,7 @@
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_BA789C80" locked="0" code="levelmusic = 101;&#xA;leveltime = 999;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol_tiles" x="16" y="0" name="inst_E98307A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1376" y="80" name="inst_21B2A4E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_flagpole" x="3168" y="32" name="inst_36AE56FD" locked="0" code="///Set the flagpole frame and next level&#xA;&#xA;//Set the next level in the game&#xA;nextlevel = &quot;1-2&quot;;&#xA;&#xA;//Do not animate&#xA;image_speed = 0;&#xA;image_index = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flagpole" x="3168" y="32" name="inst_36AE56FD" locked="0" code="///Set the flagpole frame and next level&#xA;&#xA;//Set the next level in the game&#xA;nextlevel = &quot;1-2&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_goomba" x="360" y="192" name="inst_6C25B634" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_goomba" x="648" y="192" name="inst_835291C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_goomba" x="848" y="192" name="inst_5193E26C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
