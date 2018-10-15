@@ -6,7 +6,7 @@
   <depth>1</depth>
   <persistent>0</persistent>
   <parentName>obj_climb</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_square_c</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -59,8 +59,10 @@ image_index = 1;
 
 if (mom.vspeed == 0) {
 
-    //Stop and snap in grid.
+    //Stop vertical movement
     vspeed = 0;
+    
+    //Snap in position
     move_snap(16,16);
 }
 </string>

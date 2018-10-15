@@ -9,6 +9,7 @@
 //
 //  Notes:
 //      _st[<numb>] and _en[<numb>] must be set on samples.
+//      All music file sample rates must be set to 48000 and must have 1 second of silence at the end of it.
 */
 
 //Title
@@ -33,6 +34,8 @@ global._en[102] = 941769;
 
 //Castle
 global._music[103] = bgm_castle;
+global._st[103] = 14336;
+global._en[103] = 471230;
 
 //Swimming
 global._music[104] = bgm_swimming;

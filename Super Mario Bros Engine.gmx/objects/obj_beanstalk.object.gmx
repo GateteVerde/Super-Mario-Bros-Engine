@@ -68,7 +68,7 @@ alarm[0] = 32;
 
 if (vspeed &lt; 0) {
 
-    ID = instance_create(xstart,ystart,obj_beanstalk_b);
+    ID = instance_create(x,ystart,obj_beanstalk_b);
     with (ID) {
     
         //Set this object as parent.

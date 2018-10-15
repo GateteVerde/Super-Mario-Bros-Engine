@@ -105,7 +105,7 @@ else {
     switch (global.world) {
     
         //World 1-1
-        case ("1-1"): room_goto(rm_enginetest); break;
+        case ("1-1"): room_goto(rm_w1_1); break;
     }
 }
 </string>

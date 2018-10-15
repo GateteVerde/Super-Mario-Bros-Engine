@@ -614,12 +614,20 @@
     <room>rooms\rm_load</room>
     <rooms name="Levels">
       <room>rooms\rm_levelstart</room>
-      <room>rooms\rm_timeup</room>
       <rooms name="World 1">
-        <room>rooms\rm_enginetest</room>
-        <room>rooms\rm_enginetest2</room>
-        <room>rooms\rm_enginetest3</room>
+        <rooms name="1-1">
+          <room>rooms\rm_w1_1</room>
+          <room>rooms\rm_w1_1_Bonus</room>
+        </rooms>
       </rooms>
+    </rooms>
+    <rooms name="Templates">
+      <room>rooms\rm_template</room>
+      <room>rooms\rm_template_sky</room>
+    </rooms>
+    <rooms name="Event Screens">
+      <room>rooms\rm_gameover</room>
+      <room>rooms\rm_timeup</room>
     </rooms>
   </rooms>
   <constants number="13">
