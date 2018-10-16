@@ -344,6 +344,22 @@ if (target != noone) {
                 else
                     hspeed = 0;                      
             }
+            
+            //Otherwise, if the target is climbing down a flagpole
+            else if (target == obj_player_goal) {
+            
+                //If the horizontal speed is greater than 0.5
+                if (target.hspeed &gt; 0.5) {
+                
+                    //If the player object x is lower than x-64
+                    if (obj_player_goal.x &gt; x-64)
+                        hspeed = target.hspeed-1;
+                    else
+                        hspeed = 0;
+                }
+                else
+                    hspeed = 0;                      
+            }
         }
     }
     
@@ -464,6 +480,10 @@ else if (instance_exists(obj_player_warp))
 //Otherwise, if the player is climbing a beanstalk
 else if (instance_exists(obj_player_climb))
     target = obj_player_climb;
+    
+//Otherwise, if the player is climbing down a flagpole
+else if (instance_exists(obj_player_goal))
+    target = obj_player_goal;
     
 //Otherwise, no target
 else

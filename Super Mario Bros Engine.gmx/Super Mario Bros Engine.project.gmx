@@ -13,6 +13,7 @@
         </sounds>
         <sound>sound\bgm_invincible</sound>
         <sound>sound\bgm_playerdown</sound>
+        <sound>sound\bgm_courseclear</sound>
       </sounds>
       <sound>sound\bgm_title</sound>
       <sound>sound\bgm_title_tll</sound>
@@ -28,7 +29,11 @@
     <sound>sound\snd_bump</sound>
     <sound>sound\snd_cannon</sound>
     <sound>sound\snd_coin</sound>
+    <sound>sound\snd_count</sound>
+    <sound>sound\snd_countend</sound>
     <sound>sound\snd_fireball</sound>
+    <sound>sound\snd_firework</sound>
+    <sound>sound\snd_flagpole</sound>
     <sound>sound\snd_hammer</sound>
     <sound>sound\snd_hurry</sound>
     <sound>sound\snd_jump</sound>
@@ -206,6 +211,7 @@
         <sprite>sprites\spr_cinder</sprite>
         <sprite>sprites\spr_fireball</sprite>
         <sprite>sprites\spr_fireball_hit</sprite>
+        <sprite>sprites\spr_firework</sprite>
         <sprite>sprites\spr_lavasplash</sprite>
         <sprite>sprites\spr_leaf</sprite>
         <sprite>sprites\spr_rain</sprite>
@@ -358,6 +364,7 @@
         <background>background\tls_animate8</background>
       </backgrounds>
       <background>background\tls_main</background>
+      <background>background\tls_goal</background>
       <background>background\tls_animate</background>
     </backgrounds>
     <background>background\bgr_pit</background>
@@ -460,6 +467,7 @@
       <object>objects\obj_player_warp</object>
       <object>objects\obj_player_climb</object>
       <object>objects\obj_flagpole</object>
+      <object>objects\obj_incastle</object>
     </objects>
     <object>objects\obj_solid</object>
     <object>objects\obj_climb</object>
@@ -543,6 +551,7 @@
           </objects>
           <object>objects\obj_player_transform</object>
           <object>objects\obj_player_dead</object>
+          <object>objects\obj_player_goal</object>
         </objects>
         <objects name="Blocks">
           <object>objects\obj_emptyblock</object>
@@ -588,6 +597,7 @@
           <objects name="Eyecandy">
             <objects name="Score">
               <object>objects\obj_score</object>
+              <object>objects\obj_score_goal</object>
             </objects>
             <object>objects\obj_bubble</object>
             <object>objects\obj_leaf</object>

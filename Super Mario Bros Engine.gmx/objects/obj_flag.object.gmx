@@ -29,6 +29,51 @@
 
 //Animate it
 image_speed = 0.1;
+
+//Play fanfare
+ready = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_flagpole">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///When the flag reaches the bottom of the flagpole
+
+if (y &gt; other.y+140) {
+
+    //Stop moving
+    vspeed = 0;
+
+    //Snap to bottom of the flagpole
+    y = other.y+140;
+    
+    //Play 'Flagpole' fanfare
+    if (ready == 0) {
+    
+        //Play it once
+        ready = 1;
+        
+        //Play 'Flagpole' song
+        audio_play_sound(bgm_courseclear, 0, false);
+    }
+}
 </string>
           </argument>
         </arguments>

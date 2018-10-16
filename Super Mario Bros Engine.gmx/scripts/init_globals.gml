@@ -44,6 +44,9 @@ global.hidden = ds_map_create();
 //Whether the player is starting the level
 global.playerstart = 0;
 
+//Handles the number of fireworks
+global.fireworks = 0;
+
 //Checkpoint variable
 global.checkpoint = noone;
 global.checkpointroom = noone;
