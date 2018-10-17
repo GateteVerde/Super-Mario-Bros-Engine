@@ -37,9 +37,6 @@ alarm[0] = 2;
 //The music can play?
 musicdisable = 0;
 
-//Destroy enemies in sight
-alarm[5] = 2;
-
 //Disable barrier
 barrier = 1;
 alarm[6] = 3;
@@ -649,6 +646,9 @@ if (global.postchange != -1) {
     //Move the camera to the warp spot
     x = global.postx+64;
     
+    //Destroy enemies in sight
+    alarm[5] = 2;
+    
     //Destroy player objects
     event_user(1);
         
@@ -694,6 +694,9 @@ else {
     
         //Move the camera to the checkpoint position
         x = global.checkpoint.x+80;
+        
+        //Destroy enemies in sight
+        alarm[5] = 2;
         
         //Destroy all player objects
         event_user(1);

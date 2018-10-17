@@ -634,6 +634,9 @@
         </rooms>
         <rooms name="1-2">
           <room>rooms\rm_w1_2</room>
+          <room>rooms\rm_w1_2_Main</room>
+          <room>rooms\rm_w1_2_Goal</room>
+          <room>rooms\rm_w1_2_Bonus</room>
         </rooms>
       </rooms>
     </rooms>
