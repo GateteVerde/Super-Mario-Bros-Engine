@@ -37,7 +37,7 @@ audio_play_sound(snd_flagpole, 0, false);
 vspeed = 2;
 
 //Start moving
-alarm[0] = 72;
+alarm[0] = 80;
 
 //Stop both music and timer
 with (obj_levelcontrol) {
@@ -62,6 +62,31 @@ else if (global.time -(floor(global.time/10)*10) == 3)
     global.fireworks = 3;
 else if (global.time -(floor(global.time/10)*10) == 1) 
     global.fireworks = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Go to the level start screen
+
+room_goto(rm_levelstart);
 </string>
           </argument>
         </arguments>
@@ -115,8 +140,11 @@ depth = 14;
 if (!audio_is_playing(bgm_courseclear)) {
 
     //If there's not fireworks
-    if (global.fireworks == 0)
-        room_goto(rm_levelstart);
+    if (global.fireworks == 0) {
+    
+        instance_create(obj_incastle.x,obj_incastle.y-64,obj_flagc);
+        alarm[4] = 180;
+    }
     
     else {
     
@@ -436,7 +464,7 @@ if (instance_exists(obj_incastle)) {
         hspeed = 0;
         
         //Move again after a while
-        alarm[3] = 30;
+        alarm[3] = 60;
     }    
     else if (x &gt; obj_incastle.x+8) {
     
@@ -520,7 +548,7 @@ else {
         
             //Set idle pose
             image_speed = 0;
-            if (alarm[3] &gt; 15)
+            if (alarm[3] &gt; 40)
                 image_index = 1;
             else
                 image_index = 2;

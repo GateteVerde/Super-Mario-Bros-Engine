@@ -250,7 +250,11 @@ audio_stop_sound(global._music[levelmusic]);
 //If music is not disabled
 if (musicdisable == false) {
         
-    //If the music is not playing
+    //If no music has been set
+    if (levelmusic == noone)
+    exit;
+    
+    //Otherwise, play it
     if (!audio_is_playing(global._music[levelmusic]))
         audio_loop_sound(global._music[levelmusic], global._st[levelmusic], global._en[levelmusic], 48000, 1);
 }
@@ -412,34 +416,38 @@ instance_activate_region(view_xview[view_current] - 32, view_yview - 32, view_wv
             <kind>1</kind>
             <string>///Handle music speed and update background position
 
-//If the level has a given amount of time to beat.
-if (leveltime &gt; 0) {
-
-    //If the time is lower than 100
-    if (global.time &lt; 101) {
+//Do not modify if the music has not been set
+if (levelmusic != noone) {
     
-        //Speed up level music
-        audio_sound_pitch(global._music[levelmusic],1.3);
+    //If the level has a given amount of time to beat.
+    if (leveltime &gt; 0) {
+    
+        //If the time is lower than 100
+        if (global.time &lt; 101) {
         
-        //Speed up 'Invincible' music
-        audio_sound_pitch(bgm_invincible, 1.3);
+            //Speed up level music
+            audio_sound_pitch(global._music[levelmusic],1.3);
+            
+            //Speed up 'Invincible' music
+            audio_sound_pitch(bgm_invincible, 1.3);
+        }
+        else {
+        
+            //Set normal pitch
+            audio_sound_pitch(global._music[levelmusic],1);
+                    
+            //Speed up 'Invincible' music
+            audio_sound_pitch(bgm_invincible, 1);        
+        }
     }
     else {
     
         //Set normal pitch
         audio_sound_pitch(global._music[levelmusic],1);
-                
+            
         //Speed up 'Invincible' music
-        audio_sound_pitch(bgm_invincible, 1);        
+        audio_sound_pitch(bgm_invincible, 1);    
     }
-}
-else {
-
-    //Set normal pitch
-    audio_sound_pitch(global._music[levelmusic],1);
-        
-    //Speed up 'Invincible' music
-    audio_sound_pitch(bgm_invincible, 1);    
 }
 
 //Update parallax background position
