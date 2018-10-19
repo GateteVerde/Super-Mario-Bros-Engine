@@ -314,38 +314,6 @@ if (target != noone) {
                     hspeed = 0;
             }
             
-            //Otherwise, if the target is warping through a pipe
-            else if (target == obj_player_warp) {
-            
-                //If the horizontal speed is greater than 0.5
-                if (target.hspeed &gt; 0.5) {
-                
-                    //If the player object x is lower than x-64
-                    if (obj_player_warp.x &gt; x-64)
-                        hspeed = target.hspeed-1;
-                    else
-                        hspeed = 0;
-                }
-                else
-                    hspeed = 0;                      
-            }
-            
-            //Otherwise, if the target is climbing a beanstalk
-            else if (target == obj_player_climb) {
-            
-                //If the horizontal speed is greater than 0.5
-                if (target.hspeed &gt; 0.5) {
-                
-                    //If the player object x is lower than x-64
-                    if (obj_player_climb.x &gt; x-64)
-                        hspeed = target.hspeed-1;
-                    else
-                        hspeed = 0;
-                }
-                else
-                    hspeed = 0;                      
-            }
-            
             //Otherwise, if the target is climbing down a flagpole
             else if (target == obj_player_goal) {
             
@@ -390,7 +358,7 @@ instance_deactivate_object(obj_deactenemyparent);
 instance_deactivate_object(obj_deactivateparent);
 
 //Activate deactivated instances inside the activation region
-instance_activate_region(view_xview[view_current] - 32, view_yview - 32, view_wview[view_current] + 32, view_hview[view_current] + 32, true);
+instance_activate_region(view_xview[view_current] - 32, view_yview - 32, view_wview[view_current] + 96, view_hview[view_current] + 32, true);
 </string>
           </argument>
         </arguments>
@@ -477,14 +445,6 @@ for (var i=0; i&lt;8; i++)
 //If the player is the player object
 if (instance_exists(obj_playerparent))
     target = obj_playerparent;
-    
-//Otherwise, if the player is warping through a pipe
-else if (instance_exists(obj_player_warp))
-    target = obj_player_warp;
-
-//Otherwise, if the player is climbing a beanstalk
-else if (instance_exists(obj_player_climb))
-    target = obj_player_climb;
     
 //Otherwise, if the player is climbing down a flagpole
 else if (instance_exists(obj_player_goal))

@@ -54,8 +54,6 @@ anim = 0;
             <string>///Update animation
 
 anim += 0.15;
-if (anim &gt; 3.99)
-    anim = 0;
 </string>
           </argument>
         </arguments>
@@ -90,9 +88,10 @@ draw_set_colour(c_white);
 draw_set_alpha(1);
 
 //HUD
-draw_sprite_ext(spr_hud, (global.player*4)+anim, view_xview[0]+24, view_yview[0]+16, 1, 1, 0, c_white, 1);
-
+if (global.player == 0) then draw_sprite_ext(spr_hud, anim, view_xview[0]+24, view_yview[0]+16, 1, 1, 0, c_white, 1);
+else if (global.player == 1) then draw_sprite_ext(spr_hud_l, anim, view_xview[0]+24, view_yview[0]+16, 1, 1, 0, c_white, 1);
 //Score
+
 draw_text(view_xview[0]+24, view_yview[0]+24, string_add_zeros(score, 6));
 
 //Coins

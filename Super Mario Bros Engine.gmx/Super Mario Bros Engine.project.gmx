@@ -225,6 +225,7 @@
           <sprite>sprites\spr_hud_ls_face</sprite>
           <sprite>sprites\spr_hud_ls_preview</sprite>
           <sprite>sprites\spr_hud_ls_preview_lvl</sprite>
+          <sprite>sprites\spr_hud_ls_preview_lvl2</sprite>
         </sprites>
         <sprites name="Time Up">
           <sprite>sprites\spr_hud_tu_title</sprite>
@@ -233,6 +234,7 @@
           <sprite>sprites\spr_hud_tu_timeup</sprite>
         </sprites>
         <sprite>sprites\spr_hud</sprite>
+        <sprite>sprites\spr_hud_l</sprite>
         <sprite>sprites\spr_hudfont</sprite>
         <sprite>sprites\spr_hudfont_red</sprite>
       </sprites>
@@ -308,6 +310,7 @@
         <background>background\bgr_underground</background>
         <background>background\bgr_underground_b</background>
         <background>background\bgr_underground_c</background>
+        <background>background\bgr_underground_d</background>
       </backgrounds>
       <backgrounds name="Underwater">
         <background>background\bgr_underwater</background>
