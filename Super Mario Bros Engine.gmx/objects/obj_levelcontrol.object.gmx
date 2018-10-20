@@ -289,9 +289,9 @@ if (target != noone) {
     if (x-128 &lt; room_width-256) {
     
         //If the target is greater than x
-        if (target.x+16 &gt; x) {
+        if (target.x+8 &gt; x) {
         
-            x = target.x+16;
+            x = target.x+8;
             hspeed = 0;
         }
         
@@ -304,9 +304,9 @@ if (target != noone) {
                 //If the horizontal speed is greater than 0.5
                 if (target.hspeed &gt; 0.5) {
                 
-                    //If the player object x is lower than x-64
-                    if (obj_playerparent.x &gt; x-64)
-                        hspeed = target.hspeed-1;
+                    //If the player object x is lower than x-32
+                    if (obj_playerparent.x &gt; x-32)
+                        hspeed = target.hspeed-0.5;
                     else
                         hspeed = 0;
                 }
@@ -320,9 +320,9 @@ if (target != noone) {
                 //If the horizontal speed is greater than 0.5
                 if (target.hspeed &gt; 0.5) {
                 
-                    //If the player object x is lower than x-64
-                    if (obj_player_goal.x &gt; x-64)
-                        hspeed = target.hspeed-1;
+                    //If the player object x is lower than x-32
+                    if (obj_player_goal.x &gt; x-32)
+                        hspeed = target.hspeed-0.5;
                     else
                         hspeed = 0;
                 }
@@ -338,6 +338,10 @@ if (target != noone) {
         hspeed = 0;
         x = xprevious
     }
+    
+    //Prevent the camera from reaching the right-edge
+    if (x &gt; room_width-128)
+        x = room_width-128;
 }
     
 //Round position variables
@@ -656,9 +660,10 @@ else {
         x = global.checkpoint.x+80;
         
         //Destroy enemies in sight
-        alarm[5] = 2;
+        if (global.checkpoint.kill)
+            alarm[5] = 2;
         
-        //Destroy all player objects
+        //Destroy all player objects        
         event_user(1);
         
         //Create a player object right in position
@@ -698,6 +703,13 @@ for (var i=0; i&lt;8; i++) {
     //If the background exists
     if (background_index[i] != -1)
         draw_background_tiled_horizontal_ext(background_index[i], xx[i]+(background_x[i]+background_hspeed[i]), background_y[i], 1, 1, 0, background_blend[i], background_alpha[i]);
+}
+
+//Draw camera in debug mode
+if (debug_mode) {
+
+    draw_sprite(spr_camera, 0, x, y);
+    draw_sprite(spr_camera, 1, x-32, y);    
 }
 
 //Draw pit

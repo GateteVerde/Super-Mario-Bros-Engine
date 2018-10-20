@@ -288,6 +288,7 @@
     <sprite>sprites\spr_left</sprite>
     <sprite>sprites\spr_right</sprite>
     <sprite>sprites\spr_event</sprite>
+    <sprite>sprites\spr_camera</sprite>
     <sprite>sprites\spr_playermarker</sprite>
   </sprites>
   <backgrounds name="background">
@@ -462,6 +463,7 @@
           <object>objects\obj_water</object>
         </objects>
         <object>objects\obj_pitwarp</object>
+        <object>objects\obj_warpzone</object>
         <object>objects\obj_bganimator</object>
         <object>objects\obj_checkpoint</object>
         <object>objects\obj_levelcontrol</object>
@@ -530,6 +532,7 @@
       <object>objects\obj_warpleft</object>
       <object>objects\obj_warpright</object>
       <object>objects\obj_warproom</object>
+      <object>objects\obj_warpworld</object>
     </objects>
     <objects name="Special">
       <objects name="Parents">

@@ -27,9 +27,6 @@
             <kind>1</kind>
             <string>///Use this on the cutscenes
 
-//Play 'Cutscene' fanfare
-audio_play_sound(bgm_cutscene, 0, false);
-
 //Make visible and start moving
 alarm[0] = 30;
 </string>
@@ -56,8 +53,11 @@ alarm[0] = 30;
             <kind>1</kind>
             <string>///Make visible
 
+//Play 'Cutscene' fanfare
+audio_play_sound(bgm_cutscene, 0, false);
+
 //Start moving
-hspeed = 0.75;
+hspeed = 0.625;
 
 //Make visible
 visible = 1;

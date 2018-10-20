@@ -170,6 +170,9 @@
     <instance objName="obj_warproom" x="928" y="192" name="inst_7233345A" locked="0" code="myroom = rm_w1_1_Bonus;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_checkpoint" x="1328" y="192" name="inst_E6935508" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_incastle" x="3280" y="192" name="inst_14475AA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="2640" y="80" name="inst_5E7465CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_right" x="2640" y="80" name="inst_9FFF961B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_left" x="2720" y="80" name="inst_B9ECC0FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="3232" y="128" w="96" h="80" xo="32" yo="0" id="10001845" name="inst_7371BAF2" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
