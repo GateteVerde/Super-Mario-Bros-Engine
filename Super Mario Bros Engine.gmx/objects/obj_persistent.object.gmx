@@ -249,7 +249,7 @@ view_vborder[0] = global.gh/2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Do not deactivate the following objects
+            <string>///Keep following objects activated
 
 instance_activate_object(obj_audio_loop_sound);
 </string>

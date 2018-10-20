@@ -343,10 +343,6 @@ if (target != noone) {
     if (x &gt; room_width-128)
         x = room_width-128;
 }
-    
-//Round position variables
-x = round(x);
-y = round(y);
 
 //Prevent the player from getting outside the view and set the view speed
 if (barrier == 0) {
@@ -419,9 +415,12 @@ if (levelmusic != noone) {
     }
 }
 
+//Round position variables
+x = floor(x);
+
 //Update parallax background position
 for (var i=0; i&lt;8; i++)
-    xx[i] = view_xview/(1.2+(0.4*i));
+    xx[i] = view_xview[view_current] / (1.2 + (0.4 * i));
 </string>
           </argument>
         </arguments>
