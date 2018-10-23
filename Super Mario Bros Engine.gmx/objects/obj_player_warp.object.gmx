@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_mario_small_pose</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>-5</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -46,7 +46,7 @@ xscale = 1;
 
 //Is the player invincible?
 isflashing = 0;
-alarm[4] = 1;
+alarm[1] = 1;
 </string>
           </argument>
         </arguments>
@@ -131,14 +131,14 @@ if (instance_exists(obj_invincibility)) {
     
     //Repeat the process.
     if (obj_invincibility.alarm[0] &gt; 120)
-        alarm[0] = 4;
+        alarm[1] = 4;
     else
-        alarm[0] = 16;
+        alarm[1] = 16;
 }
 else {
 
     isflashing = 0;
-    alarm[0] = 1;
+    alarm[1] = 1;
 }
 </string>
           </argument>

@@ -42,6 +42,7 @@ alarm[0] = 80;
 //Stop both music and timer
 with (obj_levelcontrol) {
 
+    musicdisable = true;
     alarm[1] = 1;
     alarm[2] = 0;
 }

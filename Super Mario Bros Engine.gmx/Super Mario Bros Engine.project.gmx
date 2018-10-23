@@ -282,6 +282,7 @@
       <sprite>sprites\spr_flagpole</sprite>
       <sprite>sprites\spr_underwater</sprite>
       <sprite>sprites\spr_underwater_top</sprite>
+      <sprite>sprites\spr_nintendo</sprite>
     </sprites>
     <sprite>sprites\spr_up</sprite>
     <sprite>sprites\spr_down</sprite>
@@ -373,6 +374,7 @@
       <background>background\tls_animate</background>
     </backgrounds>
     <background>background\bgr_pit</background>
+    <background>background\bgr_disclaimer</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_bubble</path>
@@ -622,6 +624,7 @@
         <object>objects\obj_flag</object>
         <object>objects\obj_flagc</object>
       </objects>
+      <object>objects\obj_skipper</object>
       <object>objects\obj_levelstart</object>
     </objects>
     <object>objects\obj_up</object>
@@ -630,7 +633,7 @@
     <object>objects\obj_right</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_load</room>
+    <room>rooms\rm_nintendo</room>
     <rooms name="Levels">
       <room>rooms\rm_levelstart</room>
       <rooms name="World 1">

@@ -416,7 +416,8 @@ if (levelmusic != noone) {
 }
 
 //Round position variables
-x = floor(x);
+x = round(x);
+y = round(y);
 
 //Update parallax background position
 for (var i=0; i&lt;8; i++)

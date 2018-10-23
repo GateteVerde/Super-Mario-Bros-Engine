@@ -58,6 +58,15 @@ global.gw = 256;
 //Game height
 global.gh = 224;
 
+//Key variables
+global._controlkey      = vk_control;
+global._shiftkey        = vk_shift;
+global._enterkey        = vk_enter;
+global._upkey           = vk_up;
+global._downkey         = vk_down;
+global._leftkey         = vk_left;
+global._rightkey        = vk_right;
+
 //Set the in-game fonts
 global.hud_font = font_add_sprite(spr_hudfont,ord('!'), 0, 0);
 global.hud_fontr = font_add_sprite(spr_hudfont_red,ord('!'), 0, 0);
@@ -418,7 +427,7 @@ else if (filter = 2)
     s = 3;
 
 //Reset display
-display_reset(0,vsync);
+display_reset(display_aa,vsync);
 
 //Set up the window
 window_set_size(global.gw*s,global.gh*s);

@@ -56,7 +56,14 @@ alarm[0] = 30;
 //If the player didn't came from another room
 if (global.postchange == -1) {
 
-    scr_player_retrieve(x,y);
+    with (scr_player_retrieve(x,y)) {
+    
+        if (!position_meeting(x,bbox_bottom+1,obj_solid)) {
+        
+            state = cs_jump;
+            jumping = 2;
+        }
+    }
 }
 
 //Destroy
