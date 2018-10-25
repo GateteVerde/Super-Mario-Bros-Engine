@@ -6,7 +6,7 @@
   <depth>1000000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_camera</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -421,7 +421,7 @@ y = round(y);
 
 //Update parallax background position
 for (var i=0; i&lt;8; i++)
-    xx[i] = view_xview[view_current] / (1.2 + (0.4 * i));
+    xx[i] = view_xview[view_current] / (1.5 + (0.5 * i));
 </string>
           </argument>
         </arguments>
@@ -698,18 +698,15 @@ for (var i=0; i&lt;8; i++)
             <kind>1</kind>
             <string>///Draw parallax backgrounds
 
-for (var i=0; i&lt;8; i++) {
-
-    //If the background exists
-    if (background_index[i] != -1)
-        draw_background_tiled_horizontal_ext(background_index[i], xx[i]+(background_x[i]+background_hspeed[i]), background_y[i], 1, 1, 0, background_blend[i], background_alpha[i]);
-}
-
-//Draw camera in debug mode
-if (debug_mode) {
-
-    draw_sprite(spr_camera, 0, x, y);
-    draw_sprite(spr_camera, 1, x-32, y);    
+//If the level is a castle maze
+if (instance_number(obj_castle) == 0) {
+    
+    for (var i=0; i&lt;8; i++) {
+    
+        //If the background exists
+        if (background_index[i] != -1)
+            draw_background_tiled_horizontal_ext(background_index[i], xx[i]+(background_x[i]+background_hspeed[i]), view_yview[0], 1, 1, 0, background_blend[i], background_alpha[i]);
+    }
 }
 
 //Draw pit

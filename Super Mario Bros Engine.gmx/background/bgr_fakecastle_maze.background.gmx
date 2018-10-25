@@ -14,6 +14,6 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>320</width>
-  <height>240</height>
+  <height>224</height>
   <data>images\bgr_fakecastle_maze.png</data>
 </background>

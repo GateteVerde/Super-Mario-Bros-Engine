@@ -2,11 +2,11 @@
 <object>
   <spriteName>spr_event</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_square</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,31 +25,33 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///A background animator
+            <string>///Castle Maze Manager
 
 /*
-**  This item uses creation code!
-**
-**  bg_index = Background to replace.
-**  bg_frame[0 ... 99] = Background frames.
+//  This object uses creation code
+//
+//      rx               = Camera Restart position
+//      maze_index       = Maze index
+//      maze_way[0...99] = Number of passages the maze has
 */
 
-//Default variables:
-bg_index = 0;
-bg_timer = 7;
-bg_frame[bg_index] = -1;
+//Default variables
+rx = 0;
+maze_index = 0;
+maze_way[maze_index] = noone;
 
-//Current frame of animation
+//Passages check
 numb = 0;
 
-//Begin animation
-alarm[0] = 1;
+//Do not draw backgrounds
+if (instance_number(obj_castle) == 0)
+    instance_create(0,0,obj_castle);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="4" ename="obj_levelcontrol">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -66,20 +68,68 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Animate the background
+            <string>///If the maze is correct
 
-//Set the background to the next one.
-background_index[bg_index] = bg_frame[numb];
-
-//Increment frame of animation
-numb++;
-if (numb == array_length_1d(bg_frame)) {
-
-    numb = 0;
-}
+//If all checkpoints have been check, destroy them
+if (numb == array_length_1d(maze_index)+1)
+    instance_destroy();
     
-//Continue the animation.
-alarm[0] = bg_timer;
+//Otherwise
+else {
+
+    //If the camera is below the room
+    if (obj_levelcontrol.y == 432) {
+    
+        //With the player
+        if (instance_exists(obj_playerparent)) {
+        
+            with (obj_playerparent) {
+            
+                x = self.x;
+                y = self.y-224;
+            }
+        }
+        
+        //Reset numb
+        numb = 0;
+        
+        //With the camera
+        with (obj_levelcontrol) y = 0;
+        
+        //Reset wrong ways
+        with (obj_wrongway) check = false;
+        
+        //Reset correct ways
+        for (i=0; i&lt;array_length_1d(maze_index); i++)
+            with (maze_way[i]) check = false;
+    }
+    
+    //Otherwise
+    else {
+    
+        //Reset background position
+        with (obj_castle) mazeview -= 512 / 1.5;
+        
+        //Reset camera position
+        obj_levelcontrol.x = rx;
+        obj_levelcontrol.y = 432;
+        obj_levelcontrol.alarm[6] = 3;
+        obj_levelcontrol.barrier = true;
+    
+        //Reset the player position
+        if (instance_exists(obj_playerparent)) {
+        
+            with (obj_playerparent) {
+            
+                x = ((view_xview*-1)+self.x)+obj_levelcontrol.x-128
+                y = self.y+224;
+            }
+        }
+        
+        //Reset view
+        view_xview[view_current] = 0;
+    }
+}
 </string>
           </argument>
         </arguments>
