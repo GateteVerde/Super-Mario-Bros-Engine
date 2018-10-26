@@ -110,23 +110,23 @@ if (other.y &gt;= y+16) {
 
 //5000 points
 if (obj_player_goal.ystart+16 &lt;= y+34)
-    with (instance_create(x+24,y+144,obj_score_goal)) event_user(8);
+    with (instance_create(x+12,y+144,obj_score_goal)) event_user(8);
     
 //2000 points
 else if (obj_player_goal.ystart+16 &lt;= y+80)
-    with (instance_create(x+24,y+144,obj_score_goal)) event_user(6);
+    with (instance_create(x+12,y+144,obj_score_goal)) event_user(6);
     
 //800 points
 else if (obj_player_goal.ystart+16 &lt;= y+104)
-    with (instance_create(x+24,y+144,obj_score_goal)) event_user(4);
+    with (instance_create(x+12,y+144,obj_score_goal)) event_user(4);
     
 //400 points
 else if (obj_player_goal.ystart+16 &lt;= y+144)
-    with (instance_create(x+24,y+144,obj_score_goal)) event_user(2);
+    with (instance_create(x+12,y+144,obj_score_goal)) event_user(2);
     
 //100 points
 else
-    with (instance_create(x+24,y+144,obj_score_goal)) event_user(0);
+    with (instance_create(x+12,y+144,obj_score_goal)) event_user(0);
 </string>
           </argument>
         </arguments>

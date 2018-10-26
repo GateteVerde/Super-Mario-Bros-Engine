@@ -614,9 +614,6 @@ if (global.postchange != -1) {
     //Move the camera to the warp spot
     x = global.postx+64;
     
-    //Destroy enemies in sight
-    alarm[5] = 2;
-    
     //Destroy player objects
     event_user(1);
         
