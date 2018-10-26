@@ -336,13 +336,17 @@ if (target != noone) {
     else {
     
         hspeed = 0;
-        x = xprevious
+        x = xprevious;
     }
     
     //Prevent the camera from reaching the right-edge
     if (x &gt; room_width-128)
         x = room_width-128;
 }
+
+//Otherwise, stop it
+else
+    hspeed = 0;
 
 //Prevent the player from getting outside the view and set the view speed
 if (barrier == 0) {

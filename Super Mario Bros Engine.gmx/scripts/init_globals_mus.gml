@@ -46,3 +46,14 @@ global._en[104] = 1505175;
 global._music[105] = bgm_bonus;
 global._st[105] = 114688;
 global._en[105] = 692927;
+
+//Bowser
+global._music[998] = bgm_bowser;
+global._st[998] = 151000;
+global._en[998] = 488000;
+
+//Bowser - Final
+global._music[999] = bgm_bowser_final;
+global._st[999] = 171000;
+global._en[999] = 677800;
+

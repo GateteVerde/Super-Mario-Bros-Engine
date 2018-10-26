@@ -22,6 +22,8 @@
       <sound>sound\bgm_castle</sound>
       <sound>sound\bgm_swimming</sound>
       <sound>sound\bgm_bonus</sound>
+      <sound>sound\bgm_bowser</sound>
+      <sound>sound\bgm_bowser_final</sound>
     </sounds>
     <sound>sound\snd_1up</sound>
     <sound>sound\snd_beanstalk</sound>
@@ -130,6 +132,13 @@
       <sprite>sprites\spr_shard</sprite>
     </sprites>
     <sprites name="Enemies">
+      <sprites name="Bowser">
+        <sprites name="Props">
+          <sprite>sprites\spr_bridge</sprite>
+          <sprite>sprites\spr_axe</sprite>
+          <sprite>sprites\spr_chain</sprite>
+        </sprites>
+      </sprites>
       <sprite>sprites\spr_goomba</sprite>
       <sprite>sprites\spr_goomba_sq</sprite>
       <sprite>sprites\spr_koopa</sprite>
@@ -501,6 +510,11 @@
         <object>objects\obj_generator_cheep</object>
         <object>objects\obj_generator_cheep_flying</object>
         <object>objects\obj_generator_bullet</object>
+      </objects>
+      <objects name="Bowser">
+        <objects name="Props">
+          <object>objects\obj_bridge</object>
+        </objects>
       </objects>
       <object>objects\obj_goomba</object>
       <object>objects\obj_koopa</object>
