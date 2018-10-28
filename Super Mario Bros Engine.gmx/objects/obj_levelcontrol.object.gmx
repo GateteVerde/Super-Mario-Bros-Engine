@@ -30,6 +30,7 @@
 //Default values (Check init_globals_mus for the number of the tracks)
 levelmusic = noone;
 leveltime = 0;
+drawblack = 0;
 
 //Begin playing the music
 alarm[0] = 2;
@@ -362,7 +363,7 @@ instance_deactivate_object(obj_deactenemyparent);
 instance_deactivate_object(obj_deactivateparent);
 
 //Activate deactivated instances inside the activation region
-instance_activate_region(view_xview[view_current] - 32, view_yview - 32, view_wview[view_current] + 96, view_hview[view_current] + 32, true);
+instance_activate_region(view_xview - 32, view_yview - 32, view_wview[view_current] + 32, view_hview[view_current] + 32, true);
 </string>
           </argument>
         </arguments>
@@ -709,6 +710,10 @@ if (instance_number(obj_castle) == 0) {
             draw_background_tiled_horizontal_ext(background_index[i], xx[i]+(background_x[i]+background_hspeed[i]), view_yview[0], 1, 1, 0, background_blend[i], background_alpha[i]);
     }
 }
+
+//Draw top
+if (drawblack)
+    draw_rectangle_colour(view_xview, 0, view_xview + view_wview, 32, c_black, c_black, c_black, c_black, 0);
 
 //Draw pit
 if (!instance_exists(obj_water_sf))

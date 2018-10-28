@@ -355,7 +355,7 @@
     <instance objName="obj_brick" x="1968" y="160" name="inst_FDDD43A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1952" y="208" name="inst_F4E55A00" locked="0" code="" scaleX="2" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_797F01F7" locked="0" code="levelmusic = 102;&#xA;leveltime = 400;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bganimator" x="16" y="0" name="inst_3534F427" locked="0" code="bg_index = 0;&#xA;bg_frame[0] = bgr_underground;&#xA;bg_frame[1] = bgr_underground_b;&#xA;bg_frame[2] = bgr_underground_c;&#xA;bg_frame[3] = bgr_underground_d;&#xA;bg_frame[4] = bgr_underground_c;&#xA;bg_frame[5] = bgr_underground_b;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bganimator" x="16" y="0" name="inst_3534F427" locked="0" code="bg_index = 0;&#xA;bg_timer = 14;&#xA;bg_frame[0] = bgr_underground_d;&#xA;bg_frame[1] = bgr_underground_c;&#xA;bg_frame[2] = bgr_underground_b;&#xA;bg_frame[3] = bgr_underground;&#xA;bg_frame[4] = bgr_underground;&#xA;bg_frame[5] = bgr_underground;&#xA;bg_frame[6] = bgr_underground;&#xA;bg_frame[7] = bgr_underground;&#xA;bg_frame[8] = bgr_underground;&#xA;bg_frame[9] = bgr_underground;&#xA;bg_frame[10] = bgr_underground_b;&#xA;bg_frame[11] = bgr_underground_c;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2016" y="208" name="inst_0657D5F3" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2192" y="144" name="inst_BC109717" locked="0" code="" scaleX="1" scaleY="11" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2176" y="144" name="inst_1D2ECA56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -561,8 +561,8 @@
     <instance objName="obj_up" x="1872" y="192" name="inst_A78AF1A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warptop" x="1648" y="160" name="inst_9E619FDE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warproom" x="1664" y="208" name="inst_17B74387" locked="0" code="myroom = rm_w1_2_Bonus;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_goomba" x="280" y="176" name="inst_A882BAD7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_goomba" x="264" y="192" name="inst_1EB95966" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_goomba" x="248" y="192" name="inst_A882BAD7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_goomba" x="232" y="192" name="inst_1EB95966" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_checkpoint" x="56" y="48" name="inst_1339E7B3" locked="0" code="kill = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_piranhaplant" x="2864" y="176" name="inst_1A85ED5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_piranhaplant" x="2928" y="176" name="inst_A718B8AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

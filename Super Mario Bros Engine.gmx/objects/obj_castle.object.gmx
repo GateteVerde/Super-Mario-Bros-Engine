@@ -52,7 +52,7 @@ mazeview = 0;
             <kind>1</kind>
             <string>///Draw castle background
 
-draw_background_tiled_ext(bgr_fakecastle_maze, (view_xview / 1.5) + mazeview, view_yview, 1, 1, c_white, 1);
+draw_background_tiled_ext(bgr_castle_fake, (view_xview / 1.5) + mazeview, view_yview, 1, 1, c_white, 1);
 </string>
           </argument>
         </arguments>

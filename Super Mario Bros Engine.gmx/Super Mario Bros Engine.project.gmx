@@ -229,6 +229,7 @@
         </sprites>
         <sprite>sprites\spr_bubble</sprite>
         <sprite>sprites\spr_cinder</sprite>
+        <sprite>sprites\spr_daze</sprite>
         <sprite>sprites\spr_fireball</sprite>
         <sprite>sprites\spr_fireball_hit</sprite>
         <sprite>sprites\spr_firework</sprite>
@@ -244,8 +245,6 @@
         <sprites name="Level Start">
           <sprite>sprites\spr_hud_ls_face</sprite>
           <sprite>sprites\spr_hud_ls_preview</sprite>
-          <sprite>sprites\spr_hud_ls_preview_lvl</sprite>
-          <sprite>sprites\spr_hud_ls_preview_lvl2</sprite>
         </sprites>
         <sprites name="Time Up">
           <sprite>sprites\spr_hud_tu_title</sprite>
@@ -366,12 +365,8 @@
         <background>background\bgr_nightsky_hills</background>
       </backgrounds>
       <backgrounds name="Castle">
-        <backgrounds name="Fake">
-          <background>background\bgr_fakecastle</background>
-          <background>background\bgr_fakecastle_b</background>
-          <background>background\bgr_fakecastle_maze</background>
-        </backgrounds>
         <background>background\bgr_castle</background>
+        <background>background\bgr_castle_fake</background>
       </backgrounds>
       <backgrounds name="Castle Walls">
         <background>background\bgr_castlewalls</background>
@@ -498,13 +493,17 @@
         <object>objects\obj_levelcontrol</object>
         <object>objects\obj_levelcontrol_tiles</object>
       </objects>
+      <objects name="Goals">
+        <objects name="Castle">
+          <object>objects\obj_toad</object>
+        </objects>
+        <object>objects\obj_flagpole</object>
+        <object>objects\obj_incastle</object>
+      </objects>
       <object>objects\obj_player</object>
       <object>objects\obj_player_alt</object>
       <object>objects\obj_player_warp</object>
       <object>objects\obj_player_climb</object>
-      <object>objects\obj_toad</object>
-      <object>objects\obj_flagpole</object>
-      <object>objects\obj_incastle</object>
     </objects>
     <object>objects\obj_solid</object>
     <object>objects\obj_climb</object>
@@ -642,6 +641,9 @@
           <object>objects\obj_beanstalk_b</object>
         </objects>
         <objects name="System">
+          <objects name="Backgrounds">
+            <object>objects\obj_castle</object>
+          </objects>
           <objects name="Eyecandy">
             <objects name="Score">
               <object>objects\obj_score</object>
@@ -653,11 +655,12 @@
             <object>objects\obj_rain</object>
             <object>objects\obj_smoke</object>
           </objects>
-          <object>objects\obj_castle</object>
-          <object>objects\obj_hud</object>
+          <objects name="Gameplay">
+            <object>objects\obj_audio_loop_sound</object>
+            <object>objects\obj_hud</object>
+            <object>objects\obj_water_sf</object>
+          </objects>
           <object>objects\obj_nonpc</object>
-          <object>objects\obj_water_sf</object>
-          <object>objects\obj_audio_loop_sound</object>
         </objects>
         <object>objects\obj_timeup</object>
         <object>objects\obj_flag</object>
@@ -688,6 +691,14 @@
         </rooms>
         <rooms name="1-3">
           <room>rooms\rm_w1_3</room>
+        </rooms>
+        <rooms name="1-4">
+          <room>rooms\rm_w1_4</room>
+        </rooms>
+      </rooms>
+      <rooms name="World 4">
+        <rooms name="4-4">
+          <room>rooms\rm_w4_4</room>
         </rooms>
       </rooms>
     </rooms>

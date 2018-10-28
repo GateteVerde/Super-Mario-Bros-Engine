@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>1536</width>
-  <height>432</height>
-  <data>images\bgr_fakecastle_b.png</data>
+  <width>3072</width>
+  <height>224</height>
+  <data>images\bgr_castle_fake.png</data>
 </background>

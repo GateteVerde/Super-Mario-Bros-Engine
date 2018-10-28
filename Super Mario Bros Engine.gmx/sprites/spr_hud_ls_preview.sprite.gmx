@@ -21,5 +21,9 @@
   <height>82</height>
   <frames>
     <frame index="0">images\spr_hud_ls_preview_0.png</frame>
+    <frame index="1">images\spr_hud_ls_preview_1.png</frame>
+    <frame index="2">images\spr_hud_ls_preview_2.png</frame>
+    <frame index="3">images\spr_hud_ls_preview_3.png</frame>
+    <frame index="4">images\spr_hud_ls_preview_4.png</frame>
   </frames>
 </sprite>

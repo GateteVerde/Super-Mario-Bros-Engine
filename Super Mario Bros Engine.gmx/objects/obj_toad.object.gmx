@@ -300,15 +300,15 @@ draw_set_alpha(1);
 
 //Display 'THANK YOU MARIO!'
 if (display &gt; 0)    
-    draw_text(view_xview[0]+128,view_yview[0]+64,string_upper("THANK YOU MARIO!"));
+    draw_text(view_xview[0]+128,view_yview[0]+72,string_upper("THANK YOU MARIO!"));
     
 //Display 'BUT OUR PRINCESS'
 if (display &gt; 1)
-    draw_text(view_xview[0]+128,view_yview[0]+94,string_upper("BUT OUR PRINCESS"));    
+    draw_text(view_xview[0]+128,view_yview[0]+104,string_upper("BUT OUR PRINCESS"));    
 
 //Display 'IS IN ANOTHER CASTLE'
 if (display &gt; 2)
-    draw_text(view_xview[0]+128,view_yview[0]+114,string_upper("IS IN ANOTHER CASTLE!"));      
+    draw_text(view_xview[0]+128,view_yview[0]+120,string_upper("IS IN ANOTHER CASTLE!"));      
 
 //Re-align the text
 draw_set_valign(fa_top);

@@ -87,26 +87,26 @@ if (instance_exists(obj_playerparent)) {
     
         //If the player is moving to the right and there's a wall on the way.
         if (hspeed &gt; 0) 
-        &amp;&amp; (collision_rectangle(bbox_right,bbox_top+4,bbox_right+1,bbox_bottom-1,other.id,0,0)) {
+        &amp;&amp; (collision_rectangle(bbox_right,bbox_top+4,bbox_right+1,bbox_bottom-4,other.id,0,0)) {
         
             //Stop horizontal speed
             hspeed = 0;
             
             //Prevent the player from getting embed on the wall
-            while (collision_rectangle(bbox_right,bbox_top+4,bbox_right,bbox_bottom-1,other.id,0,0))
+            while (collision_rectangle(bbox_right,bbox_top+4,bbox_right,bbox_bottom-4,other.id,0,0))
             &amp;&amp; (!collision_point(x,bbox_top+4,other.id,0,0))
                 x--;
         }
         
         //Otherwise, if the player is moving to the left and there's a wall on the way.
         else if (hspeed &lt; 0)
-        &amp;&amp; (collision_rectangle(bbox_left-1,bbox_top+4,bbox_left,bbox_bottom-1,other.id,0,0)) {
+        &amp;&amp; (collision_rectangle(bbox_left-1,bbox_top+4,bbox_left,bbox_bottom-4,other.id,0,0)) {
         
             //Stop horizontal speed
             hspeed = 0;
             
             //Prevent the player from getting embed on the wall
-            while (collision_rectangle(bbox_left,bbox_top+4,bbox_left,bbox_bottom-1,other.id,0,0))
+            while (collision_rectangle(bbox_left,bbox_top+4,bbox_left,bbox_bottom-4,other.id,0,0))
             &amp;&amp; (!collision_point(x,bbox_top+4,other.id,0,0))
                 x++;
         }

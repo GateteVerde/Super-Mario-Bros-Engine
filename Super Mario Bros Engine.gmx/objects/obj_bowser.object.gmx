@@ -31,11 +31,12 @@
 //  This object uses creation code
 //
 //      hammer = To make bowser throw hammers
+//      fake   = Sets up a different set of colours (1...7)
 */
 
 //Default variables
 hammer = 0;
-rounds = 8;
+fake = 0;
 
 //How vulnerable is this enemy to various items?
 vulnerable = 0;
@@ -56,6 +57,9 @@ xscale = 1;
 //Hits
 hits = 5;
 
+//Hammers left
+rounds = 8;
+
 //Whether bowser is in lava
 inlava = 0;
 
@@ -70,6 +74,31 @@ image_speed = 0.1;
 
 //Start moving
 alarm[10] = 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy fire generator
+
+with (obj_generator_flame) instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -106,6 +135,35 @@ alarm[1] = 300;
 //Make him throw hammers
 if (hammer == 1)
     alarm[4] = 60;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create daze effect
+
+with (instance_create(x+random_range(-8, 8), bbox_top-5, obj_smoke)) {
+
+    sprite_index = spr_daze;
+}
+alarm[5] = 8;
 </string>
           </argument>
         </arguments>
@@ -365,7 +423,8 @@ if (instance_exists(obj_axe)) {
         else {
         
             //If bowser is not breathing fire
-            if (sprite_index == spr_bowser) {
+            if (sprite_index == spr_bowser) 
+            &amp;&amp; (vspeed == 0) {
             
                 hspeed = 0.5;
                 xscale = 1;
@@ -456,6 +515,174 @@ if (cooldown &gt; 0)
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_fireball">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Damage bowser
+
+//Show hurt poses
+cooldown = 4;
+
+//If number of hits is smaller than 2, start dazing
+if (hits &gt; 1) {
+
+    //Decrement hits
+    hits--;
+    
+    //Start dazing
+    if (hits &lt; 3)
+        alarm[5] = 4;
+}
+
+//Otherwise it hits is equal to 1, inherit default event
+else {
+
+    event_inherited();    
+}
+
+//Destroy fireball
+with (other) event_user(0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_levelcontrol">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Change the music
+
+//If the player is not on the last stage
+if (global.world != "8-4") 
+&amp;&amp; (global.world != "D-4") {
+
+    //With the level controller
+    with (other) {
+    
+        //If the boss music is not playing
+        if (levelmusic != 998) {
+        
+            //Stop current theme
+            audio_stop_sound(global._music[levelmusic]);
+        
+            //Set 'Bowser' music
+            levelmusic = 998;
+            
+            //Play it
+            alarm[0] = 2;
+        }
+    }
+}
+
+//Otherwise, play 'Bowser - Final'
+else {
+
+    //With the level controller
+    with (other) {
+    
+        //If the boss music is not playing
+        if (levelmusic != 999) {
+        
+            //Stop current theme
+            audio_stop_sound(global._music[levelmusic]);
+        
+            //Set 'Bowser' music
+            levelmusic = 999;
+            
+            //Play it
+            alarm[0] = 2;
+        }
+    }    
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Custom bowser kill event
+
+//Inherit event
+event_inherited();
+
+//Switch between enemies
+switch (fake) {
+
+    //Goomba
+    case (1): imdead.sprite_index = spr_goomba; break;
+    
+    //Koopa
+    case (2): imdead.sprite_index = spr_shell; break;
+    
+    //Buzzy Beetle
+    case (3): imdead.sprite_index = spr_shell_buzzy; break
+    
+    //Spiny
+    case (4): imdead.sprite_index = spr_spiny; break;
+    
+    //Lakitu
+    case (5): imdead.sprite_index = spr_lakitu; break;
+    
+    //Blooper
+    case (6): imdead.sprite_index = spr_blooper; break;
+    
+    //Hammer Bro.
+    case (7): imdead.sprite_index = spr_hammerbro; break;
+}
+
+//Set motion
+imdead.vspeed = -3;
+imdead.hspeed = 0;
+imdead.gravity = 0.1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -476,7 +703,7 @@ if (cooldown &gt; 0)
             <string>///Draw bowser
 
 if (cooldown &gt; 0)
-    draw_sprite_ext(spr_bowser_dead, -1, round(x), y, xscale, 1, 0, c_white, 1);
+    draw_sprite_ext(spr_bowser_dead, -1*2, round(x), y, xscale, 1, 0, c_white, 1);
 else
     draw_sprite_ext(sprite_index, -1, round(x), y, xscale, 1, 0, c_white, 1);
 </string>
