@@ -55,8 +55,9 @@ vspeed = -2;
 
 if (y &lt; obj_flagpole.y+16) {
 
-    vspeed = 0;
     y = obj_flagpole.y+16;
+    if (vspeed &lt; 0)
+        vspeed = 0;
 }
 </string>
           </argument>

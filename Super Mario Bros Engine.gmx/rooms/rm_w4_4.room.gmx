@@ -51,10 +51,10 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_firebar" x="848" y="96" name="inst_01271CD8" locked="0" code="createblock = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="960" y="144" name="inst_91E72FDB" locked="0" code="createblock = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="1840" y="96" name="inst_9D50B579" locked="0" code="createblock = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="1952" y="160" name="inst_471335A6" locked="0" code="createblock = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="848" y="96" name="inst_01271CD8" locked="0" code="createblock = false;&#xA;angle = 90;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="960" y="144" name="inst_91E72FDB" locked="0" code="createblock = false;&#xA;angle = 135;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="1840" y="96" name="inst_9D50B579" locked="0" code="createblock = false;&#xA;angle = 180;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="1952" y="160" name="inst_471335A6" locked="0" code="createblock = false;&#xA;angle = 225;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="40" y="96" name="inst_0FD0A183" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="0" y="112" name="inst_7F6B279B" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="48" y="128" name="inst_2937C628" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -220,6 +220,7 @@
     <instance objName="obj_left" x="2720" y="96" name="inst_D2713E7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="2640" y="96" name="inst_C6BEFF7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform" x="2640" y="96" name="inst_E5EF4D14" locked="0" code="sprite_index = spr_platform_32;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="2592" y="160" name="inst_7370AD92" locked="0" code="angle = 270;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="0" y="48" w="32" h="16" xo="336" yo="128" id="10002224" name="inst_9AA68AAD" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

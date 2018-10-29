@@ -125,9 +125,10 @@ else {
         audio_play_sound(snd_firework, 0, false);
     
         //Spawn a firework
-        with (instance_create(view_xview[0]+random_range(32,208), view_yview[0]+random_range(32,64), obj_smoke)) {
+        with (instance_create(obj_incastle.x+random_range(-64,48), view_yview[0]+random_range(32,64), obj_smoke)) {
         
             sprite_index = spr_firework;
+            move_snap(16,16);
             score += 500;
             image_speed = 0.3;
         }
@@ -144,9 +145,10 @@ else {
         audio_play_sound(snd_firework, 0, false);
             
         //Spawn a firework
-        with (instance_create(view_xview[0]+random_range(32,208), view_yview[0]+random_range(32,64), obj_smoke)) {
+        with (instance_create(obj_incastle.x+random_range(-64,48), view_yview[0]+random_range(32,64), obj_smoke)) {
         
             sprite_index = spr_firework;
+            move_snap(16,16);
             score += 500;
             image_speed = 0.3;
         }

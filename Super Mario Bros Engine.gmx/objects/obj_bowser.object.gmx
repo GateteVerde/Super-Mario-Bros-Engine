@@ -413,7 +413,7 @@ if (instance_exists(obj_axe)) {
         if (!instance_exists(obj_playerparent)) 
         || (obj_playerparent.x &lt; x) {
         
-            hspeed = -0.5;
+            hspeed = -0.3;
             xscale = -1;
             if (x &lt; xstart-96)
                 x = xstart-96;
