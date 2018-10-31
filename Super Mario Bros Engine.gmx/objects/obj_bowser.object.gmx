@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>obj_deactenemyparent</parentName>
+  <parentName>obj_bowserparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -35,7 +35,7 @@
 */
 
 //Default variables
-hammer = 0;
+hammer = global.hardmode;
 fake = 0;
 
 //How vulnerable is this enemy to various items?
@@ -68,6 +68,9 @@ jumping = 0;
 
 //Display 'Hurt' sprite for a moment
 cooldown = 0;
+
+//Previous horizontal speed
+prevhspeed = 0;
 
 //Animate
 image_speed = 0.1;
@@ -123,8 +126,8 @@ with (obj_generator_flame) instance_destroy();
             <kind>1</kind>
             <string>///Move towards the player
 
-//Inherit event
-event_inherited();
+//Move towards the player
+hspeed = -0.3;
 
 //Make him jump
 alarm[0] = 60;
@@ -191,8 +194,9 @@ alarm[5] = 8;
 //If bowser can still throw hammers
 if (rounds &gt; 0) {
 
-    //If facing left
-    if (xscale == -1) {
+    //If facing left and not breathing fire
+    if (xscale == -1) 
+    &amp;&amp; (sprite_index == spr_bowser) {
     
         //Play 'Hammer' sound
         audio_play_sound(snd_hammer, 0, false);
@@ -282,8 +286,23 @@ alarm[1] = 60+random(30);
             <kind>1</kind>
             <string>///Breathe fire
 
+//Play 'Bowser Flame' sound
+audio_play_sound(snd_bowser_flame, 0, false);
+
 //Create fire
-instance_create(x-16, y-15, obj_bowser_flame);
+with (instance_create(x-16, y-15, obj_bowser_flame)) {
+
+    if (choose(0,1,2) == 1) {
+    
+        vspeed = -1;
+        alarm[0] = 16;
+    }
+    else if (choose(0,1,2) == 2) {
+    
+        vspeed = 1;
+        alarm[0] = 16;
+    }
+}
 
 //Set the animation
 image_speed = 0;
@@ -409,30 +428,76 @@ if (instance_exists(obj_axe)) {
     //If the axe is visible
     if (obj_axe.visible == true) {
     
-        //If the player does exist and it's at the left
-        if (!instance_exists(obj_playerparent)) 
-        || (obj_playerparent.x &lt; x) {
+        //If the player exists
+        if (instance_exists(obj_playerparent)) {
         
-            hspeed = -0.3;
-            xscale = -1;
-            if (x &lt; xstart-96)
-                x = xstart-96;
-        }
-        
-        //Otherwise, if the player is at the right
-        else {
-        
-            //If bowser is not breathing fire
-            if (sprite_index == spr_bowser) 
-            &amp;&amp; (vspeed == 0) {
-            
-                hspeed = 0.5;
-                xscale = 1;
-                if (x &gt; obj_axe.x-16)
-                    x = obj_axe.x-16;
+            //If the player is at the right
+            if (obj_playerparent.x &gt; x) {
+
+                //Check if bowser is not breathing fire
+                if (sprite_index == spr_bowser)
+                &amp;&amp; (vspeed == 0) {
+                
+                    hspeed = 0.45;
+                    xscale = 1;
+                    if (x &gt; obj_axe.x-16)
+                        x = obj_axe.x-16;
+                }
+                else {
+                
+                    //If there's no previous hspeed
+                    if (prevhspeed == 0) {
+                    
+                        prevhspeed = hspeed;
+                    }
+                    hspeed = 0;
+                }
             }
-            else
-                hspeed = 0;
+            
+            //Otherwise
+            else {
+            
+                //Look always at the left
+                xscale = -1;
+            
+                //If bowser is breathing fire, stop
+                if (sprite_index == spr_bowser) {
+                
+                    //If not moving
+                    if (prevhspeed != 0) {
+                                   
+                        hspeed = prevhspeed;
+                        prevhspeed = 0;
+                    }
+                    
+                    //Otherwise, 
+                    else {
+                    
+                        //Manage direction
+                        if (hspeed &gt; 0) {
+                        
+                            hspeed = 0.3;
+                            if (x &gt; xstart)
+                                hspeed = -hspeed;
+                        }
+                        else if (hspeed &lt; 0) {
+                        
+                            hspeed = -0.3;
+                            if (x &lt; xstart-144)             
+                                hspeed = -hspeed;
+                        }
+                    }
+                }
+                else {
+                
+                    //Stop moving
+                    if (prevhspeed == 0) {
+                    
+                        prevhspeed = hspeed;
+                    }
+                    hspeed = 0;
+                }
+            }
         }
         
         //Inherit event
@@ -491,6 +556,9 @@ if (instance_exists(obj_axe)) {
                 
                 //If not inside lava
                 if (inlava == 0) {
+                
+                    //Play 'Bowser Lava' sound
+                    audio_play_sound(snd_bowser_lava, 0, false);
                 
                     //Inside lava
                     inlava = 1;

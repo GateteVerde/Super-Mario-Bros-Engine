@@ -80,6 +80,9 @@ else {
     
         //Check if there's 1 flame and bowser does not exist
         if (instance_number(obj_bowser_flame) &lt; 1) &amp;&amp; (instance_number(obj_bowser) == 0) {
+        
+            //Play 'Flame' sound
+            audio_play_sound(snd_flame, 0, false);
 
             //Repeat
             alarm[0] = 144;

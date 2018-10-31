@@ -28,6 +28,8 @@
     </sounds>
     <sound>sound\snd_1up</sound>
     <sound>sound\snd_beanstalk</sound>
+    <sound>sound\snd_bowser_flame</sound>
+    <sound>sound\snd_bowser_lava</sound>
     <sound>sound\snd_break</sound>
     <sound>sound\snd_bridge</sound>
     <sound>sound\snd_bump</sound>
@@ -311,6 +313,7 @@
     <sprite>sprites\spr_right</sprite>
     <sprite>sprites\spr_event</sprite>
     <sprite>sprites\spr_camera</sprite>
+    <sprite>sprites\spr_npcmarker</sprite>
     <sprite>sprites\spr_playermarker</sprite>
   </sprites>
   <backgrounds name="background">
@@ -485,20 +488,20 @@
             <object>objects\obj_windmaker</object>
           </objects>
           <object>objects\obj_water</object>
+          <object>objects\obj_warpzone</object>
+        </objects>
+        <objects name="Goals">
+          <objects name="Castle">
+            <object>objects\obj_toad</object>
+          </objects>
+          <object>objects\obj_flagpole</object>
+          <object>objects\obj_incastle</object>
         </objects>
         <object>objects\obj_pitwarp</object>
-        <object>objects\obj_warpzone</object>
         <object>objects\obj_bganimator</object>
         <object>objects\obj_checkpoint</object>
         <object>objects\obj_levelcontrol</object>
         <object>objects\obj_levelcontrol_tiles</object>
-      </objects>
-      <objects name="Goals">
-        <objects name="Castle">
-          <object>objects\obj_toad</object>
-        </objects>
-        <object>objects\obj_flagpole</object>
-        <object>objects\obj_incastle</object>
       </objects>
       <object>objects\obj_player</object>
       <object>objects\obj_player_alt</object>
@@ -512,9 +515,13 @@
       <object>objects\obj_qblock</object>
       <object>objects\obj_qblock_coins</object>
       <object>objects\obj_qblock_hidden</object>
+      <object>objects\obj_emptyblock</object>
       <object>objects\obj_brick</object>
     </objects>
     <objects name="Enemies">
+      <objects name="Castle Mazes">
+        <object>objects\obj_maze_enemy</object>
+      </objects>
       <objects name="Generators">
         <object>objects\obj_generator_cheep</object>
         <object>objects\obj_generator_cheep_flying</object>
@@ -527,7 +534,6 @@
           <object>objects\obj_bridge</object>
         </objects>
         <object>objects\obj_bowser</object>
-        <object>objects\obj_bowser_flame</object>
       </objects>
       <object>objects\obj_goomba</object>
       <object>objects\obj_koopa</object>
@@ -580,6 +586,7 @@
         <objects name="NPC">
           <objects name="Enemy">
             <object>objects\obj_enemyparent</object>
+            <object>objects\obj_bowserparent</object>
             <object>objects\obj_deactenemyparent</object>
           </objects>
           <object>objects\obj_physicsparent</object>
@@ -601,12 +608,14 @@
           <object>objects\obj_player_axe</object>
         </objects>
         <objects name="Blocks">
-          <object>objects\obj_emptyblock</object>
           <object>objects\obj_shard</object>
           <object>objects\obj_blockcoin</object>
           <object>objects\obj_blockbumper</object>
         </objects>
         <objects name="Enemies">
+          <objects name="Bowser">
+            <object>objects\obj_bowser_flame</object>
+          </objects>
           <object>objects\obj_enemy_dead</object>
           <object>objects\obj_enemy_stomped</object>
           <object>objects\obj_stomped</object>
@@ -666,6 +675,7 @@
         <object>objects\obj_flag</object>
         <object>objects\obj_flagc</object>
       </objects>
+      <object>objects\obj_reset</object>
       <object>objects\obj_skipper</object>
       <object>objects\obj_levelstart</object>
     </objects>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-2</depth>
   <persistent>0</persistent>
-  <parentName>obj_deactivateparent</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -49,6 +49,9 @@ dist = 8;
 
 //Animation
 anim = 0;
+
+//Block variable
+angle_default = angle;
 
 //Create firebars and move them
 alarm[0] = 2;
@@ -123,7 +126,7 @@ for (var i=0; i&lt;length; i++) {
 
 //Create a empty block
 if (createblock == true)
-    instance_create(xstart, ystart, obj_emptyblock);
+    myblock = instance_create(xstart, ystart, obj_emptyblock);
 </string>
           </argument>
         </arguments>
@@ -150,6 +153,11 @@ if (createblock == true)
 
 //Animate
 anim += 0.3;
+
+//Reset angle if outside the view
+if (x &lt; view_xview[0]-48)
+|| (x &gt; view_xview[0] + view_xview[0] + 33)
+    angle = angle_default;
 </string>
           </argument>
         </arguments>

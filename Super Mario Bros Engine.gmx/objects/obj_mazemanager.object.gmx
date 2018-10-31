@@ -80,6 +80,9 @@ else {
     //If the camera is below the room
     if (obj_levelcontrol.y == 432) {
     
+        //Reset enemies
+        with (obj_reset) alarm[0] = 2;
+    
         //With the player
         if (instance_exists(obj_playerparent)) {
         

@@ -53,6 +53,7 @@ mazeview = 0;
             <string>///Draw castle background
 
 draw_background_tiled_ext(bgr_castle_fake, (view_xview / 1.5) + mazeview, view_yview, 1, 1, c_white, 1);
+draw_rectangle_colour(view_xview, view_yview, view_xview + view_wview, view_yview + 32, c_black, c_black, c_black, c_black, 0);
 </string>
           </argument>
         </arguments>
