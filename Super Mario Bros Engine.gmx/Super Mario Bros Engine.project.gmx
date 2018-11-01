@@ -211,6 +211,7 @@
       <sprite>sprites\spr_square</sprite>
       <sprite>sprites\spr_square_b</sprite>
       <sprite>sprites\spr_square_c</sprite>
+      <sprite>sprites\spr_square_d</sprite>
       <sprite>sprites\spr_rectangle_a</sprite>
       <sprite>sprites\spr_rectangle_b</sprite>
     </sprites>
@@ -502,6 +503,7 @@
         <object>objects\obj_checkpoint</object>
         <object>objects\obj_levelcontrol</object>
         <object>objects\obj_levelcontrol_tiles</object>
+        <object>objects\obj_clearnpcs</object>
       </objects>
       <object>objects\obj_player</object>
       <object>objects\obj_player_alt</object>
@@ -542,6 +544,7 @@
       <object>objects\obj_koopa_red</object>
       <object>objects\obj_parakoopa_red</object>
       <object>objects\obj_lakitu</object>
+      <object>objects\obj_lakitu_end</object>
       <object>objects\obj_hammerbro</object>
       <object>objects\obj_buzzybeetle</object>
       <object>objects\obj_spiny</object>
@@ -620,8 +623,8 @@
           <object>objects\obj_enemy_stomped</object>
           <object>objects\obj_stomped</object>
           <object>objects\obj_shell</object>
+          <object>objects\obj_lakitu2</object>
           <object>objects\obj_lakitu_egg</object>
-          <object>objects\obj_lakitu_ticker</object>
           <object>objects\obj_hammer</object>
           <object>objects\obj_redcheep</object>
           <object>objects\obj_greencheep</object>
@@ -669,7 +672,6 @@
             <object>objects\obj_hud</object>
             <object>objects\obj_water_sf</object>
           </objects>
-          <object>objects\obj_nonpc</object>
         </objects>
         <object>objects\obj_timeup</object>
         <object>objects\obj_flag</object>
@@ -704,6 +706,13 @@
         </rooms>
         <rooms name="1-4">
           <room>rooms\rm_w1_4</room>
+        </rooms>
+      </rooms>
+      <rooms name="World 2">
+        <rooms name="2-1">
+          <room>rooms\rm_w2_1</room>
+          <room>rooms\rm_w2_1_Bonus1</room>
+          <room>rooms\rm_w2_1_Bonus2</room>
         </rooms>
       </rooms>
       <rooms name="World 4">

@@ -57,7 +57,7 @@ show = false;
 if (show == false) {
 
     //Remove enemies
-    instance_create(view_xview + view_wview/2, view_yview, obj_nonpc);
+    with (obj_enemyparent) instance_destroy();
 
     //Show worlds
     show = true;

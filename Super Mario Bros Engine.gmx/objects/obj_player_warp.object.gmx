@@ -44,6 +44,12 @@ delay = 0;
 //Facing direction
 xscale = 1;
 
+//Set up palette
+if (global.player == 0)
+    palette_index = pal_mario;
+else
+    palette_index = pal_luigi;
+
 //Is the player invincible?
 isflashing = 0;
 alarm[1] = 1;

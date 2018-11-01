@@ -72,6 +72,13 @@ vspeed = -3;
             <kind>1</kind>
             <string>///Lakitu egg logic
 
+//If the player dies, stop everything
+if (instance_exists(obj_player_dead)) {
+
+    scr_freeze();
+    exit;
+}
+
 //Default floor event
 event_user(4);
 

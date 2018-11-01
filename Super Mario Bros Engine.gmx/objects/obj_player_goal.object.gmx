@@ -87,6 +87,10 @@ else if (global.time -(floor(global.time/10)*10) == 1)
             <kind>1</kind>
             <string>///Go to the level start screen
 
+//Disable pixel effect
+with (obj_persistent) tr_pixel = 0;
+
+//Go to level start screen
 room_goto(rm_levelstart);
 </string>
           </argument>

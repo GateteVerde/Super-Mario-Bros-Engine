@@ -40,7 +40,7 @@ musicdisable = 0;
 
 //Disable barrier
 barrier = 1;
-alarm[6] = 3;
+alarm[5] = 3;
 
 //Create HUD
 instance_create(0,0,obj_hud);
@@ -49,31 +49,6 @@ instance_create(0,0,obj_hud);
 x = view_xview[view_current]+128;
 view_object[0] = id;
 target = noone;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="6">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Disable barrier
-
-barrier = 0;
 </string>
           </argument>
         </arguments>
@@ -96,9 +71,9 @@ barrier = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Remove nearby NPCs
+            <string>///Disable barrier
 
-instance_create(view_xview+view_wview/2, view_yview, obj_nonpc);
+barrier = 0;
 </string>
           </argument>
         </arguments>
@@ -619,6 +594,13 @@ if (global.postchange != -1) {
     
     //Destroy player objects
     event_user(1);
+    
+    //Clear NPCs
+    with (obj_clearnpcs) {
+    
+        mode = 1;
+        event_user(0);
+    }
         
     //Main
     if (global.postchange == 0) {
@@ -663,9 +645,12 @@ else {
         //Move the camera to the checkpoint position
         x = global.checkpoint.x+80;
         
-        //Destroy enemies in sight
-        if (global.checkpoint.kill)
-            alarm[5] = 2;
+        //Clear NPCs
+        with (obj_clearnpcs) {
+        
+            mode = 0;
+            event_user(0);
+        }
         
         //Destroy all player objects        
         event_user(1);
