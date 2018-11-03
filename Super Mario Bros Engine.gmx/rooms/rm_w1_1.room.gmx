@@ -168,13 +168,10 @@
     <instance objName="obj_up" x="2640" y="208" name="inst_89E76908" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warptop" x="912" y="144" name="inst_5A76D3BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warproom" x="928" y="192" name="inst_7233345A" locked="0" code="myroom = rm_w1_1_Bonus;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_checkpoint" x="1328" y="192" name="inst_E6935508" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_checkpoint" x="1328" y="192" name="inst_E6935508" locked="0" code="///Remove if hard mode is active&#xA;&#xA;if (global.hardmode == 1)&#xA;    instance_destroy();&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_incastle" x="3280" y="192" name="inst_14475AA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_clearnpcs" x="1280" y="64" name="inst_A13EC9DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_clearnpcs" x="1312" y="64" name="inst_171849D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="40" y="0" name="inst_CE3BAF50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="2864" y="32" name="inst_29D922B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="40" y="0" name="inst_CB405EDE" locked="0" code="xmin = 448;&#xA;xmax = 2864;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="3232" y="128" w="96" h="80" xo="32" yo="0" id="10001845" name="inst_7371BAF2" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

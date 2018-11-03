@@ -61,17 +61,13 @@
     <instance objName="obj_lava" x="544" y="208" name="inst_531EA380" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="528" y="208" name="inst_C187C259" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="512" y="208" name="inst_32672254" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_emptyblock" x="592" y="96" name="inst_1E5CFB79" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_emptyblock" x="368" y="96" name="inst_F87DBB7B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="40" y="96" name="inst_8D7DC4D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebar" x="784" y="96" name="inst_94AEDC49" locked="0" code="clockwise = -1;&#xA;angle = 135;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebar" x="960" y="96" name="inst_6C5CCBB0" locked="0" code="clockwise = -1;&#xA;angle = 180;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebar" x="1072" y="96" name="inst_FEE9368C" locked="0" code="clockwise = -1;&#xA;angle = 225;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebar" x="1216" y="144" name="inst_2C770267" locked="0" code="clockwise = -1;&#xA;angle = 270;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebar" x="1344" y="144" name="inst_53C37231" locked="0" code="clockwise = -1;&#xA;angle = 315;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_emptyblock" x="1280" y="64" name="inst_555A91C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebar" x="1408" y="64" name="inst_565C3772" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_emptyblock" x="1472" y="144" name="inst_215BF40C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_qblock_hidden" x="1696" y="144" name="inst_93BCCFE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_qblock_hidden" x="1712" y="80" name="inst_D25B55E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_qblock_hidden" x="1744" y="144" name="inst_661F0BB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -92,7 +88,7 @@
     <instance objName="obj_bridge" x="2224" y="160" name="inst_8118BD9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bridge" x="2240" y="160" name="inst_18F075C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_axe" x="2256" y="128" name="inst_A1628C80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_toad" x="2448" y="176" name="inst_95418A98" locked="0" code="nextlevel = &quot;1-1&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_toad" x="2448" y="176" name="inst_95418A98" locked="0" code="nextlevel = &quot;2-1&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bowser" x="2224" y="144" name="inst_41425541" locked="0" code="fake = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_817A4031" locked="0" code="levelmusic = 103;&#xA;leveltime = 300;&#xA;drawblack = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="2048" y="208" name="inst_A9765249" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -157,9 +153,16 @@
     <instance objName="obj_solid" x="2304" y="32" name="inst_CC7C9D7C" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol_tiles" x="16" y="0" name="inst_4B80886F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_generator_flame" x="32" y="0" name="inst_6A9C8A45" locked="0" code="xmin = 1552;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="2208" y="96" name="inst_35EF788A" locked="0" code="sprite_index = spr_platform_32;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="2208" y="96" name="inst_35EF788A" locked="0" code="sprite_index = spr_platform_32;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_left" x="2224" y="96" name="inst_9B57FCA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="2144" y="96" name="inst_985DF79A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_createlavabubble_hard" x="432" y="96" name="inst_FA93791D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_createlavabubble_hard" x="528" y="96" name="inst_1A334EAB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_createlavabubble_hard" x="2096" y="96" name="inst_B27F2B4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_createfirebar_hard" x="368" y="96" name="inst_147D5ED6" locked="0" code="clockwise = -1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_persistent" x="592" y="96" name="inst_E4B2DBBD" locked="0" code="clockwise = -1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_persistent" x="1280" y="64" name="inst_53374F7B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_persistent" x="1472" y="144" name="inst_DACB1B86" locked="0" code="clockwise = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="32" y="112" w="16" h="16" xo="384" yo="128" id="10003812" name="inst_1ABBF0D9" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

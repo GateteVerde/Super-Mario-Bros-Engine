@@ -537,6 +537,16 @@
         </objects>
         <object>objects\obj_bowser</object>
       </objects>
+      <objects name="Hard">
+        <object>objects\obj_createkoopa_hard</object>
+        <object>objects\obj_createparakoopa_hard</object>
+        <object>objects\obj_createflyingparakoopa_hard</object>
+        <object>objects\obj_createredkoopa_hard</object>
+        <object>objects\obj_createblooper_hard</object>
+        <object>objects\obj_createfirebar_hard</object>
+        <object>objects\obj_createfastfirebar_hard</object>
+        <object>objects\obj_createlavabubble_hard</object>
+      </objects>
       <object>objects\obj_goomba</object>
       <object>objects\obj_koopa</object>
       <object>objects\obj_parakoopa</object>
@@ -713,6 +723,14 @@
           <room>rooms\rm_w2_1</room>
           <room>rooms\rm_w2_1_Bonus1</room>
           <room>rooms\rm_w2_1_Bonus2</room>
+        </rooms>
+        <rooms name="2-2">
+          <room>rooms\rm_w2_2</room>
+          <room>rooms\rm_w2_2_Main</room>
+          <room>rooms\rm_w2_2_Goal</room>
+        </rooms>
+        <rooms name="2-3">
+          <room>rooms\rm_w2_3</room>
         </rooms>
       </rooms>
       <rooms name="World 4">

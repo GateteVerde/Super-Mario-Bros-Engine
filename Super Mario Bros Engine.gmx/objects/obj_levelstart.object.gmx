@@ -76,6 +76,12 @@ switch (global.world) {
     
     //World 2-1
     case ("2-1"): frame = 5; break;
+    
+    //World 2-2
+    case ("2-2"): frame = 6; break;
+    
+    //World 2-3
+    case ("2-3"): frame = 7; break;
 }
 </string>
           </argument>
@@ -125,6 +131,12 @@ else {
         
         //World 2-1
         case ("2-1"): room_goto(rm_w2_1); break;
+        
+        //World 2-2
+        case ("2-2"): room_goto(rm_w2_2); break;
+        
+        //World 2-3
+        case ("2-3"): room_goto(rm_w2_3); break;
     }
 }
 </string>

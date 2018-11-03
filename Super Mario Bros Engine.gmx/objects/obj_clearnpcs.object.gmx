@@ -61,8 +61,12 @@ inst = instance_place(x+8, y+8, obj_enemyparent);
 if (inst != noone) {
 
     //If the level started with a checkpoint
-    if (mode == 0)
-        with (inst) instance_destroy();
+    if (mode == 0) {
+    
+        if (inst.x &gt; global.checkpoint.x - (global.gw/2) - 48)
+        &amp;&amp; (inst.x &lt; global.checkpoint.x + (global.gw/2) + 48)
+            with (inst) instance_destroy();
+    }
     
     //Otherwise, if the level started via warping
     else if (mode == 1) {

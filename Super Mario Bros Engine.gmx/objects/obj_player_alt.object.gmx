@@ -121,7 +121,7 @@ else
 audio_play_sound(snd_warp, 0, false);
 
 //Create pipe player
-with (instance_create(other.x-8,other.y+16,obj_player_warp)) {
+with (instance_create(other.x-5,other.y+16,obj_player_warp)) {
     
     //Set direction
     direction = 0;

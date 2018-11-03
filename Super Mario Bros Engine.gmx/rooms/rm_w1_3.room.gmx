@@ -53,12 +53,12 @@
   <instances>
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_F9430A41" locked="0" code="levelmusic = 101;&#xA;leveltime = 300;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="48" y="192" name="inst_05E4E339" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="880" y="80" name="inst_E8D8D615" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="880" y="80" name="inst_E8D8D615" locked="0" code="///Change into a shorter platform if hard mode is active&#xA;&#xA;if (global.hardmode == 1)&#xA;    sprite_index = spr_platform_32;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_up" x="880" y="224" name="inst_B194307F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_up" x="880" y="208" name="inst_50575706" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_qblock" x="944" y="160" name="inst_386E5736" locked="0" code="sprout = cs_powerup;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_checkpoint" x="1072" y="208" name="inst_37E39B6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="1376" y="128" name="inst_2F499797" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_checkpoint" x="1072" y="208" name="inst_37E39B6A" locked="0" code="///Remove if hard mode is active&#xA;&#xA;if (global.hardmode == 1)&#xA;    instance_destroy();&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="1376" y="128" name="inst_2F499797" locked="0" code="///Change into a shorter platform if hard mode is active&#xA;&#xA;if (global.hardmode == 1) {&#xA;&#xA;    sprite_index = spr_platform_32;&#xA;    x += 16;&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="1328" y="128" name="inst_9D095773" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_left" x="1408" y="128" name="inst_290AAB57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1360" y="80" name="inst_7D80AC77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -81,7 +81,7 @@
     <instance objName="obj_coin" x="1504" y="64" name="inst_95BFC978" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1552" y="64" name="inst_2F2A212B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1568" y="64" name="inst_F2E029AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="1456" y="144" name="inst_59F311A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="1456" y="144" name="inst_59F311A0" locked="0" code="///Change into a shorter platform if hard mode is active&#xA;&#xA;if (global.hardmode == 1)&#xA;    sprite_index = spr_platform_32;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_left" x="1536" y="144" name="inst_7DE4E0D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="1456" y="144" name="inst_BD26BD08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1808" y="176" name="inst_9A9C7B64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -91,7 +91,7 @@
     <instance objName="obj_coin" x="1936" y="64" name="inst_196062BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flagpole" x="2432" y="32" name="inst_A4284E87" locked="0" code="image_single = 1;&#xA;nextlevel = &quot;1-4&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_incastle" x="2544" y="192" name="inst_B3ED7A1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="2096" y="96" name="inst_09D2DDBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="2096" y="96" name="inst_09D2DDBE" locked="0" code="///Change into a shorter platform if hard mode is active&#xA;&#xA;if (global.hardmode == 1) {&#xA;&#xA;    sprite_index = spr_platform_32;&#xA;    x += 16;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="2048" y="96" name="inst_03E2E92A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_left" x="2128" y="96" name="inst_D2C0E482" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2064" y="208" name="inst_9468AA63" locked="0" code="" scaleX="1" scaleY="6.40000009536743" colour="4294967295" rotation="0"/>
@@ -134,6 +134,7 @@
     <instance objName="obj_koopa_red" x="2136" y="192" name="inst_37097088" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bganimator" x="32" y="0" name="inst_D11AAC2D" locked="0" code="bg_index = 2;&#xA;bg_frame[0] = bgr_waterfall;&#xA;bg_frame[1] = bgr_waterfall_b;&#xA;bg_frame[2] = bgr_waterfall_c;&#xA;bg_frame[3] = bgr_waterfall_d;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol_tiles" x="16" y="0" name="inst_62E375F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_generator_bullet" x="48" y="0" name="inst_51564A95" locked="0" code="///Destroy if hard mode is not active&#xA;&#xA;xmin = 0;&#xA;xmax = 2208;&#xA;if (global.hardmode == false)&#xA;    instance_destroy();&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="0" y="128" w="96" h="80" xo="32" yo="0" id="10003355" name="inst_5BC64E47" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

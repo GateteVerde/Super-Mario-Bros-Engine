@@ -47,17 +47,11 @@ palette_index = noone;
 image_speed = 0;
 image_index = 0;
 
-//Throw a spiny
-alarm[0] = 60;
-
-//Set the target
-target = instance_nearest(obj_levelcontrol.x, obj_levelcontrol.y, obj_playerparent);
-
-//Set the horizontal speed
-hspeed = -1;
-
-//Makes lakitu go away
+//Make lakitu go away
 goaway = 0;
+
+//Begin movement
+alarm[10] = 2;
 </string>
           </argument>
         </arguments>
@@ -83,7 +77,45 @@ goaway = 0;
             <string>///Call another lakitu if not going away
 
 if (goaway == false)
-    with (obj_lakitu) alarm[2] = 540;
+    with (obj_lakitu) alarm[1] = 540;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Begin movement if inside the view
+
+if (x &gt; view_xview[view_current] - 16)
+&amp;&amp; (x &lt; view_xview[view_current] + view_wview[view_current]) {
+
+    //Set the target
+    target = instance_nearest(obj_levelcontrol.x, obj_levelcontrol.y, obj_playerparent);
+    
+    //Throw a spiny
+    alarm[0] = 60;
+    
+    //Set the horizontal speed
+    hspeed = -1.2;
+}
+else
+    alarm[10] = 1;
 </string>
           </argument>
         </arguments>
@@ -107,6 +139,9 @@ if (goaway == false)
           <argument>
             <kind>1</kind>
             <string>///Toss an egg
+
+//Play 'Hammer' sound
+audio_play_sound(snd_hammer, 0, false);
 
 //Create a spiny egg
 with (instance_create(x, y-16, obj_lakitu_egg)) {
@@ -164,7 +199,10 @@ if (x &gt; view_xview[0]-16)
 }
 
 //Repeat the process
-alarm[0] = 144;
+if (floor(random(2)) == 0)
+    alarm[0] = 72;
+else
+    alarm[0] = 144;
 </string>
           </argument>
         </arguments>
@@ -210,7 +248,7 @@ if (instance_number(obj_playerparent) &gt; 0)
         target = instance_nearest(obj_levelcontrol.x, obj_levelcontrol.y, obj_playerparent);
     }
     
-    //Update facing direction
+    //Turn towards the player
     if (target.x &gt; x)
         xscale = 1;
     else
@@ -218,9 +256,9 @@ if (instance_number(obj_playerparent) &gt; 0)
     
     //Turn around
     if (x &lt; view_xview[view_current] + 40)
-        hspeed = 1;
+        hspeed = 1.2;    
     else if (x &gt; view_xview[view_current] + 216)
-        hspeed = -1;
+        hspeed = -1.2;
         
     //Round x position
     x = round(x);

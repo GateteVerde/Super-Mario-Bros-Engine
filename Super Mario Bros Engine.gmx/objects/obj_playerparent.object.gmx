@@ -570,7 +570,7 @@ else {
     }
 
     //Make the player do stuff if he falls on a pit.
-    else if (bbox_bottom &gt;= room_height+32) {
+    else if ((bbox_bottom &gt;= room_height+32) &amp;&amp; (!instance_exists(obj_pitwarp))) {
     
         instance_create(x,y,obj_player_dead);
         instance_destroy();

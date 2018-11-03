@@ -5,10 +5,10 @@
   <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
-  <maskName>spr_square</maskName>
+  <parentName>obj_createfirebar_hard</parentName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,9 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Makes lakitu go away
+            <string>///Create a firebar on hard mode
 
-y = 48;
+if (global.hardmode == 1) {
+
+    with (instance_create(x,y,obj_firebar_fast)) {
+    
+        clockwise = other.clockwise;
+        length = other.length;
+        angle = other.angle;
+        createblock = false;        
+    }
+}
+
+//Create a block
+instance_create(x,y,obj_emptyblock);
 </string>
           </argument>
         </arguments>

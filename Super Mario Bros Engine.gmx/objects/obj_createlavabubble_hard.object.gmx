@@ -3,12 +3,12 @@
   <spriteName>spr_event</spriteName>
   <solid>0</solid>
   <visible>0</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>spr_square</maskName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Makes lakitu go away
+            <string>///Create a lavabubble on hard mode
 
-y = 48;
+if (global.hardmode == 1)
+    instance_create(x+8, y, obj_lavabubble);
 </string>
           </argument>
         </arguments>
