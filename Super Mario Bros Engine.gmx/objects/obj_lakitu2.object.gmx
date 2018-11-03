@@ -182,8 +182,8 @@ if (x &gt; view_xview[0]-16)
 &amp;&amp; (x &lt; view_xview[0] + view_wview[0]) 
 &amp;&amp; (goaway == 0) {
 
-    //If there's 6 and less spinies in view
-    if (instance_number(obj_spiny) == 6)
+    //If there's 3 or more spinies in view
+    if (instance_number(obj_spiny) &gt;= 3)
         image_index = 1;
         
     //Otherwise, if the enemy is overlapping a solid

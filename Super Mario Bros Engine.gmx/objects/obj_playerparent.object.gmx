@@ -540,6 +540,14 @@ if (vspeed == 0)
     }
 }
 
+//Fixes a bug when being hit while stuck
+if (global.powerup == 0)
+|| (crouch == 1) {
+
+    inwall = 0;
+    direct2 = 0;
+}
+
 //Unstuck in case of overlapping a solid completely
 if (state &lt; 2)
 &amp;&amp; (inwall == 0)

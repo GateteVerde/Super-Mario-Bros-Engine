@@ -732,6 +732,9 @@
         <rooms name="2-3">
           <room>rooms\rm_w2_3</room>
         </rooms>
+        <rooms name="2-4">
+          <room>rooms\rm_w2_4</room>
+        </rooms>
       </rooms>
       <rooms name="World 4">
         <rooms name="4-4">

@@ -155,8 +155,8 @@ if (createblock == true)
 anim += 0.3;
 
 //Reset angle if outside the view
-if (x &lt; view_xview[0]-48)
-|| (x &gt; view_xview[0] + view_wview[0] + 48)
+if (x &lt; view_xview[0]-(48+(length*8)))
+|| (x &gt; view_xview[0] + view_wview[0] + (48+(length*8)))
     angle = angle_default;
 </string>
           </argument>

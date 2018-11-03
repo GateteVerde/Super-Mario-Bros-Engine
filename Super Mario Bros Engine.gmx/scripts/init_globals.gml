@@ -18,7 +18,7 @@ global.hardmode = true;
 global.player = 0;
 
 //Current World (Must be in brackets)
-global.world = "1-1";
+global.world = "2-4";
 
 //Skin (0: NOR, 1: UND, 2: CAS)
 global.skin = 0;
