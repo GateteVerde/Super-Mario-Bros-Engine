@@ -44,7 +44,8 @@ xscale = 1;
 if (global.player == 0) {
     
     //If moving horizontally
-    if (hspeed != 0) {
+    if (!place_meeting(x,y,obj_warptop)) 
+    &amp;&amp; (!place_meeting(x,y,obj_warpbottom)) {
     
         sprite_index = scr_mario_walk();
         image_speed = 0.15;
@@ -54,7 +55,7 @@ if (global.player == 0) {
     else {
     
         //If moving up
-        if (vspeed &lt; 0) {
+        if (place_meeting(x,y,obj_warpbottom)) {
         
             sprite_index = scr_mario_walk();
             image_speed = 0;
@@ -62,7 +63,7 @@ if (global.player == 0) {
         }
         
         //Otherwise, if moving down
-        else if (vspeed &gt; 0) {
+        else if (place_meeting(x,y,obj_warptop)) {
         
             sprite_index = scr_mario_pose();
             image_speed = 0;
@@ -76,7 +77,8 @@ if (global.player == 0) {
 else {
     
     //If moving horizontally
-    if (hspeed != 0) {
+    if (!place_meeting(x,y,obj_warptop)) 
+    &amp;&amp; (!place_meeting(x,y,obj_warpbottom)) {
     
         sprite_index = scr_luigi_walk();
         image_speed = 0.15;
@@ -86,7 +88,7 @@ else {
     else {
     
         //If moving up
-        if (vspeed &lt; 0) {
+        if (place_meeting(x,y,obj_warpbottom)) {
         
             sprite_index = scr_luigi_walk();
             image_speed = 0;
@@ -94,7 +96,7 @@ else {
         }
         
         //Otherwise, if moving down
-        else if (vspeed &gt; 0) {
+        else if (place_meeting(x,y,obj_warptop)) {
         
             sprite_index = scr_luigi_pose();
             image_speed = 0;

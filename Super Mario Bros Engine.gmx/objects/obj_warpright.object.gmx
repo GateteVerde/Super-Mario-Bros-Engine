@@ -36,7 +36,7 @@ if (player)
     audio_play_sound(snd_warp, 0, false);
     
     //Create pipe player
-    with (instance_create(x+24,y+16,obj_player_warp)) {
+    with (instance_create(x+21,y+16,obj_player_warp)) {
         
         //Set direction
         direction = 180;

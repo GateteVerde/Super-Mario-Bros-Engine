@@ -160,9 +160,13 @@
     <instance objName="obj_createlavabubble_hard" x="528" y="96" name="inst_1A334EAB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_createlavabubble_hard" x="2096" y="96" name="inst_B27F2B4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_createfirebar_hard" x="368" y="96" name="inst_147D5ED6" locked="0" code="clockwise = -1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_persistent" x="592" y="96" name="inst_E4B2DBBD" locked="0" code="clockwise = -1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_persistent" x="1280" y="64" name="inst_53374F7B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_persistent" x="1472" y="144" name="inst_DACB1B86" locked="0" code="clockwise = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_createfirebar_hard" x="592" y="96" name="inst_9C2FFEB9" locked="0" code="clockwise = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_createfirebar_hard" x="1280" y="64" name="inst_3A1A30E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_createfirebar_hard" x="1472" y="144" name="inst_90C551A4" locked="0" code="clockwise = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_emptyblock" x="368" y="96" name="inst_3505D2E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_emptyblock" x="592" y="96" name="inst_BF4BA587" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_emptyblock" x="1280" y="64" name="inst_BA720001" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_emptyblock" x="1472" y="144" name="inst_239FC72B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="32" y="112" w="16" h="16" xo="384" yo="128" id="10003812" name="inst_1ABBF0D9" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

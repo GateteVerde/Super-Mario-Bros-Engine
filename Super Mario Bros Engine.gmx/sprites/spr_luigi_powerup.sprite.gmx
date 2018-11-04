@@ -30,5 +30,7 @@
     <frame index="7">images\spr_luigi_powerup_7.png</frame>
     <frame index="8">images\spr_luigi_powerup_8.png</frame>
     <frame index="9">images\spr_luigi_powerup_9.png</frame>
+    <frame index="10">images\spr_luigi_powerup_10.png</frame>
+    <frame index="11">images\spr_luigi_powerup_11.png</frame>
   </frames>
 </sprite>

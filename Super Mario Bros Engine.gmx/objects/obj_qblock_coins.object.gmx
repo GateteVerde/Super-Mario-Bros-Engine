@@ -3,7 +3,7 @@
   <spriteName>spr_qblock</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>9</depth>
   <persistent>0</persistent>
   <parentName>obj_blockparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -108,7 +108,12 @@ if (state == 1) {
             state = 0;
         }
     }
+    
+    //Set the depth
+    depth = -2;
 }
+else
+    depth = 9;
 </string>
           </argument>
         </arguments>

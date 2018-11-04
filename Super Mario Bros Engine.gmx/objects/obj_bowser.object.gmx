@@ -205,7 +205,7 @@ if (rounds &gt; 0) {
         rounds--;
         
         //Create hammer
-        with (instance_create(x, bbox_top-8, obj_hammer)) {
+        with (instance_create(x-8, bbox_top-8, obj_hammer)) {
 
             hspeed = -1;
             image_xscale = -1;

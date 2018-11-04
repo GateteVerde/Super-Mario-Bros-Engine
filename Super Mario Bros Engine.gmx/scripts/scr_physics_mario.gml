@@ -19,7 +19,7 @@ acc = 0.05;
 accskid = 0.15;
 
 //Deceleration
-dec = 0.0375;
+dec = 0.0325;
 
 //Deceleration (when turning)
 decskid = 0.065;

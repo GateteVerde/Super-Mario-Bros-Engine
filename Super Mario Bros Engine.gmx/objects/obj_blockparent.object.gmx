@@ -3,7 +3,7 @@
   <spriteName>spr_qblock</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>9</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -99,7 +99,14 @@ if (state == 1) {
         instance_create(x,ystart,obj_emptyblock);
         instance_destroy();
     }
+    
+    //Set depth
+    depth = -2;
 }
+
+//Otherwise, set default state
+else
+    depth = 9;
 </string>
           </argument>
         </arguments>
