@@ -3,7 +3,7 @@
   <spriteName>spr_beanstalk</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>10</depth>
   <persistent>0</persistent>
   <parentName>obj_climb</parentName>
   <maskName>spr_square_c</maskName>

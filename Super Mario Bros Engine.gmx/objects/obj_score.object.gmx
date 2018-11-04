@@ -95,10 +95,10 @@ instance_destroy();
 x = view_xview[view_current];
 
 //Prevent the effect from appearing outside the view
-if (_xx &lt; 0)
-    _xx = 0;
-else if (_xx &gt; global.gw)
-    _xx = global.gw;
+if (_xx &lt; 2)
+    _xx = 2;
+else if (_xx &gt; 236)
+    _xx = 236;
 
 //Prevent the effect from going too high on the screen
 if (y &lt; view_yview[view_current]+40)
