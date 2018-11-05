@@ -242,6 +242,7 @@
         <sprite>sprites\spr_shellthump</sprite>
         <sprite>sprites\spr_smoke</sprite>
         <sprite>sprites\spr_smoke_skid</sprite>
+        <sprite>sprites\spr_snow</sprite>
         <sprite>sprites\spr_sparkle</sprite>
       </sprites>
       <sprites name="HUD">
@@ -399,6 +400,7 @@
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_bubble</path>
+    <path>paths\pth_snow</path>
   </paths>
   <scripts name="scripts">
     <scripts name="Gameplay">
@@ -486,6 +488,7 @@
           </objects>
           <objects name="Weather">
             <object>objects\obj_rainmaker</object>
+            <object>objects\obj_snowmaker</object>
             <object>objects\obj_windmaker</object>
           </objects>
           <object>objects\obj_water</object>
@@ -675,6 +678,7 @@
             <object>objects\obj_leaf</object>
             <object>objects\obj_bubble_current</object>
             <object>objects\obj_rain</object>
+            <object>objects\obj_snow</object>
             <object>objects\obj_smoke</object>
           </objects>
           <objects name="Gameplay">

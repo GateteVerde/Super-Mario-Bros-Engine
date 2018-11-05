@@ -25,9 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Generate rain drops
+            <string>///Generate snow drops
 
-with (instance_create(view_xview[view_current]+round(random_range(0,512)), view_yview[0]-5, obj_rain))
+with (instance_create(view_xview[view_current]+round(random_range(0,512)), view_yview[0]-5, obj_snow)) 
     depth = round(random_range(-6,9));
 </string>
           </argument>
