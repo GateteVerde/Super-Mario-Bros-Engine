@@ -1336,7 +1336,7 @@ else
             <string>///Make the player bounce
 
 //Set the vertical speed
-vspeed = -4;
+vspeed = -4.1;
 
 //Boost jump
 y--;

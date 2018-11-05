@@ -256,6 +256,9 @@
           <sprite>sprites\spr_hud_tu_player2</sprite>
           <sprite>sprites\spr_hud_tu_timeup</sprite>
         </sprites>
+        <sprites name="Menu">
+          <sprite>sprites\spr_hud_title_cursor</sprite>
+        </sprites>
         <sprite>sprites\spr_hud</sprite>
         <sprite>sprites\spr_hud_l</sprite>
         <sprite>sprites\spr_hudfont</sprite>
@@ -396,6 +399,7 @@
       <background>background\tls_animate</background>
     </backgrounds>
     <background>background\bgr_pit</background>
+    <background>background\bgr_title</background>
     <background>background\bgr_disclaimer</background>
   </backgrounds>
   <paths name="paths">
@@ -433,6 +437,8 @@
       <scripts name="NPCs">
         <script>scripts\scr_freeze.gml</script>
       </scripts>
+      <script>scripts\save.gml</script>
+      <script>scripts\load.gml</script>
       <script>scripts\scr_score_add.gml</script>
       <script>scripts\scr_coins_add.gml</script>
     </scripts>
@@ -693,6 +699,7 @@
       </objects>
       <object>objects\obj_reset</object>
       <object>objects\obj_skipper</object>
+      <object>objects\obj_title</object>
       <object>objects\obj_levelstart</object>
     </objects>
     <object>objects\obj_up</object>
@@ -702,6 +709,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_nintendo</room>
+    <room>rooms\rm_title</room>
     <rooms name="Levels">
       <room>rooms\rm_levelstart</room>
       <rooms name="World 1">

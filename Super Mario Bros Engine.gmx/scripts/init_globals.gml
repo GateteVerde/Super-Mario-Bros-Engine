@@ -15,10 +15,10 @@ global.smb2jmode = false;
 global.hardmode = false;
 
 //Current player (0: Mario, 1: Luigi)
-global.player = 1;
+global.player = 0;
 
 //Current World (Must be in brackets)
-global.world = "3-1";
+global.world = "1-1";
 
 //Skin (0: NOR, 1: UND, 2: CAS)
 global.skin = 0;
@@ -34,6 +34,9 @@ score = 0;
 
 //Coins
 global.coins = 0;
+
+//Hi-Score
+global.hiscore = 0;
 
 //Powerup
 global.powerup = cs_small;

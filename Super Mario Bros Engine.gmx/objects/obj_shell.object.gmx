@@ -289,8 +289,7 @@ if (ready == 2) {
     if (stomp != -1)
     || (other.invulnerable == -1) {
     
-        //If the player is above the enemy and moving down
-        //if (other.bbox_bottom &lt; bbox_top-vspeed+5) 
+        //If the player is moving down
         if (other.vspeed != 0) {
         
             //If the enemy can be stomped and it is not underwater
@@ -307,6 +306,10 @@ if (ready == 2) {
                     if (other.vspeed &gt; 0)
                         other.y = other.yprevious;
                 }
+                else {
+                
+                    other.y = other.yprevious;
+                }
                 
                 //Bounce the player
                 with (other) event_user(1);
@@ -319,7 +322,7 @@ if (ready == 2) {
                     
                         //Set hitcombo to 2 if smaller than 2
                         if (other.hitcombo &lt; 2) {
-                        
+                                             
                             other.hitcombo = 2;
                         }
                     
@@ -372,7 +375,7 @@ else if (ready == 0) {
         //Get points
         with (instance_create((bbox_left+bbox_right)/2-8, y, obj_score)) {
         
-            if (obj_playerparent.hitcombo &lt; 7)
+            if (obj_playerparent.hitcombo &lt; 8)
                 event_user(2+obj_playerparent.hitcombo);
             else {
             
@@ -381,6 +384,9 @@ else if (ready == 0) {
             }
         }
                     
+        //Increment delay
+        shelldelay = 32;
+        
         //Kick
         ready = 1;
         alarm[0] = -1;
@@ -388,9 +394,6 @@ else if (ready == 0) {
         
         //Animate
         image_speed = 0.3;
-        
-        //Increment delay
-        shelldelay = 32;
         
         //Increment player combo
         obj_playerparent.hitcombo++;
