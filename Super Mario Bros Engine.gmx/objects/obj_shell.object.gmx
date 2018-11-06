@@ -308,7 +308,8 @@ if (ready == 2) {
                 }
                 else {
                 
-                    other.y = other.yprevious;
+                    if (other.vspeed &gt; 0)
+                        other.y = other.yprevious;
                 }
                 
                 //Bounce the player

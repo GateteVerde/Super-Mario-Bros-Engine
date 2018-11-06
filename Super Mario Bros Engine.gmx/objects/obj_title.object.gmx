@@ -182,7 +182,7 @@ else if (keyboard_check_pressed(vk_shift)) {
             audio_play_sound(snd_correct, 0, false);
             
             //Set the world
-            global.world = "1-1";
+            global.world = "3-2";
             
             //Go to page 1
             global.hardmode = 0;
@@ -198,7 +198,7 @@ else if (keyboard_check_pressed(vk_shift)) {
             audio_play_sound(snd_correct, 0, false);
             
             //Set the world
-            global.world = "1-1";
+            global.world = "3-2";
             
             //Load game
             global.hardmode = 1;
