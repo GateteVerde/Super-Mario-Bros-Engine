@@ -125,14 +125,22 @@ else if (keyboard_check_pressed(vk_shift)) {
         //Otherwise, load current game
         else if (current == 2) {
         
-            //Play 'Correct' sound
-            audio_play_sound(snd_correct, 0, false);
+            //If a save file exists
+            if (file_exists("SMBEsave.sav")) {
             
-            //Load game
-            load();
+                //Play 'Correct' sound
+                audio_play_sound(snd_correct, 0, false);
+                
+                //Load game
+                load("SMBEsave.sav");
+                
+                //Go to level start screen
+                room_goto(rm_levelstart);
+            }
             
-            //Go to level start screen
-            room_goto(rm_levelstart);        
+            //Otherwise, play 'Wrong' sound
+            else
+                audio_play_sound(snd_wrong, 0, false);   
         }
     }
     
@@ -182,7 +190,7 @@ else if (keyboard_check_pressed(vk_shift)) {
             audio_play_sound(snd_correct, 0, false);
             
             //Set the world
-            global.world = "3-2";
+            global.world = "1-1";
             
             //Go to page 1
             global.hardmode = 0;
@@ -198,7 +206,7 @@ else if (keyboard_check_pressed(vk_shift)) {
             audio_play_sound(snd_correct, 0, false);
             
             //Set the world
-            global.world = "3-2";
+            global.world = "1-1";
             
             //Load game
             global.hardmode = 1;

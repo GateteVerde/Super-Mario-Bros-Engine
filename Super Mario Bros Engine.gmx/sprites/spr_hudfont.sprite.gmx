@@ -114,5 +114,8 @@
     <frame index="91">images\spr_hudfont_91.png</frame>
     <frame index="92">images\spr_hudfont_92.png</frame>
     <frame index="93">images\spr_hudfont_93.png</frame>
+    <frame index="94">images\spr_hudfont_94.png</frame>
+    <frame index="95">images\spr_hudfont_95.png</frame>
+    <frame index="96">images\spr_hudfont_96.png</frame>
   </frames>
 </sprite>

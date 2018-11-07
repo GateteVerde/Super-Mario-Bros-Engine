@@ -263,6 +263,7 @@
         <sprite>sprites\spr_hud_l</sprite>
         <sprite>sprites\spr_hudfont</sprite>
         <sprite>sprites\spr_hudfont_red</sprite>
+        <sprite>sprites\spr_hudfont_menus</sprite>
       </sprites>
       <sprites name="Markers">
         <sprites name="Enemies">
