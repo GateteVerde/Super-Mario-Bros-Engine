@@ -32,7 +32,7 @@ dh = view_hview[view_current];                   //Height
 
 tearings_surface    = surface_create(dw, dh);    //We'll draw on this surface
 tearings_y          = 0;
-band_num            = 256;                       //How many bands you want on screen
+band_num            = 16;                        //How many bands you want on screen
 band_height         = dh / band_num;
 tearings_x_offset   = 2;                         //How much you want to displace the bands horizontally
 tearing_speed       = 4;                         //Change this to speed up/slow down the tearings
@@ -141,7 +141,7 @@ for (var current_band = 0; current_band &lt; band_num * 2; current_band++) {
 surface_reset_target();
 
 //Draw the actual surface
-draw_surface_stretched(tearings_surface, round(view_xview[view_current]) - tearings_x_offset, 0, dw + tearings_x_offset * 2, dh);
+draw_surface_stretched(tearings_surface, round(view_xview[view_current]) - tearings_x_offset, 0, dw + tearings_x_offset * 2 + 8, dh);
 
 //Move the Tearings
 tearings_y = (tearings_y + tearing_speed) % (band_height * band_num);

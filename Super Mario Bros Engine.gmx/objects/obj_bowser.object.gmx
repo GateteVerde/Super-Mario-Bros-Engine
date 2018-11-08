@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>obj_bowserparent</parentName>
+  <parentName>obj_deactenemyparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,7 +31,8 @@
 //  This object uses creation code
 //
 //      hammer = To make bowser throw hammers
-//      fake   = Sets up a different set of colours (1...7)
+//      fake   = Sets the impostor (1...7)
+//      xmin   = Sets the minimum x coordinate where bowser will start to shoot flames.
 */
 
 //Default variables

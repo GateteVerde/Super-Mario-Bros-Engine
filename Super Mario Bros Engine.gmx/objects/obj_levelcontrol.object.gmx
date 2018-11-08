@@ -334,7 +334,6 @@ else
     view_hspeed[0] = -1;
 
 //Deactivate enemies outside the view
-instance_deactivate_object(obj_bowserparent);
 instance_deactivate_object(obj_deactenemyparent);
 instance_deactivate_object(obj_deactivateparent);
 

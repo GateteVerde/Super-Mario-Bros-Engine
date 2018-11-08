@@ -58,14 +58,13 @@ global.gw = 256;
 //Game height
 global.gh = 224;
 
-//Key variables
-global._controlkey      = vk_control;
-global._shiftkey        = vk_shift;
-global._enterkey        = vk_enter;
-global._upkey           = vk_up;
-global._downkey         = vk_down;
-global._leftkey         = vk_left;
-global._rightkey        = vk_right;
+//Alternate keys
+keyboard_set_map(ord('W'), vk_up);
+keyboard_set_map(ord('A'), vk_left);
+keyboard_set_map(ord('S'), vk_down);
+keyboard_set_map(ord('D'), vk_right);
+keyboard_set_map(ord('X'), vk_shift);
+keyboard_set_map(ord('Z'), vk_control);
 
 //Set the in-game fonts
 global.hud_font = font_add_sprite(spr_hudfont,ord('!'), 0, 0);

@@ -609,7 +609,6 @@
         <objects name="NPC">
           <objects name="Enemy">
             <object>objects\obj_enemyparent</object>
-            <object>objects\obj_bowserparent</object>
             <object>objects\obj_deactenemyparent</object>
           </objects>
           <object>objects\obj_physicsparent</object>
