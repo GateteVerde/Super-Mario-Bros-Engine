@@ -693,7 +693,7 @@ if (instance_number(obj_castle) == 0) {
     
         //If the background exists
         if (background_index[i] != -1)
-            draw_background_tiled_horizontal_ext(background_index[i], xx[i]+(background_x[i]+background_hspeed[i]), view_yview[0], 1, 1, 0, background_blend[i], background_alpha[i]);
+            draw_background_tiled_horizontal_ext(background_index[i], xx[i]+(background_x[i]+background_hspeed[i]), background_y[i], 1, 1, 0, background_blend[i], background_alpha[i]);
     }
 }
 

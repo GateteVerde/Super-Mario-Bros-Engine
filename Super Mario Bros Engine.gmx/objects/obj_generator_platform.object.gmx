@@ -79,6 +79,7 @@ if (x &gt; view_xview[0]-48)
     
         sprite_index = other.sprite;
         speed = other.spd;
+        ready = 1;
         if (other.y &gt; room_height/2)
             direction = 90;
         else

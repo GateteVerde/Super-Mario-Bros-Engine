@@ -329,6 +329,7 @@
         <background>background\bgr_gradient_sky_pale</background>
         <background>background\bgr_gradient_sky_sunset</background>
         <background>background\bgr_gradient_sky_night</background>
+        <background>background\bgr_gradient_sky_dawn</background>
         <background>background\bgr_gradient_water</background>
       </backgrounds>
       <background>background\bgr_clouds</background>
@@ -747,6 +748,7 @@
           <room>rooms\rm_w3_1_Bonus2</room>
         </rooms>
         <room>rooms\rm_w3_2</room>
+        <room>rooms\rm_w3_3</room>
       </rooms>
       <rooms name="World 4">
         <room>rooms\rm_w4_4</room>

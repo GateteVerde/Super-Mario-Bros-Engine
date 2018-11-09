@@ -56,6 +56,9 @@ y += 2;
             <kind>1</kind>
             <string>///Cloud Platform
 
+//Stay always active
+instance_activate_object(id);
+
 //Inherit default event
 event_inherited();
 

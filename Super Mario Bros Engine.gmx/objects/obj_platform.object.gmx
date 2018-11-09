@@ -8,6 +8,69 @@
   <parentName>obj_platformparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Regular moving platform
+
+//Check if inside the view
+ready = 0;
+alarm[10] = 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Start moving
+
+if (ready == 0) {
+
+    //If the platform is inside the view, make it move
+    if (x &gt; view_xview[0] - sprite_width)
+    &amp;&amp; (x &lt; view_xview[0] + view_wview[0]) {
+    
+        ready = 1;
+        exit;
+    }
+    else
+        alarm[10] = 2;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
@@ -29,21 +92,25 @@
 
 //Inherit default event
 event_inherited();
+    
+//If the platform can move
+if (ready == 1) {
+
+    //Move in contact with arrow
+    if (collision_rectangle(x,y,x+sprite_width,y+15,obj_up,0,0))
+        vspeed -= 0.0324;
+    else if (collision_rectangle(x,y,x+sprite_width,y+15,obj_down,0,0))
+        vspeed += 0.0324;
+    else if (collision_rectangle(x,y,x+sprite_width,y+15,obj_left,0,0))
+        hspeed -= 0.0324;
+    else if (collision_rectangle(x,y,x+sprite_width,y+15,obj_right,0,0))
+        hspeed += 0.0324;
+}
 
 //Destroy when outside the room
 if (y &lt; -32)
 || (y &gt; room_height+32)
     instance_destroy();
-
-//Move in contact with arrow
-if (collision_rectangle(x,y,x+sprite_width,y+15,obj_up,0,0))
-    vspeed -= 0.0324;
-else if (collision_rectangle(x,y,x+sprite_width,y+15,obj_down,0,0))
-    vspeed += 0.0324;
-else if (collision_rectangle(x,y,x+sprite_width,y+15,obj_left,0,0))
-    hspeed -= 0.0324;
-else if (collision_rectangle(x,y,x+sprite_width,y+15,obj_right,0,0))
-    hspeed += 0.0324;
 </string>
           </argument>
         </arguments>
