@@ -94,6 +94,9 @@ switch (global.world) {
     
     //World 3-3
     case ("3-3"): frame = 11; break;
+    
+    //World 3-4
+    case ("3-4"): frame = 12; break;
 }
 </string>
           </argument>
@@ -161,6 +164,9 @@ else {
         
         //World 3-3
         case ("3-3"): room_goto(rm_w3_3); break;
+        
+        //World 3-4
+        case ("3-4"): room_goto(rm_w3_4); break;
     }
 }
 </string>

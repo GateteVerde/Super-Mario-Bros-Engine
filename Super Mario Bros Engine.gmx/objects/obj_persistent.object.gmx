@@ -539,7 +539,7 @@ if (mode = 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Save Fullscreen + Window size + VSync Settings
+            <string>///Save Fullscreen + Window size + VSync + Highscore Settings
 
 keyboard_key_release(vk_control);
 
@@ -556,6 +556,10 @@ file_text_writeln(file);
 
 //Save vsync settings
 file_text_write_string(file,string(vsync));
+file_text_writeln(file);
+
+//Save highscore
+file_text_write_string(file,string(global.highscore))
 
 //Close the file
 file_text_close(file);
@@ -581,7 +585,7 @@ file_text_close(file);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Load Fullscreen + Window size + VSync Settings
+            <string>///Load Fullscreen + Window size + VSync + Highscore Settings 
 
 //If the 'settings.dat' file exist.
 if (file_exists("settings.dat")) {
@@ -599,6 +603,10 @@ if (file_exists("settings.dat")) {
 
     //Set vsync based on the read value
     vsync = real(file_text_read_string(file));
+    file_text_readln(file);
+    
+    //Set highscore
+    global.highscore = real(file_text_read_string(file));
 
     //Close the file
     file_text_close(file);
