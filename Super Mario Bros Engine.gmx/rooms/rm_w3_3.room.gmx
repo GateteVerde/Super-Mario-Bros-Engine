@@ -41,14 +41,14 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_C772A0BA" locked="0" code="levelmusic = 101;&#xA;leveltime = 300;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -65,8 +65,8 @@
     <instance objName="obj_coin" x="896" y="32" name="inst_2A60E0B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="912" y="32" name="inst_2BFAD66D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_qblock" x="784" y="48" name="inst_5FA02691" locked="0" code="sprout = cs_powerup;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="464" y="64" name="inst_D13FD6A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="512" y="128" name="inst_E034ADA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="464" y="64" name="inst_D13FD6A9" locked="0" code="///Shorten if hard mode is active&#xA;&#xA;if (global.hardmode == 1)&#xA;    sprite_index = spr_platform_32;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="512" y="128" name="inst_E034ADA1" locked="0" code="///Shorten if hard mode is active&#xA;&#xA;if (global.hardmode == 1)&#xA;    sprite_index = spr_platform_32;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="464" y="64" name="inst_F5A20A1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="512" y="128" name="inst_4122050F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_left" x="544" y="64" name="inst_3402BBA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -79,20 +79,20 @@
     <instance objName="obj_coin" x="1296" y="80" name="inst_C82EF499" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1408" y="80" name="inst_30175B76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1440" y="80" name="inst_DFF9F305" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="1504" y="144" name="inst_DA4766D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="1504" y="144" name="inst_DA4766D4" locked="0" code="///Shorten if hard mode is active&#xA;&#xA;if (global.hardmode == 1) {&#xA;&#xA;    sprite_index = spr_platform_32;&#xA;    x += 16;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="1456" y="144" name="inst_B7FFCE0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_left" x="1536" y="144" name="inst_B165E69C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="1536" y="80" name="inst_F34F953E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="1536" y="80" name="inst_F34F953E" locked="0" code="///Shorten if hard mode is active&#xA;&#xA;if (global.hardmode == 1)&#xA;    sprite_index = spr_platform_32;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="1536" y="80" name="inst_E3FE1226" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_left" x="1616" y="80" name="inst_4FC34F9E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="1648" y="176" name="inst_D5FDF485" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="1648" y="176" name="inst_D5FDF485" locked="0" code="///Shorten if hard mode is active&#xA;&#xA;if (global.hardmode == 1) {&#xA;&#xA;    sprite_index = spr_platform_32;&#xA;    x += 16;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="1600" y="176" name="inst_57C0DB41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_left" x="1680" y="176" name="inst_6B772A8B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1680" y="64" name="inst_E391F242" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1696" y="64" name="inst_30AE3FEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1744" y="96" name="inst_DDF7E20F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1728" y="160" name="inst_46DD91BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="2112" y="96" name="inst_4E3C9A48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="2112" y="96" name="inst_4E3C9A48" locked="0" code="///Shorten if hard mode is active&#xA;&#xA;if (global.hardmode == 1) {&#xA;&#xA;    sprite_index = spr_platform_32;&#xA;    x += 16;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="2064" y="96" name="inst_009CB4EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_left" x="2144" y="96" name="inst_29FB7434" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform_balance" x="2176" y="80" name="inst_8A0988B3" locked="0" code="limit = 48;&#xA;rx = 2240;&#xA;ry = 128;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -134,7 +134,7 @@
     <instance objName="obj_koopa_red" x="1992" y="144" name="inst_09E39F56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_parakoopa_red" x="1824" y="144" name="inst_CB4D20B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_checkpoint" x="1080" y="192" name="inst_CFB8CD9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bganimator" x="32" y="0" name="inst_DC908AA2" locked="0" code="bg_index = 1;&#xA;bg_frame[0] = bgr_nightsky;&#xA;bg_frame[1] = bgr_nightsky_b;&#xA;bg_frame[2] = bgr_nightsky_c;&#xA;bg_frame[3] = bgr_nightsky_d;&#xA;bg_frame[4] = bgr_nightsky_e;&#xA;bg_frame[5] = bgr_nightsky_f;&#xA;bg_frame[6] = bgr_nightsky_g;&#xA;bg_frame[7] = bgr_nightsky_h;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bganimator" x="32" y="0" name="inst_DC908AA2" locked="0" code="bg_index = 1;&#xA;bg_frame[0] = bgr_nightsky;&#xA;bg_frame[1] = bgr_nightsky_b;&#xA;bg_frame[2] = bgr_nightsky_c;&#xA;bg_frame[3] = bgr_nightsky_d;&#xA;bg_frame[4] = bgr_nightsky_e;&#xA;bg_frame[5] = bgr_nightsky_f;&#xA;bg_frame[6] = bgr_nightsky_g;&#xA;bg_frame[7] = bgr_nightsky_h;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_clearnpcs" x="1168" y="192" name="inst_58E36166" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>

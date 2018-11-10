@@ -344,6 +344,8 @@
         <background>background\bgr_underground_b</background>
         <background>background\bgr_underground_c</background>
         <background>background\bgr_underground_d</background>
+        <background>background\bgr_underground_e</background>
+        <background>background\bgr_underground_f</background>
       </backgrounds>
       <backgrounds name="Underwater">
         <background>background\bgr_underwater</background>
@@ -698,10 +700,10 @@
         <object>objects\obj_flag</object>
         <object>objects\obj_flagc</object>
       </objects>
+      <object>objects\obj_levelstart</object>
       <object>objects\obj_reset</object>
       <object>objects\obj_skipper</object>
-      <object>objects\obj_title</object>
-      <object>objects\obj_levelstart</object>
+      <object>objects\obj_titlemenu</object>
     </objects>
     <object>objects\obj_up</object>
     <object>objects\obj_down</object>

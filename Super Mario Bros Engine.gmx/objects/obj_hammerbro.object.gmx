@@ -37,6 +37,9 @@ stomp = 0;
 handicap = 5;
 handicap_stomp = 5;
 
+//Allow combo
+allowcombo = 1;
+
 //Palette
 palette_index = pal_hammerbro;
 

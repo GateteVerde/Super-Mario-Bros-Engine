@@ -40,6 +40,9 @@ stomp = 1;
 handicap = 1;
 handicap_stomp = 0;
 
+//Allow combo
+allowcombo = 1;
+
 //Palette
 palette_index = noone;
 

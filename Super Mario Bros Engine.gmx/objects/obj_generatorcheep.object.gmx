@@ -35,7 +35,10 @@ stomp = 0;
 
 //How many points should the enemy give when killed with an item
 handicap = 1;
-handicap_stomp = 0;
+handicap_stomp = 1;
+
+//Do not allow combo
+allowcombo = 0;
 
 //Palette
 palette_index = noone;

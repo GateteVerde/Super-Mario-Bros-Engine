@@ -53,6 +53,17 @@ ready = 0;
 
 //Maximum vertical speed
 vspeedmax = 1;
+
+//Modify platform if hard mode is enabled
+if (global.hardmode == 1)
+&amp;&amp; (sprite_index = spr_platform) {
+
+    //Set a 32px platform
+    sprite_index = spr_platform_32;
+    
+    //Move 8 pixels to the right
+    x += 8;
+}
 </string>
           </argument>
         </arguments>

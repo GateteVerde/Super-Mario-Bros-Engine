@@ -31,7 +31,10 @@
 event_inherited();
 
 //Play 'Title Screen' bgm
-audio_loop_sound(global._music[0], global._st[0], global._en[0], 48000, 1);
+audio_loop_sound(global._music[1], global._st[1], global._en[1], 48000, 1);
+
+//First level
+mylevel = "3-1";
 
 //Page
 page = 0;
@@ -190,7 +193,7 @@ else if (keyboard_check_pressed(vk_shift)) {
             audio_play_sound(snd_correct, 0, false);
             
             //Set the world
-            global.world = "1-1";
+            global.world = mylevel;
             
             //Go to page 1
             global.hardmode = 0;
@@ -206,7 +209,7 @@ else if (keyboard_check_pressed(vk_shift)) {
             audio_play_sound(snd_correct, 0, false);
             
             //Set the world
-            global.world = "1-1";
+            global.world = mylevel;
             
             //Load game
             global.hardmode = 1;
@@ -251,7 +254,7 @@ else if (keyboard_check_pressed(vk_control)) {
             <kind>1</kind>
             <string>///Stop title music
 
-audio_stop_sound(global._music[0]);
+audio_stop_sound(global._music[1]);
 </string>
           </argument>
         </arguments>

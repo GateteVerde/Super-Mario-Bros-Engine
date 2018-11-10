@@ -321,12 +321,6 @@ if (ready == 2) {
                     //Get points based on combo
                     if (other.hitcombo &lt; 10-handicap_stomp) {
                     
-                        //Set hitcombo to 2 if smaller than 2
-                        if (other.hitcombo &lt; 2) {
-                                             
-                            other.hitcombo = 2;
-                        }
-                    
                         //If the player did 10 or less consecutive stomps
                         with (instance_create((bbox_left+bbox_right)/2-8,y,obj_score)) 
                             event_user((0+other.handicap_stomp)+obj_playerparent.hitcombo);

@@ -30,7 +30,6 @@
 //Default values (Check init_globals_mus for the number of the tracks)
 levelmusic = noone;
 leveltime = 0;
-drawblack = 0;
 
 //Begin playing the music
 alarm[0] = 2;
@@ -44,6 +43,16 @@ alarm[5] = 3;
 
 //Create HUD
 instance_create(0,0,obj_hud);
+
+//Background variables
+bgxx[0] = 1;
+bgxx[1] = 1.5;
+bgxx[2] = 2;
+bgxx[3] = 2.5;
+bgxx[4] = 3;
+bgxx[5] = 3.5;
+bgxx[6] = 4;
+bgxx[7] = 4.5;
 
 //Jump to position
 x = view_xview[view_current]+128;
@@ -396,13 +405,7 @@ if (levelmusic != noone) {
 }
 
 //Round position variables
-
 x = round(x);
-y = round(y);
-
-//Update parallax background position
-for (var i=0; i&lt;8; i++)
-    xx[i] = view_xview[view_current] / (1.5 + (0.5 * i));
 </string>
           </argument>
         </arguments>
@@ -659,9 +662,11 @@ else {
     }
 }
 
-//Parallax backgrounds
-for (var i=0; i&lt;8; i++)
-    xx[i] = view_xview/(1.2+(0.4*i));
+//Check if the level is a "*-4" level and draw a black background above.
+if (string_char_at(global.world,3) == "4")
+    drawblack = 1;
+else
+    drawblack = 0;
 </string>
           </argument>
         </arguments>
@@ -688,12 +693,12 @@ for (var i=0; i&lt;8; i++)
 
 //If the level is a castle maze
 if (instance_number(obj_castle) == 0) {
-    
+
     for (var i=0; i&lt;8; i++) {
     
-        //If the background exists
+        //If the background has been set
         if (background_index[i] != -1)
-            draw_background_tiled_horizontal_ext(background_index[i], xx[i]+(background_x[i]+background_hspeed[i]), background_y[i], 1, 1, 0, background_blend[i], background_alpha[i]);
+            draw_background_tiled_horizontal_ext(background_index[i], background_x[i] + view_xview[view_current] / bgxx[i], view_yview[view_current] + background_y[i], 1, 1, 0, background_blend[i], background_alpha[i]); 
     }
 }
 

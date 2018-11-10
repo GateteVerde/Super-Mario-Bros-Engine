@@ -55,6 +55,9 @@ stomp = 0;
 handicap = 0;
 handicap_stomp = 0;
 
+//Allow combos
+allowcombo = 1;
+
 //Does this enemy have a palette
 palette_index = noone;
 
@@ -458,23 +461,34 @@ if (stomp != -1)
             
             //Bounce the player
             with (other) event_user(1);
-
-            //Get points based on combo
-            if (other.hitcombo &lt;= 10-handicap_stomp) {
             
-                //If the player did 10 or less consecutive stomps
-                with (instance_create((bbox_left+bbox_right)/2-8,y,obj_score)) 
-                    event_user((0+other.handicap_stomp)+obj_playerparent.hitcombo);
+            //If combos are allowed, get more points
+            if (allowcombo == 1) {
+
+                //Get points based on combo
+                if (other.hitcombo &lt;= 10-handicap_stomp) {
+                
+                    //If the player did 10 or less consecutive stomps
+                    with (instance_create((bbox_left+bbox_right)/2-8,y,obj_score)) 
+                        event_user((0+other.handicap_stomp)+obj_playerparent.hitcombo);
+                }
+                else {
+                
+                    with (instance_create((bbox_left+bbox_right)/2-8,y,obj_score)) 
+                        event_user(10);
+                }
+                
+                //Increment combo
+                other.hitcombo++;
             }
+            
+            //Otherwise, get fixed score
             else {
             
                 with (instance_create((bbox_left+bbox_right)/2-8,y,obj_score)) 
-                    event_user(10);
+                    event_user(0+other.handicap_stomp);                            
             }
-            
-            //Increment combo
-            other.hitcombo++;
-            
+
             //Stomp the enemy
             event_user(1);
         }

@@ -37,6 +37,9 @@ stomp = 0;
 handicap = 1;
 handicap_stomp = 5;
 
+//Do not allow combos
+allowcombo = 0;
+
 //Palette
 palette_index = noone;
 

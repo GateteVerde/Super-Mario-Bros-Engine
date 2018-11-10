@@ -311,6 +311,11 @@ invulnerable = false;
             <kind>1</kind>
             <string>///Player Logic
 
+//Always reset combo if in ground
+if (state != cs_jump)
+&amp;&amp; (hitcombo &gt; 0)
+    hitcombo = 0;
+
 //Floor collision
 if (vspeed &gt;= 0) {
 
@@ -636,10 +641,6 @@ else {
 
 //Allow jumping
 jumping = 0;
-
-//Reset combo
-if (hitcombo &gt; 0)
-    hitcombo = 0;
 </string>
           </argument>
         </arguments>
