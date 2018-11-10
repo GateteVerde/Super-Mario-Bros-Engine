@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>1940</width>
+  <width>2000</width>
   <height>240</height>
   <data>images\bgr_hills_forest.png</data>
 </background>

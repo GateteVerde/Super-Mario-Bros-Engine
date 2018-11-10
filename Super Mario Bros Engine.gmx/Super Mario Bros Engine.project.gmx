@@ -754,6 +754,10 @@
         <room>rooms\rm_w3_4</room>
       </rooms>
       <rooms name="World 4">
+        <rooms name="4-1">
+          <room>rooms\rm_w4_1</room>
+          <room>rooms\rm_w4_1_Bonus</room>
+        </rooms>
         <room>rooms\rm_w4_4</room>
       </rooms>
     </rooms>

@@ -102,7 +102,7 @@
     <instance objName="obj_brick" x="2976" y="144" name="inst_19351A29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="2960" y="144" name="inst_CC34EAF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_qblock_hidden" x="2976" y="80" name="inst_E53E0314" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_flagpole" x="3200" y="32" name="inst_38409D09" locked="0" code="image_single = 1;&#xA;nextlevel = &quot;2-2&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flagpole" x="3200" y="32" name="inst_38409D09" locked="0" code="image_single = 1;&#xA;nextlevel = &quot;2-2&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_goomba" x="392" y="112" name="inst_EE50DA23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_koopa" x="536" y="192" name="inst_94C6740D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_koopa" x="520" y="192" name="inst_91062CF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

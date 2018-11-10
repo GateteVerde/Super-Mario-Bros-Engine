@@ -111,7 +111,14 @@ if (instance_number(obj_playerparent) &gt; 0)
 //Check if the player exists
 if (instance_number(obj_playerparent) &gt; 0)
     target = instance_nearest(x, y, obj_playerparent);
+    
+//Otherwise, check if the player is on a pipe
+else if ((instance_number(obj_player_warp) &gt; 0) || (instance_number(obj_player_climb) &gt; 0)) {
 
+    alarm[0] = 1;
+    exit;
+}
+    
 //Check again if the player exists
 if (instance_number(obj_playerparent) &gt; 0) 
 &amp;&amp; (target.x &gt; x)
