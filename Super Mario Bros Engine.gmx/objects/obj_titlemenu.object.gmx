@@ -34,7 +34,7 @@ event_inherited();
 audio_loop_sound(global._music[1], global._st[1], global._en[1], 48000, 1);
 
 //First level
-mylevel = "4-1";
+mylevel = "4-2";
 
 //Page
 page = 0;
@@ -79,6 +79,9 @@ menu[2,2] = " HARD";
           <argument>
             <kind>1</kind>
             <string>///Manage menu actions
+
+//Inherit event
+event_inherited();
 
 //If the player presses the 'Up' key
 if (keyboard_check_pressed(vk_up)) {

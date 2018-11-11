@@ -111,7 +111,7 @@
     <instance objName="obj_qblock_coins" x="2672" y="144" name="inst_344FC686" locked="0" code="sprite_index = spr_brick;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flagpole" x="3200" y="32" name="inst_CE7A9854" locked="0" code="image_single = 5;&#xA;nextlevel = &quot;3-2&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_incastle" x="3312" y="192" name="inst_B34551FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_checkpoint" x="1584" y="192" name="inst_11F5C51D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_checkpoint" x="1584" y="192" name="inst_11F5C51D" locked="0" code="///Remove if hard mode is active&#xA;&#xA;if (global.hardmode == 1)&#xA;    instance_destroy();&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="80" y="192" name="inst_0BAF2CCD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="0" y="208" name="inst_C776F36B" locked="0" code="" scaleX="32" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="512" y="160" name="inst_3575F071" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>

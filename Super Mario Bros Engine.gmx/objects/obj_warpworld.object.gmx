@@ -108,7 +108,10 @@ if (instance_exists(obj_warpzone)) {
             draw_set_halign(fa_center);
             
             //Draw text
-            draw_text(x, y-128, "WELCOME TO WARP ZONE!");
+            if (!tile_layer_find(9,x,y-129))
+                draw_text(x, y-128, "WELCOME TO WARP ZONE!");
+            else
+                draw_text(x, y-112, "WELCOME TO WARP ZONE!");
             
             //Reset align
             draw_set_halign(fa_left);

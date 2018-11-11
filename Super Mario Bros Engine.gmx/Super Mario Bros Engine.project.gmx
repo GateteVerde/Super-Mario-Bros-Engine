@@ -758,6 +758,13 @@
           <room>rooms\rm_w4_1</room>
           <room>rooms\rm_w4_1_Bonus</room>
         </rooms>
+        <rooms name="4-2">
+          <room>rooms\rm_w4_2</room>
+          <room>rooms\rm_w4_2_Main</room>
+          <room>rooms\rm_w4_2_Goal</room>
+          <room>rooms\rm_w4_2_Bonus</room>
+          <room>rooms\rm_w4_2_WarpZone</room>
+        </rooms>
         <room>rooms\rm_w4_4</room>
       </rooms>
     </rooms>

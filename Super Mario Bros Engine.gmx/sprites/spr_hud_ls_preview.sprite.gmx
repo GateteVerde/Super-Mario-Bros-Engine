@@ -34,5 +34,6 @@
     <frame index="11">images\spr_hud_ls_preview_11.png</frame>
     <frame index="12">images\spr_hud_ls_preview_12.png</frame>
     <frame index="13">images\spr_hud_ls_preview_13.png</frame>
+    <frame index="14">images\spr_hud_ls_preview_14.png</frame>
   </frames>
 </sprite>
