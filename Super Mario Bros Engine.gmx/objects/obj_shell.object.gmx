@@ -380,7 +380,7 @@ else if (ready == 0) {
         }
                     
         //Increment delay
-        shelldelay = 32;
+        shelldelay = 24;
         
         //Kick
         ready = 1;
@@ -521,7 +521,7 @@ instance_destroy();
 with (instance_create(x,y,obj_shell)) {
 
     sprite_index = other.sprite_index;
-    shelldelay = 32;
+    shelldelay = 24;
     flip = other.flip;
 }
 instance_destroy()

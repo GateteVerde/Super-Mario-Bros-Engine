@@ -27,15 +27,8 @@
             <kind>1</kind>
             <string>///Underwater ripple effect
 
-dw = view_wview[view_current];                   //Width
-dh = view_hview[view_current];                   //Height
-
-tearings_surface    = surface_create(dw, dh);    //We'll draw on this surface
-tearings_y          = 0;
-band_num            = 16;                        //How many bands you want on screen
-band_height         = dh / band_num;
-tearings_x_offset   = 2;                         //How much you want to displace the bands horizontally
-tearing_speed       = 4;                         //Change this to speed up/slow down the tearings
+waverot = 0;
+waverotSpeed = 2;
 </string>
           </argument>
         </arguments>
@@ -58,45 +51,9 @@ tearing_speed       = 4;                         //Change this to speed up/slow 
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Update width / height
+            <string>///Update wave
 
-//If the window looses focus
-if (window_has_focus() == false) {
-
-    dw = view_wview[view_current];
-    dh = view_hview[view_current];  
-    if (surface_exists(tearings_surface)) {
-    
-        surface_free(tearings_surface);
-        tearings_surface = -1;
-    }
-} 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Force reset display
-
-dw = view_wview[view_current];
-dh = view_hview[view_current];   
+waverot = (waverot+waverotSpeed) mod 360;
 </string>
           </argument>
         </arguments>
@@ -119,32 +76,47 @@ dh = view_hview[view_current];
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw underwater surface
+            <string>///Underwater ripple effect
 
-//Create surface if it doesn't exits
-if (!surface_exists(tearings_surface)) {
+//Radius of effect
+var ir = -4;
 
-    tearings_surface = surface_create(view_wview[view_current], view_hview[view_current]);
+//Left boundary
+var ix = view_xview[view_current]-16;
+
+//Top boundary
+var iy = ystart;
+
+//Width
+var iw = 264;
+
+//Height
+var ih = 224;
+
+//Draw only if the y position is above the bottom boundary
+if (iy &lt; view_yview+view_hview) {
+
+    //Surface
+    sf = surface_create(iw, ih);
+    
+    //Copy the surface
+    surface_copy_part(sf, 0, 0, application_surface, ix-view_xview, iy-view_yview, iw, ih);
+    
+    //Disable alpha blending
+    draw_enable_alphablend(false);
+    
+    //Draw part of the surface
+    for (i=0; i&lt;ih; i++) {
+    
+        draw_surface_part_ext(sf, 0, i, iw, 1, ix-8+cos((i*3+waverot)*pi/180)*ir, iy+i, 1.08, 1, c_white, 1);
+    }
+    
+    //Free surface
+    surface_free(sf);
+    
+    //Enable alpha blending
+    draw_enable_alphablend(true);
 }
-
-//Let's set the target to our surface
-surface_set_target(tearings_surface);
-draw_clear_alpha(c_black, 0);
-
-//We draw parts of our application surface on tearings surface
-for (var current_band = 0; current_band &lt; band_num * 2; current_band++) {
-
-    draw_surface_part(application_surface, 0, band_height * current_band - tearings_y, dw, band_height, sin((degtorad(360) / band_num) * current_band) * tearings_x_offset , band_height * current_band - tearings_y)
-}
-
-//Always reset the target surface
-surface_reset_target();
-
-//Draw the actual surface
-draw_surface_stretched(tearings_surface, round(view_xview[view_current]) - tearings_x_offset, 0, dw + tearings_x_offset * 2 + 8, dh);
-
-//Move the Tearings
-tearings_y = (tearings_y + tearing_speed) % (band_height * band_num);
 </string>
           </argument>
         </arguments>

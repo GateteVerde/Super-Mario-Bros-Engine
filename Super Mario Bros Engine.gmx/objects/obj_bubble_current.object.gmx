@@ -28,7 +28,7 @@
             <string>///Bubble
 
 //Animate
-image_speed = 1;
+image_speed = 0;
 
 //Alpha
 image_alpha = 0;

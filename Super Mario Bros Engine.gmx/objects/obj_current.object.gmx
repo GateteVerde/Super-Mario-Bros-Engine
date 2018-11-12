@@ -53,7 +53,7 @@ alarm[0] = 4;
             <kind>1</kind>
             <string>///Create bubble
 
-instance_create(x+random_range(-sprite_width/2,sprite_width/2),y+random_range(40,224),obj_bubble_current);
+instance_create(x+random_range(-sprite_width/2,sprite_width/2-4),y+random_range(40,224),obj_bubble_current);
 alarm[0] = 7;
 </string>
           </argument>
@@ -82,7 +82,8 @@ alarm[0] = 7;
 //If the player does exist
 if (instance_exists(obj_playerparent)) {
 
-    if (collision_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_playerparent,0,0)) {
+    if (collision_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_playerparent,0,0)) 
+    &amp;&amp; (obj_playerparent.bbox_bottom &lt; bbox_bottom) {
     
         //If the player is at the leftmost area of the current, push him to the middle
         if (obj_playerparent.x &lt; x) {

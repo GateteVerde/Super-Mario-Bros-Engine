@@ -296,7 +296,8 @@ if (instance_number(obj_playerparent) &gt; 0)
             <string>///Make lakitu go away
 
 if (hspeed &gt; 0)
-&amp;&amp; (goaway = 0) {
+&amp;&amp; (goaway = 0) 
+&amp;&amp; (obj_levelcontrol.x &gt; x) {
 
     goaway = 1;
     hspeed = -1;
