@@ -34,8 +34,7 @@
 //          0: Straight egg throwing
 //          1: Arched egg throwing
 //
-//  Remember to add obj_lakitu_end, 
-//
+//  Remember to add obj_lakitu_end where you want Lakitu to leave ya alone.
 */
 
 //Default variable

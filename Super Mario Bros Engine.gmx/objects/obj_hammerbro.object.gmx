@@ -56,7 +56,7 @@ hammers = 1+random(round(3));
 image_speed = 0.1;
 
 //Reverse horizontal speed.
-alarm[0] = 34;
+alarm[0] = 32;
 
 //Jump upwards / downwards.
 alarm[1] = 4;
@@ -377,7 +377,7 @@ alarm[1] = 168;
 if (chase != 1) {
 
     hspeed = -hspeed;
-    alarm[0] = 64;
+    alarm[0] = 60;
 }
 </string>
           </argument>
@@ -419,30 +419,28 @@ if (throughsolid == 0) {
     //Default floor collision
     event_user(4);
     
-    //If chasing, jump on walls
+    //If chasing
     if (chase == 1) {
     
+        //If the player is at the left, move towards it.
         if (!instance_exists(obj_playerparent))
         || (obj_playerparent.x &lt; x)
             hspeed = -0.5;
+            
         else {
         
             hspeed = 0.25;
             chase = 2;
-            alarm[0] = 32;
+            alarm[0] = 30;
         }
     }
     else if (chase == 2) {
     
-        //Turn on ledges
-        event_user(5);
-    
+        //Give chase again if the player is at the left
         if (!instance_exists(obj_playerparent))
         || (obj_playerparent.x &lt; x)
             alarm[6] = 1;    
     }
-    else
-        event_user(5);
 }
 
 //Otherwise, cap vertical speed
@@ -484,24 +482,28 @@ else
           <argument>
             <kind>1</kind>
             <string>///Default wall collision
+
+//If the hammer bro is chasing the player
+if (chase == 1) {
         
-//Jump when a wall is reached
-if ((hspeed &lt; 0) &amp;&amp; (collision_rectangle(bbox_left+hspeed*2,bbox_top+4,bbox_left+hspeed*2,bbox_bottom-1,obj_solid,0,0)))
-|| ((hspeed &gt; 0) &amp;&amp; (collision_rectangle(bbox_right+hspeed*2,bbox_top+4,bbox_right+hspeed*2,bbox_bottom-1,obj_solid,0,0))) {
-
-    //If there's no gravity, hop
-    if (gravity == 0) &amp;&amp; (chase == 1) {
+    //Jump when a wall is reached
+    if ((hspeed &lt; 0) &amp;&amp; (collision_rectangle(bbox_left+hspeed*2,bbox_top+4,bbox_left+hspeed*2,bbox_bottom-1,obj_solid,0,0)))
+    || ((hspeed &gt; 0) &amp;&amp; (collision_rectangle(bbox_right+hspeed*2,bbox_top+4,bbox_right+hspeed*2,bbox_bottom-1,obj_solid,0,0))) {
     
-        vspeed = -6;
-        y--;
+        //If there's no gravity, hop
+        if (gravity == 0) &amp;&amp; (chase == 1) {
+        
+            vspeed = -6;
+            y--;
+        }
     }
+    
+    //Prevent getting embed on walls
+    if ((hspeed &lt; 0) &amp;&amp; (collision_rectangle(bbox_left+hspeed,bbox_top+4,bbox_left+hspeed,bbox_bottom-1,obj_solid,0,0)))
+        x += hspeed;
+    if ((hspeed &gt; 0) &amp;&amp; (collision_rectangle(bbox_right+hspeed,bbox_top+4,bbox_right+hspeed,bbox_bottom-1,obj_solid,0,0)))
+        x -= hspeed;
 }
-
-//Move away from walls
-if ((hspeed &lt; 0) &amp;&amp; (collision_rectangle(bbox_left+hspeed,bbox_top+4,bbox_left+hspeed,bbox_bottom-1,obj_solid,0,0)))
-    x += hspeed;
-if ((hspeed &gt; 0) &amp;&amp; (collision_rectangle(bbox_right+hspeed,bbox_top+4,bbox_right+hspeed,bbox_bottom-1,obj_solid,0,0)))
-    x -= hspeed;
 </string>
           </argument>
         </arguments>
