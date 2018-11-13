@@ -774,6 +774,11 @@
           <room>rooms\rm_w5_1</room>
           <room>rooms\rm_w5_1_Bonus</room>
         </rooms>
+        <rooms name="5-2">
+          <room>rooms\rm_w5_2</room>
+          <room>rooms\rm_w5_2_Alt</room>
+          <room>rooms\rm_w5_2_Bonus</room>
+        </rooms>
         <room>rooms\rm_w5_3</room>
         <room>rooms\rm_w5_4</room>
       </rooms>

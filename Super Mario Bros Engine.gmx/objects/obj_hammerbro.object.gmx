@@ -434,10 +434,15 @@ if (throughsolid == 0) {
     }
     else if (chase == 2) {
     
+        //Turn on ledges
+        event_user(5);
+    
         if (!instance_exists(obj_playerparent))
         || (obj_playerparent.x &lt; x)
             alarm[6] = 1;    
     }
+    else
+        event_user(5);
 }
 
 //Otherwise, cap vertical speed

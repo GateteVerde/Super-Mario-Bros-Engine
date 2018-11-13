@@ -308,7 +308,7 @@
     <instance objName="obj_qblock" x="1024" y="80" name="inst_39DCE764" locked="0" code="sprite_index = spr_brick;&#xA;sprout = cs_beanstalk;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1040" y="80" name="inst_0906D3B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1056" y="80" name="inst_A995A17C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_generator_platform" x="936" y="-16" name="inst_B88919E5" locked="0" code="///Generate smaller platforms if hard mode is active&#xA;&#xA;time = 2;&#xA;if (global.hardmode == 1) {&#xA;&#xA;    sprite = spr_platform_32;&#xA;    x += 8;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_generator_platform" x="936" y="-16" name="inst_B88919E5" locked="0" code="///Generate smaller platforms if hard mode is active&#xA;&#xA;time = 2;&#xA;if (global.hardmode == 1) {&#xA;&#xA;    sprite = spr_platform_32;&#xA;    x += 8;&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1216" y="144" name="inst_E6B8557A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1280" y="144" name="inst_35B9D2EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_qblock_coins" x="1232" y="144" name="inst_532661F8" locked="0" code="sprite_index = spr_brick;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -369,7 +369,7 @@
     <instance objName="obj_brick" x="1728" y="32" name="inst_BE0BBB25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1712" y="32" name="inst_8D47546C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1696" y="32" name="inst_E75A54DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_generator_platform" x="1832" y="-16" name="inst_074E39C8" locked="0" code="///Generate smaller platforms if hard mode is active&#xA;&#xA;time = 2;&#xA;if (global.hardmode == 1) {&#xA;&#xA;    sprite = spr_platform_32;&#xA;    x += 8;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_generator_platform" x="1832" y="-16" name="inst_074E39C8" locked="0" code="///Generate smaller platforms if hard mode is active&#xA;&#xA;time = 2;&#xA;if (global.hardmode == 1) {&#xA;&#xA;    sprite = spr_platform_32;&#xA;    x += 8;&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_generator_platform" x="1984" y="224" name="inst_170799CD" locked="0" code="///Generate smaller platforms if hard mode is active&#xA;&#xA;time = 2;&#xA;if (global.hardmode == 1) {&#xA;&#xA;    sprite = spr_platform_32;&#xA;    x += 8;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1904" y="144" name="inst_5CBF7939" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="1920" y="144" name="inst_383953EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -822,7 +822,7 @@
     <instance objName="obj_piranhaplant" x="2896" y="112" name="inst_0C5FD557" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_piranhaplant" x="3440" y="176" name="inst_2BF76967" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warptop" x="3424" y="160" name="inst_4834F735" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_warpworld" x="3440" y="208" name="inst_AB48A1DB" locked="0" code="showwarp = true;&#xA;mydest = &quot;5&quot;;&#xA;myworld = &quot;1-1&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_warpworld" x="3440" y="208" name="inst_AB48A1DB" locked="0" code="showwarp = true;&#xA;mydest = &quot;5&quot;;&#xA;myworld = &quot;5-1&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warpzone" x="3472" y="16" name="inst_A58391BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warptop" x="1344" y="160" name="inst_AC2BD845" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warproom" x="1360" y="208" name="inst_AF5A3794" locked="0" code="myroom = rm_w4_2_Bonus;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

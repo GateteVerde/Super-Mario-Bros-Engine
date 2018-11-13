@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_water" x="0" y="32" name="inst_6288AEC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelcontrol" x="0" y="0" name="inst_D010FA91" locked="0" code="levelmusic = 104;&#xA;leveltime = 400;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_levelcontrol" x="0" y="0" name="inst_D010FA91" locked="0" code="levelmusic = 104;&#xA;leveltime = 400;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="48" y="64" name="inst_9ECD6167" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_checkpoint" x="48" y="64" name="inst_13494E72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="224" y="192" name="inst_A661967E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

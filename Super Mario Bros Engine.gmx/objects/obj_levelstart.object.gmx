@@ -113,6 +113,9 @@ switch (global.world) {
     //World 5-1
     case ("5-1"): frame = 17; break;
     
+    //World 5-2
+    case ("5-2"): frame = 18; break;
+    
     //World 5-3
     case ("5-3"): frame = 19; break;
     
@@ -203,6 +206,9 @@ else {
         
         //World 5-1
         case ("5-1"): room_goto(rm_w5_1); break;
+        
+        //World 5-2
+        case ("5-2"): room_goto(rm_w5_2); break;
         
         //World 5-3
         case ("5-3"): room_goto(rm_w5_3); break;
