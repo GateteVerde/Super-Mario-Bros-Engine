@@ -73,7 +73,7 @@ else
     <instance objName="obj_solid" x="0" y="208" name="inst_FFD566CD" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="40" y="48" name="inst_44048420" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warpleft" x="208" y="176" name="inst_F97385E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_warproom" x="256" y="192" name="inst_6C1A0D9E" locked="0" code="postchange = 1;&#xA;postx = 2096;&#xA;posty = 192;&#xA;myroom = rm_w4_2_Main;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_warproom" x="256" y="192" name="inst_6C1A0D9E" locked="0" code="postchange = 1;&#xA;postx = 2608;&#xA;posty = 192;&#xA;myroom = rm_w5_1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol" x="0" y="-16" name="inst_1E465309" locked="0" code="levelmusic = 105;&#xA;leveltime = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="64" y="32" name="inst_D67CD89A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="80" y="32" name="inst_66B3FD31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -215,7 +215,7 @@
     <instance objName="obj_bowser" x="2736" y="144" name="inst_B86C2046" locked="0" code="fake = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_axe" x="2768" y="128" name="inst_E6B9D853" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_generator_flame" x="32" y="0" name="inst_6276F680" locked="0" code="xmin = 2304;&#xA;xmax = 2560;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_toad" x="2960" y="176" name="inst_5FCFA237" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_toad" x="2960" y="176" name="inst_5FCFA237" locked="0" code="nextlevel = &quot;5-1&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebar" x="2592" y="160" name="inst_7370AD92" locked="0" code="createblock = false;&#xA;angle = 270;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lavabubble" x="2632" y="112" name="inst_04836F6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maze_enemy" x="656" y="176" name="inst_8126643B" locked="0" code="myOBJ = obj_piranhaplant;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

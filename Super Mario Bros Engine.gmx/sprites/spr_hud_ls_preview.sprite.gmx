@@ -37,5 +37,9 @@
     <frame index="14">images\spr_hud_ls_preview_14.png</frame>
     <frame index="15">images\spr_hud_ls_preview_15.png</frame>
     <frame index="16">images\spr_hud_ls_preview_16.png</frame>
+    <frame index="17">images\spr_hud_ls_preview_17.png</frame>
+    <frame index="18">images\spr_hud_ls_preview_18.png</frame>
+    <frame index="19">images\spr_hud_ls_preview_19.png</frame>
+    <frame index="20">images\spr_hud_ls_preview_20.png</frame>
   </frames>
 </sprite>
