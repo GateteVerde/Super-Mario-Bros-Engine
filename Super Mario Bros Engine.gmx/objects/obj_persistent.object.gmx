@@ -58,6 +58,9 @@ global.gw = 256;
 //Game height
 global.gh = 224;
 
+//Message?
+message = noone;
+
 //Alternate keys
 keyboard_set_map(ord('X'), vk_shift);
 keyboard_set_map(ord('Z'), vk_control);
@@ -71,6 +74,31 @@ math_set_epsilon(0.0001);
 
 //Disable application surface automatic drawing
 application_surface_draw_enable(false);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hide message
+
+message = noone;
 </string>
           </argument>
         </arguments>
@@ -319,6 +347,32 @@ else if (keyboard_check_pressed(ord('R'))) {
     
     //If the screen is not fading out
     room_goto(room_first);
+    
+    //Show message
+    message = "GAME RESTART"
+    alarm[4] = 40;
+}
+
+//Enable / Disable VSync
+else if (keyboard_check_pressed(ord('V'))) {
+
+    //Toggle vsync
+    vsync = !vsync;
+    
+    //Apply settings
+    event_user(0);
+
+    //Show message
+    if (vsync) {
+    
+        message = "VSYNC ON";
+        alarm[4] = 40;
+    }
+    else {
+    
+        message = "VSYNC OFF";
+        alarm[4] = 40;
+    }
 }
 
 //Change window size
@@ -340,7 +394,7 @@ else if (keyboard_check_pressed(ord('W'))) {
             fullscreen = true;
             
             //Set fullscreen mode
-            window_set_fullscreen(true);                                                             
+            window_set_fullscreen(true);                                                           
         }
     }
     
@@ -351,15 +405,20 @@ else if (keyboard_check_pressed(ord('W'))) {
         fullscreen = false;
     
         //Set windowed mode
-        window_set_fullscreen(false);             
+        window_set_fullscreen(false);
     }
     
     //Apply settings
     event_user(0);
     
-    //Force reset display if the water object is present
-    if (instance_exists(obj_water_sf))
-        with (obj_water_sf) event_user(0);
+    //Hide message
+    alarm[4] = 60;
+    
+    //Display message
+    if (fullscreen)
+        message = "FULLSCREEN MODE";
+    else
+        message = "WINDOW SIZE " + string(filter+1) + "x";
 }
 </string>
           </argument>
@@ -405,7 +464,7 @@ done = 0;
 mode = 1;
 
 //Make sure it stops when its done
-alarm[2] = 30;
+alarm[2] = 15;
 </string>
           </argument>
         </arguments>
@@ -559,7 +618,11 @@ file_text_write_string(file,string(vsync));
 file_text_writeln(file);
 
 //Save highscore
-file_text_write_string(file,string(global.highscore))
+file_text_write_string(file,string(highscore))
+file_text_writeln(file);
+
+//Save game clear
+file_text_write_string(file,string(gameclear))
 
 //Close the file
 file_text_close(file);
@@ -606,7 +669,11 @@ if (file_exists("settings.dat")) {
     file_text_readln(file);
     
     //Set highscore
-    global.highscore = real(file_text_read_string(file));
+    highscore = real(file_text_read_string(file));
+    file_text_readln(file);
+    
+    //Game cleared
+    gameclear = real(file_text_read_string(file));
 
     //Close the file
     file_text_close(file);
@@ -621,6 +688,12 @@ else {
 
     //VSync is off by default
     vsync = 0;
+    
+    //High score
+    highscore = 0;
+    
+    //Game cleared
+    gameclear = 0;
 }
 
 //Apply loaded settings
@@ -661,10 +734,10 @@ if (done &lt; 1)
 }
 
 //Draw a rectangle
-draw_rectangle_colour(0,0,global.gw*(filter+1),global.gh*(filter+1),c_black,c_black,c_black,c_black,0);
+draw_rectangle_colour(0, 0, global.gw*(filter+1), global.gh*(filter+1), c_black, c_black, c_black, c_black, 0);
 
 //Draw the application surface
-draw_surface_stretched(application_surface,port_x*(filter+1),port_y*(filter+1),global.gw*(filter+1),global.gh*(filter+1));
+draw_surface_stretched(application_surface, port_x*(filter+1), port_y*(filter+1), global.gw*(filter+1), global.gh*(filter+1));
 
 //Reset the shader
 shader_reset();
@@ -675,20 +748,20 @@ draw_enable_alphablend(true);
 //Fades the screen to and from black
 if (done &lt; 1) {
 
-    done += 1/30;
+    done += 1/15;
     
     //Fade from black
     if (mode = 0) {
     
         draw_set_alpha(1-done);             
-        size -= 1.28;
+        size -= 2.56;
     }
 
     //Fade to black
     else {
     
         draw_set_alpha(done);
-        size += 1.28;
+        size += 2.56;
     }
 
     //Draw the fade
@@ -697,6 +770,10 @@ if (done &lt; 1) {
     draw_set_alpha(1)
     draw_set_color(c_white)
 }
+
+//Draw message at 2, 2
+if (message != noone)
+    draw_text(2,2,string(message));
 </string>
           </argument>
         </arguments>

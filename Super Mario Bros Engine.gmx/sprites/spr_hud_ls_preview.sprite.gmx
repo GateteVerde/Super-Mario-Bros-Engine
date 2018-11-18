@@ -41,5 +41,6 @@
     <frame index="18">images\spr_hud_ls_preview_18.png</frame>
     <frame index="19">images\spr_hud_ls_preview_19.png</frame>
     <frame index="20">images\spr_hud_ls_preview_20.png</frame>
+    <frame index="21">images\spr_hud_ls_preview_21.png</frame>
   </frames>
 </sprite>

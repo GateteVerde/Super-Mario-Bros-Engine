@@ -240,6 +240,7 @@
         <sprite>sprites\spr_lavasplash</sprite>
         <sprite>sprites\spr_leaf</sprite>
         <sprite>sprites\spr_rain</sprite>
+        <sprite>sprites\spr_scanlines</sprite>
         <sprite>sprites\spr_shellthump</sprite>
         <sprite>sprites\spr_smoke</sprite>
         <sprite>sprites\spr_smoke_skid</sprite>
@@ -250,6 +251,10 @@
         <sprites name="Level Start">
           <sprite>sprites\spr_hud_ls_face</sprite>
           <sprite>sprites\spr_hud_ls_preview</sprite>
+        </sprites>
+        <sprites name="Level Select">
+          <sprite>sprites\spr_hud_ls2</sprite>
+          <sprite>sprites\spr_hud_ls2_selector</sprite>
         </sprites>
         <sprites name="Time Up">
           <sprite>sprites\spr_hud_tu_title</sprite>
@@ -481,6 +486,7 @@
     <script>scripts\sprite_get_constant.gml</script>
     <script>scripts\sprite_make_object.gml</script>
     <script>scripts\draw_background_tiled_horizontal_ext.gml</script>
+    <script>scripts\draw_sprite_tiled_area_ext.gml</script>
     <script>scripts\audio_loop_sound.gml</script>
   </scripts>
   <shaders name="shaders">
@@ -710,12 +716,15 @@
     <object>objects\obj_down</object>
     <object>objects\obj_left</object>
     <object>objects\obj_right</object>
+    <object>objects\obj_levelbox</object>
+    <object>objects\obj_levelbox_select</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_nintendo</room>
     <room>rooms\rm_title</room>
     <rooms name="Levels">
       <room>rooms\rm_levelstart</room>
+      <room>rooms\rm_levelselect</room>
       <rooms name="World 1">
         <rooms name="1-1">
           <room>rooms\rm_w1_1</room>
@@ -781,6 +790,9 @@
         </rooms>
         <room>rooms\rm_w5_3</room>
         <room>rooms\rm_w5_4</room>
+      </rooms>
+      <rooms name="World 6">
+        <room>rooms\rm_w6_1</room>
       </rooms>
     </rooms>
     <rooms name="Templates">

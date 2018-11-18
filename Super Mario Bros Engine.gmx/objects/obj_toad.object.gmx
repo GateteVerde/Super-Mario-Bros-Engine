@@ -299,8 +299,13 @@ draw_set_color(c_white);
 draw_set_alpha(1);
 
 //Display 'THANK YOU MARIO!'
-if (display &gt; 0)    
-    draw_text(view_xview[0]+128,view_yview[0]+72,string_upper("THANK YOU MARIO!"));
+if (display &gt; 0) {
+
+    if (global.player == 0)
+        draw_text(view_xview[0]+128,view_yview[0]+72,string_upper("THANK YOU MARIO!"));
+    else
+        draw_text(view_xview[0]+128,view_yview[0]+72,string_upper("THANK YOU LUIGI!"));
+}
     
 //Display 'BUT OUR PRINCESS'
 if (display &gt; 1)

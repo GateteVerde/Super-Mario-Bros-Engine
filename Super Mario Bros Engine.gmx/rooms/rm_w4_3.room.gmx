@@ -269,6 +269,11 @@
     <tile bgName="tls_main" x="2384" y="208" w="16" h="16" xo="336" yo="0" id="10009680" name="inst_C1316593" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_main" x="2368" y="208" w="16" h="16" xo="336" yo="0" id="10009681" name="inst_9A4106D0" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_main" x="2352" y="208" w="16" h="16" xo="336" yo="0" id="10009682" name="inst_7B73D608" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tls_main" x="832" y="144" w="16" h="16" xo="416" yo="48" id="10010617" name="inst_31D3E282" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tls_main" x="832" y="160" w="16" h="16" xo="416" yo="64" id="10010618" name="inst_5AB1628C" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tls_main" x="832" y="176" w="16" h="16" xo="416" yo="64" id="10010619" name="inst_88E40937" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tls_main" x="832" y="192" w="16" h="16" xo="416" yo="64" id="10010620" name="inst_82DB7F4E" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tls_main" x="832" y="208" w="16" h="16" xo="416" yo="64" id="10010621" name="inst_B1BB3AF2" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_goal" x="2464" y="176" w="56" h="32" xo="8" yo="32" id="10009684" name="inst_80872CD2" depth="12" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_main" x="0" y="208" w="16" h="16" xo="336" yo="0" id="10009435" name="inst_1629B62E" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tls_main" x="16" y="208" w="16" h="16" xo="336" yo="0" id="10009436" name="inst_D8A9F4A0" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

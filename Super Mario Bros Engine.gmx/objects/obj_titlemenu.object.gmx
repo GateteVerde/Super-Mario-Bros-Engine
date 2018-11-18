@@ -31,10 +31,10 @@
 event_inherited();
 
 //Play 'Title Screen' bgm
-audio_loop_sound(global._music[1], global._st[1], global._en[1], 48000, 1);
+audio_loop_sound(global._music[0], global._st[0], global._en[0], 48000, 1);
 
 //First level
-mylevel = "5-2";
+mylevel = "5-4";
 
 //Page
 page = 0;
@@ -42,20 +42,39 @@ page = 0;
 //Choice
 current = 1;
 
-//Menu 0: Main
-menu[0,0] = 2;
-menu[0,1] = " NEW GAME";
-menu[0,2] = " CONTINUE";
+//If the game has been cleared
+if (obj_persistent.gameclear == true) {
+    
+    //Menu 0: Main
+    menu[0,0] = 3;
+    menu[0,1] = " NEW GAME";
+    menu[0,2] = " CONTINUE";
+    menu[0,3] = " LEVEL SELECT";
+    
+    //Menu 1: New Game
+    menu[1,0] = 2;
+    menu[1,1] = " MARIO GAME";
+    menu[1,2] = " LUIGI GAME";
+    
+    //Menu 2: Difficulty
+    menu[2,0] = 2;
+    menu[2,1] = " EASY";
+    menu[2,2] = " HARD";
+}
 
-//Menu 1: New Game
-menu[1,0] = 2;
-menu[1,1] = " MARIO GAME";
-menu[1,2] = " LUIGI GAME";
-
-//Menu 2: Difficulty
-menu[2,0] = 2;
-menu[2,1] = " EASY";
-menu[2,2] = " HARD";
+//Otherwise, set default menu
+else {
+    
+    //Menu 0: Main
+    menu[0,0] = 2;
+    menu[0,1] = " NEW GAME";
+    menu[0,2] = " CONTINUE";
+    
+    //Menu 1: New Game
+    menu[1,0] = 2;
+    menu[1,1] = " MARIO GAME";
+    menu[1,2] = " LUIGI GAME";
+}
 </string>
           </argument>
         </arguments>
@@ -112,114 +131,206 @@ else if (keyboard_check_pressed(vk_down)) {
 //Otherwise, if the player presses the 'Shift' buttom
 else if (keyboard_check_pressed(vk_shift)) {
 
-    //Page 0: Main
-    if (page == 0) {
-    
-        //Option 1: NEW GAME
-        if (current == 1) {
+    //If the game has been cleared
+    if (obj_persistent.gameclear == 1) {
+
+        //Page 0: Main
+        if (page == 0) {
         
-            //Play 'Correct' sound
-            audio_play_sound(snd_correct, 0, false);
+            //Option 1: NEW GAME
+            if (current == 1) {
             
-            //Go to page 1
-            page = 1;
+                //Play 'Correct' sound
+                audio_play_sound(snd_correct, 0, false);
+                
+                //Go to page 1
+                page = 1;
+                
+                //Reset option to 1
+                current = 1;
+            }
             
-            //Reset option to 1
-            current = 1;
+            //Otherwise, load current game
+            else if (current == 2) {
+            
+                //If a save file exists
+                if (file_exists("SMBEsave.sav")) {
+                
+                    //Play 'Correct' sound
+                    audio_play_sound(snd_correct, 0, false);
+                    
+                    //Load game
+                    load("SMBEsave.sav");
+                    
+                    //Go to level start screen
+                    room_goto(rm_levelstart);
+                }
+                
+                //Otherwise, play 'Wrong' sound
+                else
+                    audio_play_sound(snd_wrong, 0, false);   
+            }
+            
+            //Otherwise, go to level selection screen
+            else if (current == 3) {
+            
+                //Play 'Correct' sound
+                audio_play_sound(snd_correct, 0, false);        
+                
+                //Go to level selection screen
+                //room_goto(rm_levelselect);
+            }
         }
         
-        //Otherwise, load current game
-        else if (current == 2) {
+        //Page 1: Player Select
+        else if (page == 1) {
         
-            //If a save file exists
-            if (file_exists("SMBEsave.sav")) {
+            //Option 1: MARIO GAME
+            if (current == 1) {
+            
+                //Play 'Correct' sound
+                audio_play_sound(snd_correct, 0, false);
+                
+                //Go to page 1
+                global.player = 0;
+                
+                //Go to page 1
+                page = 2;
+                
+                //Reset option to 1
+                current = 1;
+            }
+            
+            //Option 2: LUIGI GAME
+            else if (current == 2) {
             
                 //Play 'Correct' sound
                 audio_play_sound(snd_correct, 0, false);
                 
                 //Load game
-                load("SMBEsave.sav");
+                global.player = 1;
                 
+                //Go to page 1
+                page = 2;
+                
+                //Reset option to 1
+                current = 1;       
+            }        
+        }
+        
+        //Page 2: Choose Difficulty
+        else if (page == 2) {
+        
+            //Option 1: EASY MODE
+            if (current == 1) {
+            
+                //Play 'Correct' sound
+                audio_play_sound(snd_correct, 0, false);
+                
+                //Set the world
+                global.world = mylevel;
+                
+                //Go to page 1
+                global.hardmode = 0;
+                            
                 //Go to level start screen
-                room_goto(rm_levelstart);
+                room_goto(rm_levelstart);    
             }
             
-            //Otherwise, play 'Wrong' sound
-            else
-                audio_play_sound(snd_wrong, 0, false);   
+            //Option 2: HARD MODE
+            else if (current == 2) {
+            
+                //Play 'Correct' sound
+                audio_play_sound(snd_correct, 0, false);
+                
+                //Set the world
+                global.world = mylevel;
+                
+                //Load game
+                global.hardmode = 1;
+                
+                //Go to level start screen
+                room_goto(rm_levelstart);           
+            }              
         }
     }
     
-    //Page 1: Player Select
-    else if (page == 1) {
+    //Otherwise
+    else {
     
-        //Option 1: MARIO GAME
-        if (current == 1) {
+        //Page 0: Main
+        if (page == 0) {
         
-            //Play 'Correct' sound
-            audio_play_sound(snd_correct, 0, false);
+            //Option 1: NEW GAME
+            if (current == 1) {
             
-            //Go to page 1
-            global.player = 0;
+                //Play 'Correct' sound
+                audio_play_sound(snd_correct, 0, false);
+                
+                //Go to page 1
+                page = 1;
+                
+                //Reset option to 1
+                current = 1;
+            }
             
-            //Go to page 1
-            page = 2;
+            //Otherwise, load current game
+            else if (current == 2) {
             
-            //Reset option to 1
-            current = 1;
+                //If a save file exists
+                if (file_exists("SMBEsave.sav")) {
+                
+                    //Play 'Correct' sound
+                    audio_play_sound(snd_correct, 0, false);
+                    
+                    //Load game
+                    load("SMBEsave.sav");
+                    
+                    //Go to level start screen
+                    room_goto(rm_levelstart);
+                }
+                
+                //Otherwise, play 'Wrong' sound
+                else
+                    audio_play_sound(snd_wrong, 0, false);   
+            }
         }
         
-        //Option 2: LUIGI GAME
-        else if (current == 2) {
+        //Page 1: Player Select
+        else if (page == 1) {
         
-            //Play 'Correct' sound
-            audio_play_sound(snd_correct, 0, false);
+            //Option 1: MARIO GAME
+            if (current == 1) {
             
-            //Load game
-            global.player = 1;
+                //Play 'Correct' sound
+                audio_play_sound(snd_correct, 0, false);
+                
+                //Go to page 1
+                global.player = 0;
+                
+                //Set the world
+                global.world = mylevel;
+                            
+                //Go to level start screen
+                room_goto(rm_levelstart);   
+            }
             
-            //Go to page 1
-            page = 2;
+            //Option 2: LUIGI GAME
+            else if (current == 2) {
             
-            //Reset option to 1
-            current = 1;       
-        }        
-    }
-    
-    //Page 2: Choose Difficulty
-    else if (page == 2) {
-    
-        //Option 1: EASY MODE
-        if (current == 1) {
-        
-            //Play 'Correct' sound
-            audio_play_sound(snd_correct, 0, false);
-            
-            //Set the world
-            global.world = mylevel;
-            
-            //Go to page 1
-            global.hardmode = 0;
-                        
-            //Go to level start screen
-            room_goto(rm_levelstart);    
+                //Play 'Correct' sound
+                audio_play_sound(snd_correct, 0, false);
+                
+                //Load game
+                global.player = 1;
+                
+                //Set the world
+                global.world = mylevel;
+                            
+                //Go to level start screen
+                room_goto(rm_levelstart);    
+            }        
         }
-        
-        //Option 2: HARD MODE
-        else if (current == 2) {
-        
-            //Play 'Correct' sound
-            audio_play_sound(snd_correct, 0, false);
-            
-            //Set the world
-            global.world = mylevel;
-            
-            //Load game
-            global.hardmode = 1;
-            
-            //Go to level start screen
-            room_goto(rm_levelstart);           
-        }              
     }
 }
 
@@ -257,7 +368,7 @@ else if (keyboard_check_pressed(vk_control)) {
             <kind>1</kind>
             <string>///Stop title music
 
-audio_stop_sound(global._music[1]);
+audio_stop_sound(global._music[0]);
 </string>
           </argument>
         </arguments>
@@ -298,18 +409,15 @@ draw_set_alpha(1);
 for (var i=1; i&lt;=menu[page,0]; i++) {
     
     //Draw the text...
-    if (i == current)
-        draw_text(view_xview[0]+80, view_yview[0]+144+(16*(i-1)),menu[page,i]);
-    else
-        draw_text(view_xview[0]+80, view_yview[0]+144+(16*(i-1)),menu[page,i]);
+    draw_text(view_xview[0]+80, view_yview[0]+144+(12*(i-1)),menu[page,i]);
     
     //...and draw a arrow next to the selected option 
     if (i == current)
-        draw_sprite_ext(spr_hud_title_cursor, -1, view_xview[0]+72, view_yview[0]+144+(16*(i-1)), 1, 1, 0, c_white, 1);
+        draw_sprite_ext(spr_hud_title_cursor, -1, view_xview[0]+72, view_yview[0]+144+(12*(i-1)), 1, 1, 0, c_white, 1);
 }
 
 //Draw highscore
-draw_text(view_xview[0]+88, view_yview[0]+184, "TOP- " + string_add_zeros(global.hiscore, 6));
+draw_text(view_xview[0]+80, view_yview[0]+192, "TOP- " + string_add_zeros(global.hiscore, 6));
 
 //Draw Mario &amp; Luigi
 draw_sprite(scr_mario_walk(), 0, 40, 193);

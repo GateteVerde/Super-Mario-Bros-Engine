@@ -4,7 +4,7 @@
   <width>2304</width>
   <height>224</height>
   <vsnap>16</vsnap>
-  <hsnap>8</hsnap>
+  <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -149,7 +149,7 @@
     <instance objName="obj_solid" x="2272" y="48" name="inst_245AB858" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1856" y="32" name="inst_ED80286E" locked="0" code="" scaleX="44" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2304" y="208" name="inst_3F7CAC75" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_toad" x="2448" y="176" name="inst_56D72278" locked="0" code="nextlevel = &quot;1-1&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_toad" x="2448" y="176" name="inst_56D72278" locked="0" code="nextlevel = &quot;6-1&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="2048" y="80" name="inst_0EFB1A0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="2064" y="80" name="inst_5D766A65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_brick" x="2080" y="80" name="inst_47020224" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

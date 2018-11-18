@@ -74,6 +74,9 @@ if (other.y &gt;= y+16) {
         //Set up the id of this flagpole
         flagpole = other.id;
         
+        //Set the facing direction
+        image_xscale = obj_playerparent.xscale;
+        
         //Make the flag move down
         with (other.flag) vspeed = 2;
     }

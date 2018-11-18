@@ -571,11 +571,14 @@ if (vspeed == 0)
 }
 
 //Fixes a bug when being hit while stuck
-if (global.powerup == 0)
-|| (crouch == 1) {
+if (inwall == 1) {
 
-    inwall = 0;
-    direct2 = 0;
+    //If the player is small or it is crouched down.
+    if ((global.powerup == cs_small) || (crouch == 1)) {
+    
+        inwall = 0;
+        direct2 = 0;
+    }
 }
 
 //Unstuck in case of overlapping a solid completely
@@ -1440,7 +1443,7 @@ if (invulnerable == 0) {
             <string>///Draw the player
 
 //Set the shader
-pal_swap_set(palette_index, isflashing, false);
+pal_swap_set(palette_index, isflashing, true);
 
 //Draw sprite
 draw_sprite_ext(sprite_index, -1, round(x), round(y)+1, xscale, 1, 0, c_white, image_alpha);

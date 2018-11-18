@@ -5,7 +5,7 @@
   <visible>0</visible>
   <depth>-2</depth>
   <persistent>0</persistent>
-  <parentName>obj_deactivateparent</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -77,39 +77,51 @@ else {
     //Otherwise
     else {
     
-        //Play 'Cannon' sound
-        audio_play_sound(snd_cannon, 0, false);
+        //If the cannon is inside the view
+        if (x &gt; view_xview[0]-16)
+        &amp;&amp; (x &lt; view_xview[0] + view_wview[0]) {
     
-        //If the player is at the left
-        if (obj_playerparent.x &lt; bbox_left-32) {
+            //Play 'Cannon' sound
+            audio_play_sound(snd_cannon, 0, false);
         
-            //Create smoke
-            instance_create(bbox_left-12, y, obj_smoke);
-        
-            //Shoot a bullet to the left
-            with (instance_create(bbox_left-4, y+1, obj_bullet)) {
+            //If the player is at the left
+            if (obj_playerparent.x &lt; bbox_left-32) {
             
-                hspeed = -2;
-                xscale = -1;
+                //Create smoke
+                instance_create(bbox_left-12, y, obj_smoke);
+            
+                //Shoot a bullet to the left
+                with (instance_create(bbox_left-4, y+1, obj_bullet)) {
+                
+                    hspeed = -1.5;
+                    xscale = -1;
+                }
             }
-        }
-        
-        //Otherwise, if the player is at the right
-        else if (obj_playerparent.x &gt; bbox_right+32) {
-        
-            //Create smoke
-            instance_create(bbox_right-4, y-1, obj_smoke);
-        
-            //Shoot a bullet to the left
-            with (instance_create(bbox_right+5, y+1, obj_bullet)) {
             
-                hspeed = 2;
-                xscale = 1;
-            }        
+            //Otherwise, if the player is at the right
+            else if (obj_playerparent.x &gt; bbox_right+32) {
+            
+                //Create smoke
+                instance_create(bbox_right-4, y-1, obj_smoke);
+            
+                //Shoot a bullet to the left
+                with (instance_create(bbox_right+5, y+1, obj_bullet)) {
+                
+                    hspeed = 1.5;
+                    xscale = 1;
+                }        
+            }
+            
+            //Repeat
+            alarm[0] = 90+round(random(120));
         }
         
-        //Repeat
-        alarm[0] = 90+round(random(120));
+        //Otherwise, wait
+        else {
+        
+            alarm[0] = 1;
+            exit;
+        }
     }
 }
 </string>
