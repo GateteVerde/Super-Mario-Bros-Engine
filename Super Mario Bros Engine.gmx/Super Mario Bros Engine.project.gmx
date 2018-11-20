@@ -11,9 +11,10 @@
         <sounds name="Cutscene">
           <sound>sound\bgm_cutscene</sound>
         </sounds>
-        <sound>sound\bgm_invincible</sound>
-        <sound>sound\bgm_playerdown</sound>
         <sound>sound\bgm_courseclear</sound>
+        <sound>sound\bgm_invincible</sound>
+        <sound>sound\bgm_levelselect</sound>
+        <sound>sound\bgm_playerdown</sound>
         <sound>sound\bgm_worldclear</sound>
       </sounds>
       <sound>sound\bgm_title</sound>
@@ -255,6 +256,7 @@
         <sprites name="Level Select">
           <sprite>sprites\spr_hud_ls2</sprite>
           <sprite>sprites\spr_hud_ls2_selector</sprite>
+          <sprite>sprites\spr_hud_ls2_levelselect</sprite>
         </sprites>
         <sprites name="Time Up">
           <sprite>sprites\spr_hud_tu_title</sprite>
@@ -487,6 +489,7 @@
     <script>scripts\sprite_make_object.gml</script>
     <script>scripts\draw_background_tiled_horizontal_ext.gml</script>
     <script>scripts\draw_sprite_tiled_area_ext.gml</script>
+    <script>scripts\draw_string_port.gml</script>
     <script>scripts\audio_loop_sound.gml</script>
   </scripts>
   <shaders name="shaders">
@@ -496,6 +499,13 @@
   <objects name="objects">
     <object>objects\obj_persistent</object>
     <objects name="Main">
+      <objects name="Level Selection">
+        <objects name="Players">
+          <object>objects\obj_player_ls</object>
+        </objects>
+        <object>objects\obj_levelbox</object>
+        <object>objects\obj_levelbox_select</object>
+      </objects>
       <objects name="Controllers">
         <objects name="Gameplay">
           <objects name="Castle Mazes">
@@ -716,8 +726,6 @@
     <object>objects\obj_down</object>
     <object>objects\obj_left</object>
     <object>objects\obj_right</object>
-    <object>objects\obj_levelbox</object>
-    <object>objects\obj_levelbox_select</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_nintendo</room>

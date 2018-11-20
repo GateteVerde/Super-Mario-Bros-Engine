@@ -124,6 +124,9 @@ switch (global.world) {
     
     //World 6-1
     case ("6-1"): frame = 21; break;
+    
+    //Default
+    default: frame = 0; break;
 }
 </string>
           </argument>
@@ -221,6 +224,9 @@ else {
         
         //World 6-1
         case ("6-1"): room_goto(rm_w6_1); break;
+        
+        //Default
+        default: room_goto(rm_w1_1); break;
     }
 }
 </string>

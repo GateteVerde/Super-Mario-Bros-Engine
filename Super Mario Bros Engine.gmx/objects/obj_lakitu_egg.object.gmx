@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-2</depth>
   <persistent>0</persistent>
-  <parentName>obj_enemyparent</parentName>
+  <parentName>obj_spiny</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -95,6 +95,10 @@ if (gravity == 0) {
     instance_destroy();
     exit;
 }
+
+//Destroy if outside the view
+if (bbox_top &gt; view_wview[view_current]+32)
+    instance_destroy();
 </string>
           </argument>
         </arguments>

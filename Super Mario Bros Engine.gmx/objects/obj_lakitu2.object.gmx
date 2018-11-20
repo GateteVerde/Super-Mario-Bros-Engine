@@ -187,7 +187,6 @@ if (x &gt; view_xview[0]-16)
 
     //If there's 3 or more spinies in view
     if (instance_number(obj_spiny) &gt;= 3)
-    || (instance_number(obj_lakitu_egg) &gt;= 3)
         image_index = 1;
         
     //Otherwise, if the enemy is overlapping a solid
@@ -296,13 +295,17 @@ if (instance_number(obj_playerparent) &gt; 0)
             <kind>1</kind>
             <string>///Make lakitu go away
 
-if (hspeed &gt; 0)
-&amp;&amp; (goaway = 0) 
+if (goaway = 0) 
 &amp;&amp; (obj_levelcontrol.x &gt; x) {
 
+    //Hide inside the cloud
     image_speed = 0;
     image_index = 1;
+    
+    //Go away
     goaway = 1;
+    
+    //Set the horizontal speed
     hspeed = -1;
 }
 </string>

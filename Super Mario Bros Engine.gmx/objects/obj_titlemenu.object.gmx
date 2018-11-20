@@ -34,7 +34,7 @@ event_inherited();
 audio_loop_sound(global._music[0], global._st[0], global._en[0], 48000, 1);
 
 //First level
-mylevel = "5-4";
+mylevel = "1-1";
 
 //Page
 page = 0;
@@ -66,9 +66,10 @@ if (obj_persistent.gameclear == true) {
 else {
     
     //Menu 0: Main
-    menu[0,0] = 2;
+    menu[0,0] = 3;
     menu[0,1] = " NEW GAME";
     menu[0,2] = " CONTINUE";
+    menu[0,3] = " LEVEL SELECT";
     
     //Menu 1: New Game
     menu[1,0] = 2;
@@ -178,7 +179,7 @@ else if (keyboard_check_pressed(vk_shift)) {
                 audio_play_sound(snd_correct, 0, false);        
                 
                 //Go to level selection screen
-                //room_goto(rm_levelselect);
+                room_goto(rm_levelselect);
             }
         }
         
@@ -293,6 +294,16 @@ else if (keyboard_check_pressed(vk_shift)) {
                 //Otherwise, play 'Wrong' sound
                 else
                     audio_play_sound(snd_wrong, 0, false);   
+            }
+            
+            //Otherwise, go to level selection screen
+            else if (current == 3) {
+            
+                //Play 'Correct' sound
+                audio_play_sound(snd_correct, 0, false);        
+                
+                //Go to level selection screen
+                room_goto(rm_levelselect);
             }
         }
         

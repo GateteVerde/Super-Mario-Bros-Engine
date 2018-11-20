@@ -68,6 +68,7 @@ keyboard_set_map(ord('Z'), vk_control);
 //Set the in-game fonts
 global.hud_font = font_add_sprite(spr_hudfont,ord('!'), 0, 0);
 global.hud_fontr = font_add_sprite(spr_hudfont_red,ord('!'), 0, 0);
+global.hud_fontw = font_add_sprite(spr_hudfont_menus,ord('!'), 0, 0);
 
 //Set the epsilon value for floating point numbers
 math_set_epsilon(0.0001);
@@ -598,7 +599,7 @@ if (mode = 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Save Fullscreen + Window size + VSync + Highscore Settings
+            <string>///Save fullscreen, window size, vertical syncronization, highscore and unlocked levels. 
 
 keyboard_key_release(vk_control);
 
@@ -618,8 +619,15 @@ file_text_write_string(file,string(vsync));
 file_text_writeln(file);
 
 //Save highscore
-file_text_write_string(file,string(highscore))
+file_text_write_string(file,string(highscore));
 file_text_writeln(file);
+
+//Save unlocked levels
+for (var i=0; i&lt;32; i++) {
+
+    file_text_write_string(file,string(unlock[i]));
+    file_text_writeln(file);
+}
 
 //Save game clear
 file_text_write_string(file,string(gameclear))
@@ -648,7 +656,7 @@ file_text_close(file);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Load Fullscreen + Window size + VSync + Highscore Settings 
+            <string>///Load fullscreen, window size, vertical syncronization, highscore and unlocked levels. 
 
 //If the 'settings.dat' file exist.
 if (file_exists("settings.dat")) {
@@ -672,6 +680,13 @@ if (file_exists("settings.dat")) {
     highscore = real(file_text_read_string(file));
     file_text_readln(file);
     
+    //Set unlocked levels
+    for (var i=0; i&lt;32; i++) {
+    
+        unlock[i] = real(file_text_read_string(file))
+        file_text_readln(file);
+    }
+    
     //Game cleared
     gameclear = real(file_text_read_string(file));
 
@@ -691,6 +706,12 @@ else {
     
     //High score
     highscore = 0;
+    
+    //Unlocked levels
+    for (var i=0; i&lt;32; i++) {
+    
+        unlock[i] = 0;
+    }
     
     //Game cleared
     gameclear = 0;
