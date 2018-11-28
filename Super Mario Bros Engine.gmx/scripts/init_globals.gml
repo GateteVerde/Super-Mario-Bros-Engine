@@ -35,9 +35,6 @@ score = 0;
 //Coins
 global.coins = 0;
 
-//Hi-Score
-global.hiscore = 0;
-
 //Powerup
 global.powerup = cs_small;
 
@@ -49,6 +46,9 @@ global.playerstart = 0;
 
 //Handles the number of fireworks
 global.fireworks = 0;
+
+//Was the level accessed via level selection
+global.ls = 0;
 
 //Checkpoint variable
 global.checkpoint = noone;

@@ -33,12 +33,14 @@ audio_play_sound(bgm_playerdown, 0, false);
 //Stop 'Invincible' bgm
 audio_stop_sound(bgm_invincible);
 
-//Stop music and time
+//Stop both music and timer
 with (obj_levelcontrol) {
 
     musicdisable = true;
     alarm[1] = 1;
-    alarm[2] = 0;
+    alarm[2] = -1;
+    alarm[3] = -1;
+    alarm[4] = -1;
 }
 
 //Subtract a life

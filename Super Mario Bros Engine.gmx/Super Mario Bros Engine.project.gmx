@@ -257,6 +257,7 @@
           <sprite>sprites\spr_hud_ls2</sprite>
           <sprite>sprites\spr_hud_ls2_selector</sprite>
           <sprite>sprites\spr_hud_ls2_levelselect</sprite>
+          <sprite>sprites\spr_hud_ls2_hm</sprite>
         </sprites>
         <sprites name="Time Up">
           <sprite>sprites\spr_hud_tu_title</sprite>
@@ -339,6 +340,7 @@
         <background>background\bgr_gradient_sky_night</background>
         <background>background\bgr_gradient_sky_dawn</background>
         <background>background\bgr_gradient_water</background>
+        <background>background\bgr_gradient_water_night</background>
       </backgrounds>
       <background>background\bgr_clouds</background>
       <background>background\bgr_clouds_sunset</background>
@@ -801,6 +803,13 @@
       </rooms>
       <rooms name="World 6">
         <room>rooms\rm_w6_1</room>
+        <rooms name="6-2">
+          <room>rooms\rm_w6_2</room>
+          <room>rooms\rm_w6_2_Alt</room>
+          <room>rooms\rm_w6_2_Bonus</room>
+          <room>rooms\rm_w6_2_Bonus2</room>
+          <room>rooms\rm_w6_2_Bonus3</room>
+        </rooms>
       </rooms>
     </rooms>
     <rooms name="Templates">

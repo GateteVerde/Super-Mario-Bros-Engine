@@ -28,7 +28,7 @@
             <string>///Underwater ripple effect
 
 waverot = 0;
-waverotSpeed = 2;
+waverotSpeed = 3;
 </string>
           </argument>
         </arguments>

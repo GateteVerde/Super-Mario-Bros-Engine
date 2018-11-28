@@ -44,7 +44,9 @@ with (obj_levelcontrol) {
 
     musicdisable = true;
     alarm[1] = 1;
-    alarm[2] = 0;
+    alarm[2] = -1;
+    alarm[3] = -1;
+    alarm[4] = -1;
 }
 
 //Forget check points
@@ -91,7 +93,10 @@ else if (global.time -(floor(global.time/10)*10) == 1)
 with (obj_persistent) tr_pixel = 0;
 
 //Go to level start screen
-room_goto(rm_levelstart);
+if (global.ls == 0)
+    room_goto(rm_levelstart);
+else
+    room_goto(rm_levelselect);
 </string>
           </argument>
         </arguments>
@@ -333,6 +338,9 @@ image_xscale = 1;
           <argument>
             <kind>1</kind>
             <string>///Player goal logic
+
+//Destroy enemies
+with (obj_enemyparent) instance_destroy();
 
 //When in the physics or countdown state
 if ((ready == 2) || (ready == 3)) {

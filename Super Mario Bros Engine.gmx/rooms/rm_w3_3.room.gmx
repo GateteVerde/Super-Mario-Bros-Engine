@@ -101,7 +101,7 @@
     <instance objName="obj_solid" x="2320" y="208" name="inst_FBAEE190" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2432" y="208" name="inst_DB5E3CE4" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_incastle" x="2528" y="192" name="inst_737F2397" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_flagpole" x="2416" y="32" name="inst_CC3B68A9" locked="0" code="nextlevel = &quot;3-4&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flagpole" x="2416" y="32" name="inst_CC3B68A9" locked="0" code="nextlevel = &quot;3-4&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="48" y="192" name="inst_A477D548" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="240" y="208" name="inst_B38CF449" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="0" y="208" name="inst_4DAC4B20" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>

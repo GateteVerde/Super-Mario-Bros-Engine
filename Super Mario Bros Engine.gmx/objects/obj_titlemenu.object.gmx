@@ -34,7 +34,7 @@ event_inherited();
 audio_loop_sound(global._music[0], global._st[0], global._en[0], 48000, 1);
 
 //First level
-mylevel = "1-1";
+mylevel = "6-2";
 
 //Page
 page = 0;
@@ -428,7 +428,7 @@ for (var i=1; i&lt;=menu[page,0]; i++) {
 }
 
 //Draw highscore
-draw_text(view_xview[0]+80, view_yview[0]+192, "TOP- " + string_add_zeros(global.hiscore, 6));
+draw_text(view_xview[0]+80, view_yview[0]+192, "TOP- " + string_add_zeros(obj_persistent.highscore, 6));
 
 //Draw Mario &amp; Luigi
 draw_sprite(scr_mario_walk(), 0, 40, 193);

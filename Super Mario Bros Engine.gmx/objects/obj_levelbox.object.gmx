@@ -85,14 +85,11 @@ else {
         image_index = 3;
     }
     
+    //Return to level selection after clear
+    global.ls = 1;
+    
     //Do not allow cursor movement
     with (obj_levelbox_select) ready = 1;
-    
-    //Enable hard mode if the game has been beaten once and 'H' is pressed
-    if ((obj_persistent.gameclear == true) &amp;&amp; (keyboard_check(ord('H'))))
-        global.hardmode = 1;
-    else
-        global.hardmode = 0;
 }
 </string>
           </argument>
@@ -134,8 +131,11 @@ if (obj_persistent.unlock[level_id] == false) {
     draw_set_colour(c_gray);
     draw_text(round(x+sprite_width/2), round(y+sprite_height/2), "???");
 }
-else
+else {
+
+    draw_set_colour(c_white);
     draw_text(round(x+sprite_width/2), round(y+sprite_height/2), string(level_numb));
+}
     
 //Align the text
 draw_set_valign(fa_top);
