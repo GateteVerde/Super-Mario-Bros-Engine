@@ -71,8 +71,13 @@ if (hspeed != prevhspeed) then event_user(0);
 //Bounce
 if (gravity == 0) {
 
-    vspeed = -2.25;
+    vspeed = -2;
     y--;
+}
+else {
+
+    if (vspeed &gt; 3)
+        vspeed = 3;
 }
 
 //Destroy if outside the view

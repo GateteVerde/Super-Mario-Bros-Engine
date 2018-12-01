@@ -9,23 +9,23 @@
 */
 
 //Minimum / Maximum Horizontal speed
-minspd = 1.3;
-maxspd = 2.6;
+minspd = 1.25;
+maxspd = 2.5;
 
 //Acceleration
-acc = 0.05;
+acc = 0.06;
 
 //Acceleration (when turning)
-accskid = 0.15;
+accskid = 0.125;
 
 //Deceleration
-dec = 0.0325;
+dec = 0.1;
 
 //Deceleration (when turning)
-decskid = 0.065;
+decskid = 0.06;
 
 //Jump Strength
-jumpstr = 4.1675;
+jumpstr = 3.85; //4.1675;
 
 //Gravity
 grav = 0.4;

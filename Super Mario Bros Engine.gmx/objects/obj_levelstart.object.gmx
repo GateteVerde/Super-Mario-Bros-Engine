@@ -128,6 +128,9 @@ switch (global.world) {
     //World 6-2
     case ("6-2"): frame = 22; break;
     
+    //World 6-3
+    case ("6-3"): frame = 23; break;
+    
     //Default
     default: frame = 0; break;
 }
@@ -230,6 +233,9 @@ else {
         
         //World 6-2
         case ("6-2"): room_goto(rm_w6_2); break;
+        
+        //World 6-3
+        case ("6-3"): room_goto(rm_w6_3); break;
         
         //Default
         default: room_goto(rm_w1_1); break;

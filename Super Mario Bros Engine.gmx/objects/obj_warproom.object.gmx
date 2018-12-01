@@ -71,9 +71,6 @@ myroom = room_next(room);
 
 //If the player is climbing
 if (other.state == cs_climb) {
-    
-    //Enable pixel fade
-    with (obj_persistent) tr_pixel = 1;
 
     //If the position needs to be changed in the new room.
     if (postchange != -1) {

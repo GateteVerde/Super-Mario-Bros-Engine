@@ -76,7 +76,7 @@
     <instance objName="obj_up" x="928" y="240" name="inst_F9596E94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_up" x="992" y="192" name="inst_9634C8F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_up" x="992" y="208" name="inst_73DA401A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform_balance" x="1280" y="80" name="inst_FB807757" locked="0" code="limit = 48;&#xA;rx = 1408;&#xA;ry = 144;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform_balance" x="1280" y="80" name="inst_FB807757" locked="0" code="limit = 48;&#xA;rx = 1408;&#xA;ry = 144;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform_balance" x="1456" y="80" name="inst_3DDC699F" locked="0" code="limit = 48;&#xA;rx = 1536;&#xA;ry = 144;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1536" y="112" name="inst_6EAFE6D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform_balance" x="1632" y="80" name="inst_7F6C08A1" locked="0" code="limit = 48;&#xA;rx = 1728;&#xA;ry = 144;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

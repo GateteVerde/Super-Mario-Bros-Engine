@@ -480,9 +480,6 @@ move_snap(16,16);
             <kind>1</kind>
             <string>///Warp to the given destination room
 
-//Set pixel fade mode
-with (obj_persistent) tr_pixel = 1;
-
 //With the warp object.
 with (other) {
 

@@ -1221,9 +1221,10 @@ if (statedelay &gt; 0)
         gravity = grav_alt/8;
     
     else {
+    
         //Variable jumping
-        if (vspeed &lt; -2) 
-        &amp;&amp; (jumping == 1)
+        if (jumping == 1)
+        &amp;&amp; (vspeed &lt; -1) 
             gravity = grav_alt;
         
         //Otherwise, use default gravity.     

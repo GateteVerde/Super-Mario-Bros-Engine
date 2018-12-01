@@ -339,6 +339,7 @@
         <background>background\bgr_gradient_sky_sunset</background>
         <background>background\bgr_gradient_sky_night</background>
         <background>background\bgr_gradient_sky_dawn</background>
+        <background>background\bgr_gradient_sky_dawn_strange</background>
         <background>background\bgr_gradient_water</background>
         <background>background\bgr_gradient_water_night</background>
       </backgrounds>
@@ -810,6 +811,7 @@
           <room>rooms\rm_w6_2_Bonus2</room>
           <room>rooms\rm_w6_2_Bonus3</room>
         </rooms>
+        <room>rooms\rm_w6_3</room>
       </rooms>
     </rooms>
     <rooms name="Templates">
