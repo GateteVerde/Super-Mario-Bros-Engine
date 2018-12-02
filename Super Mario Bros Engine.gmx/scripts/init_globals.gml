@@ -47,8 +47,8 @@ global.playerstart = 0;
 //Handles the number of fireworks
 global.fireworks = 0;
 
-//Was the level accessed via level selection
-global.ls = 0;
+//Checks if a maze has been failed
+global.fail = 0;
 
 //Checkpoint variable
 global.checkpoint = noone;

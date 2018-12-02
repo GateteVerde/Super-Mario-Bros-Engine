@@ -53,10 +53,14 @@ check = 0;
             <string>///Mark as checked
 
 if (check == 0) 
-&amp;&amp; (other.x &gt; x+8) {
+&amp;&amp; (other.x &gt; x+8) 
+&amp;&amp; (global.fail == false) {
 
     //Play 'Wrong' sound
     audio_play_sound(snd_wrong, 0, false);
+    
+    //Maze has been failed
+    global.fail = true;
 
     //Check it
     check = 1;

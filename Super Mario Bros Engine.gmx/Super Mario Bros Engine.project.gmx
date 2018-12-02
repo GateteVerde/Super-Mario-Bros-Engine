@@ -812,6 +812,20 @@
           <room>rooms\rm_w6_2_Bonus3</room>
         </rooms>
         <room>rooms\rm_w6_3</room>
+        <room>rooms\rm_w6_4</room>
+      </rooms>
+      <rooms name="World 7">
+        <rooms name="7-1">
+          <room>rooms\rm_w7_1</room>
+          <room>rooms\rm_w7_1_Bonus</room>
+        </rooms>
+        <rooms name="7-2">
+          <room>rooms\rm_w7_2</room>
+          <room>rooms\rm_w7_2_Main</room>
+          <room>rooms\rm_w7_2_Goal</room>
+        </rooms>
+        <room>rooms\rm_w7_3</room>
+        <room>rooms\rm_w7_4</room>
       </rooms>
     </rooms>
     <rooms name="Templates">

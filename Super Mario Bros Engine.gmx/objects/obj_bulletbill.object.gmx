@@ -31,7 +31,7 @@
 instance_create(x,y,obj_solid);
 
 //Shoot a bullet bill
-alarm[0] = 90;
+alarm[0] = 90+round(random(120));
 </string>
           </argument>
         </arguments>

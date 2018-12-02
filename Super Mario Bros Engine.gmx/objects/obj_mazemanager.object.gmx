@@ -31,12 +31,14 @@
 //  This object uses creation code
 //
 //      rx               = Camera Restart position
+//      passages         = Number of correct passages
 //      maze_index       = Maze index
 //      maze_way[0...99] = Number of passages the maze has
 */
 
 //Default variables
 rx = 0;
+passages = 1;
 maze_index = 0;
 maze_way[maze_index] = noone;
 
@@ -46,6 +48,31 @@ numb = 0;
 //Do not draw backgrounds
 if (instance_number(obj_castle) == 0)
     instance_create(0,0,obj_castle);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reset failure check
+
+global.fail = 0;
 </string>
           </argument>
         </arguments>
@@ -68,10 +95,10 @@ if (instance_number(obj_castle) == 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///If the maze is correct
+            <string>///Manage the maze
 
-//If all checkpoints have been check, destroy them
-if (numb == array_length_1d(maze_index)+1)
+//If all checkpoints have been check correctly, destroy the manager
+if (numb == passages)
     instance_destroy();
     
 //Otherwise
@@ -95,6 +122,9 @@ else {
         
         //Reset numb
         numb = 0;
+        
+        //Reset fail
+        global.fail = 0;
         
         //With the camera
         with (obj_levelcontrol) y = 0;

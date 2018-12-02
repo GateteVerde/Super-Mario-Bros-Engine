@@ -160,7 +160,7 @@
     <instance objName="obj_solid" x="2992" y="208" name="inst_3D77183E" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bganimator" x="32" y="0" name="inst_1DF162DD" locked="0" code="bg_index = 1;&#xA;bg_frame[0] = bgr_nightsky;&#xA;bg_frame[1] = bgr_nightsky_b;&#xA;bg_frame[2] = bgr_nightsky_c;&#xA;bg_frame[3] = bgr_nightsky_d;&#xA;bg_frame[4] = bgr_nightsky_e;&#xA;bg_frame[5] = bgr_nightsky_f;&#xA;bg_frame[6] = bgr_nightsky_g;&#xA;bg_frame[7] = bgr_nightsky_h;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_piranhaplant" x="1648" y="176" name="inst_77659296" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_checkpoint" x="1584" y="192" name="inst_568ED846" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_checkpoint" x="1584" y="192" name="inst_568ED846" locked="0" code="///Remove if hard mode is active&#xA;&#xA;if (global.hardmode == 1)&#xA;    instance_destroy();&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="80" y="192" name="inst_E56B1441" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_qblock_coins" x="688" y="144" name="inst_243932CC" locked="0" code="sprite_index = spr_brick;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>

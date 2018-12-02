@@ -95,7 +95,8 @@ else if (check == 1) {
             <string>///Mark as checked
 
 if (check == 0) 
-&amp;&amp; (other.x &gt; x+8) {
+&amp;&amp; (other.x &gt; x+8) 
+&amp;&amp; (global.fail == false) {
 
     //Play 'Correct' sound
     audio_play_sound(snd_correct, 0, false);

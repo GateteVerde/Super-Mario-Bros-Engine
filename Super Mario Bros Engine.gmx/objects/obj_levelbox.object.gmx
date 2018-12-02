@@ -85,9 +85,6 @@ else {
         image_index = 3;
     }
     
-    //Return to level selection after clear
-    global.ls = 1;
-    
     //Do not allow cursor movement
     with (obj_levelbox_select) ready = 1;
 }

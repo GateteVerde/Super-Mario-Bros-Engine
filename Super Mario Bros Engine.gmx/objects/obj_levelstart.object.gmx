@@ -131,6 +131,21 @@ switch (global.world) {
     //World 6-3
     case ("6-3"): frame = 23; break;
     
+    //World 6-4
+    case ("6-4"): frame = 24; break;
+    
+    //World 7-1
+    case ("7-1"): frame = 25; break;
+    
+    //World 7-2
+    case ("7-2"): frame = 26; break;
+    
+    //World 7-3
+    case ("7-3"): frame = 27; break;
+    
+    //World 7-4
+    case ("7-4"): frame = 28; break;
+        
     //Default
     default: frame = 0; break;
 }
@@ -236,6 +251,21 @@ else {
         
         //World 6-3
         case ("6-3"): room_goto(rm_w6_3); break;
+        
+        //World 6-4
+        case ("6-4"): room_goto(rm_w6_4); break;
+                
+        //World 7-1
+        case ("7-1"): room_goto(rm_w7_1); break;
+        
+        //World 7-2
+        case ("7-2"): room_goto(rm_w7_2); break;
+        
+        //World 7-3
+        case ("7-3"): room_goto(rm_w7_3); break;
+        
+        //World 7-4
+        case ("7-4"): room_goto(rm_w7_4); break;
         
         //Default
         default: room_goto(rm_w1_1); break;

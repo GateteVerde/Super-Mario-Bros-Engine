@@ -210,7 +210,7 @@
     <instance objName="obj_up" x="1872" y="208" name="inst_04E64E8E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warptop" x="880" y="160" name="inst_E60BD4E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warproom" x="896" y="208" name="inst_3C9038D8" locked="0" code="myroom = rm_w5_2_Alt;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_checkpoint" x="1584" y="192" name="inst_C763B96C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_checkpoint" x="1584" y="192" name="inst_C763B96C" locked="0" code="///Remove if hard mode is active&#xA;&#xA;if (global.hardmode == 1)&#xA;    instance_destroy();&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_clearnpcs" x="1696" y="192" name="inst_FEF0C25D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="48" y="192" name="inst_8D3010B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
