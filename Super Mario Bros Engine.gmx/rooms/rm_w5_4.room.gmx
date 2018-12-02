@@ -64,8 +64,8 @@ global.skin = 2;</code>
     <instance objName="obj_solid" x="0" y="64" name="inst_FFE799E1" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="544" y="32" name="inst_EDE1CD99" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="528" y="160" name="inst_40B08BA8" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="880" y="80" name="inst_C8E8D413" locked="0" code="clockwise = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="1312" y="96" name="inst_8FF65EEF" locked="0" code="clockwise = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="880" y="80" name="inst_C8E8D413" locked="0" code="clockwise = -1;&#xA;angle = 225;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="1312" y="96" name="inst_8FF65EEF" locked="0" code="clockwise = -1;&#xA;angle = 90;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1280" y="160" name="inst_216F9625" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1328" y="160" name="inst_D12256C4" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1296" y="160" name="inst_8A7563BC" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
@@ -85,9 +85,9 @@ global.skin = 2;</code>
     <instance objName="obj_solid" x="704" y="208" name="inst_2262D78F" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="896" y="208" name="inst_19F2E517" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1088" y="208" name="inst_35057336" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="784" y="144" name="inst_0FEDF244" locked="0" code="clockwise = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="976" y="144" name="inst_DA856673" locked="0" code="clockwise = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="1168" y="144" name="inst_F755BB6E" locked="0" code="clockwise = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="784" y="144" name="inst_0FEDF244" locked="0" code="clockwise = -1;&#xA;angle = 180;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="976" y="144" name="inst_DA856673" locked="0" code="clockwise = -1;&#xA;angle = 315;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="1168" y="144" name="inst_F755BB6E" locked="0" code="clockwise = -1;&#xA;angle = 45;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="256" y="208" name="inst_34BE730C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="272" y="208" name="inst_B85AF83F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="304" y="208" name="inst_860089B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -108,7 +108,7 @@ global.skin = 2;</code>
     <instance objName="obj_solid" x="0" y="32" name="inst_23452F50" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_generator_platform" x="1372" y="224" name="inst_927FEBB0" locked="0" code="sprite = spr_platform_24;&#xA;time = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_generator_platform" x="1420" y="-16" name="inst_EC2858C8" locked="0" code="sprite = spr_platform_24;&#xA;time = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="1472" y="160" name="inst_DA954594" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="1472" y="160" name="inst_DA954594" locked="0" code="angle = 135;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1488" y="32" name="inst_E9EE2069" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1568" y="32" name="inst_D292653C" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1504" y="32" name="inst_4895C4CE" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
@@ -188,11 +188,11 @@ global.skin = 2;</code>
     <instance objName="obj_lava" x="2224" y="208" name="inst_6144F48E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="2240" y="208" name="inst_9C3775DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lavabubble" x="328" y="80" name="inst_8C31AA90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="368" y="112" name="inst_37AFC849" locked="0" code="length = 11;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="688" y="208" name="inst_39AEA607" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="880" y="208" name="inst_43B765A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="368" y="112" name="inst_37AFC849" locked="0" code="length = 11;&#xA;angle = 90;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="688" y="208" name="inst_39AEA607" locked="0" code="angle = 135;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="880" y="208" name="inst_43B765A5" locked="0" code="angle = 270;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebar" x="1072" y="208" name="inst_0E87C4A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar_fast" x="1648" y="176" name="inst_1C19D081" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar_fast" x="1648" y="176" name="inst_1C19D081" locked="0" code="angle = 180;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="1376" y="208" w="16" h="16" xo="624" yo="112" id="10006353" name="inst_41D2489C" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

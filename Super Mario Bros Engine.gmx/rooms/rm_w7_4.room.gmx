@@ -298,8 +298,8 @@ global.skin = 2;</code>
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_8824CF5D" locked="0" code="levelmusic = 103;&#xA;leveltime = 400;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol_tiles" x="16" y="0" name="inst_CA393D2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_generator_flame" x="32" y="0" name="inst_4C02DF58" locked="0" code="xmin = 2448;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="1648" y="336" name="inst_EA4F7CB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firebar" x="1648" y="112" name="inst_0943A906" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="1648" y="336" name="inst_EA4F7CB4" locked="0" code="angle = 90;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firebar" x="1648" y="112" name="inst_0943A906" locked="0" code="angle = 90;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="1600" y="208" name="inst_0003C15F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="1616" y="208" name="inst_F20E6E5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="1632" y="208" name="inst_5E1BDB49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -434,6 +434,7 @@ global.skin = 2;</code>
     <instance objName="obj_wrongway" x="2144" y="48" name="inst_18896F6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wrongway" x="2160" y="176" name="inst_E5B5AB2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maze_enemy" x="328" y="112" name="inst_76F2F66B" locked="0" code="myOBJ = obj_lavabubble;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lavabubble" x="3144" y="112" name="inst_1F6144CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="0" y="32" w="16" h="16" xo="352" yo="128" id="10012461" name="inst_D200C82E" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

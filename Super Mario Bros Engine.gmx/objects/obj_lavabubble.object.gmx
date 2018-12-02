@@ -163,14 +163,21 @@ if (lava) {
 if (x &gt; view_xview[0]-32)
 &amp;&amp; (x &lt; view_xview[0]+view_wview[0]+32) {
 
-    //Make it visible
-    visible = true;
+    //If the player is above
+    if (instance_exists(obj_playerparent))
+    &amp;&amp; (obj_playerparent.y &lt; y) {
     
-    //Set the vertical speed.
-    vspeed = -6;
-    
-    //Play sound and create lava effect.
-    alarm[2] = 10;
+        //Make it visible
+        visible = true;
+        
+        //Set the vertical speed.
+        vspeed = -6;
+        
+        //Play sound and create lava effect.
+        alarm[2] = 10;
+    }
+    else
+        alarm[1] = 10;
 }
 
 //Otherwise, wait
