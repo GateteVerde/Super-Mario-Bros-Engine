@@ -56,7 +56,8 @@ ready = 0;
             <kind>1</kind>
             <string>///Make the bridge collapse if Bowser exists
 
-if (ready == 0) {
+if (ready == 0) 
+&amp;&amp; (other.x &gt; x+8) {
 
     //Turn the player into the course clear object
     with (other) instance_change(obj_player_axe, true);

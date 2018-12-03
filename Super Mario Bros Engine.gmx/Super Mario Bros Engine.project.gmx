@@ -340,10 +340,12 @@
         <background>background\bgr_gradient_sky_night</background>
         <background>background\bgr_gradient_sky_dawn</background>
         <background>background\bgr_gradient_sky_dawn_strange</background>
+        <background>background\bgr_gradient_sky_gray</background>
         <background>background\bgr_gradient_water</background>
         <background>background\bgr_gradient_water_night</background>
       </backgrounds>
       <background>background\bgr_clouds</background>
+      <background>background\bgr_clouds_gray</background>
       <background>background\bgr_clouds_sunset</background>
       <background>background\bgr_mushrooms</background>
       <backgrounds name="Hills">
@@ -826,6 +828,12 @@
         </rooms>
         <room>rooms\rm_w7_3</room>
         <room>rooms\rm_w7_4</room>
+      </rooms>
+      <rooms name="World 8">
+        <rooms name="8-1">
+          <room>rooms\rm_w8_1</room>
+          <room>rooms\rm_w8_1_Bonus</room>
+        </rooms>
       </rooms>
     </rooms>
     <rooms name="Templates">
