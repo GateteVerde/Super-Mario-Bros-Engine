@@ -27,7 +27,172 @@
             <kind>1</kind>
             <string>///Fake castle background
 
+//Parallax value
 mazeview = 0;
+myy = 0;
+
+//Lightning
+lightning = 0;
+
+//Real bowser castle animation
+if (string_char_at(global.world, 1) == "8") {
+
+    myback = bgr_castle;
+    myy = 16;
+    alarm[0] = 7;
+    alarm[1] = 100;
+}
+else
+    myback = bgr_castle_fake;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Replace background colour
+
+//If there's no lightning effect in place
+if (lightning == 0) {
+
+    //Play 'Lightning' sound
+    audio_play_sound(snd_lightning, 0, false);
+
+    //Increment lightning
+    lightning++;
+    
+    //Set background colour
+    background_colour = make_colour_rgb(248, 248, 136);
+    
+    //Repeat the process
+    alarm[1] = 7;
+}
+
+//Otherwise, 
+else {
+    
+    switch (lightning) {
+    
+        //1
+        case (1): {
+        
+            lightning = 2;
+            background_colour = make_colour_rgb(216, 216, 120);
+            alarm[1] = 7;
+        } break;
+        
+        //2
+        case (2): {
+        
+            lightning = 3;
+            background_colour = make_colour_rgb(184, 184, 104);
+            alarm[1] = 7;
+        } break;
+        
+        //3
+        case (3): {
+        
+            lightning = 4;
+            background_colour = make_colour_rgb(152, 152, 88);
+            alarm[1] = 7;
+        } break;
+        
+        //4
+        case (4): {
+        
+            lightning = 5;
+            background_colour = make_colour_rgb(120, 120, 62);
+            alarm[1] = 7;
+        } break;
+        
+        //5
+        case (5): {
+        
+            lightning = 6;
+            background_colour = make_colour_rgb(88, 88, 56);
+            alarm[1] = 7;
+        } break;
+        
+        //6
+        case (6): {
+        
+            lightning = 7;
+            background_colour = make_colour_rgb(56, 56, 40);
+            alarm[1] = 7;
+        } break;
+        
+        //7
+        case (7): {
+        
+            lightning = 8;
+            background_colour = make_colour_rgb(24, 24, 14);
+            alarm[1] = 7;
+        } break;
+        
+        //1
+        case (8): {
+        
+            lightning = 0;
+            background_colour = c_black;
+            alarm[1] = 100+random(round(200));
+        } break;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Replace background
+
+//Switch between backgrounds
+switch (myback) {
+
+    case (bgr_castle): myback = bgr_castle_b; break;
+    case (bgr_castle_b): myback = bgr_castle_c; break;
+    case (bgr_castle_c): myback = bgr_castle_d; break;
+    case (bgr_castle_d): myback = bgr_castle_e; break;
+    case (bgr_castle_e): myback = bgr_castle_f; break;
+    case (bgr_castle_f): myback = bgr_castle_g; break;
+    case (bgr_castle_g): myback = bgr_castle_h; break;
+    case (bgr_castle_h): myback = bgr_castle; break;
+}
+
+//Repeat the process
+alarm[0] = 7;
 </string>
           </argument>
         </arguments>
@@ -52,7 +217,10 @@ mazeview = 0;
             <kind>1</kind>
             <string>///Draw castle background
 
-draw_background_tiled_ext(bgr_castle_fake, (view_xview / 1.5) + mazeview, view_yview, 1, 1, c_white, 1);
+//Draw the background given in 'myback'
+draw_background_tiled_ext(myback, (view_xview / 1.5) + mazeview, view_yview+myy, 1, 1, c_white, 1);
+
+//Always draw a rectangle above
 draw_rectangle_colour(view_xview, view_yview, view_xview + view_wview, view_yview + 32, c_black, c_black, c_black, c_black, 0);
 </string>
           </argument>

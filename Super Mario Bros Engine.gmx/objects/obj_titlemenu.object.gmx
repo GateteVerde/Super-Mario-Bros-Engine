@@ -34,7 +34,7 @@ event_inherited();
 audio_loop_sound(global._music[0], global._st[0], global._en[0], 48000, 1);
 
 //First level
-mylevel = "1-1";
+mylevel = "8-3";
 
 //Page
 page = 0;

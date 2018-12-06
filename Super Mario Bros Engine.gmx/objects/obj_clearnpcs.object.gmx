@@ -72,8 +72,8 @@ if (inst != noone) {
     else if (mode == 1) {
     
         //If the instance is inside the view
-        if (inst.x &gt; global.postx - (global.gw / 2) - 48)
-        &amp;&amp; (inst.x &lt; global.postx + (global.gw / 2) + 48)   
+        if (inst.x &gt; global.postx - (global.gw / 2) - 96)
+        &amp;&amp; (inst.x &lt; global.postx + (global.gw / 2) + 96)   
             with (inst) instance_destroy();        
     }
 }

@@ -136,8 +136,8 @@
     <instance objName="obj_solid" x="3600" y="192" name="inst_C8321EBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="3616" y="208" name="inst_C3157B10" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_D42A0BDB" locked="0" code="levelmusic = 101;&#xA;leveltime = 400;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelcontrol_tiles" x="16" y="0" name="inst_6A4C4C76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lakitu" x="32" y="0" name="inst_504E382E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="16" y="0" name="inst_6A4C4C76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lakitu" x="16" y="0" name="inst_504E382E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lakitu_end" x="3328" y="48" name="inst_D3C4EA6E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_piranhaplant" x="352" y="176" name="inst_C24DF094" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_piranhaplant" x="1872" y="160" name="inst_60157312" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -58,6 +58,45 @@ bgxx[7] = 4.5;
 x = view_xview[view_current]+128;
 view_object[0] = id;
 target = noone;
+
+//Initialize system
+animated_tile_init();
+
+//Add Tiles
+animated_tile_add(tls_animate, .1,
+                  tls_animate1,
+                  tls_animate2,
+                  tls_animate3,
+                  tls_animate4,
+                  tls_animate5,
+                  tls_animate6,
+                  tls_animate7,
+                  tls_animate8);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Clean all animated tiles
+
+animated_tile_cleanup();
 </string>
           </argument>
         </arguments>
@@ -406,6 +445,9 @@ if (levelmusic != noone) {
 
 //Round position variables
 x = round(x);
+
+//Update tiles
+animated_tile_update();
 </string>
           </argument>
         </arguments>

@@ -33,6 +33,9 @@ flagpole = -1;
 //Play the flagpole sound
 audio_play_sound(snd_flagpole, 0, false);
 
+//Stop 'Starman' sound
+audio_stop_sound(bgm_invincible);
+
 //Move down
 vspeed = 2;
 

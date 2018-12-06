@@ -152,8 +152,8 @@ global.skin = 2;</code>
     <instance objName="obj_solid" x="2288" y="144" name="inst_B6752EB0" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2304" y="208" name="inst_E985FEDB" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2304" y="32" name="inst_CC7C9D7C" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelcontrol_tiles" x="16" y="0" name="inst_4B80886F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_generator_flame" x="32" y="0" name="inst_6A9C8A45" locked="0" code="xmin = 1552;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="16" y="0" name="inst_4B80886F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_generator_flame" x="16" y="0" name="inst_6A9C8A45" locked="0" code="xmin = 1552;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform" x="2208" y="96" name="inst_35EF788A" locked="0" code="sprite_index = spr_platform_32;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_left" x="2224" y="96" name="inst_9B57FCA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="2144" y="96" name="inst_985DF79A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

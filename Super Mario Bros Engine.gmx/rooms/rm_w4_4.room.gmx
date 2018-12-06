@@ -156,7 +156,7 @@ global.skin = 2;</code>
     <instance objName="obj_solid" x="1376" y="384" name="inst_C4821952" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1024" y="432" name="inst_99AFAF5E" locked="0" code="" scaleX="23" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1520" y="432" name="inst_A07AB780" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelcontrol_tiles" x="16" y="0" name="inst_7115FFBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="16" y="0" name="inst_7115FFBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1392" y="208" name="inst_8A2E3BC7" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1520" y="208" name="inst_91A932D0" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="obj_mazemanager" x="1280" y="0" name="inst_3ABABD62" locked="0" code="rx = 128;&#xA;maze_index = 0;&#xA;maze_way[0] = instance_create(1008, 48, obj_correctway);&#xA;    maze_way[0].parent = id;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -215,7 +215,7 @@ global.skin = 2;</code>
     <instance objName="obj_bridge" x="2752" y="160" name="inst_D52EB762" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bowser" x="2736" y="144" name="inst_B86C2046" locked="0" code="fake = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_axe" x="2768" y="128" name="inst_E6B9D853" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_generator_flame" x="32" y="0" name="inst_6276F680" locked="0" code="xmin = 2304;&#xA;xmax = 2560;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_generator_flame" x="16" y="0" name="inst_6276F680" locked="0" code="xmin = 2304;&#xA;xmax = 2560;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_toad" x="2960" y="176" name="inst_5FCFA237" locked="0" code="nextlevel = &quot;5-1&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebar" x="2592" y="160" name="inst_7370AD92" locked="0" code="createblock = false;&#xA;angle = 270;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lavabubble" x="2632" y="112" name="inst_04836F6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

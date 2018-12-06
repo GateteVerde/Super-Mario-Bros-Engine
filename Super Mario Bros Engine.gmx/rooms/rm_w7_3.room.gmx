@@ -142,10 +142,9 @@
     <instance objName="obj_solid" x="3584" y="208" name="inst_CBD2DEFD" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_5B1FD81B" locked="0" code="levelmusic = 101;&#xA;leveltime = 300;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_checkpoint" x="1840" y="192" name="inst_ABE45937" locked="0" code="///Remove if hard mode is active&#xA;&#xA;if (global.hardmode == 1)&#xA;    instance_destroy();&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_generator_cheep_flying" x="48" y="0" name="inst_30B4475E" locked="0" code="xmin = 240;&#xA;xmax = 1696;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_generator_cheep_flying" x="64" y="0" name="inst_A85FB146" locked="0" code="xmin = 1936;&#xA;xmax = 3072;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelcontrol_tiles" x="16" y="0" name="inst_FC9C68A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rainmaker" x="32" y="0" name="inst_BFB0D354" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_generator_cheep_flying" x="16" y="0" name="inst_30B4475E" locked="0" code="xmin = 240;&#xA;xmax = 1696;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_generator_cheep_flying" x="32" y="0" name="inst_A85FB146" locked="0" code="xmin = 1936;&#xA;xmax = 3072;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="16" y="0" name="inst_FC9C68A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_koopa" x="632" y="144" name="inst_7199F27A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_parakoopa" x="840" y="144" name="inst_00840413" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_koopa_red" x="1272" y="144" name="inst_0A8FB8A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

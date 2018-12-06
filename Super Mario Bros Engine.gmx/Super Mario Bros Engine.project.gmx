@@ -55,6 +55,7 @@
     <sound>sound\snd_kick7</sound>
     <sound>sound\snd_kick8</sound>
     <sound>sound\snd_lava</sound>
+    <sound>sound\snd_lightning</sound>
     <sound>sound\snd_powerup</sound>
     <sound>sound\snd_rain</sound>
     <sound>sound\snd_skid</sound>
@@ -391,6 +392,13 @@
       </backgrounds>
       <backgrounds name="Castle">
         <background>background\bgr_castle</background>
+        <background>background\bgr_castle_b</background>
+        <background>background\bgr_castle_c</background>
+        <background>background\bgr_castle_d</background>
+        <background>background\bgr_castle_e</background>
+        <background>background\bgr_castle_f</background>
+        <background>background\bgr_castle_g</background>
+        <background>background\bgr_castle_h</background>
         <background>background\bgr_castle_fake</background>
       </backgrounds>
       <backgrounds name="Castle Walls">
@@ -504,41 +512,29 @@
   <objects name="objects">
     <object>objects\obj_persistent</object>
     <objects name="Main">
-      <objects name="Level Selection">
-        <objects name="Players">
-          <object>objects\obj_player_ls</object>
-        </objects>
-        <object>objects\obj_levelbox</object>
-        <object>objects\obj_levelbox_select</object>
-      </objects>
       <objects name="Controllers">
-        <objects name="Gameplay">
-          <objects name="Castle Mazes">
-            <object>objects\obj_mazemanager</object>
-            <object>objects\obj_wrongway</object>
-            <object>objects\obj_correctway</object>
-          </objects>
-          <objects name="Weather">
-            <object>objects\obj_rainmaker</object>
-            <object>objects\obj_snowmaker</object>
-            <object>objects\obj_windmaker</object>
-          </objects>
+        <objects name="Castle Mazes">
+          <object>objects\obj_mazemanager</object>
+          <object>objects\obj_wrongway</object>
+          <object>objects\obj_correctway</object>
+        </objects>
+        <objects name="Levels">
           <object>objects\obj_water</object>
-          <object>objects\obj_warpzone</object>
+          <object>objects\obj_rainmaker</object>
+          <object>objects\obj_snowmaker</object>
+          <object>objects\obj_windmaker</object>
         </objects>
         <objects name="Goals">
-          <objects name="Castle">
-            <object>objects\obj_toad</object>
-          </objects>
           <object>objects\obj_flagpole</object>
           <object>objects\obj_incastle</object>
+          <object>objects\obj_toad</object>
+          <object>objects\obj_warpzone</object>
         </objects>
         <object>objects\obj_pitwarp</object>
+        <object>objects\obj_clearnpcs</object>
         <object>objects\obj_bganimator</object>
         <object>objects\obj_checkpoint</object>
         <object>objects\obj_levelcontrol</object>
-        <object>objects\obj_levelcontrol_tiles</object>
-        <object>objects\obj_clearnpcs</object>
       </objects>
       <object>objects\obj_player</object>
       <object>objects\obj_player_alt</object>
@@ -717,6 +713,13 @@
             <object>objects\obj_hud</object>
             <object>objects\obj_water_sf</object>
           </objects>
+          <objects name="Level Selection">
+            <objects name="Players">
+              <object>objects\obj_player_ls</object>
+            </objects>
+            <object>objects\obj_levelbox</object>
+            <object>objects\obj_levelbox_select</object>
+          </objects>
         </objects>
         <object>objects\obj_timeup</object>
         <object>objects\obj_flag</object>
@@ -834,6 +837,11 @@
           <room>rooms\rm_w8_1</room>
           <room>rooms\rm_w8_1_Bonus</room>
         </rooms>
+        <rooms name="8-2">
+          <room>rooms\rm_w8_2</room>
+          <room>rooms\rm_w8_2_Bonus</room>
+        </rooms>
+        <room>rooms\rm_w8_3</room>
       </rooms>
     </rooms>
     <rooms name="Templates">

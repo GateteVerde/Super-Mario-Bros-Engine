@@ -296,8 +296,8 @@ global.skin = 2;</code>
     <instance objName="obj_lava" x="3264" y="208" name="inst_737F355A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="3264" y="208" name="inst_58C55509" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_8824CF5D" locked="0" code="levelmusic = 103;&#xA;leveltime = 400;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelcontrol_tiles" x="16" y="0" name="inst_CA393D2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_generator_flame" x="32" y="0" name="inst_4C02DF58" locked="0" code="xmin = 2448;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="16" y="0" name="inst_CA393D2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_generator_flame" x="16" y="0" name="inst_4C02DF58" locked="0" code="xmin = 2448;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebar" x="1648" y="336" name="inst_EA4F7CB4" locked="0" code="angle = 90;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebar" x="1648" y="112" name="inst_0943A906" locked="0" code="angle = 90;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="1600" y="208" name="inst_0003C15F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

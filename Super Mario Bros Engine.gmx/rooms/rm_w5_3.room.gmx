@@ -133,9 +133,9 @@ background_blend[2] = make_color_rgb(255, 229, 119);</code>
     <instance objName="obj_parakoopa_red" x="1832" y="128" name="inst_BE916848" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_koopa_red" x="1768" y="96" name="inst_F643D13C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_koopa_red" x="2136" y="192" name="inst_37097088" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bganimator" x="32" y="0" name="inst_D11AAC2D" locked="0" code="bg_index = 2;&#xA;bg_frame[0] = bgr_waterfall;&#xA;bg_frame[1] = bgr_waterfall_b;&#xA;bg_frame[2] = bgr_waterfall_c;&#xA;bg_frame[3] = bgr_waterfall_d;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelcontrol_tiles" x="16" y="0" name="inst_62E375F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_generator_bullet" x="48" y="0" name="inst_51564A95" locked="0" code="xmin = 0;&#xA;xmax = 2208;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bganimator" x="16" y="0" name="inst_D11AAC2D" locked="0" code="bg_index = 2;&#xA;bg_frame[0] = bgr_waterfall;&#xA;bg_frame[1] = bgr_waterfall_b;&#xA;bg_frame[2] = bgr_waterfall_c;&#xA;bg_frame[3] = bgr_waterfall_d;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="16" y="0" name="inst_62E375F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_generator_bullet" x="32" y="0" name="inst_51564A95" locked="0" code="xmin = 0;&#xA;xmax = 2208;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="0" y="128" w="96" h="80" xo="32" yo="0" id="10003355" name="inst_5BC64E47" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
