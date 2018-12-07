@@ -81,8 +81,8 @@
     <instance objName="obj_levelbox" x="136" y="156" name="inst_0DCE1077" locked="-1" code="level_id = 27;&#xA;level_numb = &quot;7-4&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelbox" x="16" y="180" name="inst_5273C0F5" locked="-1" code="level_id = 28;&#xA;level_numb = &quot;8-1&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelbox" x="56" y="180" name="inst_BCE8A247" locked="-1" code="level_id = 29;&#xA;level_numb = &quot;8-2&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelbox" x="96" y="180" name="inst_605EB947" locked="-1" code="level_id = 30;&#xA;level_numb = &quot;8-3&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelbox" x="136" y="180" name="inst_A6C2F3B9" locked="-1" code="level_id = 31;&#xA;level_numb = &quot;8-4&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_levelbox" x="96" y="180" name="inst_605EB947" locked="-1" code="level_id = 30;&#xA;level_numb = &quot;8-3&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_levelbox" x="136" y="180" name="inst_A6C2F3B9" locked="-1" code="level_id = 31;&#xA;level_numb = &quot;8-4&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelbox_select" x="16" y="12" name="inst_F7FF13E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bganimator" x="-16" y="-16" name="inst_E2AF89F4" locked="0" code="bg_index = 1;&#xA;bg_frame[0] = bgr_nightsky;&#xA;bg_frame[1] = bgr_nightsky_b;&#xA;bg_frame[2] = bgr_nightsky_c;&#xA;bg_frame[3] = bgr_nightsky_d;&#xA;bg_frame[4] = bgr_nightsky_e;&#xA;bg_frame[5] = bgr_nightsky_f;&#xA;bg_frame[6] = bgr_nightsky_g;&#xA;bg_frame[7] = bgr_nightsky_h;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_ls" x="224" y="144" name="inst_23A31D74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

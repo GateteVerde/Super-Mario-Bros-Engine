@@ -154,6 +154,9 @@ switch (global.world) {
     
     //World 8-3
     case ("8-3"): frame = 31; break;
+    
+    //World 8-4
+    case ("8-4"): frame = 32; break;
         
     //Default
     default: frame = 0; break;
@@ -284,6 +287,9 @@ else {
         
         //World 8-3
         case ("8-3"): room_goto(rm_w8_3); break;
+        
+        //World 8-4
+        case ("8-4"): room_goto(rm_w8_4); break;
         
         //Default
         default: room_goto(rm_w1_1); break;

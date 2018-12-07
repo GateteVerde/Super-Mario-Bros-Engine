@@ -183,7 +183,6 @@ global.skin = 2;</code>
     <instance objName="obj_lava" x="1808" y="208" name="inst_B96B2239" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="1824" y="208" name="inst_36A05663" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_725230AB" locked="0" code="levelmusic = 103;&#xA;leveltime = 300;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="16" y="0" name="inst_5A4BA0BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_generator_flame" x="16" y="0" name="inst_7CA8C0C1" locked="0" code="xmin = 1488;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="2048" y="208" name="inst_8D3CEEE5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava" x="2064" y="208" name="inst_240230F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

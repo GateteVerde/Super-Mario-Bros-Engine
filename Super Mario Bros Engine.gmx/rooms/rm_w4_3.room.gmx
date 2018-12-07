@@ -136,7 +136,6 @@
     <instance objName="obj_clearnpcs" x="1088" y="192" name="inst_BE2EB7CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_koopa_red" x="1256" y="64" name="inst_46CAEB9E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_B8BD9CC9" locked="0" code="levelmusic = 101;&#xA;leveltime = 300;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="16" y="0" name="inst_39AB122F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tls_main" x="0" y="128" w="96" h="80" xo="32" yo="0" id="10009419" name="inst_E9E62356" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

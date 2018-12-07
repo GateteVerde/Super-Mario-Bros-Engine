@@ -38,7 +38,7 @@ lightning = 0;
 if (string_char_at(global.world, 1) == "8") {
 
     myback = bgr_castle;
-    myy = 16;
+    myy = 8;
     alarm[0] = 7;
     alarm[1] = 100;
 }

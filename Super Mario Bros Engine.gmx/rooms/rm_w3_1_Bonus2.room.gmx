@@ -52,7 +52,6 @@
   </views>
   <instances>
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_BD7DD6C6" locked="0" code="levelmusic = 105;&#xA;leveltime = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="16" y="0" name="inst_946410F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pitwarp" x="16" y="0" name="inst_38239F3E" locked="0" code="drawbonus = 1;&#xA;postchange = 0;&#xA;postx = 2608;&#xA;posty = -32;&#xA;myroom = rm_w3_1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="0" y="192" name="inst_9451D83C" locked="0" code="" scaleX="83" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_climb" x="72" y="160" name="inst_E3321630" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

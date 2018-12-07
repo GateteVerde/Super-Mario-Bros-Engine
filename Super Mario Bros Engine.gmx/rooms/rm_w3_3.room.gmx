@@ -125,7 +125,6 @@
     <instance objName="obj_solid" x="1712" y="176" name="inst_C2D03E4B" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1856" y="208" name="inst_C253C189" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1904" y="160" name="inst_DBFB5DAA" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="16" y="0" name="inst_C6BA6B49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_goomba" x="424" y="96" name="inst_DE38BC0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_koopa_red" x="840" y="96" name="inst_0DED27E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_koopa_red" x="872" y="160" name="inst_4D957F58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

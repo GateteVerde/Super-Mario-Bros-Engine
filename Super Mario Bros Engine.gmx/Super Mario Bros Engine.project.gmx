@@ -515,6 +515,7 @@
       <objects name="Controllers">
         <objects name="Castle Mazes">
           <object>objects\obj_mazemanager</object>
+          <object>objects\obj_jumpback</object>
           <object>objects\obj_wrongway</object>
           <object>objects\obj_correctway</object>
         </objects>
@@ -842,6 +843,10 @@
           <room>rooms\rm_w8_2_Bonus</room>
         </rooms>
         <room>rooms\rm_w8_3</room>
+        <rooms name="8-4">
+          <room>rooms\rm_w8_4</room>
+          <room>rooms\rm_w8_4_Section2</room>
+        </rooms>
       </rooms>
     </rooms>
     <rooms name="Templates">
