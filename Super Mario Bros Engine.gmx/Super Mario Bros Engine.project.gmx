@@ -10,6 +10,7 @@
       <sounds name="Misc">
         <sounds name="Cutscene">
           <sound>sound\bgm_cutscene</sound>
+          <sound>sound\bgm_ending</sound>
         </sounds>
         <sound>sound\bgm_courseclear</sound>
         <sound>sound\bgm_invincible</sound>
@@ -56,6 +57,7 @@
     <sound>sound\snd_kick8</sound>
     <sound>sound\snd_lava</sound>
     <sound>sound\snd_lightning</sound>
+    <sound>sound\snd_pause</sound>
     <sound>sound\snd_powerup</sound>
     <sound>sound\snd_rain</sound>
     <sound>sound\snd_skid</sound>
@@ -316,6 +318,8 @@
         </sprites>
       </sprites>
       <sprite>sprites\spr_toad</sprite>
+      <sprite>sprites\spr_toadstool</sprite>
+      <sprite>sprites\spr_ending</sprite>
       <sprite>sprites\spr_flag</sprite>
       <sprite>sprites\spr_flagc</sprite>
       <sprite>sprites\spr_flagpole</sprite>
@@ -529,6 +533,7 @@
           <object>objects\obj_flagpole</object>
           <object>objects\obj_incastle</object>
           <object>objects\obj_toad</object>
+          <object>objects\obj_toadstool</object>
           <object>objects\obj_warpzone</object>
         </objects>
         <object>objects\obj_pitwarp</object>
@@ -546,6 +551,9 @@
     <object>objects\obj_climb</object>
     <object>objects\obj_swim</object>
     <objects name="Blocks">
+      <objects name="Castle Mazes">
+        <object>objects\obj_maze_block</object>
+      </objects>
       <object>objects\obj_qblock</object>
       <object>objects\obj_qblock_coins</object>
       <object>objects\obj_qblock_hidden</object>
@@ -730,6 +738,7 @@
       <object>objects\obj_reset</object>
       <object>objects\obj_skipper</object>
       <object>objects\obj_titlemenu</object>
+      <object>objects\obj_ending</object>
     </objects>
     <object>objects\obj_up</object>
     <object>objects\obj_down</object>
@@ -846,8 +855,12 @@
         <rooms name="8-4">
           <room>rooms\rm_w8_4</room>
           <room>rooms\rm_w8_4_Section2</room>
+          <room>rooms\rm_w8_4_Section3</room>
+          <room>rooms\rm_w8_4_Section4</room>
+          <room>rooms\rm_w8_4_Section5</room>
         </rooms>
       </rooms>
+      <room>rooms\rm_ending</room>
     </rooms>
     <rooms name="Templates">
       <room>rooms\rm_template</room>

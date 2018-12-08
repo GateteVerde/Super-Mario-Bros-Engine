@@ -587,7 +587,10 @@ if (instance_exists(obj_playerparent)) {
 global.skin = 0;
 
 //Stop music
-audio_stop_all();
+if (!audio_is_playing(bgm_ending)) {
+
+    audio_stop_all();
+}
 
 //Destroy
 instance_destroy();
