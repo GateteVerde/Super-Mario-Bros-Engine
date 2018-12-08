@@ -148,10 +148,10 @@ else {
 
 //Draw score and high-score
 draw_text(200, 136, "SCORE");
-draw_text(192, 152, string_add_zeros(score, 6));
+draw_text(184, 152, string_add_zeros(score, 7));
 
 draw_text(176, 168, "HI-SCORE");
-draw_text(192, 184, string_add_zeros(obj_persistent.highscore, 6));
+draw_text(184, 184, string_add_zeros(obj_persistent.highscore, 7));
 </string>
           </argument>
         </arguments>

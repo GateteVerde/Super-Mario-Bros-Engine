@@ -177,7 +177,7 @@ background_blend[2] = c_gray;</code>
     <instance objName="obj_solid" x="3456" y="192" name="inst_D70F984C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="3472" y="208" name="inst_C9A770B0" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_incastle" x="3568" y="192" name="inst_638BE0FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_flagpole" x="3456" y="32" name="inst_D5C82E42" locked="0" code="image_single = 1;&#xA;nextlevel = &quot;1-1&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flagpole" x="3456" y="32" name="inst_D5C82E42" locked="0" code="image_single = 1;&#xA;nextlevel = &quot;8-3&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_parakoopa" x="296" y="160" name="inst_F0FDCE6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_parakoopa" x="392" y="64" name="inst_214EFC90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_parakoopa" x="920" y="192" name="inst_8A763D78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

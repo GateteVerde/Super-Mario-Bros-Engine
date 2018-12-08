@@ -91,7 +91,7 @@ background_blend[2] = c_gray;</code>
     <instance objName="obj_hammerbro" x="2840" y="192" name="inst_545B9839" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hammerbro" x="2968" y="192" name="inst_2BED9871" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_incastle" x="3536" y="192" name="inst_AD53978B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_flagpole" x="3424" y="32" name="inst_ABEE18CC" locked="0" code="image_single = 1;&#xA;nextlevel = &quot;1-1&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flagpole" x="3424" y="32" name="inst_ABEE18CC" locked="0" code="image_single = 1;&#xA;nextlevel = &quot;8-4&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="0" y="208" name="inst_649DB695" locked="0" code="" scaleX="18" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="288" y="192" name="inst_E778E1E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="304" y="208" name="inst_97F0C0BC" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>
