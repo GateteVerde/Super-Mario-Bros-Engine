@@ -35,9 +35,6 @@ alarm[0] = 180;
 
 //Reset time and check frame / preview
 alarm[1] = 1;
-
-//Save the game
-save();
 </string>
           </argument>
         </arguments>

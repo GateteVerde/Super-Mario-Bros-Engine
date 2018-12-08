@@ -78,7 +78,7 @@
     <instance objName="obj_up" x="80" y="208" name="inst_3F00131D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_piranhaplant" x="64" y="192" name="inst_0F7E1DE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_piranhaplant" x="176" y="176" name="inst_F356A2F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lavabubble" x="376" y="80" name="inst_861DC055" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lavabubble" x="376" y="112" name="inst_861DC055" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="736" y="144" name="inst_C769933B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_castle" x="16" y="0" name="inst_96939AE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="416" y="48" name="inst_D32B6E32" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>

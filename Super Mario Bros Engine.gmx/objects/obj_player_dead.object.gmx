@@ -94,6 +94,8 @@ if (lives &gt; 0) {
     else
         room_goto(rm_levelstart);
 }
+else
+    room_goto(rm_gameover);
 </string>
           </argument>
         </arguments>

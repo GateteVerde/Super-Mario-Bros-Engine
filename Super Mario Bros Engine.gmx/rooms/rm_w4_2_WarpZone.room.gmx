@@ -103,7 +103,7 @@
     <instance objName="obj_solid" x="480" y="64" name="inst_91079BD5" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="496" y="160" name="inst_FF41E457" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="416" y="112" name="inst_1C8037EB" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_warpworld" x="816" y="208" name="inst_C1AAEDCE" locked="0" code="mydest = &quot;8&quot;;&#xA;myworld = &quot;8-1&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_warpworld" x="816" y="208" name="inst_C1AAEDCE" locked="0" code="mydest = &quot;8&quot;;&#xA;myworld = &quot;8-1&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warpworld" x="880" y="208" name="inst_1E1BA001" locked="0" code="showwarp = true;&#xA;mydest = &quot;7&quot;;&#xA;myworld = &quot;7-1&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warpworld" x="944" y="208" name="inst_A25B5FAD" locked="0" code="mydest = &quot;6&quot;;&#xA;myworld = &quot;6-1&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warpzone" x="928" y="48" name="inst_0A2C8A6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

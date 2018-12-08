@@ -9,14 +9,14 @@
 */
 
 //Open the file to overwrite
-var file = file_text_open_write(argument[0]);
+var file = file_text_open_read(argument[0]);
 
 //Player
 global.player = real(base64_decode(file_text_read_string(file)));
 file_text_readln(file);
 
 //World
-global.world = real(base64_decode(file_text_read_string(file)));
+global.world = base64_decode(file_text_read_string(file));
 file_text_readln(file);
 
 //Coins

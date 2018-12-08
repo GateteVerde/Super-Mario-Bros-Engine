@@ -7,26 +7,23 @@
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="Level Music">
-      <sounds name="Misc">
-        <sounds name="Cutscene">
-          <sound>sound\bgm_cutscene</sound>
-          <sound>sound\bgm_ending</sound>
-        </sounds>
-        <sound>sound\bgm_courseclear</sound>
-        <sound>sound\bgm_invincible</sound>
-        <sound>sound\bgm_levelselect</sound>
-        <sound>sound\bgm_playerdown</sound>
-        <sound>sound\bgm_worldclear</sound>
-      </sounds>
-      <sound>sound\bgm_title</sound>
-      <sound>sound\bgm_title_tll</sound>
-      <sound>sound\bgm_overworld</sound>
-      <sound>sound\bgm_underground</sound>
-      <sound>sound\bgm_castle</sound>
-      <sound>sound\bgm_swimming</sound>
       <sound>sound\bgm_bonus</sound>
       <sound>sound\bgm_bowser</sound>
       <sound>sound\bgm_bowser_final</sound>
+      <sound>sound\bgm_castle</sound>
+      <sound>sound\bgm_courseclear</sound>
+      <sound>sound\bgm_cutscene</sound>
+      <sound>sound\bgm_ending</sound>
+      <sound>sound\bgm_gameover</sound>
+      <sound>sound\bgm_invincible</sound>
+      <sound>sound\bgm_levelselect</sound>
+      <sound>sound\bgm_overworld</sound>
+      <sound>sound\bgm_playerdown</sound>
+      <sound>sound\bgm_swimming</sound>
+      <sound>sound\bgm_title</sound>
+      <sound>sound\bgm_title_tll</sound>
+      <sound>sound\bgm_underground</sound>
+      <sound>sound\bgm_worldclear</sound>
     </sounds>
     <sound>sound\snd_1up</sound>
     <sound>sound\snd_beanstalk</sound>
@@ -269,6 +266,14 @@
           <sprite>sprites\spr_hud_tu_timeup</sprite>
         </sprites>
         <sprites name="Menu">
+          <sprites name="Pause">
+            <sprite>sprites\spr_hud_pause</sprite>
+            <sprite>sprites\spr_hud_pause_cursor</sprite>
+          </sprites>
+          <sprites name="Game Over">
+            <sprite>sprites\spr_hud_gameover</sprite>
+            <sprite>sprites\spr_hud_gameover_cursor</sprite>
+          </sprites>
           <sprite>sprites\spr_hud_title_cursor</sprite>
         </sprites>
         <sprite>sprites\spr_hud</sprite>
@@ -468,6 +473,9 @@
       </scripts>
       <script>scripts\save.gml</script>
       <script>scripts\load.gml</script>
+      <script>scripts\init_pixel.gml</script>
+      <script>scripts\init_globals.gml</script>
+      <script>scripts\init_globals_mus.gml</script>
       <script>scripts\scr_score_add.gml</script>
       <script>scripts\scr_coins_add.gml</script>
     </scripts>
@@ -497,17 +505,14 @@
       <script>scripts\animated_tile_is_playing.gml</script>
       <script>scripts\animated_tile_update.gml</script>
     </scripts>
-    <script>scripts\init_pixel.gml</script>
-    <script>scripts\init_globals.gml</script>
-    <script>scripts\init_globals_mus.gml</script>
-    <script>scripts\string_add_zeros.gml</script>
-    <script>scripts\constant_get_sprite.gml</script>
-    <script>scripts\sprite_get_constant.gml</script>
-    <script>scripts\sprite_make_object.gml</script>
+    <script>scripts\audio_loop_sound.gml</script>
     <script>scripts\draw_background_tiled_horizontal_ext.gml</script>
     <script>scripts\draw_sprite_tiled_area_ext.gml</script>
     <script>scripts\draw_string_port.gml</script>
-    <script>scripts\audio_loop_sound.gml</script>
+    <script>scripts\constant_get_sprite.gml</script>
+    <script>scripts\sprite_get_constant.gml</script>
+    <script>scripts\sprite_make_object.gml</script>
+    <script>scripts\string_add_zeros.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_palette_swapper.shader</shader>
@@ -738,6 +743,8 @@
       <object>objects\obj_reset</object>
       <object>objects\obj_skipper</object>
       <object>objects\obj_titlemenu</object>
+      <object>objects\obj_pausemenu</object>
+      <object>objects\obj_gameover</object>
       <object>objects\obj_ending</object>
     </objects>
     <object>objects\obj_up</object>
