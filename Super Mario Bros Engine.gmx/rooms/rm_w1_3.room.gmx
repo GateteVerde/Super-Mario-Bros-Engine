@@ -81,7 +81,7 @@
     <instance objName="obj_coin" x="1504" y="64" name="inst_95BFC978" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1552" y="64" name="inst_2F2A212B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1568" y="64" name="inst_F2E029AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="1504" y="144" name="inst_59F311A0" locked="0" code="///Change into a shorter platform if hard mode is active&#xA;&#xA;if (global.hardmode == 1)&#xA;    sprite_index = spr_platform_32;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="1504" y="144" name="inst_59F311A0" locked="0" code="///Change into a shorter platform if hard mode is active&#xA;&#xA;if (global.hardmode == 1) {&#xA;&#xA;    sprite_index = spr_platform_32;&#xA;    x += 16;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_left" x="1536" y="144" name="inst_7DE4E0D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_right" x="1456" y="144" name="inst_BD26BD08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="1808" y="176" name="inst_9A9C7B64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
