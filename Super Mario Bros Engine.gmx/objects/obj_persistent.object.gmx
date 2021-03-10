@@ -707,7 +707,7 @@ else {
     //Unlocked levels
     for (var i=0; i&lt;32; i++) {
     
-        unlock[i] = 0;
+        unlock[i] = 1;
     }
     
     //Game cleared
